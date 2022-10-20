@@ -1,0 +1,152 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "eeb-coverage-egk",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/eeb-coverage-egk",
+  "version": "1.0",
+  "name": "EEBCoverageEgk",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "KVDT",
+      "name": "KVDT Mapping"
+    },
+    {
+      "identity": "BDT",
+      "name": "BDT Mapping"
+    },
+    {
+      "identity": "KHEntgG",
+      "name": "Datensatzbeschreibung nach Krankenhaus-Entgelt-Gesetz"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Coverage",
+  "baseDefinition": "http://fhir.de/StructureDefinition/coverage-de-gkv",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coverage.extension",
+        "path": "Coverage.extension",
+        "min": 3
+      },
+      {
+        "id": "Coverage.extension:versionEgk",
+        "path": "Coverage.extension",
+        "sliceName": "versionEgk"
+      },
+      {
+        "id": "Coverage.extension:versionEgk.extension",
+        "path": "Coverage.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:versionEgk.value[x]",
+        "path": "Coverage.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "Coverage.extension:persoenlicheVersichertendaten",
+        "path": "Coverage.extension",
+        "sliceName": "persoenlicheVersichertendaten",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/PersoenlicheVersichertendaten"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "Coverage.extension:persoenlicheVersichertendaten.value[x]",
+        "path": "Coverage.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "Coverage.extension:allgemeineVersicherungsdaten",
+        "path": "Coverage.extension",
+        "sliceName": "allgemeineVersicherungsdaten",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "Coverage.extension:allgemeineVersicherungsdaten.value[x]",
+        "path": "Coverage.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "Coverage.extension:geschuetzteVersichertendaten",
+        "path": "Coverage.extension",
+        "sliceName": "geschuetzteVersichertendaten",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "Coverage.extension:geschuetzteVersichertendaten.value[x]",
+        "path": "Coverage.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "Coverage.identifier:KrankenversichertenID",
+        "path": "Coverage.identifier",
+        "sliceName": "KrankenversichertenID",
+        "min": 1
+      },
+      {
+        "id": "Coverage.identifier:pseudo-Krankenversichertennummer",
+        "path": "Coverage.identifier",
+        "sliceName": "pseudo-Krankenversichertennummer",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.status",
+        "path": "Coverage.status",
+        "fixedCode": "active"
+      },
+      {
+        "id": "Coverage.period",
+        "path": "Coverage.period",
+        "min": 1
+      },
+      {
+        "id": "Coverage.period.start",
+        "path": "Coverage.period.start",
+        "min": 1
+      },
+      {
+        "id": "Coverage.period.end",
+        "path": "Coverage.period.end",
+        "min": 1
+      },
+      {
+        "id": "Coverage.payor.identifier",
+        "path": "Coverage.payor.identifier",
+        "min": 1
+      }
+    ]
+  }
+}

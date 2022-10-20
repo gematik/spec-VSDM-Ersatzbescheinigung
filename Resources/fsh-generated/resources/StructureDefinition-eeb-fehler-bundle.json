@@ -1,0 +1,143 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "eeb-fehler-bundle",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerBundle",
+  "version": "1.0",
+  "name": "EEBFehlerBundle",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "min": 1
+      },
+      {
+        "id": "Bundle.identifier.system",
+        "path": "Bundle.identifier.system",
+        "min": 1,
+        "fixedUri": "urn:ietf:rfc:3986"
+      },
+      {
+        "id": "Bundle.identifier.value",
+        "path": "Bundle.identifier.value",
+        "short": "Eindeutige UUID",
+        "min": 1
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "fixedCode": "message"
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "min": 1
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "resource.meta.profile"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:Header",
+        "path": "Bundle.entry",
+        "sliceName": "Header",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:Header.link",
+        "path": "Bundle.entry.link",
+        "contentReference": "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link"
+      },
+      {
+        "id": "Bundle.entry:Header.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerHeader"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:OperationOutcome",
+        "path": "Bundle.entry",
+        "sliceName": "OperationOutcome",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:OperationOutcome.link",
+        "path": "Bundle.entry.link",
+        "contentReference": "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link"
+      },
+      {
+        "id": "Bundle.entry:OperationOutcome.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "OperationOutcome",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/eeb-fehler"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "eeb-bescheinigung-header",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader",
+  "version": "1.0",
+  "name": "EEBBescheinigungHeader",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MessageHeader",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MessageHeader",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MessageHeader.event[x]",
+        "path": "MessageHeader.event[x]",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "https://gematik.de/fhir/eeb/EEBBescheinigung"
+      },
+      {
+        "id": "MessageHeader.source.endpoint",
+        "path": "MessageHeader.source.endpoint",
+        "fixedUrl": "https://ehex.de/KIM"
+      },
+      {
+        "id": "MessageHeader.response",
+        "path": "MessageHeader.response",
+        "min": 1
+      },
+      {
+        "id": "MessageHeader.response.identifier",
+        "path": "MessageHeader.response.identifier",
+        "short": "Identifier of EEBAnfrageBundle",
+        "definition": "The Bundle.identifier of the EEBAnfrageBundle to which this message is a response."
+      },
+      {
+        "id": "MessageHeader.response.code",
+        "path": "MessageHeader.response.code",
+        "fixedCode": "ok"
+      }
+    ]
+  }
+}

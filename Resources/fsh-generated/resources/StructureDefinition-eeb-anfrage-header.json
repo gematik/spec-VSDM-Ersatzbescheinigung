@@ -1,0 +1,129 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "eeb-anfrage-header",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader",
+  "version": "1.0",
+  "name": "EEBAnfrageHeader",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MessageHeader",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MessageHeader",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MessageHeader.extension",
+        "path": "MessageHeader.extension",
+        "min": 2
+      },
+      {
+        "id": "MessageHeader.extension:Leistungsdatum",
+        "path": "MessageHeader.extension",
+        "sliceName": "Leistungsdatum",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/Leistungsdatum"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MessageHeader.extension:Leistungsdatum.value[x]",
+        "path": "MessageHeader.extension.value[x]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MessageHeader.extension:Einverstaendnis",
+        "path": "MessageHeader.extension",
+        "sliceName": "Einverstaendnis",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/Einverstaendnis"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MessageHeader.extension:Einverstaendnis.value[x]",
+        "path": "MessageHeader.extension.value[x]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MessageHeader.event[x]",
+        "path": "MessageHeader.event[x]",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "https://gematik.de/fhir/eeb/EEBAnfrage"
+      },
+      {
+        "id": "MessageHeader.sender",
+        "path": "MessageHeader.sender",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MessageHeader.sender.reference",
+        "path": "MessageHeader.sender.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MessageHeader.source.endpoint",
+        "path": "MessageHeader.source.endpoint",
+        "fixedUrl": "https://ehex.de/KIM"
+      }
+    ]
+  }
+}
