@@ -2,9 +2,8 @@ Profile: KnownPatient
 Parent: Patient
 Id: known-patient
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/KnownPatient"
-* ^version = "1.0"
-* ^status = #draft
-* identifier 1..1 MS
+* insert Meta
+* identifier 1..1
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #closed

@@ -5,6 +5,9 @@
   "version": "1.0",
   "name": "Einverstaendnis",
   "status": "draft",
+  "experimental": false,
+  "date": "2022-10-30",
+  "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

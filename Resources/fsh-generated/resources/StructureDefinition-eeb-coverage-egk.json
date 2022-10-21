@@ -1,10 +1,13 @@
 {
   "resourceType": "StructureDefinition",
   "id": "eeb-coverage-egk",
-  "url": "https://gematik.de/fhir/eeb/StructureDefinition/eeb-coverage-egk",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk",
   "version": "1.0",
   "name": "EEBCoverageEgk",
   "status": "draft",
+  "experimental": false,
+  "date": "2022-10-30",
+  "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
     {

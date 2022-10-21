@@ -2,11 +2,10 @@ Profile: UnknownPatient
 Parent: Patient
 Id: unknown-patient
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/UnknownPatient"
-* ^version = "1.0"
-* ^status = #draft
-* name 1..1 MS
+* insert Meta
+* name 1..1
 * name only $humanname-de-basis
-* name.family 1.. MS
+* name.family 1..
 * name.family.extension ^slicing.discriminator.type = #value
 * name.family.extension ^slicing.discriminator.path = "url"
 * name.family.extension ^slicing.rules = #open
@@ -18,7 +17,7 @@ Id: unknown-patient
 * name.family.extension[vorsatzwort] ^sliceName = "vorsatzwort"
 * name.family.extension[vorsatzwort] ^min = 0
 * name.family.extension[vorsatzwort] ^mustSupport = true
-* name.given 1.. MS
-* birthDate 1.. MS
-* address 1..1 MS
-* address.postalCode 1.. MS
+* name.given 1..
+* birthDate 1..
+* address 1..1
+* address.postalCode 1..

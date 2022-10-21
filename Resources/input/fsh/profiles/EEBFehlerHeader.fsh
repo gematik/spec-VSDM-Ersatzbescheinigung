@@ -2,8 +2,7 @@ Profile: EEBFehlerHeader
 Parent: MessageHeader
 Id: eeb-fehler-header
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerHeader"
-* ^version = "1.0"
-* ^status = #draft
+* insert Meta
 * event[x] only uri
 * event[x] = "https://gematik.de/fhir/eeb/EEBFehler" (exactly)
 * sender only Reference (KBV_PR_FOR_Organization)

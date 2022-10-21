@@ -1,7 +1,7 @@
 Profile: EEBCoverageNoEgk
 Parent: coverage-de-gkv
 Id: eeb-coverage-no-egk
-* ^status = #draft
+* insert Meta
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open

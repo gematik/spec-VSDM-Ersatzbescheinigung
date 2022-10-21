@@ -15,6 +15,9 @@
   "version": "1.0",
   "name": "EEBBescheinigungBundle",
   "status": "draft",
+  "experimental": false,
+  "date": "2022-10-30",
+  "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -46,20 +49,8 @@
   "differential": {
     "element": [
       {
-        "id": "Bundle.identifier",
-        "path": "Bundle.identifier",
-        "min": 1
-      },
-      {
-        "id": "Bundle.identifier.system",
-        "path": "Bundle.identifier.system",
-        "min": 1,
-        "fixedUri": "urn:ietf:rfc:3986"
-      },
-      {
-        "id": "Bundle.identifier.value",
-        "path": "Bundle.identifier.value",
-        "short": "Eindeutige UUID",
+        "id": "Bundle.id",
+        "path": "Bundle.id",
         "min": 1
       },
       {
@@ -147,8 +138,7 @@
           {
             "code": "Patient",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/KnownPatient",
-              "https://gematik.de/fhir/eeb/StructureDefinition/UnknownPatient"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
             ]
           }
         ]
@@ -188,7 +178,7 @@
           {
             "code": "Coverage",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/eeb-coverage-egk",
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk",
               "https://gematik.de/fhir/eeb/StructureDefinition/eeb-coverage-no-egk"
             ]
           }
