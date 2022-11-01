@@ -21,7 +21,7 @@ Id: EEBBescheinigungBundle
     eEBHeader 1..1 and
 //    Patient 0..1 MS and
     KBVFORPatient 1..1 and
-    eGKCoverage 0..1
+    eGKCoverage 0..1 and
     noGKCoverage 0..1
 * entry[eEBHeader].link ..0
 * entry[eEBHeader].resource 1..

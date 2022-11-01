@@ -3,7 +3,7 @@ canonical: https://gematik.de/fhir/eeb
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
 name: Implementierungsleitfaden-VSDM-Ersatzbescheinigung
-copyrightYear: 2022+
+copyrightYear: 2022
 releaseLabel: draft
 status: draft
 version: "1.0"

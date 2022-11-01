@@ -86,6 +86,39 @@
         "max": "1"
       },
       {
+        "id": "Bundle.entry:eEBHeader.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:eEBHeader.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:eEBHeader.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:eEBHeader.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:eEBHeader.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:KBVFORPatient",
         "path": "Bundle.entry",
         "sliceName": "KBVFORPatient",
@@ -93,11 +126,117 @@
         "max": "1"
       },
       {
+        "id": "Bundle.entry:KBVFORPatient.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBVFORPatient.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:KBVFORPatient.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBVFORPatient.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBVFORPatient.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:eGKCoverage",
         "path": "Bundle.entry",
         "sliceName": "eGKCoverage",
         "min": 0,
         "max": "1"
+      },
+      {
+        "id": "Bundle.entry:eGKCoverage.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:eGKCoverage.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Coverage",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:eGKCoverage.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:eGKCoverage.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:eGKCoverage.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:noGKCoverage",
+        "path": "Bundle.entry",
+        "sliceName": "noGKCoverage",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:noGKCoverage.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:noGKCoverage.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Coverage",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:noGKCoverage.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:noGKCoverage.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:noGKCoverage.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
       }
     ]
   }

@@ -1,7 +1,7 @@
 {
   "resourceType": "ImplementationGuide",
   "url": "https://gematik.de/fhir/eeb/ImplementationGuide/VSDM-Ersatzbescheinigung",
-  "name": "Implementierungsleitfaden VSDM Ersatzbescheinigung",
+  "name": "Implementierungsleitfaden-VSDM-Ersatzbescheinigung",
   "status": "draft",
   "fhirVersion": [
     "4.0.1"
