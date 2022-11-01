@@ -1,6 +1,6 @@
 Profile: EEBAnfrageHeader
 Parent: MessageHeader
-Id: eeb-anfrage-header
+Id: EEBAnfrageHeader
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
 * insert Meta
 * extension ^slicing.discriminator.type = #value

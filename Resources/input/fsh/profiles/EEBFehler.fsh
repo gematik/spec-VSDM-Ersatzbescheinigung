@@ -1,4 +1,4 @@
 Profile: EEBFehler
 Parent: OperationOutcome
-Id: eeb-fehler
+Id: EEBFehler
 * insert Meta

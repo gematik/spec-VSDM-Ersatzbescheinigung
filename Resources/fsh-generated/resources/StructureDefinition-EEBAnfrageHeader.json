@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "eeb-anfrage-header",
+  "id": "EEBAnfrageHeader",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",

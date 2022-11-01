@@ -1,6 +1,6 @@
 Profile: EEBAnfrageBundle
 Parent: Bundle
-Id: eeb-anfrage-bundle
+Id: EEBAnfrageBundle
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
 * insert Meta
 * identifier 1..

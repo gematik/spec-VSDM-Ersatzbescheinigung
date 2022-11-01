@@ -1,7 +1,7 @@
 {
   "resourceType": "ImplementationGuide",
-  "id": "Implementierungsleitfaden VSDM Ersatzbescheinigung",
-  "url": "https://gematik.de/fhir/eeb/ImplementationGuide/Implementierungsleitfaden VSDM Ersatzbescheinigung",
+  "id": "Implementierungsleitfaden-VSDM-Ersatzbescheinigung",
+  "url": "https://gematik.de/fhir/eeb/ImplementationGuide/Implementierungsleitfaden-VSDM-Ersatzbescheinigung",
   "version": "1.0",
   "name": "ImplementierungsleitfadenVSDMErsatzbescheinigung",
   "status": "draft",
@@ -21,7 +21,7 @@
       ]
     }
   ],
-  "packageId": "Implementierungsleitfaden VSDM Ersatzbescheinigung",
+  "packageId": "Implementierungsleitfaden-VSDM-Ersatzbescheinigung",
   "fhirVersion": [
     "4.0.1"
   ],
@@ -55,63 +55,63 @@
     "resource": [
       {
         "reference": {
-          "reference": "StructureDefinition/eeb-anfrage-bundle"
+          "reference": "StructureDefinition/EEBAnfrageBundle"
         },
         "name": "EEBAnfrageBundle",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/eeb-anfrage-header"
+          "reference": "StructureDefinition/EEBAnfrageHeader"
         },
         "name": "EEBAnfrageHeader",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/eeb-bescheinigung-bundle"
+          "reference": "StructureDefinition/EEBBescheinigungBundle"
         },
         "name": "EEBBescheinigungBundle",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/eeb-bescheinigung-header"
+          "reference": "StructureDefinition/EEBBescheinigungHeader"
         },
         "name": "EEBBescheinigungHeader",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/eeb-coverage-egk"
+          "reference": "StructureDefinition/EEBCoverageEgk"
         },
         "name": "EEBCoverageEgk",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/eeb-coverage-no-egk"
+          "reference": "StructureDefinition/EEBCoverageNoEgk"
         },
         "name": "EEBCoverageNoEgk",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/eeb-fehler"
+          "reference": "StructureDefinition/EEBFehler"
         },
         "name": "EEBFehler",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/eeb-fehler-bundle"
+          "reference": "StructureDefinition/EEBFehlerBundle"
         },
         "name": "EEBFehlerBundle",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/eeb-fehler-header"
+          "reference": "StructureDefinition/EEBFehlerHeader"
         },
         "name": "EEBFehlerHeader",
         "exampleBoolean": false
@@ -167,10 +167,31 @@
       },
       {
         "reference": {
+          "reference": "Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"
+        },
+        "name": "Coverage EEB-ErsatzbescheinigungsBundle",
+        "exampleCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
+      },
+      {
+        "reference": {
+          "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
+        },
+        "name": "Sample KBV-FOR-patient for eEB sample generation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Bundle/9b6ac30d-246d-4eab-af83-544564792088"
         },
         "name": "EEB-ErsatzbescheinigungsBundle",
-        "exampleBoolean": true
+        "exampleCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+      },
+      {
+        "reference": {
+          "reference": "Coverage/c7bbbd73-630a-4585-985f-76c513cb1960"
+        },
+        "name": "Coverage EEB-ErsatzbescheinigungsBundle",
+        "exampleCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
       }
     ],
     "page": {

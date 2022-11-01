@@ -3,7 +3,7 @@
   "id": "9b6ac30d-246d-4eab-af83-544564792088",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle|1.0.0"
+      "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
     ],
     "tag": [
       {
@@ -25,30 +25,25 @@
           ]
         },
         "eventUri": "https://gematik.de/fhir/eeb/EEBBescheinigung",
-        "source": {
-          "endpoint": "https://ehex.de/KIM"
-        },
         "response": {
           "code": "ok",
           "_identifier": {
             "value": "e71108ff-a936-44fa-9d7d-215a09428194"
           }
+        },
+        "source": {
+          "endpoint": "https://ehex.de/KIM"
         }
       }
     },
     {
-      "fullUrl": "https://easyti.ehex.de/fhir/Coverage/c7bbbd73-630a-4585-985f-76c513cb1960",
+      "fullUrl": "https://easyti.ehex.de/fhir/Patient/437f2555-2396-4c64-a656-e9553161ca3c",
       "resource": {
-        "resourceType": "Coverage",
-        "id": "c7bbbd73-630a-4585-985f-76c513cb1960",
+        "resourceType": "Patient",
+        "id": "437f2555-2396-4c64-a656-e9553161ca3c",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
-          ],
-          "tag": [
-            {
-              "display": "Coverage für EEB-Ersatzbescheinigung"
-            }
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
           ]
         },
         "identifier": [
@@ -56,8 +51,8 @@
             "type": {
               "coding": [
                 {
-                  "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis",
-                  "code": "GKV"
+                  "code": "GKV",
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis"
                 }
               ]
             },
@@ -65,25 +60,62 @@
             "value": "A123456789"
           }
         ],
-        "status": "active",
-        "extension": [
+        "name": [
           {
-            "url": "https://gematik.de/fhir/eeb/StructureDefinition/PersoenlicheVersichertendaten",
-            "valueString": "5.2.0"
-          },
-          {
-            "url": "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten",
-            "valueBase64Binary": "H4sIAAAAAAAAAI1RbU/CQAz+K+S+QxlhMkx3xIBRAgMjEf1Gzq2yxe1m7m748mf9K3YICMYPfmn79Nqnz7U4eCvyxoaMzUodCq/VFg3ScZlkeh2K8WLeDAK/3/R80bBO6UTlpaZQvJMVA4l3w9UNt5ak8yxOaVnTsDeOuJLNQzRtDEfRanl5uxjPZ6HwW516As/UNhSpcy/nAK+2taZCuey5lRA8KdjYpKgNbLheSDziNSdIr8YjGflBr9P1At9H+P2GW3la4hU9VsZZVlUVstNu++2gEyCcpHFZGq0KkpNcVZbJdhBnKk63UUQZGYQDZlobpznFqZNRzXZAuHBGWUv6IjHEnpWU1uWUuQ+V5tLve70uwkkO58bJCdNqhDrEKe9b4n2ZasslueKlkuHTkBwh/JVG+G7ZzZbTKmMFltEnIeyzeM2/01VR8DK9M4QjeCj6kQ37DcLpFeAft5dfJRi8TF4CAAA="
-          },
-          {
-            "url": "https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten",
-            "valueBase64Binary": "H4sIAAAAAAAAALVS0U7CMBT9laXv0A1cGKYrQTCGTMCIovFlqdtlLNvuTFtQ+Xo7gmYjBH3xpc25p+fck97LBh9Fbm1BqrREnzhtm1iAURmnmPhkspi3PM/ttxyXWEoLjEVeIvjkExQZcPY4Cod5nkABKcKyMonWIDeYqFhowOfprTUaT8Pl9f1iMp/5xG13qgamJSqfrLV+u6T0XbWNg9Bp1o6BrgTdqrioDro17wlnP8YaZA1VbVS03ugdZ1eQpIi8Y3ds2+t4jB4KLCiVCaKlgKQSN2AGiMaEO7bj9lzX6TN6km+qcgEYgzRfBHx8pKhzbCYK4A8QrTHNQFqBFGgcM6EUMLon2fBVVvxe9Lek3Ytez7W7/5E0+E5Fz8Six/jkOF42SuhdiqtSNcBNsGyME4XU3KmZHEp1TXhIY/zDvf5pfmcGzWh1M3ruJT1uTRvBaHOx6O/bzL8A/lor0i8DAAA="
-          },
-          {
-            "url": "https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten",
-            "valueBase64Binary": "H4sIAAAAAAAAAIVPXWvCQBD8K+HezWohoGXvpGgpQq3QUBFf5EjWXPByKblN2ubX90ILtSj4Mvs1zMzi/LOyUUeNL2snxSQei4hcVuelK6RYpZvRdJrMRpNERJ61y7WtHUnxRV7MFb4tDk/kM9MS90zbQSUz1DAFYoDd+jlaLNeH7eNrutq8SJHEd4NBsHReCsP8fg/w4eOCKs3lKc4Jjho6n1cDQBf4QuG+7bWxrSt8iMCtV5j+1DHCb4dwhUSWTlx24TluNBWk8IGanm3IqGYIfwPutXH6/PZ/EWwuteD28+obUb40hF4BAAA="
+            "use": "official",
+            "family": "Königstein",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Königstein"
+                }
+              ]
+            },
+            "given": [
+              "Ludger"
+            ]
           }
         ],
+        "birthDate": "1935-06-22",
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "Blumenweg 14"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "14"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Blumenweg"
+                  }
+                ]
+              }
+            ],
+            "city": "Esens",
+            "postalCode": "26427",
+            "country": "D"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://easyti.ehex.de/fhir/Coverage/2d4da53a-413a-48fe-b908-2e67b5761523",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "2d4da53a-413a-48fe-b908-2e67b5761523",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
+          ]
+        },
+        "status": "active",
         "type": {
           "coding": [
             {
@@ -101,15 +133,43 @@
             "display": "Test Krankenkasse"
           }
         ],
-        "beneficiary": {
-          "identifier": {
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "code": "GKV",
+                  "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis"
+                }
+              ]
+            },
             "system": "http://fhir.de/sid/gkv/kvid-10",
             "value": "A123456789"
           }
-        },
+        ],
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten",
+            "valueBase64Binary": "H4sIAAAAAAAAALVS0U7CMBT9laXv0A1cGKYrQTCGTMCIovFlqdtlLNvuTFtQ+Xo7gmYjBH3xpc25p+fck97LBh9Fbm1BqrREnzhtm1iAURmnmPhkspi3PM/ttxyXWEoLjEVeIvjkExQZcPY4Cod5nkABKcKyMonWIDeYqFhowOfprTUaT8Pl9f1iMp/5xG13qgamJSqfrLV+u6T0XbWNg9Bp1o6BrgTdqrioDro17wlnP8YaZA1VbVS03ugdZ1eQpIi8Y3ds2+t4jB4KLCiVCaKlgKQSN2AGiMaEO7bj9lzX6TN6km+qcgEYgzRfBHx8pKhzbCYK4A8QrTHNQFqBFGgcM6EUMLon2fBVVvxe9Lek3Ytez7W7/5E0+E5Fz8Six/jkOF42SuhdiqtSNcBNsGyME4XU3KmZHEp1TXhIY/zDvf5pfmcGzWh1M3ruJT1uTRvBaHOx6O/bzL8A/lor0i8DAAA="
+          },
+          {
+            "url": "https://gematik.de/fhir/eeb/StructureDefinition/PersoenlicheVersichertendaten",
+            "valueBase64Binary": "H4sIAAAAAAAAAI1RbU/CQAz+K+S+QxlhMkx3xIBRAgMjEf1Gzq2yxe1m7m748mf9K3YICMYPfmn79Nqnz7U4eCvyxoaMzUodCq/VFg3ScZlkeh2K8WLeDAK/3/R80bBO6UTlpaZQvJMVA4l3w9UNt5ak8yxOaVnTsDeOuJLNQzRtDEfRanl5uxjPZ6HwW516As/UNhSpcy/nAK+2taZCuey5lRA8KdjYpKgNbLheSDziNSdIr8YjGflBr9P1At9H+P2GW3la4hU9VsZZVlUVstNu++2gEyCcpHFZGq0KkpNcVZbJdhBnKk63UUQZGYQDZlobpznFqZNRzXZAuHBGWUv6IjHEnpWU1uWUuQ+V5tLve70uwkkO58bJCdNqhDrEKe9b4n2ZasslueKlkuHTkBwh/JVG+G7ZzZbTKmMFltEnIeyzeM2/01VR8DK9M4QjeCj6kQ37DcLpFeAft5dfJRi8TF4CAAA="
+          },
+          {
+            "url": "https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten",
+            "valueBase64Binary": "H4sIAAAAAAAAAIVPXWvCQBD8K+HezWohoGXvpGgpQq3QUBFf5EjWXPByKblN2ubX90ILtSj4Mvs1zMzi/LOyUUeNL2snxSQei4hcVuelK6RYpZvRdJrMRpNERJ61y7WtHUnxRV7MFb4tDk/kM9MS90zbQSUz1DAFYoDd+jlaLNeH7eNrutq8SJHEd4NBsHReCsP8fg/w4eOCKs3lKc4Jjho6n1cDQBf4QuG+7bWxrSt8iMCtV5j+1DHCb4dwhUSWTlx24TluNBWk8IGanm3IqGYIfwPutXH6/PZ/EWwuteD28+obUb40hF4BAAA="
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/version-vsdm",
+            "valueString": "5.2.0"
+          }
+        ],
         "period": {
-          "start": "2017-08-29",
           "end": "2027-08-29"
+        },
+        "beneficiary": {
+          "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
         }
       }
     }

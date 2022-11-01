@@ -1,6 +1,6 @@
 Profile: EEBFehlerHeader
 Parent: MessageHeader
-Id: eeb-fehler-header
+Id: EEBFehlerHeader
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerHeader"
 * insert Meta
 * event[x] only uri

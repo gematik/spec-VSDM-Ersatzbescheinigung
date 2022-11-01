@@ -1,8 +1,8 @@
-id: Implementierungsleitfaden VSDM Ersatzbescheinigung
+id: Implementierungsleitfaden-VSDM-Ersatzbescheinigung
 canonical: https://gematik.de/fhir/eeb
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
-name: Implementierungsleitfaden VSDM Ersatzbescheinigung
+name: Implementierungsleitfaden-VSDM-Ersatzbescheinigung
 copyrightYear: 2022+
 releaseLabel: draft
 status: draft

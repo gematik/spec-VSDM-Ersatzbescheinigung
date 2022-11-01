@@ -1,13 +1,13 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "eeb-fehler",
+  "id": "EEBFehler",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
       "valueString": "Foundation.Other"
     }
   ],
-  "url": "https://gematik.de/fhir/eeb/StructureDefinition/eeb-fehler",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler",
   "version": "1.0",
   "name": "EEBFehler",
   "status": "draft",

@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "eeb-bescheinigung-bundle",
+  "id": "EEBFehlerBundle",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,9 +11,9 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerBundle",
   "version": "1.0",
-  "name": "EEBBescheinigungBundle",
+  "name": "EEBFehlerBundle",
   "status": "draft",
   "experimental": false,
   "date": "2022-10-30",
@@ -49,8 +49,20 @@
   "differential": {
     "element": [
       {
-        "id": "Bundle.id",
-        "path": "Bundle.id",
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "min": 1
+      },
+      {
+        "id": "Bundle.identifier.system",
+        "path": "Bundle.identifier.system",
+        "min": 1,
+        "fixedUri": "urn:ietf:rfc:3986"
+      },
+      {
+        "id": "Bundle.identifier.value",
+        "path": "Bundle.identifier.value",
+        "short": "Eindeutige UUID",
         "min": 1
       },
       {
@@ -87,7 +99,7 @@
       {
         "id": "Bundle.entry:Header.link",
         "path": "Bundle.entry.link",
-        "max": "0"
+        "contentReference": "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link"
       },
       {
         "id": "Bundle.entry:Header.resource",
@@ -97,107 +109,34 @@
           {
             "code": "MessageHeader",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerHeader"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:Header.search",
-        "path": "Bundle.entry.search",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:Header.request",
-        "path": "Bundle.entry.request",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:Header.response",
-        "path": "Bundle.entry.response",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:Patient",
+        "id": "Bundle.entry:OperationOutcome",
         "path": "Bundle.entry",
-        "sliceName": "Patient",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Bundle.entry:Patient.link",
-        "path": "Bundle.entry.link",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:Patient.resource",
-        "path": "Bundle.entry.resource",
-        "min": 1,
-        "type": [
-          {
-            "code": "Patient",
-            "profile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Bundle.entry:Patient.search",
-        "path": "Bundle.entry.search",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:Patient.request",
-        "path": "Bundle.entry.request",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:Patient.response",
-        "path": "Bundle.entry.response",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:Coverage",
-        "path": "Bundle.entry",
-        "sliceName": "Coverage",
+        "sliceName": "OperationOutcome",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:Coverage.link",
+        "id": "Bundle.entry:OperationOutcome.link",
         "path": "Bundle.entry.link",
-        "max": "0"
+        "contentReference": "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link"
       },
       {
-        "id": "Bundle.entry:Coverage.resource",
+        "id": "Bundle.entry:OperationOutcome.resource",
         "path": "Bundle.entry.resource",
-        "min": 1,
         "type": [
           {
-            "code": "Coverage",
+            "code": "OperationOutcome",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk",
-              "https://gematik.de/fhir/eeb/StructureDefinition/eeb-coverage-no-egk"
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
             ]
           }
         ]
-      },
-      {
-        "id": "Bundle.entry:Coverage.search",
-        "path": "Bundle.entry.search",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:Coverage.request",
-        "path": "Bundle.entry.request",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:Coverage.response",
-        "path": "Bundle.entry.response",
-        "max": "0"
       }
     ]
   }

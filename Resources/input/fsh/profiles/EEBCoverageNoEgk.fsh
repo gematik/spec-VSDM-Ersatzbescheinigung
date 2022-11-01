@@ -1,7 +1,8 @@
 Profile: EEBCoverageNoEgk
 Parent: coverage-de-gkv
-Id: eeb-coverage-no-egk
+Id: EEBCoverageNoEgk
 * insert Meta
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk" (exactly)
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
@@ -32,3 +33,4 @@ Id: eeb-coverage-no-egk
 * payor.extension[abrechnendeIK] ^sliceName = "abrechnendeIK"
 * payor.extension[abrechnendeIK].value[x] 1..
 * payor.identifier 1..
+
