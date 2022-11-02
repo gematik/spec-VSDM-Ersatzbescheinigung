@@ -11,7 +11,7 @@
     "resource": [
       {
         "reference": {
-          "reference": "Patient/test"
+          "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
         }
       }
     ],
@@ -21,13 +21,22 @@
       "generation": "markdown",
       "page": [
         {
-          "nameUrl": "ImplementationGuide/markdown/ReleaseNotes.md",
-          "title": "Release Notes",
+          "nameUrl": "ImplementationGuide/markdown/Anfrage.md",
+          "title": "Anfrage",
           "generation": "markdown"
         },
         {
-          "nameUrl": "ImplementationGuide/markdown/Motivation.md",
-          "title": "Motivation",
+          "nameUrl": "ImplementationGuide/markdown/Bescheinigung.md",
+          "title": "Bescheinigung",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/KIM-Nachrichtenstruktur.md",
+          "title": "KIM-Nachrichtenstruktur",
+          "generation": "markdown"
+        },{
+          "nameUrl": "ImplementationGuide/markdown/ReleaseNotes.md",
+          "title": "Release Notes",
           "generation": "markdown"
         },
         {
