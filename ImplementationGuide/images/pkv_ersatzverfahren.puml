@@ -1,7 +1,7 @@
 @startuml pkv_ersatzverfahren
 
 hide footbox
-title Bereitstellung KVNR über VSD Ersatzbescheinigung
+title Ersatzverfahren KVNR/VSD Anforderung via App
 actor Vers as "Versicherte" #ee8360
 participant App as "PKV App" #009a7c
 actor LE as "Praxis" #ee8360

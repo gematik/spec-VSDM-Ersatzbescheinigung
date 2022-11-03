@@ -1,6 +1,6 @@
 @startuml gkv_ersatzverfahren
 hide footbox
-title Ersatzverfahren Bereitstellung VSD
+title Ersatzverfahren VSD Anforderung via KIM
 actor Vers as "Versicherte" #ee8360
 actor LE as "Praxis" #ee8360
 participant PVS as "Primärsystem" #ee8360
