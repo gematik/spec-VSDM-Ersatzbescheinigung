@@ -5,4 +5,4 @@
 
 ## FHIR Datenstruktur Bescheinigung
 
-{{tree:<https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle>}}
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle}}
