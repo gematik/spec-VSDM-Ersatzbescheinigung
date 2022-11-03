@@ -10,34 +10,35 @@ participant KIMCM2 as "KIM-Clientmodul" #8da5c4
 participant Kasse as "Krankenkasse (GKV)" #009a7c
 
 Vers -> LE: "Ich habe meine\nGesundheitskarte\nnicht zur Hand"
-LE -> PVS: VSDM Ersatzbescheinigung einholen
+LE -> PVS: VSDM Ersatzbescheinigung\nanfordern
 activate PVS #ee8360
-PVS -> PVS: (1)
-PVS -> KIMCM1: (2)
+PVS -> PVS: Ggfs. bekannte\nPatientendaten erfassen\n(Name, KVNR, etc.)
+PVS -> PVS: Suche nach KIM-Adresse\nder bekannten/benannten\nKasse
+PVS -> KIMCM1: Versand via KIM\nan die KIM-Adresse\nder Kasse
 activate KIMCM1 #8da5c4
-KIMCM1 -> KIMFD: (3)
+KIMCM1 -> KIMFD: Weiterleitung an\nKIM-Fachdienst der\nEmpfängerkasse
 deactivate KIMCM1
 activate KIMFD #8da5c4
-KIMFD -> KIMCM2: (4)
+KIMFD -> KIMCM2: Nachrichtenempfang
 deactivate KIMFD
 activate KIMCM2 #8da5c4
-KIMCM2 -> Kasse: (5)
+KIMCM2 -> Kasse: Einlesen der\nAnforderung einer\nErsatzbescheinigung
 deactivate KIMCM2
 activate Kasse #00907c
-Kasse -> Kasse: (6)
-Kasse -> KIMCM2: (7)
+Kasse -> Kasse: Prüfung\nVersicherungsverhältnis\nund Ausstellung einer\nErsatzbescheinigung
+Kasse -> KIMCM2: Versand via KIM\nan die benannte\nKIM-Adresse\nder Praxis
 deactivate Kasse
 activate KIMCM2 #8da5c4
-KIMCM2 -> KIMFD: (8)
+KIMCM2 -> KIMFD: Weiterleitung an\nKIM-Fachdienst der\nEmpfängerpraxis
 deactivate KIMCM2
 activate KIMFD #8da5c4
-KIMFD -> KIMCM1: (9)
+KIMFD -> KIMCM1: Nachrichtenempfang
 deactivate KIMFD
 activate KIMCM1 #8da5c4
-KIMCM1 -> PVS: (10)
+KIMCM1 -> PVS: Einlesen der\nErsatzbescheinigung
 deactivate KIMCM1
-PVS -> PVS: (11)
-PVS --> LE: :Ersatzbescheinigung
+PVS -> PVS: Ggfs. Anlage/Aktualisierung\ndes Patientendatensatzes
+PVS --> LE: :Hinweis zum Vorliegen\nder Ersatzbescheinigung
 deactivate PVS
 LE -> Vers: "Kein Problem,\nihre Kasse hat\nuns soeben eine\nErsatzbescheinigung\ngeschickt"
 

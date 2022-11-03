@@ -86,4 +86,4 @@ Das Segment muss die folgenden Metainformationen enthalten:
 
 ## KIM Beispielnachricht
 
-wird nachgeliefert
+TODO wird nachgeliefert

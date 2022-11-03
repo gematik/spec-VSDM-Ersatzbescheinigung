@@ -14,25 +14,26 @@ participant Kasse as "Krankenkasse (PKV)" #009a7c
 Vers -> App: Praxis Check-In
 activate App #009a7c
 App -> App: QR-Code\nscannen
+note right: Die Identifikation und Autorisierung der versicherten Person zur Anforderung einer Ersatzbescheinigung gegenüber der Kasse\n ist nicht Gegenstand dieser Betrachtungen und wird zwischen der betreffenden Kasse und der durch sie bereitgestellten App umgesetzt.
 App -> App: Praxis-KIM-Adresse extrahieren
 App -> Kasse: Check-In bei Praxis ( KIM-Adresse )
 activate Kasse #00907c
 App --> Vers:
 deactivate App
-Kasse -> Kasse: (1)
-Kasse -> KIMCM2: (2)
+Kasse -> Kasse: Prüfung\nVersicherungsverhältnis\nund Ausstellung einer\nErsatzbescheinigung
+Kasse -> KIMCM2: Versand via KIM\nan die benannte\nKIM-Adresse\nder Praxis
 deactivate Kasse
 activate KIMCM2 #8da5c4
-KIMCM2 -> KIMFD: (3)
+KIMCM2 -> KIMFD: Weiterleitung an\nKIM-Fachdienst der\nEmpfängerpraxis
 deactivate KIMCM2
 activate KIMFD #8da5c4
-KIMFD -> KIMCM1: (4)
+KIMFD -> KIMCM1: Nachrichtenempfang
 deactivate KIMFD
 activate KIMCM1 #8da5c4
-KIMCM1 -> PVS: (5)
+KIMCM1 -> PVS: Einlesen der\nErsatzbescheinigung
 deactivate KIMCM1
 activate PVS #ee8360
-PVS -> PVS: (6)
+PVS -> PVS: Ggfs. Anlage/Aktualisierung\ndes Patientendatensatzes
 PVS ---> LE: :Hinweis Check-In\n(neuer) Patient
 deactivate PVS
 
