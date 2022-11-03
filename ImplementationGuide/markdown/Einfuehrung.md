@@ -6,8 +6,8 @@
 
 ## UseCase und Funktionsweise (GKV-Versicherte)
 
-{{render:gkv_ersatzverfahren}}
+{{render:ImplementationGuide-images-out-gkv-ersatzverfahren}}
 
 ## UseCase und Funktionsweise (PKV-Versicherte)
 
-{{render:pkv_ersatzverfahren}}
+{{render:ImplementationGuide-images-out-pkv-ersatzverfahren}}

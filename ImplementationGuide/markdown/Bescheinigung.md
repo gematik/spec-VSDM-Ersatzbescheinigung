@@ -5,4 +5,4 @@
 
 ## FHIR Datenstruktur Bescheinigung
 
-<https://simplifier.net/vsdm-ersatzbescheinigung/eebbescheinigungbundle-duplicate-2>
+{{tree:<https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle>}}
