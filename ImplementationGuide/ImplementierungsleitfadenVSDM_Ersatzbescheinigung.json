@@ -21,8 +21,13 @@
       "generation": "markdown",
       "page": [
         {
-          "nameUrl": "ImplementationGuide/markdown/Anfrage.md",
-          "title": "Anfrage",
+          "nameUrl": "ImplementationGuide/markdown/Anfrage-App.md",
+          "title": "Anfrage (Check-In) via App",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/Anfrage-KIM.md",
+          "title": "Anfrage via KIM",
           "generation": "markdown"
         },
         {
