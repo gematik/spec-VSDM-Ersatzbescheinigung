@@ -25,4 +25,4 @@ Diese Kommunikation wird als `kassenintern` betrachtet.
 Nach Bedarf kann die Datenstruktur [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") genutzt werden, um die KIM-Empfängeradresse der Praxis zur Zustellung der Ersatzbescheinigung der Kasse mitzuteilen.
 Die KIM-Empfängeradresse würde dabei im Value-Feld des Attributes `telecom` und dem System `email` eingetragen werden.
 
-<iframe src=https://www.simplifier.net/embed/render?id=for/kbvprfororganization style="width:auto"></iframe>
+<iframe src="https://www.simplifier.net/embed/render?id=for/kbvprfororganization" style="width: 100%;height: 320px;"></iframe>
