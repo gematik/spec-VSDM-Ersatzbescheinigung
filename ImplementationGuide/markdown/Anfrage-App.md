@@ -9,20 +9,20 @@ Beim Check-In mittels einer Versicherten-App fordert die versicherte Person die 
 
 ## Identifikation und Autorisierung der versicherten Person
 
-TODO Thorsten
+> TODO Thorsten
 
 Die Identifikation und Autorisierung der versicherten Person zur Anforderung einer Ersatzbescheinigung gegenüber der Kasse ist nicht Gegenstand dieser Betrachtungen und wird zwischen der betreffenden Kasse und der durch sie bereitgestellten App umgesetzt.
 
 ## Aufbau QR-Code
 
-TODO eHex
+> TODO eHex
 
 ## Anforderung zur Ausstellung einer Ersatzbescheinigung
 
 Der Aufbau und Inhalt der Kommunikation zwischen App und Kasse ist nicht Gegenstand dieser Beschreibung.
 Diese Kommunikation wird als `kassenintern` betrachtet.
 
-Nach Bedarf kann die Datenstruktur `KBV_PR_FOR_Organization` genutzt werden, um die KIM-Empfängeradresse der Praxis zur Zustellung der Ersatzbescheinigung der Kasse mitzuteilen.
+Nach Bedarf kann die Datenstruktur [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") genutzt werden, um die KIM-Empfängeradresse der Praxis zur Zustellung der Ersatzbescheinigung der Kasse mitzuteilen.
 Die KIM-Empfängeradresse würde dabei im Value-Feld des Attributes `telecom` und dem System `email` eingetragen werden.
 
-{{tree:https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization}}
+<iframe src=https://www.simplifier.net/embed/render?id=for/kbvprfororganization height=”345px” width=”100%”></iframe>
