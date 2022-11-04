@@ -9,6 +9,8 @@ Bei der Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM wird durch
   - [Angaben zur anfragenden Praxis](#angaben-zur-anfragenden-praxis)
   - [KIM-Empfängeradresse der Krankenkasse](#kim-empfängeradresse-der-krankenkasse)
   - [Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM](#anforderung-zur-ausstellung-einer-ersatzbescheinigung-via-kim)
+    - [Anfrage Bundle](#anfrage-bundle)
+    - [KIM-Nachricht (Beispiel)](#kim-nachricht-beispiel)
 
 ## Erfassung personenbezogener Daten
 
@@ -28,6 +30,26 @@ Ist die zu behandelnde Person als Patient im PVS unbekannt, sind Angaben in eine
 
 ## Angaben zur anfragenden Praxis
 
+Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen über die anfragende Praxis, um das Ausstellen von "Blanko"-Bescheinigungen zu unterbinden. Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") mitgegeben werden. Die Angaben zur `address` und `telecom`-Kontaktinformationen für Rückfragen sind dabei mindestens anzugeben.
+
+<iframe src="https://www.simplifier.net/embed/render?id=for/kbvprfororganization" style="width: 100%;height: 320px;"></iframe>
+
 ## KIM-Empfängeradresse der Krankenkasse
 
+Die Suche nach der KIM-Empfängeradresse der Kasse erfolgt im zentralen Verzeichnisdienst VZD mittels LDAP-Query und kann über das KIM-Clientmodul oder direkt durch das PVS über den Konnektor erfolgen. Folgendes Beispiel für einen Konsolenaufruf mittels `ldapsearch` im VZD der TI-Referenzumgebung RU mit der Suche nach einer Krankenkasse OID=`1.2.276.0.76.4.59` und Teil des Namens `Techniker` in einem kombinierten LDAP-Filter `(&(professionOID=1.2.276.0.76.4.50)(displayName=Techniker*))`:
+
+    ldapsearch -h directory-ref.vzd.telematik-test -p 1636 -Z -X -b dc=data,dc=vzd  "(&(professionOID=1.2.276.0.76.4.50)(displayName=Techniker*))"
+
+Details und weitere Hinweise zur Suche findet sich in der [API-Beschreibung zum VZD](https://github.com/gematik/api-vzd/blob/main/docs/LDAP_Search.adoc#suche-bei-bekanntem-namen).
+
 ## Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM
+
+Liegen alle Informationen im PVS vor, werden diese in einer FHIR-Ressource `EEBAnfrageBundle` zusammengestellt und als Anhang einer KIM-Nachricht an die Kasse gesendet.
+
+### Anfrage Bundle
+
+> TODO Hendrik
+
+### KIM-Nachricht (Beispiel)
+
+> TODO eHex
