@@ -36,11 +36,15 @@ Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen
 
 ## KIM-Empfängeradresse der Krankenkasse
 
-Die Suche nach der KIM-Empfängeradresse der Kasse erfolgt im zentralen Verzeichnisdienst VZD mittels LDAP-Query und kann über das KIM-Clientmodul oder direkt durch das PVS über den Konnektor erfolgen. Folgendes Beispiel für einen Konsolenaufruf mittels `ldapsearch` im VZD der TI-Referenzumgebung RU mit der Suche nach einer Krankenkasse OID=`1.2.276.0.76.4.59` und Teil des Namens `Techniker` in einem kombinierten LDAP-Filter `(&(professionOID=1.2.276.0.76.4.50)(displayName=Techniker*))`:
+Die Suche nach der KIM-Empfängeradresse der Kasse erfolgt im zentralen Verzeichnisdienst VZD mittels LDAP-Query und kann über das KIM-Clientmodul oder direkt durch das PVS über den Konnektor erfolgen. Folgendes Beispiel für einen Konsolenaufruf mittels `ldapsearch` im VZD der TI-Referenzumgebung RU mit der Suche nach einer Krankenkasse OID=`1.2.276.0.76.4.59` und Teil des Namens `Techniker` in einem kombinierten LDAP-Filter `(&(professionOID=1.2.276.0.76.4.59)(displayName=Techniker*))`:
 
-    ldapsearch -h directory-ref.vzd.telematik-test -p 1636 -Z -X -b dc=data,dc=vzd  "(&(professionOID=1.2.276.0.76.4.50)(displayName=Techniker*))"
+    $ ldapsearch -h directory-ref.vzd.telematik-test -p 1636 -Z -X -b dc=data,dc=vzd  "(&(professionOID=1.2.276.0.76.4.59)(displayName=Techniker*))"
 
-Details und weitere Hinweise zur Suche findet sich in der [API-Beschreibung zum VZD](https://github.com/gematik/api-vzd/blob/main/docs/LDAP_Search.adoc#suche-bei-bekanntem-namen).
+Diese liefert folgendes Ergebnis
+
+> TODO Hendrik
+
+Details und weitere Hinweise zur Suche finden sich in der [API-Beschreibung zum VZD](https://github.com/gematik/api-vzd/blob/main/docs/LDAP_Search.adoc#suche-bei-bekanntem-namen).
 
 ## Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM
 
