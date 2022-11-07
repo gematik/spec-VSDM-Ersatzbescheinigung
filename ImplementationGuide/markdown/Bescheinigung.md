@@ -220,7 +220,7 @@ Das Bescheinigungs-Bundle besteht aus einem Bescheinigungs-Header `MessageHeader
 
 Der `MessageHeader` enthält lediglich eine Statusinformation, ist für den Bundle-Type `message` jedoch verpflichtend.
 
-{{tree:<https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle>}}
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle}}
 
 ### Patient (optional)
 
