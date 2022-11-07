@@ -163,7 +163,7 @@ Liegen alle Informationen im PVS vor, werden diese in einer FHIR-Ressource `EEBA
 
 ### Anfrage Bundle
 
-{{tree:<https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle>}}
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle}}
 
 Im folgenden ist ein Beispiel-Bundle dargestellt
 
