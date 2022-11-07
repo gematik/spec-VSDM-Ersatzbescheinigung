@@ -15,7 +15,7 @@ Die Identifikation und Autorisierung der versicherten Person zur Anforderung ein
 
 ## Aufbau QR-Code
 
-> TODO eHex
+> TODO Thorsten
 
 ## Anforderung zur Ausstellung einer Ersatzbescheinigung
 
