@@ -12,7 +12,9 @@ Als Ergebnis einer Bescheinigungsanfrage antwortet die Kasse eine KIM-Nachricht,
 
 ## Signatur
 
-Die Signatur ist als Base64-Codierter PKCS#7-Container der KIM-Antwort zu entnehmen. Sie trägt die signierte Bescheinigung innerhalb des Signaturcontainers (enveloping Signatur). Mit der Konnektoroperation `verifyDocument` kann die Signatur der Kasse geprüft werden.
+Die Signatur ist als Base64-Codierter PKCS#7-Container der KIM-Antwort zu entnehmen.
+Sie trägt die signierte Bescheinigung innerhalb des Signaturcontainers (enveloping Signatur).
+Mit der Konnektoroperation `verifyDocument` kann die Signatur der Kasse geprüft werden.
 
 ```xml
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
@@ -198,7 +200,17 @@ Im Ergebnis liefert der Konnektor eine `verifyDocumentResponse`, die im einfache
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
  <SOAP-ENV:Header/>
  <SOAP-ENV:Body>
-  <ns8:VerifyDocumentResponse xmlns:ns10="urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#" xmlns:ns11="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns12="http://uri.etsi.org/02231/v2#" xmlns:ns2="http://ws.gematik.de/conn/EncryptionService/v6.1" xmlns:ns3="http://ws.gematik.de/conn/ConnectorCommon/v5.0" xmlns:ns4="http://ws.gematik.de/conn/ConnectorContext/v2.0" xmlns:ns5="urn:oasis:names:tc:dss:1.0:core:schema" xmlns:ns6="http://www.w3.org/2000/09/xmldsig#" xmlns:ns7="http://ws.gematik.de/tel/error/v2.0" xmlns:ns8="http://ws.gematik.de/conn/SignatureService/v7.4" xmlns:ns9="urn:oasis:names:tc:dss-x:1.0:profiles:SignaturePolicy:schema#">
+  <ns8:VerifyDocumentResponse xmlns:ns10="urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#"
+    xmlns:ns11="http://uri.etsi.org/01903/v1.3.2#"
+    xmlns:ns12="http://uri.etsi.org/02231/v2#"
+    xmlns:ns2="http://ws.gematik.de/conn/EncryptionService/v6.1"
+    xmlns:ns3="http://ws.gematik.de/conn/ConnectorCommon/v5.0"
+    xmlns:ns4="http://ws.gematik.de/conn/ConnectorContext/v2.0"
+    xmlns:ns5="urn:oasis:names:tc:dss:1.0:core:schema"
+    xmlns:ns6="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:ns7="http://ws.gematik.de/tel/error/v2.0"
+    xmlns:ns8="http://ws.gematik.de/conn/SignatureService/v7.4"
+    xmlns:ns9="urn:oasis:names:tc:dss-x:1.0:profiles:SignaturePolicy:schema#">
    <ns3:Status>
     <ns3:Result>OK</ns3:Result>
    </ns3:Status>
@@ -224,11 +236,13 @@ Der `MessageHeader` enthält lediglich eine Statusinformation, ist für den Bund
 
 ### Patient (optional)
 
-Die Patient-Ressource vom Typ `KBV_PR_FOR_Patient` enthält die der Kasse bekannten Patientendaten gemäß KBV-Profilierung, wie sie in den Anwendungen *eAU*, *eRezept*, etc. verwendet werden.
+Die Patient-Ressource vom Typ `KBV_PR_FOR_Patient` enthält die der Kasse bekannten Patientendaten gemäß KBV-Profilierung,
+wie sie in den Anwendungen *eAU*, *eRezept*, etc. verwendet werden.
 
 ### Coverage
 
-In der Coverage-Ressource werden die Informationen zum Versicherungsverhältnis mitgeliefert. Mit dem Institutionskennzeichen `iknr` der Kasse und der `KVNR` des Patienten liegen der Praxis alle notwendigen Informationen zur späteren Abrechnung vor.
+In der Coverage-Ressource werden die Informationen zum Versicherungsverhältnis mitgeliefert.
+Mit dem Institutionskennzeichen `iknr` der Kasse und der `KVNR` des Patienten liegen der Praxis alle notwendigen Informationen zur späteren Abrechnung vor.
 
 ## Bescheinigungsbundle (Beispiel)
 
