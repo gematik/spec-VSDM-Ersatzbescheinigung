@@ -9,8 +9,6 @@ Beim Check-In mittels einer Versicherten-App fordert die versicherte Person die 
 
 ## Identifikation und Autorisierung der versicherten Person
 
-> TODO Thorsten
-
 Die Identifikation und Autorisierung der versicherten Person zur Anforderung einer Ersatzbescheinigung gegenüber der Kasse ist nicht Gegenstand dieser Betrachtungen und wird zwischen der betreffenden Kasse und der durch sie bereitgestellten App umgesetzt.
 
 ## Aufbau QR-Code
