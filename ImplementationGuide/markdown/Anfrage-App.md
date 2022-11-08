@@ -15,7 +15,23 @@ Die Identifikation und Autorisierung der versicherten Person zur Anforderung ein
 
 ## Aufbau QR-Code
 
-> TODO Thorsten
+Der QR-Code stellt den Namen `displayName` und die KIM-Adresse `komLeData` der Praxis zum Abscannen durch eine Versicherten-App bereit.
+Diese sind dem VZD-Eintrag der Praxis zu entnehmen und können bspw. über das PVS aus dem VZD geladen und in der folgenden JSON-Struktur als QR-Code ausgedruckt werden.
+
+```json
+{
+ "version": "1",
+ "displayName": "Meine Praxis Dr. Müller",
+ "komLeData": "1.0,praxis-drmueller03@akquinet.kim.telematik"
+}
+```
+<!--- generated at https://qr.io/?gclid=Cj0KCQiAmaibBhCAARIsAKUlaKS6Fc5U2WtQhnpeJi--cek12_qHdHOsKbkwxUp8AlsldhGeEtQCkF8aAo-TEALw_wcB -->
+{{render:ImplementationGuide-images-qr-sample}}
+
+Diese JSON-Struktur wird dann durch die Kassen-App an das Kassen-Backend übertragen, wo die Kasse die Daten prüft:
+
+- Existiert für diesen `displayName` ein Eintrag im VZD der Telematikinfrastruktur
+- Stimmt die KIM-Adresse aus `komLeData` mit der KIM-Adresse im VZD-Eintrag überein
 
 ## Anforderung zur Ausstellung einer Ersatzbescheinigung
 
