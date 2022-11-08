@@ -159,7 +159,9 @@ Liegen alle Informationen im PVS vor, werden diese in einer FHIR-Ressource `EEBA
 
 ### Anfrage Header
 
-> TODO Hendrik
+Der für den genutzten Bundle-Typ `message` verpflichtende Header transportiert neben Metainformationen (Leistungsdatum, Referenz auf die anfragende Praxis `KBV_PR_FOR_Organization`) das Einverständnis des Patienten (`true` = eingewilligt), dass zuvor vom Praxispersonal mündlich eingeholt wurde.
+
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader}}
 
 ### Anfrage Bundle
 

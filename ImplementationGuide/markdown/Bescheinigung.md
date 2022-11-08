@@ -234,89 +234,92 @@ In der Coverage-Ressource werden die Informationen zum Versicherungsverhältnis 
 
 Im Folgenden ist ein Beispiel-Bescheinigungs-Bundle dargestellt. Dieses ist innerhalb des Signaturcontainers (PKCS#7 enveloping) enthalten.
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<Bundle xmlns="http://hl7.org/fhir">
-   <id value="876193e4-f880-466c-ab6c-d9c94f7e43e1" />
-   <meta>
-      <profile value="https://fhir.ehex.de/StructureDefinition/EEBBescheinigungBundle|1.0.0" />
-   </meta>
-   <identifier>
-      <system value="urn:ietf:rfc:3986" />
-      <value value="f2197b7b-7859-4f0d-9028-29db19cfa99d" />
-   </identifier>
-   <type value="message" />
-   <timestamp value="2022-11-04T13:03:45.197+01:00" />
-   <entry>
-      <fullUrl value="https://easyti.ehex.de/fhir/MessageHeader/a0dc4ce3-f959-46b5-84b6-a9e2a340d5dc" />
-      <resource>
-         <MessageHeader xmlns="http://hl7.org/fhir">
-            <id value="a0dc4ce3-f959-46b5-84b6-a9e2a340d5dc" />
-            <meta>
-               <profile value="https://fhir.ehex.de/StructureDefinition/EEBBescheinigungBundle|1.0.0" />
-            </meta>
-            <eventUri value="https://fhir.ehex.de/EEBBescheinigung" />
-            <source>
-               <endpoint value="http://www.tk.de" />
-            </source>
-            <response>
-               <identifier value="cb67de30-a309-4f1d-9dd1-6cc73a65a3a6" />
-               <code value="ok" />
-            </response>
-         </MessageHeader>
-      </resource>
-   </entry>
-   <entry>
-      <fullUrl value="https://easyti.ehex.de/fhir/Coverage/344a0422-6bb6-4a04-8705-9d5d74517136" />
-      <resource>
-         <Coverage xmlns="http://hl7.org/fhir">
-            <id value="344a0422-6bb6-4a04-8705-9d5d74517136" />
-            <meta>
-               <profile value="https://fhir.ehex.de/StructureDefinition/EEBCoverageEgk|1.0.0" />
-            </meta>
-            <extension url="http://fhir.de/StructureDefinition/gkv/version-vsdm">
-               <valueString value="5.2.0" />
-            </extension>
-            <extension url="https://fhir.ehex.de/StructureDefinition/AllgemeineVersicherungsdaten">
-               <valueBase64Binary value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iSVNPLTg4NTktMTUiIHN0YW5kYWxvbmU9InllcyI/PjxVQ19BbGxnZW1laW5lVmVyc2ljaGVydW5nc2RhdGVuWE1MIENETV9WRVJTSU9OPSI1LjIuMCIgeG1sbnM9Imh0dHA6Ly93cy5nZW1hdGlrLmRlL2ZhL3ZzZG0vdnNkL3Y1LjIiPjxWZXJzaWNoZXJ0ZXI+PFZlcnNpY2hlcnVuZ3NzY2h1dHo+PEJlZ2lubj4yMDIwMDEwMTwvQmVnaW5uPjxLb3N0ZW50cmFlZ2VyPjxLb3N0ZW50cmFlZ2Vya2VubnVuZz4xMDE1NzU1MTk8L0tvc3RlbnRyYWVnZXJrZW5udW5nPjxLb3N0ZW50cmFlZ2VybGFlbmRlcmNvZGU+RDwvS29zdGVudHJhZWdlcmxhZW5kZXJjb2RlPjxOYW1lPlRlY2huaWtlciBLcmFua2Vua2Fzc2U8L05hbWU+PEFicmVjaG5lbmRlcktvc3RlbnRyYWVnZXI+PEtvc3RlbnRyYWVnZXJrZW5udW5nPjEwNDA3NzUwMTwvS29zdGVudHJhZWdlcmtlbm51bmc+PEtvc3RlbnRyYWVnZXJsYWVuZGVyY29kZT5EPC9Lb3N0ZW50cmFlZ2VybGFlbmRlcmNvZGU+PE5hbWU+VEs8L05hbWU+PC9BYnJlY2huZW5kZXJLb3N0ZW50cmFlZ2VyPjwvS29zdGVudHJhZWdlcj48L1ZlcnNpY2hlcnVuZ3NzY2h1dHo+PFp1c2F0emluZm9zPjxadXNhdHppbmZvc0dLVj48VmVyc2ljaGVydGVuYXJ0PjE8L1ZlcnNpY2hlcnRlbmFydD48WnVzYXR6aW5mb3NfQWJyZWNobnVuZ19HS1Y+PFdPUD4zODwvV09QPjwvWnVzYXR6aW5mb3NfQWJyZWNobnVuZ19HS1Y+PC9adXNhdHppbmZvc0dLVj48L1p1c2F0emluZm9zPjwvVmVyc2ljaGVydGVyPjwvVUNfQWxsZ2VtZWluZVZlcnNpY2hlcnVuZ3NkYXRlblhNTD4=" />
-            </extension>
-            <extension url="https://fhir.ehex.de/StructureDefinition/PersoenlicheVersichertendaten">
-               <valueBase64Binary value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iSVNPLTg4NTktMTUiIHN0YW5kYWxvbmU9InllcyI/PjxVQ19QZXJzb2VubGljaGVWZXJzaWNoZXJ0ZW5kYXRlblhNTCBDRE1fVkVSU0lPTj0iNS4yLjAiIHhtbG5zPSJodHRwOi8vd3MuZ2VtYXRpay5kZS9mYS92c2RtL3ZzZC92NS4yIj48VmVyc2ljaGVydGVyPjxWZXJzaWNoZXJ0ZW5fSUQ+VDAyOTY1MzI5MDwvVmVyc2ljaGVydGVuX0lEPjxQZXJzb24+PEdlYnVydHNkYXR1bT4xOTkyMDEwMTwvR2VidXJ0c2RhdHVtPjxWb3JuYW1lPlBldGVyPC9Wb3JuYW1lPjxOYWNobmFtZT5USy1lQVUtTcO8bGxlcjwvTmFjaG5hbWU+PEdlc2NobGVjaHQ+TTwvR2VzY2hsZWNodD48U3RyYXNzZW5BZHJlc3NlPjxQb3N0bGVpdHphaGw+NDAyMjE8L1Bvc3RsZWl0emFobD48T3J0PkTDvHNzZWxkb3JmPC9PcnQ+PExhbmQ+PFdvaG5zaXR6bGFlbmRlcmNvZGU+RDwvV29obnNpdHpsYWVuZGVyY29kZT48L0xhbmQ+PFN0cmFzc2U+U3BlZGl0aW9uc3RyLjwvU3RyYXNzZT48SGF1c251bW1lcj4xOTwvSGF1c251bW1lcj48L1N0cmFzc2VuQWRyZXNzZT48L1BlcnNvbj48L1ZlcnNpY2hlcnRlcj48L1VDX1BlcnNvZW5saWNoZVZlcnNpY2hlcnRlbmRhdGVuWE1MPg==" />
-            </extension>
-            <extension url="https://fhir.ehex.de/StructureDefinition/GeschuetzteVersichertendaten">
-               <valueBase64Binary value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iSVNPLTg4NTktMTUiIHN0YW5kYWxvbmU9InllcyI/PjxVQ19HZXNjaHVldHp0ZVZlcnNpY2hlcnRlbmRhdGVuWE1MIENETV9WRVJTSU9OPSI1LjIuMCIgeG1sbnM9Imh0dHA6Ly93cy5nZW1hdGlrLmRlL2ZhL3ZzZG0vdnNkL3Y1LjIiPjxadXphaGx1bmdzc3RhdHVzPjxTdGF0dXM+MDwvU3RhdHVzPjwvWnV6YWhsdW5nc3N0YXR1cz48U2VsZWt0aXZ2ZXJ0cmFlZ2U+PEFlcnp0bGljaD45PC9BZXJ6dGxpY2g+PFphaG5hZXJ6dGxpY2g+OTwvWmFobmFlcnp0bGljaD48L1NlbGVrdGl2dmVydHJhZWdlPjwvVUNfR2VzY2h1ZXR6dGVWZXJzaWNoZXJ0ZW5kYXRlblhNTD4=" />
-            </extension>
-            <status value="active" />
-            <beneficiary>
-               <identifier>
-                  <type>
-                     <coding>
-                        <system value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
-                        <code value="GKV" />
-                        <display value="Gesetzliche Krankenversicherung" />
-                     </coding>
-                  </type>
-                  <system value="http://fhir.de/NamingSystem/gkv/kvid-10" />
-                  <value value="T029653290" />
-               </identifier>
-            </beneficiary>
-            <period>
-               <start value="2022-11-03" />
-               <end value="2027-11-03" />
-            </period>
-            <payor>
-               <identifier>
-                  <system value="http://fhir.de/NamingSystem/arge-ik/iknr" />
-                  <value value="101575519" />
-               </identifier>
-               <display value="Techniker Krankenkasse" />
-            </payor>
-         </Coverage>
-      </resource>
-   </entry>
-</Bundle>
-```
+<!--- code block put in quote block to wrap long base64 VSD Data -->
+> ```xml
+> <?xml version="1.0" encoding="UTF-8"?>
+> <Bundle xmlns="http://hl7.org/fhir">
+>    <id value="876193e4-f880-466c-ab6c-d9c94f7e43e1" />
+>    <meta>
+>       <profile value="https://fhir.ehex.de/StructureDefinition/EEBBescheinigungBundle|1.0.0" />
+>    </meta>
+>    <identifier>
+>       <system value="urn:ietf:rfc:3986" />
+>       <value value="f2197b7b-7859-4f0d-9028-29db19cfa99d" />
+>    </identifier>
+>    <type value="message" />
+>    <timestamp value="2022-11-04T13:03:45.197+01:00" />
+>    <entry>
+>       <fullUrl value="https://easyti.ehex.de/fhir/MessageHeader/a0dc4ce3-f959-46b5-84b6-a9e2a340d5dc" />
+>       <resource>
+>          <MessageHeader xmlns="http://hl7.org/fhir">
+>             <id value="a0dc4ce3-f959-46b5-84b6-a9e2a340d5dc" />
+>             <meta>
+>                <profile value="https://fhir.ehex.de/StructureDefinition/EEBBescheinigungBundle|1.0.0" />
+>             </meta>
+>             <eventUri value="https://fhir.ehex.de/EEBBescheinigung" />
+>             <source>
+>                <endpoint value="http://www.tk.de" />
+>             </source>
+>             <response>
+>                <identifier value="cb67de30-a309-4f1d-9dd1-6cc73a65a3a6" />
+>                <code value="ok" />
+>             </response>
+>          </MessageHeader>
+>       </resource>
+>    </entry>
+>    <entry>
+>       <fullUrl value="https://easyti.ehex.de/fhir/Coverage/344a0422-6bb6-4a04-8705-9d5d74517136" />
+>       <resource>
+>          <Coverage xmlns="http://hl7.org/fhir">
+>             <id value="344a0422-6bb6-4a04-8705-9d5d74517136" />
+>             <meta>
+>                <profile value="https://fhir.ehex.de/StructureDefinition/EEBCoverageEgk|1.0.0" />
+>             </meta>
+>             <extension url="http://fhir.de/StructureDefinition/gkv/version-vsdm">
+>                <valueString value="5.2.0" />
+>             </extension>
+>             <extension url="https://fhir.ehex.de/StructureDefinition/AllgemeineVersicherungsdaten">
+>                <valueBase64Binary value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iSVNPLTg4NTktMTUiIHN0YW5kYWxvbmU9InllcyI/PjxVQ19BbGxnZW1laW5lVmVyc2ljaGVydW5nc2RhdGVuWE1MIENETV9WRVJTSU9OPSI1LjIuMCIgeG1sbnM9Imh0dHA6Ly93cy5nZW1hdGlrLmRlL2ZhL3ZzZG0vdnNkL3Y1LjIiPjxWZXJzaWNoZXJ0ZXI+PFZlcnNpY2hlcnVuZ3NzY2h1dHo+PEJlZ2lubj4yMDIwMDEwMTwvQmVnaW5uPjxLb3N0ZW50cmFlZ2VyPjxLb3N0ZW50cmFlZ2Vya2VubnVuZz4xMDE1NzU1MTk8L0tvc3RlbnRyYWVnZXJrZW5udW5nPjxLb3N0ZW50cmFlZ2VybGFlbmRlcmNvZGU+RDwvS29zdGVudHJhZWdlcmxhZW5kZXJjb2RlPjxOYW1lPlRlY2huaWtlciBLcmFua2Vua2Fzc2U8L05hbWU+PEFicmVjaG5lbmRlcktvc3RlbnRyYWVnZXI+PEtvc3RlbnRyYWVnZXJrZW5udW5nPjEwNDA3NzUwMTwvS29zdGVudHJhZWdlcmtlbm51bmc+PEtvc3RlbnRyYWVnZXJsYWVuZGVyY29kZT5EPC9Lb3N0ZW50cmFlZ2VybGFlbmRlcmNvZGU+PE5hbWU+VEs8L05hbWU+PC9BYnJlY2huZW5kZXJLb3N0ZW50cmFlZ2VyPjwvS29zdGVudHJhZWdlcj48L1ZlcnNpY2hlcnVuZ3NzY2h1dHo+PFp1c2F0emluZm9zPjxadXNhdHppbmZvc0dLVj48VmVyc2ljaGVydGVuYXJ0PjE8L1ZlcnNpY2hlcnRlbmFydD48WnVzYXR6aW5mb3NfQWJyZWNobnVuZ19HS1Y+PFdPUD4zODwvV09QPjwvWnVzYXR6aW5mb3NfQWJyZWNobnVuZ19HS1Y+PC9adXNhdHppbmZvc0dLVj48L1p1c2F0emluZm9zPjwvVmVyc2ljaGVydGVyPjwvVUNfQWxsZ2VtZWluZVZlcnNpY2hlcnVuZ3NkYXRlblhNTD4=" />
+>             </extension>
+>             <extension url="https://fhir.ehex.de/StructureDefinition/PersoenlicheVersichertendaten">
+>                <valueBase64Binary value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iSVNPLTg4NTktMTUiIHN0YW5kYWxvbmU9InllcyI/PjxVQ19QZXJzb2VubGljaGVWZXJzaWNoZXJ0ZW5kYXRlblhNTCBDRE1fVkVSU0lPTj0iNS4yLjAiIHhtbG5zPSJodHRwOi8vd3MuZ2VtYXRpay5kZS9mYS92c2RtL3ZzZC92NS4yIj48VmVyc2ljaGVydGVyPjxWZXJzaWNoZXJ0ZW5fSUQ+VDAyOTY1MzI5MDwvVmVyc2ljaGVydGVuX0lEPjxQZXJzb24+PEdlYnVydHNkYXR1bT4xOTkyMDEwMTwvR2VidXJ0c2RhdHVtPjxWb3JuYW1lPlBldGVyPC9Wb3JuYW1lPjxOYWNobmFtZT5USy1lQVUtTcO8bGxlcjwvTmFjaG5hbWU+PEdlc2NobGVjaHQ+TTwvR2VzY2hsZWNodD48U3RyYXNzZW5BZHJlc3NlPjxQb3N0bGVpdHphaGw+NDAyMjE8L1Bvc3RsZWl0emFobD48T3J0PkTDvHNzZWxkb3JmPC9PcnQ+PExhbmQ+PFdvaG5zaXR6bGFlbmRlcmNvZGU+RDwvV29obnNpdHpsYWVuZGVyY29kZT48L0xhbmQ+PFN0cmFzc2U+U3BlZGl0aW9uc3RyLjwvU3RyYXNzZT48SGF1c251bW1lcj4xOTwvSGF1c251bW1lcj48L1N0cmFzc2VuQWRyZXNzZT48L1BlcnNvbj48L1ZlcnNpY2hlcnRlcj48L1VDX1BlcnNvZW5saWNoZVZlcnNpY2hlcnRlbmRhdGVuWE1MPg==" />
+>             </extension>
+>             <extension url="https://fhir.ehex.de/StructureDefinition/GeschuetzteVersichertendaten">
+>                <valueBase64Binary value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iSVNPLTg4NTktMTUiIHN0YW5kYWxvbmU9InllcyI/PjxVQ19HZXNjaHVldHp0ZVZlcnNpY2hlcnRlbmRhdGVuWE1MIENETV9WRVJTSU9OPSI1LjIuMCIgeG1sbnM9Imh0dHA6Ly93cy5nZW1hdGlrLmRlL2ZhL3ZzZG0vdnNkL3Y1LjIiPjxadXphaGx1bmdzc3RhdHVzPjxTdGF0dXM+MDwvU3RhdHVzPjwvWnV6YWhsdW5nc3N0YXR1cz48U2VsZWt0aXZ2ZXJ0cmFlZ2U+PEFlcnp0bGljaD45PC9BZXJ6dGxpY2g+PFphaG5hZXJ6dGxpY2g+OTwvWmFobmFlcnp0bGljaD48L1NlbGVrdGl2dmVydHJhZWdlPjwvVUNfR2VzY2h1ZXR6dGVWZXJzaWNoZXJ0ZW5kYXRlblhNTD4=" />
+>             </extension>
+>             <status value="active" />
+>             <beneficiary>
+>                <identifier>
+>                   <type>
+>                      <coding>
+>                         <system value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
+>                         <code value="GKV" />
+>                         <display value="Gesetzliche Krankenversicherung" />
+>                      </coding>
+>                   </type>
+>                   <system value="http://fhir.de/NamingSystem/gkv/kvid-10" />
+>                   <value value="T029653290" />
+>                </identifier>
+>             </beneficiary>
+>             <period>
+>                <start value="2022-11-03" />
+>                <end value="2027-11-03" />
+>             </period>
+>             <payor>
+>                <identifier>
+>                   <system value="http://fhir.de/NamingSystem/arge-ik/iknr" />
+>                   <value value="101575519" />
+>                </identifier>
+>                <display value="Techniker Krankenkasse" />
+>             </payor>
+>          </Coverage>
+>       </resource>
+>    </entry>
+> </Bundle>
+> ```
 
 ## Fehlerfälle und Fehlerbundle
 
-TODO
+Im Fall von Fehlern, antwortet die Kasse mit einer Fehler-Nachricht `EEBFehlerBundle`, die in einer FHIR-Ressource `OperationOutcome` StatusCodes und lesbare Fehlertexte in einer Liste von Fehlern `issue`|s transportieren.
+
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerBundle}}
