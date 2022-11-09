@@ -5,6 +5,7 @@ Alias: $identifier-kvid-10 = http://fhir.de/StructureDefinition/identifier-kvid-
 Alias: $identifier-pkv = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Identifier_PkvID_10
 Alias: $humanname-de-basis = http://fhir.de/StructureDefinition/humanname-de-basis
 Alias: $coverage-de-basis = http://fhir.de/StructureDefinition/coverage-de-basis
+Alias: $versicherungsart-de-basis = http://fhir.de/ValueSet/versicherungsart-de-basis
 Alias: $einlesedatum-karte = http://fhir.de/StructureDefinition/gkv/einlesedatum-karte
 Alias: $onlinepruefung-egk = http://fhir.de/StructureDefinition/gkv/onlinepruefung-egk
 Alias: $version-vsdm = http://fhir.de/StructureDefinition/gkv/version-vsdm

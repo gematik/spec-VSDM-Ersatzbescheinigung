@@ -26,9 +26,7 @@
         "eventUri": "https://gematik.de/fhir/eeb/EEBBescheinigung",
         "response": {
           "code": "ok",
-          "_identifier": {
-            "value": "e71108ff-a936-44fa-9d7d-215a09428194"
-          }
+          "identifier": "e71108ff-a936-44fa-9d7d-215a09428194"
         },
         "source": {
           "endpoint": "https://Test-Krankenkasse.de/KIM"
@@ -36,7 +34,7 @@
       }
     },
     {
-      "fullUrl": "https://easyti.ehex.de/fhir/Patient/437f2555-2396-4c64-a656-e9553161ca3c",
+      "fullUrl": "https://easyti.ehex.de/fhir/Patient/d62d9d82-2396-4c64-a656-2e67b5761523",
       "resource": {
         "resourceType": "Patient",
         "id": "d62d9d82-2396-4c64-a656-2e67b5761523",
@@ -91,7 +89,7 @@
       }
     },
     {
-      "fullUrl": "https://easyti.ehex.de/fhir/Coverage/2d4da53a-413a-48fe-b908-2e67b5761523",
+      "fullUrl": "https://easyti.ehex.de/fhir/Coverage/e9553161ca3c-413a-48fe-b908-04159be709fb",
       "resource": {
         "resourceType": "Coverage",
         "id": "e9553161ca3c-413a-48fe-b908-04159be709fb",
@@ -197,14 +195,14 @@
         "type": {
           "coding": [
             {
-              "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+              "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis",
               "code": "GKV"
             }
           ]
         },
         "period": {
           "start": "2022-04-01",
-          "end": "2022-06-31"
+          "end": "2022-07-31"
         },
         "beneficiary": {
           "reference": "Patient/d62d9d82-2396-4c64-a656-2e67b5761523"

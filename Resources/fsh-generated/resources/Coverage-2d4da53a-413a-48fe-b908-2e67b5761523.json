@@ -119,14 +119,14 @@
   "type": {
     "coding": [
       {
-        "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+        "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis",
         "code": "GKV"
       }
     ]
   },
   "period": {
     "start": "2022-04-01",
-    "end": "2022-06-31"
+    "end": "2022-07-31"
   },
   "beneficiary": {
     "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3c"

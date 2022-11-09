@@ -82,7 +82,7 @@ Usage: #example
 * timestamp = "2022-08-29T02:09:37.157+02:00"
 * entry[+][EEBBescheinigungHeader].fullUrl = "https://easyti.ehex.de/fhir/MessageHeader/bd901c08-0133-4276-b34b-eb810a62deda"
 * entry[=][EEBBescheinigungHeader].resource = EEBBescheinigungHeaderSample
-* entry[+][KBVFORPatient].fullUrl = "https://easyti.ehex.de/fhir/Patient/437f2555-2396-4c64-a656-e9553161ca3c"
+* entry[+][KBVFORPatient].fullUrl = "https://easyti.ehex.de/fhir/Patient/d62d9d82-2396-4c64-a656-2e67b5761523"
 * entry[=][KBVFORPatient].resource = KBV_PR_FOR_PatientNoEgkSample
-* entry[+][EEBCoverageEgk].fullUrl = "https://easyti.ehex.de/fhir/Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"
+* entry[+][EEBCoverageEgk].fullUrl = "https://easyti.ehex.de/fhir/Coverage/e9553161ca3c-413a-48fe-b908-04159be709fb"
 * entry[=][EEBCoverageEgk].resource = EEBCoverageNoEgkSample

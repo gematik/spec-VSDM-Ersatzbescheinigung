@@ -18,11 +18,10 @@ Id: EEBCoverageNoEgk
     $ruhender-leistungsanspruch named ruhenderLeistungsanspruch 1..1 and
     $zuzahlungsstatus named zuzahlungsstatus 1..1
 * status = #active (exactly)
-* type.coding ^slicing.discriminator.type = #pattern
-* type.coding ^slicing.discriminator.path = "$this"
-* type.coding ^slicing.rules = #open
-* type.coding contains VersicherungsArtDeBasis 1..1
-* type.coding[VersicherungsArtDeBasis] 1..1
+* type 1..1
+* type from $versicherungsart-de-basis (required)
+* type ^short = "Versicherungsart"
+* type ^definition = "Art der Versicherung: Selbstzahler, gesetzliche/private Versicherung, Berufsgenossenschaft oder Sozialamt"
 * beneficiary 1..1
 * beneficiary.reference 1..1
 * period 1..1
@@ -96,10 +95,10 @@ Usage: #example
 * extension[=].extension[+].url = "gueltigBis"
 * extension[=].extension[=].valueDate = "2020-12-31"
 * status = #active
-* type.coding.system = "http://fhir.de/CodeSystem/identifier-type-de-basis"
+* type.coding.system = "http://fhir.de/CodeSystem/versicherungsart-de-basis"
 * type.coding.code = #GKV
 * period.start = "2022-04-01"
-* period.end = "2022-06-31"
+* period.end = "2022-07-31"
 * beneficiary.reference =  "Patient/d62d9d82-2396-4c64-a656-2e67b5761523"
 * payor.extension[0].url = "http://fhir.de/StructureDefinition/AbrechnendeIK"
 * payor.extension[=].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"

@@ -23,11 +23,10 @@ Id: EEBCoverageEgk
     AllgemeineVersicherungsdaten named allgemeineVersicherungsdaten 1..1 and
     GeschuetzteVersichertendaten named geschuetzteVersichertendaten 1..1
 * status = #active (exactly)
-* type.coding ^slicing.discriminator.type = #pattern
-* type.coding ^slicing.discriminator.path = "$this"
-* type.coding ^slicing.rules = #open
-* type.coding contains VersicherungsArtDeBasis 1..1
-* type.coding[VersicherungsArtDeBasis] 1..1
+* type 1..1
+* type from $versicherungsart-de-basis (required)
+* type ^short = "Versicherungsart"
+* type ^definition = "Art der Versicherung: Selbstzahler, gesetzliche/private Versicherung, Berufsgenossenschaft oder Sozialamt"
 * beneficiary 1..1
 * beneficiary.reference 1..1
 * period 1..1
@@ -112,10 +111,10 @@ Usage: #example
 * extension[+].url = "https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten"
 * extension[=].valueBase64Binary = "H4sIAAAAAAAAAIVPXWvCQBD8K+HezWohoGXvpGgpQq3QUBFf5EjWXPByKblN2ubX90ILtSj4Mvs1zMzi/LOyUUeNL2snxSQei4hcVuelK6RYpZvRdJrMRpNERJ61y7WtHUnxRV7MFb4tDk/kM9MS90zbQSUz1DAFYoDd+jlaLNeH7eNrutq8SJHEd4NBsHReCsP8fg/w4eOCKs3lKc4Jjho6n1cDQBf4QuG+7bWxrSt8iMCtV5j+1DHCb4dwhUSWTlx24TluNBWk8IGanm3IqGYIfwPutXH6/PZ/EWwuteD28+obUb40hF4BAAA="
 * status = #active
-* type.coding.system = "http://fhir.de/CodeSystem/identifier-type-de-basis"
+* type.coding.system = "http://fhir.de/CodeSystem/versicherungsart-de-basis"
 * type.coding.code = #GKV
 * period.start = "2022-04-01"
-* period.end = "2022-06-31"
+* period.end = "2022-07-31"
 * beneficiary.reference =  "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
 * payor.extension[0].url = "http://fhir.de/StructureDefinition/AbrechnendeIK"
 * payor.extension[=].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
