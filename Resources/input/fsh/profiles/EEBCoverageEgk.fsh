@@ -2,6 +2,7 @@ Profile: EEBCoverageEgk
 Parent: EEBCoverageBasis
 Id: EEBCoverageEgk
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
+* insert Meta
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk" (exactly)
 * extension[versionEgk] 1..1
 * extension[persoenlicheVersichertendaten] 1..1
