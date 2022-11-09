@@ -54,6 +54,35 @@
         "min": 1
       },
       {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+      },
+      {
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "min": 1
+      },
+      {
+        "id": "Bundle.identifier.system",
+        "path": "Bundle.identifier.system",
+        "min": 1,
+        "fixedUri": "urn:ietf:rfc:3986"
+      },
+      {
+        "id": "Bundle.identifier.value",
+        "path": "Bundle.identifier.value",
+        "short": "Eindeutige UUID als übergreifender Identifier für mehrere Anfragen eines Vorgangs",
+        "min": 1
+      },
+      {
         "id": "Bundle.type",
         "path": "Bundle.type",
         "fixedCode": "message"
@@ -79,19 +108,19 @@
         "max": "3"
       },
       {
-        "id": "Bundle.entry:eEBHeader",
+        "id": "Bundle.entry:EEBBescheinigungHeader",
         "path": "Bundle.entry",
-        "sliceName": "eEBHeader",
+        "sliceName": "EEBBescheinigungHeader",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:eEBHeader.link",
+        "id": "Bundle.entry:EEBBescheinigungHeader.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:eEBHeader.resource",
+        "id": "Bundle.entry:EEBBescheinigungHeader.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
@@ -104,17 +133,17 @@
         ]
       },
       {
-        "id": "Bundle.entry:eEBHeader.search",
+        "id": "Bundle.entry:EEBBescheinigungHeader.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:eEBHeader.request",
+        "id": "Bundle.entry:EEBBescheinigungHeader.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:eEBHeader.response",
+        "id": "Bundle.entry:EEBBescheinigungHeader.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
@@ -159,19 +188,19 @@
         "max": "0"
       },
       {
-        "id": "Bundle.entry:eGKCoverage",
+        "id": "Bundle.entry:EEBCoverageEgk",
         "path": "Bundle.entry",
-        "sliceName": "eGKCoverage",
+        "sliceName": "EEBCoverageEgk",
         "min": 0,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:eGKCoverage.link",
+        "id": "Bundle.entry:EEBCoverageEgk.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:eGKCoverage.resource",
+        "id": "Bundle.entry:EEBCoverageEgk.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
@@ -184,34 +213,34 @@
         ]
       },
       {
-        "id": "Bundle.entry:eGKCoverage.search",
+        "id": "Bundle.entry:EEBCoverageEgk.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:eGKCoverage.request",
+        "id": "Bundle.entry:EEBCoverageEgk.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:eGKCoverage.response",
+        "id": "Bundle.entry:EEBCoverageEgk.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:noGKCoverage",
+        "id": "Bundle.entry:EEBCoverageNoEgk",
         "path": "Bundle.entry",
-        "sliceName": "noGKCoverage",
+        "sliceName": "EEBCoverageNoEgk",
         "min": 0,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:noGKCoverage.link",
+        "id": "Bundle.entry:EEBCoverageNoEgk.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:noGKCoverage.resource",
+        "id": "Bundle.entry:EEBCoverageNoEgk.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
@@ -224,17 +253,17 @@
         ]
       },
       {
-        "id": "Bundle.entry:noGKCoverage.search",
+        "id": "Bundle.entry:EEBCoverageNoEgk.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:noGKCoverage.request",
+        "id": "Bundle.entry:EEBCoverageNoEgk.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:noGKCoverage.response",
+        "id": "Bundle.entry:EEBCoverageNoEgk.response",
         "path": "Bundle.entry.response",
         "max": "0"
       }

@@ -9,133 +9,165 @@
   "date": "2022-10-30",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "KVDT",
-      "name": "KVDT Mapping"
-    },
-    {
-      "identity": "BDT",
-      "name": "BDT Mapping"
-    },
-    {
-      "identity": "KHEntgG",
-      "name": "Datensatzbeschreibung nach Krankenhaus-Entgelt-Gesetz"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "Coverage",
-  "baseDefinition": "http://fhir.de/StructureDefinition/coverage-de-gkv",
+  "baseDefinition": "http://fhir.de/StructureDefinition/coverage-de-basis",
   "derivation": "constraint",
   "differential": {
     "element": [
       {
+        "id": "Coverage.meta",
+        "path": "Coverage.meta",
+        "min": 1
+      },
+      {
         "id": "Coverage.meta.profile",
         "path": "Coverage.meta.profile",
+        "min": 1,
+        "max": "1",
         "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk"
+      },
+      {
+        "id": "Coverage.extension",
+        "path": "Coverage.extension",
+        "min": 7
       },
       {
         "id": "Coverage.extension:versichertenart",
         "path": "Coverage.extension",
-        "sliceName": "versichertenart"
+        "sliceName": "versichertenart",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gkv/versichertenart"
+            ]
+          }
+        ]
       },
       {
-        "id": "Coverage.extension:versichertenart.extension",
-        "path": "Coverage.extension.extension",
-        "max": "0"
-      },
-      {
-        "id": "Coverage.extension:versichertenart.value[x]",
-        "path": "Coverage.extension.value[x]",
-        "min": 1
+        "id": "Coverage.extension:kostenerstattung",
+        "path": "Coverage.extension",
+        "sliceName": "kostenerstattung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gkv/kostenerstattung"
+            ]
+          }
+        ]
       },
       {
         "id": "Coverage.extension:wop",
         "path": "Coverage.extension",
-        "sliceName": "wop"
-      },
-      {
-        "id": "Coverage.extension:wop.extension",
-        "path": "Coverage.extension.extension",
-        "max": "0"
-      },
-      {
-        "id": "Coverage.extension:wop.value[x]",
-        "path": "Coverage.extension.value[x]",
-        "min": 1
+        "sliceName": "wop",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gkv/wop"
+            ]
+          }
+        ]
       },
       {
         "id": "Coverage.extension:besonderePersonengruppe",
         "path": "Coverage.extension",
-        "sliceName": "besonderePersonengruppe"
-      },
-      {
-        "id": "Coverage.extension:besonderePersonengruppe.extension",
-        "path": "Coverage.extension.extension",
-        "max": "0"
-      },
-      {
-        "id": "Coverage.extension:besonderePersonengruppe.value[x]",
-        "path": "Coverage.extension.value[x]",
-        "min": 1
+        "sliceName": "besonderePersonengruppe",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
+            ]
+          }
+        ]
       },
       {
         "id": "Coverage.extension:dmpKennzeichen",
         "path": "Coverage.extension",
-        "sliceName": "dmpKennzeichen"
+        "sliceName": "dmpKennzeichen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen"
+            ]
+          }
+        ]
       },
       {
-        "id": "Coverage.extension:dmpKennzeichen.extension",
-        "path": "Coverage.extension.extension",
-        "max": "0"
-      },
-      {
-        "id": "Coverage.extension:dmpKennzeichen.value[x]",
-        "path": "Coverage.extension.value[x]",
-        "min": 1
+        "id": "Coverage.extension:ruhenderLeistungsanspruch",
+        "path": "Coverage.extension",
+        "sliceName": "ruhenderLeistungsanspruch",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gkv/ruhender-leistungsanspruch"
+            ]
+          }
+        ]
       },
       {
         "id": "Coverage.extension:zuzahlungsstatus",
         "path": "Coverage.extension",
-        "sliceName": "zuzahlungsstatus"
-      },
-      {
-        "id": "Coverage.extension:zuzahlungsstatus.extension:status",
-        "path": "Coverage.extension.extension",
-        "sliceName": "status"
-      },
-      {
-        "id": "Coverage.extension:zuzahlungsstatus.extension:status.extension",
-        "path": "Coverage.extension.extension.extension",
-        "max": "0"
-      },
-      {
-        "id": "Coverage.extension:zuzahlungsstatus.extension:status.value[x]",
-        "path": "Coverage.extension.extension.value[x]",
-        "min": 1
-      },
-      {
-        "id": "Coverage.identifier",
-        "path": "Coverage.identifier",
-        "max": "1"
-      },
-      {
-        "id": "Coverage.identifier:KrankenversichertenID",
-        "path": "Coverage.identifier",
-        "sliceName": "KrankenversichertenID",
-        "max": "0"
-      },
-      {
-        "id": "Coverage.identifier:pseudo-Krankenversichertennummer",
-        "path": "Coverage.identifier",
-        "sliceName": "pseudo-Krankenversichertennummer",
-        "min": 1
+        "sliceName": "zuzahlungsstatus",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gkv/zuzahlungsstatus"
+            ]
+          }
+        ]
       },
       {
         "id": "Coverage.status",
         "path": "Coverage.status",
-        "fixedCode": "draft"
+        "fixedCode": "active"
+      },
+      {
+        "id": "Coverage.type.coding",
+        "path": "Coverage.type.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Coverage.type.coding:VersicherungsArtDeBasis",
+        "path": "Coverage.type.coding",
+        "sliceName": "VersicherungsArtDeBasis",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.beneficiary.reference",
+        "path": "Coverage.beneficiary.reference",
+        "min": 1
       },
       {
         "id": "Coverage.period",
@@ -153,23 +185,45 @@
         "min": 1
       },
       {
+        "id": "Coverage.payor",
+        "path": "Coverage.payor",
+        "max": "1"
+      },
+      {
+        "id": "Coverage.payor.extension",
+        "path": "Coverage.payor.extension",
+        "min": 1
+      },
+      {
         "id": "Coverage.payor.extension:abrechnendeIK",
         "path": "Coverage.payor.extension",
-        "sliceName": "abrechnendeIK"
-      },
-      {
-        "id": "Coverage.payor.extension:abrechnendeIK.extension",
-        "path": "Coverage.payor.extension.extension",
-        "max": "0"
-      },
-      {
-        "id": "Coverage.payor.extension:abrechnendeIK.value[x]",
-        "path": "Coverage.payor.extension.value[x]",
-        "min": 1
+        "sliceName": "abrechnendeIK",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/AbrechnendeIK"
+            ]
+          }
+        ]
       },
       {
         "id": "Coverage.payor.identifier",
         "path": "Coverage.payor.identifier",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-iknr"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Coverage.payor.display",
+        "path": "Coverage.payor.display",
         "min": 1
       }
     ]

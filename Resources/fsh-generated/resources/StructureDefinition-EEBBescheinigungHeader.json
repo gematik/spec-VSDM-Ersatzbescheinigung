@@ -68,7 +68,7 @@
       {
         "id": "MessageHeader.source.endpoint",
         "path": "MessageHeader.source.endpoint",
-        "mustSupport": true
+        "short": "Source endpoint URI of sender. E.g. https://Test-Krankenkasse.de/KIM"
       },
       {
         "id": "MessageHeader.response",
