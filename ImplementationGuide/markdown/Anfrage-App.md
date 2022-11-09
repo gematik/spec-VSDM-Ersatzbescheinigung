@@ -9,13 +9,27 @@ Beim Check-In mittels einer Versicherten-App fordert die versicherte Person die 
 
 ## Identifikation und Autorisierung der versicherten Person
 
-> TODO Thorsten
-
 Die Identifikation und Autorisierung der versicherten Person zur Anforderung einer Ersatzbescheinigung gegenüber der Kasse ist nicht Gegenstand dieser Betrachtungen und wird zwischen der betreffenden Kasse und der durch sie bereitgestellten App umgesetzt.
 
 ## Aufbau QR-Code
 
-> TODO eHex
+Der QR-Code stellt den Namen `displayName` und die KIM-Adresse `komLeData` der Praxis zum Abscannen durch eine Versicherten-App bereit.
+Diese sind dem VZD-Eintrag der Praxis zu entnehmen und können bspw. über das PVS aus dem VZD geladen und in der folgenden JSON-Struktur als QR-Code ausgedruckt werden.
+
+```json
+{
+ "version": "1",
+ "displayName": "Meine Praxis Dr. Müller",
+ "komLeData": "1.0,praxis-drmueller03@akquinet.kim.telematik"
+}
+```
+<!--- generated at https://qr.io/?gclid=Cj0KCQiAmaibBhCAARIsAKUlaKS6Fc5U2WtQhnpeJi--cek12_qHdHOsKbkwxUp8AlsldhGeEtQCkF8aAo-TEALw_wcB -->
+{{render:ImplementationGuide-images-qr-sample}}
+
+Diese JSON-Struktur wird dann durch die Kassen-App an das Kassen-Backend übertragen, wo die Kasse die Daten prüft:
+
+- Existiert für diesen `displayName` ein Eintrag im VZD der Telematikinfrastruktur
+- Stimmt die KIM-Adresse aus `komLeData` mit der KIM-Adresse im VZD-Eintrag überein
 
 ## Anforderung zur Ausstellung einer Ersatzbescheinigung
 
