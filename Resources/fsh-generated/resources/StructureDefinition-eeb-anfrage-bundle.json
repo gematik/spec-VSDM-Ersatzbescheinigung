@@ -149,8 +149,8 @@
           {
             "code": "Patient",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/KnownPatient",
-              "https://gematik.de/fhir/eeb/StructureDefinition/UnknownPatient"
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient",
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient"
             ]
           }
         ]

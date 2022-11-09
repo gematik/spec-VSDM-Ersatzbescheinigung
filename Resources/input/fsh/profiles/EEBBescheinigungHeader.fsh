@@ -1,6 +1,6 @@
 Profile: EEBBescheinigungHeader
 Parent: MessageHeader
-Id: EEBBescheinigungHeader
+Id: eeb-bescheinigung-header
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
 * insert Meta
 * meta 1..1

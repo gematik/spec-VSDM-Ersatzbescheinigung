@@ -11,7 +11,7 @@
       "valueCode": "patient"
     }
   ],
-  "url": "https://gematik.de/fhir/eeb/StructureDefinition/UnknownPatient",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient",
   "version": "1.0",
   "name": "EEBUnknownPatient",
   "status": "draft",

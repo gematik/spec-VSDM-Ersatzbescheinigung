@@ -1,6 +1,6 @@
 Profile: EEBFehlerBundle
 Parent: Bundle
-Id: EEBFehlerBundle
+Id: eeb-fehler-bundle
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerBundle"
 * insert Meta
 * identifier 1..

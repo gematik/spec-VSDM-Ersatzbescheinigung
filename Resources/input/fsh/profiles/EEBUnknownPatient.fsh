@@ -1,7 +1,7 @@
 Profile: EEBUnknownPatient
 Parent: Patient
 Id: eeb-unknown-patient
-* ^url = "https://gematik.de/fhir/eeb/StructureDefinition/UnknownPatient"
+* ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient"
 * insert Meta
 * name 1..1
 * name only $humanname-de-basis

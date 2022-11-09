@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "EEBFehlerBundle",
+  "id": "eeb-fehler-bundle",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
