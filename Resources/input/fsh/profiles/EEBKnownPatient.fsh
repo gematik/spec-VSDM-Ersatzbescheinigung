@@ -1,6 +1,6 @@
-Profile: KnownPatient
+Profile: EEBKnownPatient
 Parent: Patient
-Id: known-patient
+Id: eeb-known-patient
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/KnownPatient"
 * insert Meta
 * identifier 1..1

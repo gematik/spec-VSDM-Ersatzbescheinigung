@@ -133,7 +133,7 @@
           {
             "code": "OperationOutcome",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
+              "https://gematik.de/fhir/eeb/StructureDefinition/eeb-fehler"
             ]
           }
         ]

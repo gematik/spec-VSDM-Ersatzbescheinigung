@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "known-patient",
+  "id": "eeb-known-patient",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -13,7 +13,7 @@
   ],
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/KnownPatient",
   "version": "1.0",
-  "name": "KnownPatient",
+  "name": "EEBKnownPatient",
   "status": "draft",
   "experimental": false,
   "date": "2022-10-30",

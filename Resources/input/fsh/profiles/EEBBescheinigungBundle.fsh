@@ -1,6 +1,6 @@
 Profile: EEBBescheinigungBundle
 Parent: Bundle
-Id: EEBBescheinigungBundle
+Id: eeb-bescheinigung-bundle
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
 * insert Meta
 * meta 1..1

@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "EEBBescheinigungBundle",
+  "id": "eeb-anfrage-bundle",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,9 +11,9 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle",
   "version": "1.0",
-  "name": "EEBBescheinigungBundle",
+  "name": "EEBAnfrageBundle",
   "status": "draft",
   "experimental": false,
   "date": "2022-10-30",
@@ -49,23 +49,6 @@
   "differential": {
     "element": [
       {
-        "id": "Bundle.id",
-        "path": "Bundle.id",
-        "min": 1
-      },
-      {
-        "id": "Bundle.meta",
-        "path": "Bundle.meta",
-        "min": 1
-      },
-      {
-        "id": "Bundle.meta.profile",
-        "path": "Bundle.meta.profile",
-        "min": 1,
-        "max": "1",
-        "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
-      },
-      {
         "id": "Bundle.identifier",
         "path": "Bundle.identifier",
         "min": 1
@@ -79,7 +62,7 @@
       {
         "id": "Bundle.identifier.value",
         "path": "Bundle.identifier.value",
-        "short": "Eindeutige UUID als übergreifender Identifier für mehrere Anfragen eines Vorgangs",
+        "short": "Eindeutige UUID",
         "min": 1
       },
       {
@@ -98,172 +81,132 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "profile",
-              "path": "resource"
+              "type": "value",
+              "path": "resource.meta.profile"
             }
           ],
           "rules": "closed"
         },
-        "min": 3,
-        "max": "3"
+        "min": 3
       },
       {
-        "id": "Bundle.entry:EEBBescheinigungHeader",
+        "id": "Bundle.entry:Header",
         "path": "Bundle.entry",
-        "sliceName": "EEBBescheinigungHeader",
+        "sliceName": "Header",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:EEBBescheinigungHeader.link",
+        "id": "Bundle.entry:Header.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBBescheinigungHeader.resource",
+        "id": "Bundle.entry:Header.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
             "code": "MessageHeader",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:EEBBescheinigungHeader.search",
+        "id": "Bundle.entry:Header.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBBescheinigungHeader.request",
+        "id": "Bundle.entry:Header.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBBescheinigungHeader.response",
+        "id": "Bundle.entry:Header.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:KBVFORPatient",
+        "id": "Bundle.entry:Patient",
         "path": "Bundle.entry",
-        "sliceName": "KBVFORPatient",
+        "sliceName": "Patient",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:KBVFORPatient.link",
+        "id": "Bundle.entry:Patient.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:KBVFORPatient.resource",
+        "id": "Bundle.entry:Patient.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
             "code": "Patient",
             "profile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+              "https://gematik.de/fhir/eeb/StructureDefinition/KnownPatient",
+              "https://gematik.de/fhir/eeb/StructureDefinition/UnknownPatient"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:KBVFORPatient.search",
+        "id": "Bundle.entry:Patient.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:KBVFORPatient.request",
+        "id": "Bundle.entry:Patient.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:KBVFORPatient.response",
+        "id": "Bundle.entry:Patient.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBCoverageEgk",
+        "id": "Bundle.entry:Organization",
         "path": "Bundle.entry",
-        "sliceName": "EEBCoverageEgk",
-        "min": 0,
+        "sliceName": "Organization",
+        "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:EEBCoverageEgk.link",
+        "id": "Bundle.entry:Organization.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBCoverageEgk.resource",
+        "id": "Bundle.entry:Organization.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
-            "code": "Coverage",
+            "code": "Organization",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:EEBCoverageEgk.search",
+        "id": "Bundle.entry:Organization.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBCoverageEgk.request",
+        "id": "Bundle.entry:Organization.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBCoverageEgk.response",
-        "path": "Bundle.entry.response",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:EEBCoverageNoEgk",
-        "path": "Bundle.entry",
-        "sliceName": "EEBCoverageNoEgk",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Bundle.entry:EEBCoverageNoEgk.link",
-        "path": "Bundle.entry.link",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:EEBCoverageNoEgk.resource",
-        "path": "Bundle.entry.resource",
-        "min": 1,
-        "type": [
-          {
-            "code": "Coverage",
-            "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Bundle.entry:EEBCoverageNoEgk.search",
-        "path": "Bundle.entry.search",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:EEBCoverageNoEgk.request",
-        "path": "Bundle.entry.request",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:EEBCoverageNoEgk.response",
+        "id": "Bundle.entry:Organization.response",
         "path": "Bundle.entry.response",
         "max": "0"
       }

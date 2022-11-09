@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "EEBCoverageNoEgk",
+  "id": "eeb-coverage-no-egk",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk",
   "version": "1.0",
   "name": "EEBCoverageNoEgk",

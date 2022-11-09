@@ -1,6 +1,6 @@
 Profile: EEBAnfrageBundle
 Parent: Bundle
-Id: EEBAnfrageBundle
+Id: eeb-anfrage-bundle
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
 * insert Meta
 * identifier 1..
@@ -26,7 +26,7 @@ Id: EEBAnfrageBundle
 * entry[Header].response ..0
 * entry[Patient].link ..0
 * entry[Patient].resource 1..
-* entry[Patient].resource only KnownPatient or UnknownPatient
+* entry[Patient].resource only EEBKnownPatient or EEBUnknownPatient
 * entry[Patient].search ..0
 * entry[Patient].request ..0
 * entry[Patient].response ..0

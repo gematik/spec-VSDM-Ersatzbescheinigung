@@ -1,6 +1,6 @@
 Profile: EEBCoverageBasis
 Parent: coverage-de-basis
-Id: EEBCoverageBasis
+Id: eeb-coverage-basis
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageBasis"
 * insert Meta
 * meta 1..1

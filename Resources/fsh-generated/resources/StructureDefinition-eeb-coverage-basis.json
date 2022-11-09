@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "EEBCoverageBasis",
+  "id": "eeb-coverage-basis",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageBasis",
   "version": "1.0",
   "name": "EEBCoverageBasis",
