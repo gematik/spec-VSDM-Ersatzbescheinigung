@@ -1,44 +1,12 @@
 Profile: EEBCoverageEgk
-Parent: coverage-de-basis
+Parent: EEBCoverageBasis
 Id: EEBCoverageEgk
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
-* insert Meta
-* meta 1..1
-* meta.profile 1..1
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk" (exactly)
-* extension ^slicing.discriminator.type = #value
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.rules = #open
-* extension contains
-    $version-vsdm named versionEgk 1..1 and
-    $versichertenart named versichertenart 1..1 and
-    $kostenerstattung named kostenerstattung 1..1 and
-    $wop named wop 1..1 and
-    $besondere-personengruppe named besonderePersonengruppe 1..1 and
-    $dmp-kennzeichen named dmpKennzeichen 1..1 and
-    $ruhender-leistungsanspruch named ruhenderLeistungsanspruch 1..1 and
-    $zuzahlungsstatus named zuzahlungsstatus 
-    1..1 and
-    PersoenlicheVersichertendaten named persoenlicheVersichertendaten 1..1 and
-    AllgemeineVersicherungsdaten named allgemeineVersicherungsdaten 1..1 and
-    GeschuetzteVersichertendaten named geschuetzteVersichertendaten 1..1
-* status = #active (exactly)
-* type 1..1
-* type from $versicherungsart-de-basis (required)
-* type ^short = "Versicherungsart"
-* type ^definition = "Art der Versicherung: Selbstzahler, gesetzliche/private Versicherung, Berufsgenossenschaft oder Sozialamt"
-* beneficiary 1..1
-* beneficiary.reference 1..1
-* period 1..1
-* period.start 1..1
-* period.end 1..1
-* payor 1..1
-* payor.extension ^slicing.discriminator.type = #value
-* payor.extension ^slicing.discriminator.path = "url"
-* payor.extension ^slicing.rules = #open
-* payor.extension contains $AbrechnendeIK named abrechnendeIK 1..1
-* payor.identifier only $identifier-iknr
-* payor.display 1..1
+* extension[versionEgk] 1..1
+* extension[persoenlicheVersichertendaten] 1..1
+* extension[allgemeineVersicherungsdaten] 1..1
+* extension[geschuetzteVersichertendaten] 1..1
 
 
 // Beispielgenerierung

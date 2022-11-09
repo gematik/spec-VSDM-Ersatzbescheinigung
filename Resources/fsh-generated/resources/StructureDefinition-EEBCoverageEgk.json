@@ -4,28 +4,18 @@
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk",
   "version": "1.0",
   "name": "EEBCoverageEgk",
-  "status": "draft",
-  "experimental": false,
-  "date": "2022-10-30",
-  "publisher": "gematik GmbH",
+  "status": "active",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
   "type": "Coverage",
-  "baseDefinition": "http://fhir.de/StructureDefinition/coverage-de-basis",
+  "baseDefinition": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageBasis",
   "derivation": "constraint",
   "differential": {
     "element": [
       {
-        "id": "Coverage.meta",
-        "path": "Coverage.meta",
-        "min": 1
-      },
-      {
         "id": "Coverage.meta.profile",
         "path": "Coverage.meta.profile",
-        "min": 1,
-        "max": "1",
         "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
       },
       {
@@ -37,240 +27,24 @@
         "id": "Coverage.extension:versionEgk",
         "path": "Coverage.extension",
         "sliceName": "versionEgk",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/version-vsdm"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:versichertenart",
-        "path": "Coverage.extension",
-        "sliceName": "versichertenart",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/versichertenart"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:kostenerstattung",
-        "path": "Coverage.extension",
-        "sliceName": "kostenerstattung",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/kostenerstattung"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:wop",
-        "path": "Coverage.extension",
-        "sliceName": "wop",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/wop"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:besonderePersonengruppe",
-        "path": "Coverage.extension",
-        "sliceName": "besonderePersonengruppe",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:dmpKennzeichen",
-        "path": "Coverage.extension",
-        "sliceName": "dmpKennzeichen",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:ruhenderLeistungsanspruch",
-        "path": "Coverage.extension",
-        "sliceName": "ruhenderLeistungsanspruch",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/ruhender-leistungsanspruch"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:zuzahlungsstatus",
-        "path": "Coverage.extension",
-        "sliceName": "zuzahlungsstatus",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/zuzahlungsstatus"
-            ]
-          }
-        ]
+        "min": 1
       },
       {
         "id": "Coverage.extension:persoenlicheVersichertendaten",
         "path": "Coverage.extension",
         "sliceName": "persoenlicheVersichertendaten",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/PersoenlicheVersichertendaten"
-            ]
-          }
-        ]
+        "min": 1
       },
       {
         "id": "Coverage.extension:allgemeineVersicherungsdaten",
         "path": "Coverage.extension",
         "sliceName": "allgemeineVersicherungsdaten",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten"
-            ]
-          }
-        ]
+        "min": 1
       },
       {
         "id": "Coverage.extension:geschuetzteVersichertendaten",
         "path": "Coverage.extension",
         "sliceName": "geschuetzteVersichertendaten",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.status",
-        "path": "Coverage.status",
-        "fixedCode": "active"
-      },
-      {
-        "id": "Coverage.type",
-        "path": "Coverage.type",
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://fhir.de/ValueSet/versicherungsart-de-basis"
-        }
-      },
-      {
-        "id": "Coverage.beneficiary.reference",
-        "path": "Coverage.beneficiary.reference",
-        "min": 1
-      },
-      {
-        "id": "Coverage.period",
-        "path": "Coverage.period",
-        "min": 1
-      },
-      {
-        "id": "Coverage.period.start",
-        "path": "Coverage.period.start",
-        "min": 1
-      },
-      {
-        "id": "Coverage.period.end",
-        "path": "Coverage.period.end",
-        "min": 1
-      },
-      {
-        "id": "Coverage.payor",
-        "path": "Coverage.payor",
-        "max": "1"
-      },
-      {
-        "id": "Coverage.payor.extension",
-        "path": "Coverage.payor.extension",
-        "min": 1
-      },
-      {
-        "id": "Coverage.payor.extension:abrechnendeIK",
-        "path": "Coverage.payor.extension",
-        "sliceName": "abrechnendeIK",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/AbrechnendeIK"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.payor.identifier",
-        "path": "Coverage.payor.identifier",
-        "type": [
-          {
-            "code": "Identifier",
-            "profile": [
-              "http://fhir.de/StructureDefinition/identifier-iknr"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.payor.display",
-        "path": "Coverage.payor.display",
         "min": 1
       }
     ]
