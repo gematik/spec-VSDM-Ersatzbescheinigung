@@ -8,10 +8,22 @@ Id: eeb-known-patient
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #closed
 * identifier contains
-    GKV 0..1 MS and
-    PKV 0..1 MS
+    GKV 0..1 and
+    PKV 0..1
 * identifier[GKV] only $identifier-kvid-10
-* identifier[GKV].system MS
-* identifier[GKV].value MS
+* identifier[GKV].system
+* identifier[GKV].value
 * identifier[PKV] only $identifier-pkv
-* identifier[PKV].value MS
+* identifier[PKV].value
+
+
+// Beispielgenerierung
+Instance: EEBKnownPatientSample
+InstanceOf: EEBKnownPatient
+Title: "EEBKnownPatient"
+Usage: #example
+* id = "b8f0f69c-af1a-480b-8abf-44ab11aa23c5"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient"
+* identifier[GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
+* identifier[GKV].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[GKV].value = "T024791905"

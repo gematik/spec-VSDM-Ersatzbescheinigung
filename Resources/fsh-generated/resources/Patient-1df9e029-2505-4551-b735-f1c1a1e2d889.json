@@ -1,0 +1,31 @@
+{
+  "resourceType": "Patient",
+  "id": "1df9e029-2505-4551-b735-f1c1a1e2d889",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient"
+    ]
+  },
+  "name": [
+    {
+      "family": "TK-eAU-Schmidt",
+      "_family": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+            "valueString": "TK-eAU-Schmidt"
+          }
+        ]
+      },
+      "given": [
+        "Wolfgang"
+      ]
+    }
+  ],
+  "birthDate": "1991-01-04",
+  "address": [
+    {
+      "postalCode": "40221"
+    }
+  ]
+}

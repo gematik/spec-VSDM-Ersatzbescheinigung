@@ -17,7 +17,6 @@ Alias: $besondere-personengruppe = http://fhir.de/StructureDefinition/gkv/besond
 Alias: $dmp-kennzeichen = http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen
 Alias: $ruhender-leistungsanspruch = http://fhir.de/StructureDefinition/gkv/ruhender-leistungsanspruch
 Alias: $zuzahlungsstatus = http://fhir.de/StructureDefinition/gkv/zuzahlungsstatus
-Alias: $identifier-kvid-10 = http://fhir.de/StructureDefinition/identifier-kvid-10
 Alias: $identifier-pseudo-kvid = http://fhir.de/StructureDefinition/identifier-pseudo-kvid
 Alias: $AbrechnendeIK = http://fhir.de/StructureDefinition/AbrechnendeIK
 Alias: $identifier-iknr = http://fhir.de/StructureDefinition/identifier-iknr
