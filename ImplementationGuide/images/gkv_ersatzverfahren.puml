@@ -3,11 +3,11 @@ hide footbox
 title Ersatzverfahren VSD Anforderung via KIM
 actor Vers as "Versicherte" #ee8360
 actor LE as "Praxis" #ee8360
-participant PVS as "Primärsystem" #ee8360
-participant KIMCM1 as "KIM-Clientmodul" #8da5c4
-participant KIMFD as "KIM-Fachdienste" #8da5c4
-participant KIMCM2 as "KIM-Clientmodul" #8da5c4
-participant Kasse as "Krankenkasse (GKV)" #009a7c
+participant PVS as "Primärsystem\n" #ee8360
+participant KIMCM1 as "KIM-Clientmodul\n" #8da5c4
+participant KIMFD as "KIM-Fachdienste\n" #8da5c4
+participant KIMCM2 as "KIM-Clientmodul\n" #8da5c4
+participant Kasse as "PKV Versicherungsunternehmen\nGKV Krankenkasse" #009a7c
 
 Vers -> LE: "Ich habe meine\nGesundheitskarte\nnicht zur Hand"
 LE -> PVS: VSDM Ersatzbescheinigung\nanfordern

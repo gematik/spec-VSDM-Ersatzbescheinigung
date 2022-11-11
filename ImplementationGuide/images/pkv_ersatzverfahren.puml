@@ -3,13 +3,13 @@
 hide footbox
 title Ersatzverfahren KVNR/VSD Anforderung via App
 actor Vers as "Versicherte" #ee8360
-participant App as "PKV App" #009a7c
+participant App as "PKV App\nGKV App" #009a7c
 actor LE as "Praxis" #ee8360
-participant PVS as "Primärsystem" #ee8360
-participant KIMCM1 as "KIM-Clientmodul" #8da5c4
-participant KIMFD as "KIM-Fachdienste" #8da5c4
-participant KIMCM2 as "KIM-Clientmodul" #8da5c4
-participant Kasse as "Krankenkasse (PKV)" #009a7c
+participant PVS as "Primärsystem\n" #ee8360
+participant KIMCM1 as "KIM-Clientmodul\n" #8da5c4
+participant KIMFD as "KIM-Fachdienste\n(Weiterleitung)" #8da5c4
+participant KIMCM2 as "KIM-Clientmodul\n" #8da5c4
+participant Kasse as "PKV Versicherungsunternehmen\nGKV Krankenkasse" #009a7c
 
 Vers -> App: Praxis Check-In
 activate App #009a7c
@@ -35,6 +35,27 @@ deactivate KIMCM1
 activate PVS #ee8360
 PVS -> PVS: Ggfs. Anlage/Aktualisierung\ndes Patientendatensatzes
 PVS ---> LE: :Hinweis Check-In\n(neuer) Patient
-deactivate PVS
+alt Lesebestätigung
+    PVS -> KIMCM1
+    deactivate PVS
+    activate KIMCM1 #8da5c4
+    KIMCM1 -> KIMFD
+    deactivate KIMCM1
+    activate KIMFD #8da5c4
+    KIMFD -> KIMCM2
+    deactivate KIMFD
+    activate KIMCM2 #8da5c4
+    KIMCM2 -> Kasse
+    deactivate KIMCM2
+    activate Kasse #00907c
+    Kasse -> App: Notification "Statuscode"
+    deactivate Kasse
+    activate App #00907c
+    App -> App: Benachrichtigung "Ihr Check-In ist in der Praxis eingegangen"
+    activate App
+    deactivate App
+    deactivate App
+
+end
 
 @enduml
