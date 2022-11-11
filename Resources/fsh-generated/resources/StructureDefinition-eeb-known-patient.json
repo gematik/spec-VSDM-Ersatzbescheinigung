@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "known-patient",
+  "id": "eeb-known-patient",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,9 +11,9 @@
       "valueCode": "patient"
     }
   ],
-  "url": "https://gematik.de/fhir/eeb/StructureDefinition/KnownPatient",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient",
   "version": "1.0",
-  "name": "KnownPatient",
+  "name": "EEBKnownPatient",
   "status": "draft",
   "experimental": false,
   "date": "2022-10-30",
@@ -81,18 +81,7 @@
               "http://fhir.de/StructureDefinition/identifier-kvid-10"
             ]
           }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.identifier:GKV.system",
-        "path": "Patient.identifier.system",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.identifier:GKV.value",
-        "path": "Patient.identifier.value",
-        "mustSupport": true
+        ]
       },
       {
         "id": "Patient.identifier:PKV",
@@ -107,13 +96,7 @@
               "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Identifier_PkvID_10"
             ]
           }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.identifier:PKV.value",
-        "path": "Patient.identifier.value",
-        "mustSupport": true
+        ]
       }
     ]
   }

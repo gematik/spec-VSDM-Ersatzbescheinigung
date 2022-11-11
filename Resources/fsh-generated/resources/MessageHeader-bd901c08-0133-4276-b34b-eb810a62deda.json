@@ -1,0 +1,17 @@
+{
+  "resourceType": "MessageHeader",
+  "id": "bd901c08-0133-4276-b34b-eb810a62deda",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+    ]
+  },
+  "eventUri": "https://gematik.de/fhir/eeb/EEBBescheinigung",
+  "response": {
+    "code": "ok",
+    "identifier": "e71108ff-a936-44fa-9d7d-215a09428194"
+  },
+  "source": {
+    "endpoint": "https://Test-Krankenkasse.de/KIM"
+  }
+}

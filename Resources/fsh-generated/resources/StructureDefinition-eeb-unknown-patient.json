@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "unknown-patient",
+  "id": "eeb-unknown-patient",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,9 +11,9 @@
       "valueCode": "patient"
     }
   ],
-  "url": "https://gematik.de/fhir/eeb/StructureDefinition/UnknownPatient",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient",
   "version": "1.0",
-  "name": "UnknownPatient",
+  "name": "EEBUnknownPatient",
   "status": "draft",
   "experimental": false,
   "date": "2022-10-30",
@@ -73,27 +73,10 @@
         "min": 1
       },
       {
-        "id": "Patient.name.family.extension:namenszusatz",
-        "path": "Patient.name.family.extension",
-        "sliceName": "namenszusatz",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.name.family.extension:nachname",
-        "path": "Patient.name.family.extension",
-        "sliceName": "nachname",
-        "mustSupport": true
-      },
-      {
-        "id": "Patient.name.family.extension:vorsatzwort",
-        "path": "Patient.name.family.extension",
-        "sliceName": "vorsatzwort",
-        "mustSupport": true
-      },
-      {
         "id": "Patient.name.given",
         "path": "Patient.name.given",
-        "min": 1
+        "min": 1,
+        "max": "1"
       },
       {
         "id": "Patient.birthDate",

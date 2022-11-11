@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "EEBFehlerBundle",
+  "id": "eeb-anfrage-bundle",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,9 +11,9 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerBundle",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle",
   "version": "1.0",
-  "name": "EEBFehlerBundle",
+  "name": "EEBAnfrageBundle",
   "status": "draft",
   "experimental": false,
   "date": "2022-10-30",
@@ -87,7 +87,7 @@
           ],
           "rules": "closed"
         },
-        "min": 2
+        "min": 3
       },
       {
         "id": "Bundle.entry:Header",
@@ -99,7 +99,7 @@
       {
         "id": "Bundle.entry:Header.link",
         "path": "Bundle.entry.link",
-        "contentReference": "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link"
+        "max": "0"
       },
       {
         "id": "Bundle.entry:Header.resource",
@@ -109,34 +109,106 @@
           {
             "code": "MessageHeader",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerHeader"
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:OperationOutcome",
+        "id": "Bundle.entry:Header.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Header.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Header.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Patient",
         "path": "Bundle.entry",
-        "sliceName": "OperationOutcome",
+        "sliceName": "Patient",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:OperationOutcome.link",
+        "id": "Bundle.entry:Patient.link",
         "path": "Bundle.entry.link",
-        "contentReference": "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link"
+        "max": "0"
       },
       {
-        "id": "Bundle.entry:OperationOutcome.resource",
+        "id": "Bundle.entry:Patient.resource",
         "path": "Bundle.entry.resource",
+        "min": 1,
         "type": [
           {
-            "code": "OperationOutcome",
+            "code": "Patient",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient",
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient"
             ]
           }
         ]
+      },
+      {
+        "id": "Bundle.entry:Patient.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Patient.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Patient.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Organization",
+        "path": "Bundle.entry",
+        "sliceName": "Organization",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:Organization.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Organization.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Organization.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Organization.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:Organization.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
       }
     ]
   }

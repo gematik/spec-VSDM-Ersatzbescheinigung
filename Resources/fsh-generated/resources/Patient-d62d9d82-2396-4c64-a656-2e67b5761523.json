@@ -1,39 +1,25 @@
 {
   "resourceType": "Patient",
-  "id": "437f2555-2396-4c64-a656-e9553161ca3c",
+  "id": "d62d9d82-2396-4c64-a656-2e67b5761523",
   "meta": {
     "profile": [
       "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
     ]
   },
-  "identifier": [
-    {
-      "type": {
-        "coding": [
-          {
-            "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-            "code": "GKV"
-          }
-        ]
-      },
-      "system": "http://fhir.de/sid/gkv/kvid-10",
-      "value": "A123456789"
-    }
-  ],
   "name": [
     {
       "use": "official",
-      "family": "Königstein",
+      "family": "Meier",
       "_family": {
         "extension": [
           {
             "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-            "valueString": "Königstein"
+            "valueString": "Meier"
           }
         ]
       },
       "given": [
-        "Ludger"
+        "Max"
       ]
     }
   ],
@@ -41,26 +27,26 @@
     {
       "type": "both",
       "line": [
-        "Blumenweg 14"
+        "Teststrasse 2"
       ],
       "_line": [
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-              "valueString": "14"
+              "valueString": "2"
             },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-              "valueString": "Blumenweg"
+              "valueString": "Teststrasse"
             }
           ]
         }
       ],
-      "city": "Esens",
-      "postalCode": "26427",
+      "city": "Dortmund",
+      "postalCode": "44227",
       "country": "D"
     }
   ],
-  "birthDate": "1935-06-22"
+  "birthDate": "1970-04-11"
 }

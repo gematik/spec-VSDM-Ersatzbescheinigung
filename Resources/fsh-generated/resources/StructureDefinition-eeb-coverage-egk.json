@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "eeb-coverage-egk",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk",
+  "version": "1.0",
+  "name": "EEBCoverageEgk",
+  "status": "draft",
+  "experimental": false,
+  "date": "2022-10-30",
+  "publisher": "gematik GmbH",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Coverage",
+  "baseDefinition": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageBasis",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coverage.meta.profile",
+        "path": "Coverage.meta.profile",
+        "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
+      },
+      {
+        "id": "Coverage.extension",
+        "path": "Coverage.extension",
+        "min": 11
+      },
+      {
+        "id": "Coverage.extension:versionEgk",
+        "path": "Coverage.extension",
+        "sliceName": "versionEgk",
+        "min": 1
+      },
+      {
+        "id": "Coverage.extension:persoenlicheVersichertendaten",
+        "path": "Coverage.extension",
+        "sliceName": "persoenlicheVersichertendaten",
+        "min": 1
+      },
+      {
+        "id": "Coverage.extension:allgemeineVersicherungsdaten",
+        "path": "Coverage.extension",
+        "sliceName": "allgemeineVersicherungsdaten",
+        "min": 1
+      },
+      {
+        "id": "Coverage.extension:geschuetzteVersichertendaten",
+        "path": "Coverage.extension",
+        "sliceName": "geschuetzteVersichertendaten",
+        "min": 1
+      }
+    ]
+  }
+}
