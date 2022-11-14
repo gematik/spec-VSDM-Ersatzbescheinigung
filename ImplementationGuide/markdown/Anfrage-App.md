@@ -30,6 +30,7 @@ Diese JSON-Struktur wird dann durch die Kassen-App an das Kassen-Backend übertr
 
 - Existiert für diesen `displayName` ein Eintrag im VZD der Telematikinfrastruktur
 - Stimmt die KIM-Adresse aus `komLeData` mit der KIM-Adresse im VZD-Eintrag überein
+- (Optional je Kasse: Passt die im VZD hinterlegte `oid` zu einem Institutionstyp, für den Ersatzbescheinigungen ausgestellt werden)
 
 ## Anforderung zur Ausstellung einer Ersatzbescheinigung
 
