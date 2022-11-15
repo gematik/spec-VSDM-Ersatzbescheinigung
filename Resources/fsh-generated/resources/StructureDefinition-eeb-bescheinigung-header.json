@@ -60,10 +60,13 @@
         "path": "MessageHeader.event[x]",
         "type": [
           {
-            "code": "uri"
+            "code": "Coding"
           }
         ],
-        "fixedUri": "https://gematik.de/fhir/eeb/EEBBescheinigung"
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/directory/ValueSet/OrganizationTypeVS"
+        }
       },
       {
         "id": "MessageHeader.source.endpoint",

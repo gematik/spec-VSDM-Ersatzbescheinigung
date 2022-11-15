@@ -23,10 +23,14 @@
             "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
           ]
         },
-        "eventUri": "https://gematik.de/fhir/eeb/EEBBescheinigung",
         "response": {
           "code": "ok",
           "identifier": "e71108ff-a936-44fa-9d7d-215a09428194"
+        },
+        "eventCoding": {
+          "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+          "code": "1.2.276.0.76.4.59",
+          "display": "Betriebsstätte Kostenträger"
         },
         "source": {
           "endpoint": "https://Test-Krankenkasse.de/KIM"
