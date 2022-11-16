@@ -1,0 +1,42 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "EEBMessageEventTypeVS",
+  "id": "EEBMessageEventTypeVS",
+  "title": "ValueSet of eEB Mesage Event Types",
+  "description": "Types of eEB messge events - why was this message sent, who triggered the message event",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/eeb/EEBMessageEventTypeVS",
+  "publisher": "gematik GmbH",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.gematik.de"
+        }
+      ]
+    }
+  ],
+  "expansion": {
+    "identifier": "fe7e0ee0-f72e-4909-bf48-7c84ff97bac5",
+    "timestamp": "2020-05-07T07:48:29+00:00",
+    "total": 1
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "urn:ietf:rfc:3986",
+        "concept": [
+          {
+            "code": "urn:oid:1.2.276.0.76.4.32",
+            "display": "Apotheker"
+          }
+        ]
+      },
+      {
+        "system": "http://hl7.org/fhir/message-events"
+      }
+    ]
+  }
+}

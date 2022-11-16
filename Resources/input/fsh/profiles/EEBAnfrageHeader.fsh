@@ -11,8 +11,11 @@ Id: eeb-anfrage-header
     Einverstaendnis named Einverstaendnis 1..1
 * extension[Leistungsdatum].value[x] 1..
 * extension[Einverstaendnis].value[x] 1..
-* event[x] only uri
-* event[x] = "https://gematik.de/fhir/eeb/EEBAnfrage" (exactly)
+
+// hier OID anfragende Praxiss
+* event[x] only Coding
+* event[x] from OrganizationTypeVS
+
 * sender 1..
 * sender only Reference(KBV_PR_FOR_Organization)
 * sender.reference 1..

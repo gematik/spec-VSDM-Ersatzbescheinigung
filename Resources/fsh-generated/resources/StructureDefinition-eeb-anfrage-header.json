@@ -46,15 +46,6 @@
       {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "rules": "open"
-        },
         "min": 2
       },
       {
@@ -102,10 +93,13 @@
         "path": "MessageHeader.event[x]",
         "type": [
           {
-            "code": "uri"
+            "code": "Coding"
           }
         ],
-        "fixedUri": "https://gematik.de/fhir/eeb/EEBAnfrage"
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/directory/ValueSet/OrganizationTypeVS"
+        }
       },
       {
         "id": "MessageHeader.sender",
