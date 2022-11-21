@@ -29,8 +29,8 @@
         },
         "eventCoding": {
           "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
-          "code": "1.2.276.0.76.4.59",
-          "display": "Betriebsstätte Kostenträger"
+          "code": "1.2.276.0.76.4.49",
+          "display": "Versicherte/-r"
         },
         "source": {
           "endpoint": "https://Test-Krankenkasse.de/KIM"

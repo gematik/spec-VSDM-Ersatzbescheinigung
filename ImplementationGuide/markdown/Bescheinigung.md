@@ -230,7 +230,8 @@ Gibt es Hinweise im Zusammenhang mit ggfs. veralteten, eingebetteten OCSP-Respon
 
 Das Bescheinigungs-Bundle besteht aus einem Bescheinigungs-Header `MessageHeader`, Patienteninformationen `Patient` und der Deckungsinformation `Coverage`.
 
-Der `MessageHeader` enthält lediglich eine Statusinformation, ist für den Bundle-Type `message` jedoch verpflichtend.
+Der `MessageHeader` enthält eine Statusinformation und einen `event`-Coding-Code über die Herkunft der Anfrage zur Ausstellung einer Ersatzbescheinigung als `OID` über die fachlichen Rollen der Telematikinfrastruktur. Die Liste der zulässigen OIDs findet sich als `ProfessionOID` in gemSpec_OID bzw. als CodeSystem des [VZD-FHIR-Projekts](https://simplifier.net/vzd-fhir-directory/practitionerprofessionoid).
+Der Header ist für den Bundle-Type `message` verpflichtend.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle}}
 

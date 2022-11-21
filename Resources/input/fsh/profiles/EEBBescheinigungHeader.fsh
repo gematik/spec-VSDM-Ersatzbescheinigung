@@ -28,8 +28,8 @@ Usage: #example
 * id = "bd901c08-0133-4276-b34b-eb810a62deda"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
-* eventCoding.code = #1.2.276.0.76.4.59
-* eventCoding.display = "Betriebsstätte Kostenträger"
+* eventCoding.code = #1.2.276.0.76.4.49
+* eventCoding.display = "Versicherte/-r"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
 * response.identifier = "e71108ff-a936-44fa-9d7d-215a09428194"
 * response.code = #ok

@@ -1,0 +1,39 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "EEBErrorcodeCS",
+  "id": "EEBErrorcodeCS",
+  "title": "CodeSystem for eEB Errorcodes",
+  "description": "eEB Errorcodes when Kasse is unable to provide Ersatzbescheinigung",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS",
+  "concept": [
+    {
+      "code": "1010",
+      "display": "Unbekannter Person"
+    },
+    {
+      "code": "1020",
+      "display": "eEB Abgelehnt"
+    },
+    {
+      "code": "1099",
+      "display": "Sonstiger Fehler"
+    }
+  ],
+  "publisher": "gematik GmbH",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.gematik.de"
+        }
+      ]
+    }
+  ],
+  "copyright": "gematik GmbH",
+  "caseSensitive": true,
+  "count": 3
+}
