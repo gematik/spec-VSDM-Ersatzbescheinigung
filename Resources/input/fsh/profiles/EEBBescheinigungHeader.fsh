@@ -13,7 +13,8 @@ Id: eeb-bescheinigung-header
 
 * source.endpoint 1..1
 * source.endpoint ^short = "Source endpoint URI of sender. E.g. https://Test-Krankenkasse.de/KIM"
-* response 1..1
+* response 0..1
+* response ^short = "If there is an EEBAnfrageBundle, the Bundle.identifier is mandatory."
 * response.identifier 1..1
 * response.identifier ^short = "Identifier of EEBAnfrageBundle"
 * response.identifier ^definition = "The Bundle.identifier of the EEBAnfrageBundle to which this message is a response."
