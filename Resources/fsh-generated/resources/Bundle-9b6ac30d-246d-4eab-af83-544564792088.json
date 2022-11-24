@@ -14,7 +14,7 @@
   "timestamp": "2022-08-29T02:09:37.157+02:00",
   "entry": [
     {
-      "fullUrl": "https://easyti.ehex.de/fhir/MessageHeader/bd901c08-0133-4276-b34b-eb810a62deda",
+      "fullUrl": "https://gematik.de/fhir/MessageHeader/bd901c08-0133-4276-b34b-eb810a62deda",
       "resource": {
         "resourceType": "MessageHeader",
         "id": "bd901c08-0133-4276-b34b-eb810a62deda",
@@ -38,7 +38,7 @@
       }
     },
     {
-      "fullUrl": "https://easyti.ehex.de/fhir/Patient/d62d9d82-2396-4c64-a656-2e67b5761523",
+      "fullUrl": "https://gematik.de/fhir/Patient/d62d9d82-2396-4c64-a656-2e67b5761523",
       "resource": {
         "resourceType": "Patient",
         "id": "d62d9d82-2396-4c64-a656-2e67b5761523",
@@ -93,7 +93,7 @@
       }
     },
     {
-      "fullUrl": "https://easyti.ehex.de/fhir/Coverage/e9553161ca3c-413a-48fe-b908-04159be709fb",
+      "fullUrl": "https://gematik.de/fhir/Coverage/e9553161ca3c-413a-48fe-b908-04159be709fb",
       "resource": {
         "resourceType": "Coverage",
         "id": "e9553161ca3c-413a-48fe-b908-04159be709fb",

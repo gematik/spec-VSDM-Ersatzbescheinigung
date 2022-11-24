@@ -44,8 +44,29 @@
   "differential": {
     "element": [
       {
+        "id": "MessageHeader.meta",
+        "path": "MessageHeader.meta",
+        "min": 1
+      },
+      {
+        "id": "MessageHeader.meta.profile",
+        "path": "MessageHeader.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
+      },
+      {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
         "min": 2
       },
       {
@@ -122,7 +143,7 @@
       {
         "id": "MessageHeader.source.endpoint",
         "path": "MessageHeader.source.endpoint",
-        "fixedUrl": "https://ehex.de/KIM"
+        "short": "Source endpoint URI of sender. E.g. https://pvs.de/KIM"
       }
     ]
   }

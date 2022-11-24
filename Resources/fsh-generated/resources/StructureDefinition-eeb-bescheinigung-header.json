@@ -76,7 +76,7 @@
       {
         "id": "MessageHeader.response",
         "path": "MessageHeader.response",
-        "min": 1
+        "short": "If there is a EEBAnfrageBundle, the Bundle.identifier is mandatory"
       },
       {
         "id": "MessageHeader.response.identifier",

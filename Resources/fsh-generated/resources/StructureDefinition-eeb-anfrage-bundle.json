@@ -49,6 +49,23 @@
   "differential": {
     "element": [
       {
+        "id": "Bundle.id",
+        "path": "Bundle.id",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+      },
+      {
         "id": "Bundle.identifier",
         "path": "Bundle.identifier",
         "min": 1
@@ -87,22 +104,23 @@
           ],
           "rules": "closed"
         },
-        "min": 3
+        "min": 3,
+        "max": "3"
       },
       {
-        "id": "Bundle.entry:Header",
+        "id": "Bundle.entry:EEBAnfrageHeader",
         "path": "Bundle.entry",
-        "sliceName": "Header",
+        "sliceName": "EEBAnfrageHeader",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:Header.link",
+        "id": "Bundle.entry:EEBAnfrageHeader.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Header.resource",
+        "id": "Bundle.entry:EEBAnfrageHeader.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
@@ -115,58 +133,97 @@
         ]
       },
       {
-        "id": "Bundle.entry:Header.search",
+        "id": "Bundle.entry:EEBAnfrageHeader.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Header.request",
+        "id": "Bundle.entry:EEBAnfrageHeader.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Header.response",
+        "id": "Bundle.entry:EEBAnfrageHeader.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Patient",
+        "id": "Bundle.entry:EEBKnownPatient",
         "path": "Bundle.entry",
-        "sliceName": "Patient",
-        "min": 1,
+        "sliceName": "EEBKnownPatient",
+        "min": 0,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:Patient.link",
+        "id": "Bundle.entry:EEBKnownPatient.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Patient.resource",
+        "id": "Bundle.entry:EEBKnownPatient.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
             "code": "Patient",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient",
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:EEBKnownPatient.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBKnownPatient.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBKnownPatient.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBUnknownPatient",
+        "path": "Bundle.entry",
+        "sliceName": "EEBUnknownPatient",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:EEBUnknownPatient.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBUnknownPatient.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
               "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:Patient.search",
+        "id": "Bundle.entry:EEBUnknownPatient.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Patient.request",
+        "id": "Bundle.entry:EEBUnknownPatient.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Patient.response",
+        "id": "Bundle.entry:EEBUnknownPatient.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
