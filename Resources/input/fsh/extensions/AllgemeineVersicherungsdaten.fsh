@@ -7,3 +7,4 @@ Id: allgemeine-versicherungsdaten
 * . ^short = "Allgemeine Versicherungsdaten"
 * url = "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten" (exactly)
 * value[x] only base64Binary
+* value[x] 1..1

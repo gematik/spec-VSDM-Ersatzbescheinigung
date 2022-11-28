@@ -7,3 +7,4 @@ Id: geschuetzte-versichertendaten
 * . ^short = "Geschuetzte Versichertendaten"
 * url = "https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten" (exactly)
 * value[x] only base64Binary
+* value[x] 1..1
