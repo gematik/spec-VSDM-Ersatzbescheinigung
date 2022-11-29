@@ -65,7 +65,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/directory/ValueSet/OrganizationTypeVS"
+          "valueSet": "https://gematik.de/fhir/eeb/ValueSet/EEBAnfrageUrsprungVS"
         }
       },
       {

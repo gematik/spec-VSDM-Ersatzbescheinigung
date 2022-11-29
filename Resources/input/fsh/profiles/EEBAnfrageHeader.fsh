@@ -18,7 +18,7 @@ Id: eeb-anfrage-header
 
 // hier OID anfragende Praxiss
 * event[x] only Coding
-* event[x] from OrganizationTypeVS
+* event[x] from EEBAnfrageUrsprungVS
 
 * sender 1..1
 * sender only Reference(KBV_PR_FOR_Organization)
