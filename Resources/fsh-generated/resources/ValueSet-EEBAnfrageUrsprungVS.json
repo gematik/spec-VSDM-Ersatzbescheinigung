@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "EEBAnfrageUrsprungVS",
+  "id": "EEBAnfrageUrsprungVS",
+  "title": "ValueSet of eEB Message Header Events",
+  "description": "eEB Message Header Event codes of request orgin",
+  "version": "1.0",
+  "url": "https://gematik.de/fhir/eeb/ValueSet/EEBAnfrageUrsprungVS",
+  "publisher": "gematik GmbH",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.gematik.de"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
+      },
+      {
+        "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+      }
+    ]
+  }
+}

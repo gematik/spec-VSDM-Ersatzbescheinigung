@@ -9,7 +9,7 @@ Id: eeb-bescheinigung-header
 
 // hier OID Kasse
 * event[x] only Coding
-* event[x] from OrganizationTypeVS
+* event[x] from EEBAnfrageUrsprungVS
 
 * source.endpoint 1..1
 * source.endpoint ^short = "Source endpoint URI of sender. E.g. https://Test-Krankenkasse.de/KIM"
@@ -28,7 +28,7 @@ Title:   "Header for EEBBescheinigungBundle"
 Usage: #example
 * id = "bd901c08-0133-4276-b34b-eb810a62deda"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.49
 * eventCoding.display = "Versicherte/-r"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
