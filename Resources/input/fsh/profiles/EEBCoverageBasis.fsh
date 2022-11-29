@@ -5,19 +5,18 @@ Id: eeb-coverage-basis
 * insert Meta
 * meta 1..1
 * meta.profile 1..1
-* meta.profile 1..1
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
     $version-vsdm named versionEgk 0..1 and
-    $versichertenart named versichertenart 1..1 and
-    $kostenerstattung named kostenerstattung 1..1 and
-    $wop named wop 1..1 and
-    $besondere-personengruppe named besonderePersonengruppe 1..1 and
-    $dmp-kennzeichen named dmpKennzeichen 1..1 and
-    $ruhender-leistungsanspruch named ruhenderLeistungsanspruch 1..1 and
-    $zuzahlungsstatus named zuzahlungsstatus 1..1 and
+    $versichertenart named versichertenart 0..1 and
+    $kostenerstattung named kostenerstattung 0..1 and
+    $wop named wop 0..1 and
+    $besondere-personengruppe named besonderePersonengruppe 0..1 and
+    $dmp-kennzeichen named dmpKennzeichen 0..1 and
+    $ruhender-leistungsanspruch named ruhenderLeistungsanspruch 0..1 and
+    $zuzahlungsstatus named zuzahlungsstatus 0..1 and
     PersoenlicheVersichertendaten named persoenlicheVersichertendaten 0..1 and
     AllgemeineVersicherungsdaten named allgemeineVersicherungsdaten 0..1 and
     GeschuetzteVersichertendaten named geschuetzteVersichertendaten 0..1

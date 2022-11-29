@@ -4,7 +4,10 @@ Id: eeb-coverage-no-egk
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk"
 * insert Meta
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk" (exactly)
-
+* extension[versionEgk] 0..0
+* extension[allgemeineVersicherungsdaten] 0..0
+* extension[persoenlicheVersichertendaten] 0..0
+* extension[geschuetzteVersichertendaten] 0..0
 
 // Beispielgenerierung
 Instance: KBV_PR_FOR_PatientNoEgkSample

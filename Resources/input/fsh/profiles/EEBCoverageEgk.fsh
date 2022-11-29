@@ -5,17 +5,10 @@ Id: eeb-coverage-egk
 * insert Meta
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk" (exactly)
 * extension[versionEgk] 1..1
+* extension[versionEgk].valueString 1..1
 * extension[allgemeineVersicherungsdaten] 1..1
 * extension[persoenlicheVersichertendaten] 1..1
 * extension[geschuetzteVersichertendaten] 1..1
-// make values manadatory when Extension mandatory
-* extension[versionEgk].valueString 1..1
-* extension[versichertenart].valueCoding 1..1
-* extension[wop].valueCoding 1..1
-* extension[besonderePersonengruppe].valueCoding 1..1
-* extension[dmpKennzeichen].valueCoding 1..1
-
-
 
 // Beispielgenerierung
 Instance: KBV_PR_FOR_PatientEgkSample
