@@ -7,3 +7,4 @@ Id: persoenliche-versichertendaten
 * . ^short = "Persoenliche Versichertendaten"
 * url = "https://gematik.de/fhir/eeb/StructureDefinition/PersoenlicheVersichertendaten" (exactly)
 * value[x] only base64Binary
+* value[x] 1..1

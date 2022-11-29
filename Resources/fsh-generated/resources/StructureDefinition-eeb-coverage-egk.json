@@ -33,6 +33,156 @@
         "min": 1
       },
       {
+        "id": "Coverage.extension:versionEgk.extension",
+        "path": "Coverage.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:versionEgk.value[x]",
+        "path": "Coverage.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Coverage.extension:versionEgk.valueString",
+        "path": "Coverage.extension.valueString",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.extension:versichertenart",
+        "path": "Coverage.extension",
+        "sliceName": "versichertenart"
+      },
+      {
+        "id": "Coverage.extension:versichertenart.extension",
+        "path": "Coverage.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:versichertenart.value[x]",
+        "path": "Coverage.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Coverage.extension:versichertenart.valueCoding",
+        "path": "Coverage.extension.valueCoding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.extension:wop",
+        "path": "Coverage.extension",
+        "sliceName": "wop"
+      },
+      {
+        "id": "Coverage.extension:wop.extension",
+        "path": "Coverage.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:wop.value[x]",
+        "path": "Coverage.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Coverage.extension:wop.valueCoding",
+        "path": "Coverage.extension.valueCoding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.extension:besonderePersonengruppe",
+        "path": "Coverage.extension",
+        "sliceName": "besonderePersonengruppe"
+      },
+      {
+        "id": "Coverage.extension:besonderePersonengruppe.extension",
+        "path": "Coverage.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:besonderePersonengruppe.value[x]",
+        "path": "Coverage.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Coverage.extension:besonderePersonengruppe.valueCoding",
+        "path": "Coverage.extension.valueCoding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Coverage.extension:dmpKennzeichen",
+        "path": "Coverage.extension",
+        "sliceName": "dmpKennzeichen"
+      },
+      {
+        "id": "Coverage.extension:dmpKennzeichen.extension",
+        "path": "Coverage.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:dmpKennzeichen.value[x]",
+        "path": "Coverage.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Coverage.extension:dmpKennzeichen.valueCoding",
+        "path": "Coverage.extension.valueCoding",
+        "min": 1,
+        "max": "1"
+      },
+      {
         "id": "Coverage.extension:persoenlicheVersichertendaten",
         "path": "Coverage.extension",
         "sliceName": "persoenlicheVersichertendaten",
