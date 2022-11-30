@@ -65,4 +65,4 @@ Usage: #example
 * issue.extension[EEBOperationOutcomeIssueIdentifier].extension[Message-ID].valueIdentifier.value = "96d6a790-afc2-4556-ab73-301e51a7bf30@kim.de"
 * issue.severity = #fatal
 * issue.code = #processing
-* issue.details = https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS#1010 "Unbekannte Person"
+* issue.details = https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS#100 "Der Patient ist nicht bei der adressierten Krankenkasse versichert."
