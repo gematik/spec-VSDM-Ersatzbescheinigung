@@ -74,10 +74,10 @@ Instance: EEBBescheinigungBundleSampleNoEgk
 InstanceOf: EEBBescheinigungBundle
 Title:   "EEBBescheinigungBundleNoEgk"
 Usage: #example
-* id = "9b6ac30d-246d-4eab-af83-544564792088"
+* id = "43bb7e49-7d03-4dfe-b4d7-df4b6c370d6b"
 * meta.profile[+] = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
 * identifier[+].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "9b6ac30d-246d-4eab-af83-544564792088"
+* identifier[=].value = "4b06f5c4-dced-4904-b1d2-2e5c64087919"
 * type = #message
 * timestamp = "2022-08-29T02:09:37.157+02:00"
 * entry[+][EEBBescheinigungHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/bd901c08-0133-4276-b34b-eb810a62deda"

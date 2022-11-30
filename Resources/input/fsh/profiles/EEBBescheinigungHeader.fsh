@@ -7,7 +7,7 @@ Id: eeb-bescheinigung-header
 * meta.profile 1..1
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader" (exactly)
 
-// hier OID Kasse
+// hier OID Anfragender
 * event[x] only Coding
 * event[x] from EEBAnfrageUrsprungVS
 
