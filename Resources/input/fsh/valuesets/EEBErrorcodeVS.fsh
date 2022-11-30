@@ -1,7 +1,7 @@
 ValueSet: EEBErrorcodeVS
 Id: EEBErrorcodeVS
-Title: "ValueSet of eEB Errorcodes"
-Description: "eEB Errorcodes when Kasse is unable to provide Ersatzbescheinigung"
+Title: "ValueSet für eEB Fehler"
+Description: "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausstellen kann"
 * ^url = "https://gematik.de/fhir/eeb/ValueSet/EEBErrorcodeVS"
 * ^version = "1.0"
 * ^status = #draft

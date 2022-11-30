@@ -1,7 +1,7 @@
 CodeSystem: EEBErrorcodeCS
 Id: EEBErrorcodeCS
-Title: "CodeSystem for eEB Errorcodes"
-Description: "eEB Errorcodes when Kasse is unable to provide Ersatzbescheinigung"
+Title: "CodeSystem für eEB Fehler"
+Description: "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausstellen kann"
 * ^url = "https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS"
 * ^version = "1.0"
 * ^status = #draft
@@ -11,6 +11,6 @@ Description: "eEB Errorcodes when Kasse is unable to provide Ersatzbescheinigung
 * ^copyright = "gematik GmbH"
 * ^caseSensitive = true
 * ^content = #complete
-* #1010 "Unbekannter Person"
+* #1010 "Unbekannte Person"
 * #1020 "eEB Abgelehnt"
 * #1099 "Sonstiger Fehler"
