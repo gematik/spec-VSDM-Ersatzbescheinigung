@@ -62,7 +62,7 @@ Usage: #example
 * type = #message
 * timestamp = "2022-08-29T02:10:37.154+02:00"
 * entry[+][EEBAnfrageHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/bb03a437-fe56-46f9-8622-ffc3766e7c70"
-* entry[=][EEBAnfrageHeader].resource = EEBBescheinigungHeaderSample
+* entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample
 * entry[+][EEBKnownPatient].fullUrl = "https://gematik.de/fhir/Patient/b8f0f69c-af1a-480b-8abf-44ab11aa23c5"
 * entry[=][EEBKnownPatient].resource = EEBKnownPatientSample
 * entry[+][Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
@@ -80,7 +80,7 @@ Usage: #example
 * type = #message
 * timestamp = "2022-08-29T02:10:37.154+02:00"
 * entry[+][EEBAnfrageHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/bb03a437-fe56-46f9-8622-ffc3766e7c70"
-* entry[=][EEBAnfrageHeader].resource = EEBBescheinigungHeaderSample
+* entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample
 * entry[+][EEBKnownPatient].fullUrl = "https://gematik.de/fhir/Patient/1df9e029-2505-4551-b735-f1c1a1e2d889"
 * entry[=][EEBKnownPatient].resource = EEBUnknownPatientSample
 * entry[+][Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
