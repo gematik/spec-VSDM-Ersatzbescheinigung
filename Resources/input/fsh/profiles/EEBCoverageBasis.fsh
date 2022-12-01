@@ -34,6 +34,6 @@ Id: eeb-coverage-basis
 * payor.extension ^slicing.discriminator.type = #value
 * payor.extension ^slicing.discriminator.path = "url"
 * payor.extension ^slicing.rules = #open
-* payor.extension contains $AbrechnendeIK named abrechnendeIK 1..1
+* payor.extension contains $AbrechnendeIK named abrechnendeIK 0..1
 * payor.identifier only $identifier-iknr
 * payor.display 1..1
