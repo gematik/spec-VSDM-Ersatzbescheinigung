@@ -9,7 +9,7 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "79939e34-c5cc-4da6-ba55-f4bd85832760"
+    "value": "urn:uuid:79939e34-c5cc-4da6-ba55-f4bd85832760"
   },
   "timestamp": "2022-08-29T02:10:37.154+02:00",
   "entry": [
@@ -17,23 +17,32 @@
       "fullUrl": "https://gematik.de/fhir/MessageHeader/bb03a437-fe56-46f9-8622-ffc3766e7c70",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "bd901c08-0133-4276-b34b-eb810a62deda",
+        "id": "bb03a437-fe56-46f9-8622-ffc3766e7c70",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+            "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
           ]
         },
-        "response": {
-          "code": "ok",
-          "identifier": "e71108ff-a936-44fa-9d7d-215a09428194"
-        },
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/eeb/StructureDefinition/Leistungsdatum",
+            "valueDate": "2022-02-01"
+          },
+          {
+            "url": "https://gematik.de/fhir/eeb/StructureDefinition/Einverstaendnis",
+            "valueBoolean": true
+          }
+        ],
         "eventCoding": {
-          "system": "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID",
-          "code": "1.2.276.0.76.4.49",
-          "display": "Versicherte/-r"
+          "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+          "code": "1.2.276.0.76.4.50",
+          "display": "Betriebsstätte Arzt"
+        },
+        "sender": {
+          "reference": "Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
         },
         "source": {
-          "endpoint": "https://Test-Krankenkasse.de/KIM"
+          "endpoint": "https://pvs.de/KIM"
         }
       }
     },

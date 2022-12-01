@@ -9,7 +9,7 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "9b6ac30d-246d-4eab-af83-544564792089"
+    "value": "urn:uuid:9b6ac30d-246d-4eab-af83-544564792089"
   },
   "timestamp": "2022-08-29T02:09:37.157+02:00",
   "entry": [
