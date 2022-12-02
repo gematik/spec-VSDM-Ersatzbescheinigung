@@ -10,26 +10,6 @@ Id: eeb-fehler
 * issue.extension ^slicing.discriminator.path = "url"
 * issue.extension ^slicing.rules = #closed
 * issue.extension contains EEBOperationOutcomeIssueIdentifier named Identifier 1..1 MS
-* issue.extension[Identifier].extension ^slicing.discriminator.type = #value
-* issue.extension[Identifier].extension ^slicing.discriminator.path = "url"
-* issue.extension[Identifier].extension ^slicing.rules = #closed
-* issue.extension[Identifier].extension ^min = 0
-* issue.extension[Identifier].extension[Bundle-Identifier] ^sliceName = "Bundle-Identifier"
-* issue.extension[Identifier].extension[Bundle-Identifier] ^min = 0
-* issue.extension[Identifier].extension[Bundle-Identifier] ^mustSupport = true
-* issue.extension[Identifier].extension[Bundle-Identifier].value[x] MS
-* issue.extension[Identifier].extension[Bundle-Identifier].valueIdentifier MS
-* issue.extension[Identifier].extension[Bundle-Identifier].valueIdentifier ^sliceName = "valueIdentifier"
-* issue.extension[Identifier].extension[Bundle-Identifier].valueIdentifier.system MS
-* issue.extension[Identifier].extension[Bundle-Identifier].valueIdentifier.value MS
-* issue.extension[Identifier].extension[Message-ID] ^sliceName = "Message-ID"
-* issue.extension[Identifier].extension[Message-ID] ^min = 0
-* issue.extension[Identifier].extension[Message-ID] ^mustSupport = true
-* issue.extension[Identifier].extension[Message-ID].value[x] MS
-* issue.extension[Identifier].extension[Message-ID].valueIdentifier MS
-* issue.extension[Identifier].extension[Message-ID].valueIdentifier ^sliceName = "valueIdentifier"
-* issue.extension[Identifier].extension[Message-ID].valueIdentifier.system MS
-* issue.extension[Identifier].extension[Message-ID].valueIdentifier.value MS
 * issue.severity = #fatal (exactly)
 * issue.severity MS
 * issue.severity ^definition = "Angabe der Fehlerkategorie"
@@ -53,16 +33,28 @@ Id: eeb-fehler
 
 
 // Beispielgenerierung
-Instance: EEBFehlerSample
+Instance: EEBFehlerSampleMessage
 InstanceOf: EEBFehler
 Title:   "Fehler for EEBFehlerBundle"
 Usage: #example
 * id = "3f624395-be34-4fac-9773-d735cb3a1f73"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
 * issue.extension[EEBOperationOutcomeIssueIdentifier].url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBOperationOutcomeIssueIdentifier"
-* issue.extension[EEBOperationOutcomeIssueIdentifier].extension[Message-ID].url = "Message-ID"
 * issue.extension[EEBOperationOutcomeIssueIdentifier].extension[Message-ID].valueIdentifier.system = "https://gematik.de/fhir/eeb/StructureDefinition/Message_ID_KIM"
 * issue.extension[EEBOperationOutcomeIssueIdentifier].extension[Message-ID].valueIdentifier.value = "96d6a790-afc2-4556-ab73-301e51a7bf30@kim.de"
+* issue.severity = #fatal
+* issue.code = #processing
+* issue.details = https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS#101 "Die übermittelte eEB entspricht nicht den Vorgaben und/oder ist nicht lesbar."
+
+Instance: EEBFehlerSampleBundle
+InstanceOf: EEBFehler
+Title:   "Fehler for EEBFehlerBundle"
+Usage: #example
+* id = "bbd0690c-6939-4c90-979c-9ab9b1ed1552"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
+* issue.extension[EEBOperationOutcomeIssueIdentifier].url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBOperationOutcomeIssueIdentifier"
+* issue.extension[EEBOperationOutcomeIssueIdentifier].extension[Bundle-Identifier].valueIdentifier.system = "urn:ietf:rfc:3986"
+* issue.extension[EEBOperationOutcomeIssueIdentifier].extension[Bundle-Identifier].valueIdentifier.value = "urn:uuid:79939e34-c5cc-4da6-ba55-f4bd85832760"
 * issue.severity = #fatal
 * issue.code = #processing
 * issue.details = https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS#100 "Der Patient ist nicht bei der adressierten Krankenkasse versichert."
