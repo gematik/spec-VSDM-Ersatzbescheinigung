@@ -55,7 +55,7 @@
     },
     {
       "code": "313",
-      "display": "Die KOM-LE-Nachricht konnte auf Grund eines nicht verfügbaren Schlüssels nicht entschlüsselt werden."
+      "display": "Die KIM-Nachricht konnte auf Grund eines nicht verfügbaren Schlüssels nicht entschlüsselt werden."
     }
   ],
   "publisher": "gematik GmbH",

@@ -1,6 +1,6 @@
 {
   "resourceType": "OperationOutcome",
-  "id": "3f624395-be34-4fac-9773-d735cb3a1f73",
+  "id": "bbd0690c-6939-4c90-979c-9ab9b1ed1552",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
@@ -15,10 +15,10 @@
           "extension": [
             {
               "valueIdentifier": {
-                "system": "https://gematik.de/fhir/eeb/StructureDefinition/Message_ID_KIM",
-                "value": "96d6a790-afc2-4556-ab73-301e51a7bf30@kim.de"
+                "system": "urn:ietf:rfc:3986",
+                "value": "urn:uuid:79939e34-c5cc-4da6-ba55-f4bd85832760"
               },
-              "url": "Message-ID"
+              "url": "Bundle-Identifier"
             }
           ]
         }
@@ -27,9 +27,9 @@
       "details": {
         "coding": [
           {
-            "code": "101",
+            "code": "100",
             "system": "https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS",
-            "display": "Die übermittelte eEB entspricht nicht den Vorgaben und/oder ist nicht lesbar."
+            "display": "Der Patient ist nicht bei der adressierten Krankenkasse versichert."
           }
         ]
       }

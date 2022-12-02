@@ -76,58 +76,6 @@
         "mustSupport": true
       },
       {
-        "id": "OperationOutcome.issue.extension:Identifier.extension:Bundle-Identifier",
-        "path": "OperationOutcome.issue.extension.extension",
-        "sliceName": "Bundle-Identifier",
-        "mustSupport": true
-      },
-      {
-        "id": "OperationOutcome.issue.extension:Identifier.extension:Bundle-Identifier.value[x]",
-        "path": "OperationOutcome.issue.extension.extension.value[x]",
-        "mustSupport": true
-      },
-      {
-        "id": "OperationOutcome.issue.extension:Identifier.extension:Bundle-Identifier.valueIdentifier",
-        "path": "OperationOutcome.issue.extension.extension.valueIdentifier",
-        "mustSupport": true
-      },
-      {
-        "id": "OperationOutcome.issue.extension:Identifier.extension:Bundle-Identifier.valueIdentifier.system",
-        "path": "OperationOutcome.issue.extension.extension.valueIdentifier.system",
-        "mustSupport": true
-      },
-      {
-        "id": "OperationOutcome.issue.extension:Identifier.extension:Bundle-Identifier.valueIdentifier.value",
-        "path": "OperationOutcome.issue.extension.extension.valueIdentifier.value",
-        "mustSupport": true
-      },
-      {
-        "id": "OperationOutcome.issue.extension:Identifier.extension:Message-ID",
-        "path": "OperationOutcome.issue.extension.extension",
-        "sliceName": "Message-ID",
-        "mustSupport": true
-      },
-      {
-        "id": "OperationOutcome.issue.extension:Identifier.extension:Message-ID.value[x]",
-        "path": "OperationOutcome.issue.extension.extension.value[x]",
-        "mustSupport": true
-      },
-      {
-        "id": "OperationOutcome.issue.extension:Identifier.extension:Message-ID.valueIdentifier",
-        "path": "OperationOutcome.issue.extension.extension.valueIdentifier",
-        "mustSupport": true
-      },
-      {
-        "id": "OperationOutcome.issue.extension:Identifier.extension:Message-ID.valueIdentifier.system",
-        "path": "OperationOutcome.issue.extension.extension.valueIdentifier.system",
-        "mustSupport": true
-      },
-      {
-        "id": "OperationOutcome.issue.extension:Identifier.extension:Message-ID.valueIdentifier.value",
-        "path": "OperationOutcome.issue.extension.extension.valueIdentifier.value",
-        "mustSupport": true
-      },
-      {
         "id": "OperationOutcome.issue.severity",
         "path": "OperationOutcome.issue.severity",
         "definition": "Angabe der Fehlerkategorie",

@@ -44,6 +44,17 @@
         "path": "Coverage.extension",
         "sliceName": "geschuetzteVersichertendaten",
         "max": "0"
+      },
+      {
+        "id": "Coverage.payor.extension",
+        "path": "Coverage.payor.extension",
+        "min": 1
+      },
+      {
+        "id": "Coverage.payor.extension:abrechnendeIK",
+        "path": "Coverage.payor.extension",
+        "sliceName": "abrechnendeIK",
+        "min": 1
       }
     ]
   }
