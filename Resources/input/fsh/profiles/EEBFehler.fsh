@@ -35,7 +35,7 @@ Id: eeb-fehler
 // Beispielgenerierung
 Instance: EEBFehlerSampleMessage
 InstanceOf: EEBFehler
-Title:   "Fehler for EEBFehlerBundle"
+Title:   "eEB Fehlermeldung"
 Usage: #example
 * id = "3f624395-be34-4fac-9773-d735cb3a1f73"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
@@ -48,7 +48,7 @@ Usage: #example
 
 Instance: EEBFehlerSampleBundle
 InstanceOf: EEBFehler
-Title:   "Fehler for EEBFehlerBundle"
+Title:   "eEB Fehlermeldung"
 Usage: #example
 * id = "bbd0690c-6939-4c90-979c-9ab9b1ed1552"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
