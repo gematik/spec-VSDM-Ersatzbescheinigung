@@ -25,6 +25,7 @@ Id: eeb-coverage-basis
 * type from $versicherungsart-de-basis (required)
 * type ^short = "Versicherungsart"
 * type ^definition = "Art der Versicherung: Selbstzahler, gesetzliche/private Versicherung, Berufsgenossenschaft oder Sozialamt"
+* beneficiary only Reference($kbv-for-patient)
 * beneficiary 1..1
 * beneficiary.reference 1..1
 * period 1..1
