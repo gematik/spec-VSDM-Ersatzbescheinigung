@@ -36,4 +36,5 @@ Id: eeb-coverage-basis
 * payor.extension ^slicing.rules = #open
 * payor.extension contains $AbrechnendeIK named abrechnendeIK 0..1
 * payor.identifier only $identifier-iknr
+* payor.identifier 1..1
 * payor.display 1..1
