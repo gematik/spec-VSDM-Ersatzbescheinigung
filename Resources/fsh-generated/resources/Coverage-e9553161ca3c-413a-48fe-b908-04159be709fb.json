@@ -7,6 +7,24 @@
     ]
   },
   "status": "active",
+  "payor": [
+    {
+      "identifier": {
+        "system": "http://fhir.de/sid/arge-ik/iknr",
+        "value": "12345678"
+      },
+      "extension": [
+        {
+          "url": "http://fhir.de/StructureDefinition/AbrechnendeIK",
+          "valueIdentifier": {
+            "system": "http://fhir.de/sid/arge-ik/iknr",
+            "value": "756756324"
+          }
+        }
+      ],
+      "display": "Test Krankenkasse"
+    }
+  ],
   "extension": [
     {
       "url": "http://fhir.de/StructureDefinition/gkv/versichertenart",
@@ -80,24 +98,6 @@
           "valueDate": "2020-12-31"
         }
       ]
-    }
-  ],
-  "payor": [
-    {
-      "identifier": {
-        "system": "http://fhir.de/sid/arge-ik/iknr",
-        "value": "12345678"
-      },
-      "extension": [
-        {
-          "url": "http://fhir.de/StructureDefinition/AbrechnendeIK",
-          "valueIdentifier": {
-            "system": "http://fhir.de/sid/arge-ik/iknr",
-            "value": "756756324"
-          }
-        }
-      ],
-      "display": "Test Krankenkasse"
     }
   ],
   "type": {

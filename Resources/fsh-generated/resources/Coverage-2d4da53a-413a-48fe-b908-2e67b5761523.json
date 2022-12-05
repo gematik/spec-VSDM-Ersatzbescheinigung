@@ -27,6 +27,10 @@
   ],
   "payor": [
     {
+      "identifier": {
+        "system": "http://fhir.de/sid/arge-ik/iknr",
+        "value": "12345678"
+      },
       "extension": [
         {
           "url": "http://fhir.de/StructureDefinition/AbrechnendeIK",
@@ -36,10 +40,6 @@
           }
         }
       ],
-      "identifier": {
-        "system": "http://fhir.de/sid/arge-ik/iknr",
-        "value": "12345678"
-      },
       "display": "Test Krankenkasse"
     }
   ],
