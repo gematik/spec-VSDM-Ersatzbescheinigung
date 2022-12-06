@@ -77,7 +77,8 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "ordered": false,
+          "rules": "open"
         },
         "min": 1,
         "type": [
@@ -152,7 +153,8 @@
               "path": "$this"
             }
           ],
-          "rules": "closed"
+          "ordered": false,
+          "rules": "open"
         },
         "min": 1,
         "type": [

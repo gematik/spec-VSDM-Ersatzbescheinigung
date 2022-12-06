@@ -17,12 +17,6 @@ Id: eeb-operation-outcome-issue-identifier
 * extension[Bundle-Identifier] ^definition = "Repräsentiert den Bundle-Identifier einer eEB-Anfrage"
 * extension[Bundle-Identifier].value[x] 1..
 * extension[Bundle-Identifier].value[x] only Identifier
-* extension[Bundle-Identifier].value[x] ^slicing.discriminator.type = #type
-* extension[Bundle-Identifier].value[x] ^slicing.discriminator.path = "$this"
-* extension[Bundle-Identifier].value[x] ^slicing.rules = #closed
-* extension[Bundle-Identifier].valueIdentifier 1..
-* extension[Bundle-Identifier].valueIdentifier only Identifier
-* extension[Bundle-Identifier].valueIdentifier ^sliceName = "valueIdentifier"
 * extension[Bundle-Identifier].valueIdentifier.use ..0
 * extension[Bundle-Identifier].valueIdentifier.type ..0
 * extension[Bundle-Identifier].valueIdentifier.system 1..
@@ -34,12 +28,6 @@ Id: eeb-operation-outcome-issue-identifier
 * extension[Message-ID] ^definition = "Hier wird die Message-ID der KIM-Nachricht abgebildet."
 * extension[Message-ID].value[x] 1..
 * extension[Message-ID].value[x] only Identifier
-* extension[Message-ID].value[x] ^slicing.discriminator.type = #type
-* extension[Message-ID].value[x] ^slicing.discriminator.path = "$this"
-* extension[Message-ID].value[x] ^slicing.rules = #closed
-* extension[Message-ID].valueIdentifier 1..
-* extension[Message-ID].valueIdentifier only Identifier
-* extension[Message-ID].valueIdentifier ^sliceName = "valueIdentifier"
 * extension[Message-ID].valueIdentifier.use ..0
 * extension[Message-ID].valueIdentifier.type ..0
 * extension[Message-ID].valueIdentifier.system 1..
