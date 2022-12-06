@@ -4,12 +4,7 @@
   "meta": {
     "profile": [
       "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
-    ],
-    "tag": [
-            {
-                "display": "AnfrageHeader durch 'Betriebstätte Arzt'"
-            }
-        ]
+    ]
   },
   "extension": [
     {
@@ -21,6 +16,7 @@
       "valueBoolean": true
     }
   ],
+  "text": "Lorem Ipsum",
   "eventCoding": {
     "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
     "code": "1.2.276.0.76.4.50",
