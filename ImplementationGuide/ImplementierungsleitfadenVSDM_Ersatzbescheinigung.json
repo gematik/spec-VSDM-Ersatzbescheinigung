@@ -39,7 +39,13 @@
           "nameUrl": "ImplementationGuide/markdown/KIM-Nachrichten.md",
           "title": "KIM-Nachrichtenstruktur",
           "generation": "markdown"
-        },{
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/ErrorHandling.md",
+          "title": "Error-Handling",
+          "generation": "markdown"
+        },
+        {
           "nameUrl": "ImplementationGuide/markdown/ReleaseNotes.md",
           "title": "Release Notes",
           "generation": "markdown"
