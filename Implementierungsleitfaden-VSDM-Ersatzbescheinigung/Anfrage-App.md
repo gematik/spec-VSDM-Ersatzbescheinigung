@@ -1,3 +1,6 @@
+---
+topic: anfrageapp
+---
 # Inhalt
 
 Beim Check-In mittels einer Versicherten-App fordert die versicherte Person die Bereitstellung eines Versicherungsnachweis bzw. einer Ersatzbescheinigung an eine konkrete Praxis an. Der Bezug zu einer konkreten Praxis kann mittels Abscannen eines QR-Codes in der Versicherten-App hergestellt werden, der als Ausdruck in einem Aufsteller am Empfangstresen oder auf einer Internetseite (z.B. Terminbuchungsportal) dargestellt wird.
@@ -24,7 +27,7 @@ Diese sind dem VZD-Eintrag der Praxis zu entnehmen und können bspw. über das P
 }
 ```
 <!--- generated at https://qr.io/?gclid=Cj0KCQiAmaibBhCAARIsAKUlaKS6Fc5U2WtQhnpeJi--cek12_qHdHOsKbkwxUp8AlsldhGeEtQCkF8aAo-TEALw_wcB -->
-{{render:ImplementationGuide-images-qr-sample}}
+{{render:Implementierungsleitfaden-VSDM-Ersatzbescheinigung-qr-sample}}
 
 Diese JSON-Struktur wird dann durch die Kassen-App an das Kassen-Backend übertragen, wo die Kasse die Daten prüft:
 

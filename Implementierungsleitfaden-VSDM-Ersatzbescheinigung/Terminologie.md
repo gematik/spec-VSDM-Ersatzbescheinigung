@@ -1,3 +1,6 @@
+---
+topic: terminologie
+---
 # Terminologie
 
 ## Hinweis zu verwendeten Terminologien
