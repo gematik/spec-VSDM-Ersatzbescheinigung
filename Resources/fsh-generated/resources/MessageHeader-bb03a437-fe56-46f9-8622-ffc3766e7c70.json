@@ -5,7 +5,7 @@
     "profile": [
       "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
     ],
-    tag: [
+    "tag": [
             {
                 "display": "AnfrageHeader durch 'Betriebstätte Arzt'"
             }
