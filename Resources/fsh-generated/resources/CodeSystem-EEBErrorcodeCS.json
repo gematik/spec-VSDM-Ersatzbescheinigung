@@ -4,22 +4,58 @@
   "content": "complete",
   "name": "EEBErrorcodeCS",
   "id": "EEBErrorcodeCS",
-  "title": "CodeSystem for eEB Errorcodes",
-  "description": "eEB Errorcodes when Kasse is unable to provide Ersatzbescheinigung",
+  "title": "CodeSystem für eEB Fehler",
+  "description": "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausstellen kann",
   "version": "1.0",
   "url": "https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS",
   "concept": [
     {
-      "code": "1010",
-      "display": "Unbekannter Person"
+      "code": "100",
+      "display": "Der Patient ist nicht bei der adressierten Krankenkasse versichert."
     },
     {
-      "code": "1020",
-      "display": "eEB Abgelehnt"
+      "code": "101",
+      "display": "Die übermittelte eEB entspricht nicht den Vorgaben und/oder ist nicht lesbar."
     },
     {
-      "code": "1099",
-      "display": "Sonstiger Fehler"
+      "code": "110",
+      "display": "Der Patient ist nicht eindeutig identifizierbar."
+    },
+    {
+      "code": "111",
+      "display": "Das angefragte Leistungsdatum ist unplausibel."
+    },
+    {
+      "code": "112",
+      "display": "Es liegt für den Patienten kein gültiges Versichertenverhältnis zum angefragten Leistungsdatum vor."
+    },
+    {
+      "code": "120",
+      "display": "Die Einwilligung des Patienten zur Freigabe der Bescheinigungsübermittlung an die Praxis liegt nicht vor."
+    },
+    {
+      "code": "130",
+      "display": "Es liegt ein Sonderfall/ eine Ausnahme vor. Bitten Sie den Patienten, mit der Krankenkasse Kontakt aufzunehmen."
+    },
+    {
+      "code": "307",
+      "display": "Übermittlung ist fehlgeschlagen. Grund hierfür ist, dass die KIM-Nachricht zwar als eine verschlüsselte KIM-Nachricht gekennzeichnet wurde, aber auf Grund des falschen Formats nicht von der Krankenkasse entschlüsselt werden konnte."
+    },
+    {
+      "code": "309",
+      "display": "Übermittlung ist fehlgeschlagen. Grund hierfür ist, dass für die KIM-Nachricht keine Signatur vorhanden ist."
+    },
+    {
+      "code": "310",
+      "display": "Übermittlung ist fehlgeschlagen. Grund hierfür ist, dass die Signatur für die KIM-Nachricht aufgrund des falschen Formats nicht geprüft werden konnte."
+    },
+    {
+      "code": "311",
+      "display": "Die Integrität der Nachricht wurde verletzt. Die Prüfung der Signatur hat ergeben, dass die Nachricht manipuliert wurde."
+    },
+    {
+      "code": "313",
+      "display": "Die KIM-Nachricht konnte auf Grund eines nicht verfügbaren Schlüssels nicht entschlüsselt werden."
     }
   ],
   "publisher": "gematik GmbH",
@@ -35,5 +71,5 @@
   ],
   "copyright": "gematik GmbH",
   "caseSensitive": true,
-  "count": 3
+  "count": 12
 }

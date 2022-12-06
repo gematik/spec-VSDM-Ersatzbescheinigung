@@ -16,7 +16,7 @@ Id: eeb-anfrage-header
 * extension[Leistungsdatum].value[x] 1..1
 * extension[Einverstaendnis].value[x] 1..1
 
-// hier OID anfragende Praxiss
+// hier OID Anfragender
 * event[x] only Coding
 * event[x] from EEBAnfrageUrsprungVS
 

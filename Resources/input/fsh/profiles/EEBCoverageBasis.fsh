@@ -25,6 +25,7 @@ Id: eeb-coverage-basis
 * type from $versicherungsart-de-basis (required)
 * type ^short = "Versicherungsart"
 * type ^definition = "Art der Versicherung: Selbstzahler, gesetzliche/private Versicherung, Berufsgenossenschaft oder Sozialamt"
+* beneficiary only Reference($kbv-for-patient)
 * beneficiary 1..1
 * beneficiary.reference 1..1
 * period 1..1
@@ -34,6 +35,7 @@ Id: eeb-coverage-basis
 * payor.extension ^slicing.discriminator.type = #value
 * payor.extension ^slicing.discriminator.path = "url"
 * payor.extension ^slicing.rules = #open
-* payor.extension contains $AbrechnendeIK named abrechnendeIK 1..1
+* payor.extension contains $AbrechnendeIK named abrechnendeIK 0..1
 * payor.identifier only $identifier-iknr
+* payor.identifier 1..1
 * payor.display 1..1

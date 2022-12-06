@@ -206,6 +206,18 @@
         }
       },
       {
+        "id": "Coverage.beneficiary",
+        "path": "Coverage.beneficiary",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+            ]
+          }
+        ]
+      },
+      {
         "id": "Coverage.beneficiary.reference",
         "path": "Coverage.beneficiary.reference",
         "min": 1
@@ -231,15 +243,10 @@
         "max": "1"
       },
       {
-        "id": "Coverage.payor.extension",
-        "path": "Coverage.payor.extension",
-        "min": 1
-      },
-      {
         "id": "Coverage.payor.extension:abrechnendeIK",
         "path": "Coverage.payor.extension",
         "sliceName": "abrechnendeIK",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "type": [
           {
@@ -253,6 +260,7 @@
       {
         "id": "Coverage.payor.identifier",
         "path": "Coverage.payor.identifier",
+        "min": 1,
         "type": [
           {
             "code": "Identifier",

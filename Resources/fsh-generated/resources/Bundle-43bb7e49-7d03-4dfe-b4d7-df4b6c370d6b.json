@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "9b6ac30d-246d-4eab-af83-544564792088",
+  "id": "43bb7e49-7d03-4dfe-b4d7-df4b6c370d6b",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
@@ -9,7 +9,7 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "9b6ac30d-246d-4eab-af83-544564792088"
+    "value": "urn:uuid:4b06f5c4-dced-4904-b1d2-2e5c64087919"
   },
   "timestamp": "2022-08-29T02:09:37.157+02:00",
   "entry": [
@@ -125,7 +125,7 @@
           {
             "url": "http://fhir.de/StructureDefinition/gkv/versichertenart",
             "valueCoding": {
-              "system": "https://fhir.kbv.de/CodeSystem/74_CS_SFHIR_KBV_VERSICHERTENSTATUS",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS",
               "code": "1"
             }
           },
@@ -145,7 +145,7 @@
           {
             "url": "http://fhir.de/StructureDefinition/gkv/wop",
             "valueCoding": {
-              "system": "https://fhir.kbv.de/CodeSystem/CS_AW_Krankenversicherung_WOP",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP",
               "code": "38",
               "display": "Nordrhein"
             }
@@ -153,15 +153,15 @@
           {
             "url": "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe",
             "valueCoding": {
-              "system": "https://fhir.kbv.de/CodeSystem/74_CS_SFHIR_KBV_PERSONENGRUPPE",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE",
               "code": "06",
-              "display": "BVG (Gesetz über die Versorgung der Opfer des Krieges)"
+              "display": "BVG"
             }
           },
           {
             "url": "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen",
             "valueCoding": {
-              "system": "https://fhir.kbv.de/CodeSystem/74_CS_SFHIR_KBV_DMP",
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP",
               "code": "00"
             }
           },

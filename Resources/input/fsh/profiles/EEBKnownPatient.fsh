@@ -3,6 +3,9 @@ Parent: Patient
 Id: eeb-known-patient
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient"
 * insert Meta
+* meta 1..1
+* meta.profile 1..1
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient" (exactly)
 * identifier 1..1
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "type"
