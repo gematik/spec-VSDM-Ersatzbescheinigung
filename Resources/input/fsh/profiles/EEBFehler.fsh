@@ -35,10 +35,11 @@ Id: eeb-fehler
 // Beispielgenerierung
 Instance: EEBFehlerSampleMessage
 InstanceOf: EEBFehler
-Title:   "eEB Fehlermeldung"
+Title:   "eEB Fehlermeldung KIM"
 Usage: #example
 * id = "3f624395-be34-4fac-9773-d735cb3a1f73"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
+* meta.tag.display = "eEB Fehlermeldung KIM"
 * issue.extension[EEBOperationOutcomeIssueIdentifier].url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBOperationOutcomeIssueIdentifier"
 * issue.extension[EEBOperationOutcomeIssueIdentifier].extension[Message-ID].valueIdentifier.system = "https://gematik.de/fhir/eeb/StructureDefinition/Message_ID_KIM"
 * issue.extension[EEBOperationOutcomeIssueIdentifier].extension[Message-ID].valueIdentifier.value = "96d6a790-afc2-4556-ab73-301e51a7bf30@kim.de"
@@ -48,10 +49,11 @@ Usage: #example
 
 Instance: EEBFehlerSampleBundle
 InstanceOf: EEBFehler
-Title:   "eEB Fehlermeldung"
+Title:   "eEB Fehlermeldung FHIR"
 Usage: #example
 * id = "bbd0690c-6939-4c90-979c-9ab9b1ed1552"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
+* meta.tag.display = "eEB Fehlermeldung FHIR"
 * issue.extension[EEBOperationOutcomeIssueIdentifier].url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBOperationOutcomeIssueIdentifier"
 * issue.extension[EEBOperationOutcomeIssueIdentifier].extension[Bundle-Identifier].valueIdentifier.system = "urn:ietf:rfc:3986"
 * issue.extension[EEBOperationOutcomeIssueIdentifier].extension[Bundle-Identifier].valueIdentifier.value = "urn:uuid:79939e34-c5cc-4da6-ba55-f4bd85832760"
