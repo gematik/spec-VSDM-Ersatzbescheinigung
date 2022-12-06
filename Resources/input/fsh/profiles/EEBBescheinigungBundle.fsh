@@ -59,7 +59,6 @@ Title:   "EEBBescheinigungBundleEgk"
 Usage: #example
 * id = "9b6ac30d-246d-4eab-af83-544564792089"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
-* meta.tag.display = "EEBBescheinigungBundle Egk"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:9b6ac30d-246d-4eab-af83-544564792089"
 * type = #message
@@ -77,7 +76,6 @@ Title:   "EEBBescheinigungBundleNoEgk"
 Usage: #example
 * id = "43bb7e49-7d03-4dfe-b4d7-df4b6c370d6b"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
-* meta.tag.display = "EEBBescheinigungBundle NoEgk"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:4b06f5c4-dced-4904-b1d2-2e5c64087919"
 * type = #message

@@ -39,9 +39,9 @@ InstanceOf: EEBFehlerBundle
 Title:   "EEBFehlerBundle"
 Usage: #example
 * id = "903ce6bc-49b5-455d-9c1c-60b5d77fd14c"
-* meta.profile[+] = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerBundle"
-* identifier[+].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "urn:uuid:0b3061e8-1513-4d6e-8f6d-58ea147e8ca2"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerBundle"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:0b3061e8-1513-4d6e-8f6d-58ea147e8ca2"
 * type = #message
 * timestamp = "2022-09-29T02:29:37.157+02:00"
 * entry[+][EEBFehlerHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/241017e9-46bf-4951-a2ca-cdd5a9eab800"
@@ -54,9 +54,9 @@ InstanceOf: EEBFehlerBundle
 Title:   "EEBFehlerBundle"
 Usage: #example
 * id = "16a15052-3085-4c57-b787-464ecca880f6"
-* meta.profile[+] = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerBundle"
-* identifier[+].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "urn:uuid:0b3061e8-1513-4d6e-8f6d-58ea147e8ca2"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerBundle"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:0b3061e8-1513-4d6e-8f6d-58ea147e8ca2"
 * type = #message
 * timestamp = "2022-09-29T02:29:37.157+02:00"
 * entry[+][EEBFehlerHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/241017e9-46bf-4951-a2ca-cdd5a9eab800"

@@ -4,11 +4,6 @@
   "meta": {
     "profile": [
       "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
-    ],
-    "tag": [
-      {
-        "display": "eEB Fehlermeldung FHIR"
-      }
     ]
   },
   "issue": [
