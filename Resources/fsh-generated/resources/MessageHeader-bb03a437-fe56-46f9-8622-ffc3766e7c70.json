@@ -16,9 +16,6 @@
       "valueBoolean": true
     }
   ],
-  "text": {
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Lorem Ipsum</div>"
-  },
   "eventCoding": {
     "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
     "code": "1.2.276.0.76.4.50",
