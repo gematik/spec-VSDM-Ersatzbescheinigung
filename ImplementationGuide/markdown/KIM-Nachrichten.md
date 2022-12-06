@@ -1,6 +1,3 @@
----
-topic: kimnachrichten
----
 # Inhalt
 
 - [Inhalt](#inhalt)

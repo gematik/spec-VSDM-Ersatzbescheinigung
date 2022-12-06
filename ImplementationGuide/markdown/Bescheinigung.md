@@ -1,6 +1,3 @@
----
-topic: bescheinigung
----
 # Inhalt
 
 Als Ergebnis einer Bescheinigungsanfrage antwortet die Kasse eine KIM-Nachricht, die im Positiv-Fall ein signiertes Bescheinigungsbundle enthält.

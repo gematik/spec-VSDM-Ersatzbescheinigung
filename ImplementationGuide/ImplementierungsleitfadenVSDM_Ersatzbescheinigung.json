@@ -1,0 +1,61 @@
+{
+  "resourceType": "ImplementationGuide",
+  "url": "https://gematik.de/fhir/eeb/ImplementationGuide/VSDM-Ersatzbescheinigung",
+  "name": "Implementierungsleitfaden-VSDM-Ersatzbescheinigung",
+  "status": "draft",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "packageId": "0.0.1",
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
+        }
+      }
+    ],
+    "page": {
+      "nameUrl": "ImplementationGuide/markdown/Einfuehrung.md",
+      "title": "Einführung",
+      "generation": "markdown",
+      "page": [
+        {
+          "nameUrl": "ImplementationGuide/markdown/Anfrage-App.md",
+          "title": "Anfrage (Check-In) via App",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/Anfrage-KIM.md",
+          "title": "Anfrage (durch MFA) via KIM",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/Bescheinigung.md",
+          "title": "Bescheinigung",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/KIM-Nachrichten.md",
+          "title": "KIM-Nachrichtenstruktur",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/ErrorHandling.md",
+          "title": "Error-Handling",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/markdown/ReleaseNotes.md",
+          "title": "Release Notes",
+          "generation": "markdown"
+        },
+        {
+          "generation": "markdown",
+          "nameUrl": "ImplementationGuide/markdown/Terminologie.md",
+          "title": "Terminologie"
+        }
+      ]
+    }
+  }
+}
