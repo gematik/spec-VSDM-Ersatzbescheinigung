@@ -11,19 +11,19 @@ Id: eeb-fehler
 * issue.extension ^slicing.rules = #closed
 * issue.extension contains EEBOperationOutcomeIssueIdentifier named Identifier 1..1 MS
 * issue.severity = #fatal (exactly)
-* issue.severity MS
+* issue.severity
 * issue.severity ^definition = "Angabe der Fehlerkategorie"
 * issue.code MS
-* issue.details 1.. MS
+* issue.details 1..
 * issue.details ^definition = "nähere Beschreibung des Fehlers"
-* issue.details.coding 1..1 MS
+* issue.details.coding 1..1
 * issue.details.coding from EEBErrorcodeVS (required)
-* issue.details.coding.system 1.. MS
+* issue.details.coding.system 1..
 * issue.details.coding.version ..0
-* issue.details.coding.code 1.. MS
+* issue.details.coding.code 1..
 * issue.details.coding.code ^short = "Errorcode"
 * issue.details.coding.code ^definition = "Errorcode"
-* issue.details.coding.display 1.. MS
+* issue.details.coding.display 1..
 * issue.details.coding.display ^short = "Errortext"
 * issue.details.coding.userSelected ..0
 * issue.details.text ..0
