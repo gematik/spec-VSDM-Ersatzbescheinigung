@@ -1,6 +1,6 @@
 {
   "resourceType": "MessageHeader",
-  "id": "bb03a437-fe56-46f9-8622-ffc3766e7c70",
+  "id": "bb03a437-fe56-46f9-8622-ffc3766e7ff0",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
