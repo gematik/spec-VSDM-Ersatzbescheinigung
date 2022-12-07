@@ -58,6 +58,15 @@
       {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
         "min": 2
       },
       {
