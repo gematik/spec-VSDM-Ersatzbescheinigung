@@ -228,6 +228,46 @@
         "max": "0"
       },
       {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient",
+        "path": "Bundle.entry",
+        "sliceName": "KBV_PR_FOR_Patient",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
         "id": "Bundle.entry:Organization",
         "path": "Bundle.entry",
         "sliceName": "Organization",

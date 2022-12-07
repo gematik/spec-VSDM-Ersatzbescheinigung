@@ -81,9 +81,9 @@
         "max": "1"
       },
       {
-        "id": "Patient.identifier:GKV",
+        "id": "Patient.identifier:versichertenId_GKV",
         "path": "Patient.identifier",
-        "sliceName": "GKV",
+        "sliceName": "versichertenId_GKV",
         "min": 0,
         "max": "1",
         "type": [
@@ -96,9 +96,9 @@
         ]
       },
       {
-        "id": "Patient.identifier:PKV",
+        "id": "Patient.identifier:versichertenID_pkv",
         "path": "Patient.identifier",
-        "sliceName": "PKV",
+        "sliceName": "versichertenID_pkv",
         "min": 0,
         "max": "1",
         "type": [

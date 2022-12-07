@@ -8,24 +8,18 @@
   },
   "name": [
     {
+      "use": "official",
       "family": "TK-eAU-Schmidt",
-      "_family": {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-            "valueString": "TK-eAU-Schmidt"
-          }
-        ]
-      },
       "given": [
         "Wolfgang"
       ]
     }
   ],
-  "birthDate": "1991-01-04",
   "address": [
     {
+      "type": "both",
       "postalCode": "40221"
     }
-  ]
+  ],
+  "birthDate": "1991-01-04"
 }
