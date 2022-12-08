@@ -31,7 +31,8 @@
             "system": "https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS",
             "display": "Die übermittelte eEB entspricht nicht den Vorgaben und/oder ist nicht lesbar."
           }
-        ]
+        ],
+        "text": "Hier könnte ihr Stacktrace stehen"
       }
     }
   ]

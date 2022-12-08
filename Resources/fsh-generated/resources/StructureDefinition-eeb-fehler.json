@@ -133,7 +133,7 @@
       {
         "id": "OperationOutcome.issue.details.text",
         "path": "OperationOutcome.issue.details.text",
-        "max": "0"
+        "short": "Errortext für Entwickler"
       },
       {
         "id": "OperationOutcome.issue.diagnostics",
