@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "ff0406a7-b0c2-4426-82fd-8e49e72814da",
+  "id": "cef4c975-753e-4b25-bec3-6549c7360e0a",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
@@ -9,7 +9,7 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:182259bd-1d1d-470a-8744-1dc36ceea0a7"
+    "value": "urn:uuid:186b422f-2bf6-474c-b512-480c6f1f1c7c"
   },
   "timestamp": "2022-08-29T02:10:37.154+02:00",
   "entry": [
@@ -47,31 +47,58 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/Patient/1df9e029-2505-4551-b735-f1c1a1e2d889",
+      "fullUrl": "https://gematik.de/fhir/Patient/16c07b55-c7bd-4e64-86bc-bf00f0435ba7",
       "resource": {
         "resourceType": "Patient",
-        "id": "1df9e029-2505-4551-b735-f1c1a1e2d889",
+        "id": "16c07b55-c7bd-4e64-86bc-bf00f0435ba7",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
           ]
         },
         "name": [
           {
             "use": "official",
-            "family": "TK-eAU-Schmidt",
+            "family": "Meier",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Meier"
+                }
+              ]
+            },
             "given": [
-              "Wolfgang"
+              "Max"
             ]
           }
         ],
         "address": [
           {
             "type": "both",
-            "postalCode": "40221"
+            "line": [
+              "Teststrasse 2"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "2"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Teststrasse"
+                  }
+                ]
+              }
+            ],
+            "city": "Dortmund",
+            "postalCode": "44227",
+            "country": "D"
           }
         ],
-        "birthDate": "1991-01-04"
+        "birthDate": "1970-04-11"
       }
     },
     {

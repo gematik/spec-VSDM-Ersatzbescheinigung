@@ -7,20 +7,23 @@ Id: eeb-unknown-patient
 * meta.profile 1..1
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient" (exactly)
 * name 1..1
-* name only $humanname-de-basis
-* name.family 1..1
-* name.family.extension ^slicing.discriminator.type = #value
-* name.family.extension ^slicing.discriminator.path = "url"
-* name.family.extension ^slicing.rules = #open
-* name.family.extension[namenszusatz] ^sliceName = "namenszusatz"
-* name.family.extension[namenszusatz] ^min = 0
-* name.family.extension[nachname] ^sliceName = "nachname"
-* name.family.extension[vorsatzwort] ^sliceName = "vorsatzwort"
-* name.family.extension[vorsatzwort] ^min = 0
-* name.given 1..1
+* name ^slicing.discriminator.type = #value
+* name ^slicing.discriminator.path = "use"
+* name ^slicing.rules = #closed
+* name contains
+    name 1..1
+* name[name] only $kbv_pr_base_datatype_name
+* name[name].family 1..1
+* name[name].given 1..1
 * birthDate 1..1
 * address 1..1
-* address.postalCode 1..1
+* address ^slicing.discriminator.type = #value
+* address ^slicing.discriminator.path = "type"
+* address ^slicing.rules = #closed
+* address contains
+    Strassenanschrift 1..1
+* address[Strassenanschrift] only $kbv_pr_base_datatype_street_address
+* address[Strassenanschrift].postalCode 1..1
 
 
 // Beispielgenerierung
@@ -30,9 +33,7 @@ Title: "EEBUnknownPatient"
 Usage: #example
 * id = "1df9e029-2505-4551-b735-f1c1a1e2d889"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient"
-* name.family = "TK-eAU-Schmidt"
-* name.family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-* name.family.extension[nachname].valueString = "TK-eAU-Schmidt"
-* name.given = "Wolfgang"
+* name[name].family = "TK-eAU-Schmidt"
+* name[name].given = "Wolfgang"
 * birthDate = "1991-01-04"
-* address.postalCode = "40221"
+* address[Strassenanschrift].postalCode = "40221"

@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "ff0406a7-b0c2-4426-82fd-8e49e72814da",
+  "id": "96120812-a785-4fe3-a1e9-244314fdad9d",
   "meta": {
     "profile": [
       "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
@@ -9,7 +9,7 @@
   "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:182259bd-1d1d-470a-8744-1dc36ceea0a7"
+    "value": "urn:uuid:1407c1c4-392f-4c63-940d-ffea9344e0dc"
   },
   "timestamp": "2022-08-29T02:10:37.154+02:00",
   "entry": [
@@ -47,31 +47,72 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/Patient/1df9e029-2505-4551-b735-f1c1a1e2d889",
+      "fullUrl": "https://gematik.de/fhir/Patient/eb601b0c-96cd-4ac8-8849-fdd7aca89c33",
       "resource": {
         "resourceType": "Patient",
-        "id": "1df9e029-2505-4551-b735-f1c1a1e2d889",
+        "id": "eb601b0c-96cd-4ac8-8849-fdd7aca89c33",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
           ]
         },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "GKV"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "A123456789"
+          }
+        ],
         "name": [
           {
             "use": "official",
-            "family": "TK-eAU-Schmidt",
+            "family": "Königstein",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Königstein"
+                }
+              ]
+            },
             "given": [
-              "Wolfgang"
+              "Ludger"
             ]
           }
         ],
         "address": [
           {
             "type": "both",
-            "postalCode": "40221"
+            "line": [
+              "Blumenweg 14"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "14"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Blumenweg"
+                  }
+                ]
+              }
+            ],
+            "city": "Esens",
+            "postalCode": "26427",
+            "country": "D"
           }
         ],
-        "birthDate": "1991-01-04"
+        "birthDate": "1935-06-22"
       }
     },
     {
