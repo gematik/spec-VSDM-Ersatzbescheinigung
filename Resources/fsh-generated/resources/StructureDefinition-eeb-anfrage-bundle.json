@@ -228,42 +228,42 @@
         "max": "0"
       },
       {
-        "id": "Bundle.entry:KBV_PR_FOR_Patient",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient",
         "path": "Bundle.entry",
-        "sliceName": "KBV_PR_FOR_Patient",
+        "sliceName": "EEBKBV_PR_FOR_Patient",
         "min": 0,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:KBV_PR_FOR_Patient.link",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:KBV_PR_FOR_Patient.resource",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
             "code": "Patient",
             "profile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:KBV_PR_FOR_Patient.search",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:KBV_PR_FOR_Patient.request",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:KBV_PR_FOR_Patient.response",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
