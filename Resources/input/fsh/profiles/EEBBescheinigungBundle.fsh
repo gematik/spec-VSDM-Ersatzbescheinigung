@@ -5,8 +5,6 @@ Id: eeb-bescheinigung-bundle
 * insert Meta
 * meta 1..1
 * meta.profile 1..1
-//Welche Variante ist hier besser?
-//* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle|1.0.0" (exactly)
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle" (exactly)
 * id 1..1
 * identifier 1..

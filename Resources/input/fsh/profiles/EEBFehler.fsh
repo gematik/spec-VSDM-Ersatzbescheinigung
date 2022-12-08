@@ -26,7 +26,8 @@ Id: eeb-fehler
 * issue.details.coding.display 1..
 * issue.details.coding.display ^short = "Errortext"
 * issue.details.coding.userSelected ..0
-* issue.details.text ..0
+* issue.details.text ..1
+* issue.details.text ^short = "Errortext für Entwickler"
 * issue.diagnostics ..0
 * issue.location ..0
 * issue.expression ..0
@@ -45,6 +46,7 @@ Usage: #example
 * issue.severity = #fatal
 * issue.code = #processing
 * issue.details = https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS#101 "Die übermittelte eEB entspricht nicht den Vorgaben und/oder ist nicht lesbar."
+* issue.details.text = "Hier könnte ihr Stacktrace stehen"
 
 Instance: EEBFehlerSampleBundle
 InstanceOf: EEBFehler
