@@ -3,13 +3,11 @@
 - [Inhalt](#inhalt)
   - [Verwendung von KIM](#verwendung-von-kim)
   - [KIM Dienstkennungen](#kim-dienstkennungen)
-  - [KIM Datenübertragung](#kim-datenübertragung)
-  - [KIM Textueller Inhalt](#kim-textueller-inhalt)
-  - [KIM Betreff](#kim-betreff)
-  - [KIM Nachrichten-Header](#kim-nachrichten-header)
-  - [KIM Nachrichten-Anhänge](#kim-nachrichten-anhänge)
-  - [KIM Anfrage Beispielnachricht](#kim-anfrage-beispielnachricht)
-  - [KIM Bescheinigung Beispielnachricht](#kim-bescheinigung-beispielnachricht)
+  - [KIM Anfrage einer Ersatzbescheinigung](#kim-anfrage-einer-ersatzbescheinigung)
+    - [KIM Anfrage Beispielnachricht](#kim-anfrage-beispielnachricht)
+  - [KIM Bescheinigung](#kim-bescheinigung)
+    - [KIM Bescheinigung Beispielnachricht](#kim-bescheinigung-beispielnachricht)
+  - [KIM Fehlernachricht](#kim-fehlernachricht)
 
 ## Verwendung von KIM
 
@@ -29,63 +27,24 @@ Dienstkennungen in KIM-Nachrichten kennzeichnen den transportierten Inhalt für 
 |Anwendungsbeschreibung             |Ersatzverfahren zur Übertragung der Versichertenstammdaten (VSD) von einer Krankenkasse zu einem Leistungserbringer|
 |Dienstkennung & Kurzbeschreibung|**eEB;Anfrage;V1.0** <br /> Nachrichten-Typ: Anfragedaten zum Erhalt von Versichertendaten <br /> Verwendung: Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken <br /><br />  **eEB;Bescheinigung;V1.0** <br /> Nachrichten-Typ: Versichertendaten in verschiedenen Ausprägungen <br /> Verwendung: Krankenkassen <br /> <br /> **eEB;Fehler;V1.0** <br /> Nachrichten-Typ: Fehlermeldung bzgl. der Ermittlung der Daten des Versicherten <br />  Verwendung: Krankenkassen |
 
-## KIM Datenübertragung
+## KIM Anfrage einer Ersatzbescheinigung
 
 Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich als Anhang in der KIM Nachricht übertragen.
 **siehe unten**
 
-## KIM Textueller Inhalt
+|KIM-Header              |Inhalt                                 |verpflichtend|
+|------------------------|---------------------------------------|-------------|
+|X-KIM-Dienstkennung     |eEB;Anfrage;V1.0                       |ja|
+|X-KIM-Sendersystem      |\<PVS-Bezeichnung>;\<Releaseversion>   |ja|
+|X-KIM-Support           |\<Support-Email-Adresse PVS-Hersteller>|nein|
+|Subject                 |\<T/E>EEB0_ANF_\<UUID>                 |ja <br />T/E: *T*estsystem (RU) / *E*chtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)|
+|Content-Type            | application/xml;<br />name="<T/E>EEB0_ANF_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)<br />
+|Content-Transfer-Encoding |base64 |ja|
+|Content-Disposition     |attachment; filename="<T/E>EEB0_ANF_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)|
+|Content-Description     |eEB_ANF                                |ja|
 
-Der textuelle Inhalt der KIM Nachricht kann vom Empfänger ignoriert werden bzw. dem Sender werden keine Vorgaben gemacht, ob
-oder wie diese zu befüllen sind.
-
-Es wird empfohlen, dass die von den Krankenkassen erzeugten Nachrichten einen menschenlesbaren Text enthalten, falls die Systeme des empfangenden Leistungserbringers die Dienstkennung nicht verarbeiten können.
-
-So könnte z.B. in einer Bescheinigung mit Daten stehen "Die versicherte Person \<Vorname Nachname> ist uns bekannt. Im Anhang
-befinden sich die aktuellen Daten des Versicherten aus unserem System". Bei einer Fehlernachricht könnte z.B. der Text enthalten sein
-"Zu den Daten aus ihrer Anfrage XXX vom DD.MM.YYYY konnten wir in unserem System keine Daten ermitteln".
-
-## KIM Betreff
-
-Der Betreff der KIM-Nachricht ist je Dienstkennung folgendermaßen aufzubauen:
-
-|Dienstkennung          |Betreff|
-|-------------          |-------|
-|eEB;Anfrage;V1.0       |<E,T>EEB0_ANF_\<UUID> |
-|eEB;Bescheinigung;V1.0 |<E,T>EEB0_BES_\<UUID> <br /> Hinweis: In der Response-FHIR Nachricht wird der Bundle-Identifier des Requests referenziert (Korrelation) |
-|eEB;Fehler;V1.0        |<E,T>EEB0_FEH_\<UUID> <br /> Hinweis: In der Response-FHIR Nachricht wird der Bundle-Identifier des Requests  referenziert (Korrelation)|
-
-## KIM Nachrichten-Header
-
-Folgende E-Mail-Header sind jeder KIM-Nachricht hinzuzufügen:
-
-|Header                 |Wert                                   |
-|---------------------- |-------------------------------------- |
-|X-KIM-Sendersystem     |\<PVS/KK Bezeichnung>;\<Release-Version> |
-|X-KIM-Ursprungssystem  |\<PVS Bezeichnung>;\<Release-Version>    |
-|X-KIM-Dienstkennung    |\<Dienstkennung>                        |
-|X-KIM-Fehlercode       |\<Code>                                 |
-
-## KIM Nachrichten-Anhänge
-
-Je nach Dienstkennung (Nachrichtentyp) sind folgende Anhänge mit zu übermitteln:
-
-| Dienstkennung          | Anhang                    |
-|------------------------|---------------------------|
-| eEB;Anfrage;V1.0       | <E,T>EEB0_ANF_\<UUID>.xml |
-| eEB;Bescheinigung;V1.0 | <E,T>EEB0_BES_\<UUID>.xml |
-| eEB;Fehler;V1.0        | <E,T>EEB0_FEH_\<UUID>.xml |
-
-Die jeweilige XML-Datei enthält die zum Nachrichtentyp passende FHIR-Ressource.
-Die XML-Datei wird im Anhang in einem base64-codierten MIME-Segment übertragen.
-Das Segment muss die folgenden Metainformationen enthalten:
-
-- Content-Type: application/xml
-- Content-Transfer-Encoding: base64
-- Content-Disposition: attachment
-- Content-Description: KIM\<FHIR-ProfilName>.xml
-
-## KIM Anfrage Beispielnachricht
+Der Anhang enthält die Anfrage als FHIR-Ressource `EEBAnfrageBundle`
+### KIM Anfrage Beispielnachricht
 
     Date: Fri, 4 Nov 2022 13:02:59 +0100 (CET)
     From: ehex-22@arv.kim.telematik-test
@@ -163,7 +122,23 @@ Das Segment muss die folgenden Metainformationen enthalten:
     PC9hZGRyZXNzPjwvT3JnYW5pemF0aW9uPjwvcmVzb3VyY2U+PC9lbnRyeT48L0J1bmRsZT4=
     ------=_Part_6_1831919254.1667563379306--
 
-## KIM Bescheinigung Beispielnachricht
+## KIM Bescheinigung
+
+|Header                  |Inhalt                                 |verpflichtend|
+|------------------------|---------------------------------------|-------------|
+|X-KIM-Dienstkennung     |eEB;Bescheinigung;V1.0                 |ja|
+|X-KIM-Sendersystem      |\<Kasse-Bezeichnung>;\<Releaseversion> |nein|
+|X-KIM-Support           |\<Support-Email-Adresse Kasse> |nein|
+|In-Reply-To             |Message-ID der Anfrage                 |ja - wenn die Anfrage über eine KIM-Nachricht gestellt wurde <br />Andernfalls nein|
+|Subject                 |\<T/E>EEB0_BES_\<UUID>                 |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Type            |application/octet-stream; name="<T/E>EEB0_BES_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Transfer-Encoding |base64 |ja|
+|Content-Disposition     |attachment; filename="<T/E>EEB0_BES_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Description     |eEB_BES |ja|
+
+Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Datei
+
+### KIM Bescheinigung Beispielnachricht
 
     Date: Fri, 4 Nov 2022 13:03:45 +0100 (CET)
     From: tk@dgn.kim.telematik-test
@@ -393,3 +368,20 @@ Das Segment muss die folgenden Metainformationen enthalten:
     Rj4gPDJEMjQ3Q0M4QUU5MTI1MzEwMzJENTI2RjI1MEUxN0NGPl0KL1NpemUgMTAKPj4Kc3RhcnR4
     cmVmCjI0MDkKJSVFT0YK
     ------=_Part_8_1818972272.1667563520030--
+
+## KIM Fehlernachricht
+
+|Header	                   |Inhalt	                                         |verpflichtend|
+|------                    |-------                                          |-------------|
+|X-KIM-Dienstkennung	     |eEB;Fehler;V1.0	                                 |ja|
+|X-KIM-Ursprungssystem	   |\<PVS-Bezeichnung>;\<Releaseversion>             |nein|
+|X-KIM-Sendersystem        |\<Kasse-Bezeichnung>;\<Releaseversion>           |nein|
+|X-KIM-Support             |\<Support-Email-Adresse Kasse>                   |nein|
+|In-Reply-To               |Message-ID der Anfrage                           |ja|
+|Subject                   |\<T/E>EEB0_FEH_<UUID> |ja<br /><br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Type              |application/xml; name="<T/E>EEB0_FEH_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Transfer-Encoding |base64	                                         |ja|
+|Content-Disposition       |attachment; filename="<T/E>EEB0_FEH_<UUID>.xml"  |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Description       |eEB_FEH                                          |ja|
+
+Der Anhang enthält eine Fehlermeldung als FHIR-Ressource `OperationOutcome`
