@@ -1,3 +1,6 @@
+---
+topic: errorhandling
+---
 # Inhalt
 
 Auf dieser Seite wird das Error-Handling vorgestellt.

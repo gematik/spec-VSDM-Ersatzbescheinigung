@@ -1,3 +1,6 @@
+---
+topic: bescheinigung
+---
 # Inhalt
 
 Als Ergebnis einer Bescheinigungsanfrage antwortet die Kasse eine KIM-Nachricht, die im Positiv-Fall ein signiertes Bescheinigungsbundle enthält.
@@ -8,7 +11,7 @@ Als Ergebnis einer Bescheinigungsanfrage antwortet die Kasse eine KIM-Nachricht,
     - [Patient (optional)](#patient-optional)
     - [Coverage](#coverage)
   - [Bescheinigungsbundle (Beispiel)](#bescheinigungsbundle-beispiel)
-  - [Fehlerfälle und Fehlerbundle](#fehlerfälle-und-fehlerbundle)
+  - [Fehlerfälle](#fehlerfälle)
 
 ## Signatur
 
@@ -360,8 +363,8 @@ dGl2dmVydHJhZWdlPjwvVUNfR2VzY2h1ZXR6dGVWZXJzaWNoZXJ0ZW5kYXRlblhNTD4=" />
 </Bundle>
 ```
 
-## Fehlerfälle und Fehlerbundle
+## Fehlerfälle
 
-Im Fall von Fehlern, antwortet die Kasse mit einer Fehler-Nachricht `EEBFehlerBundle`, die in einer FHIR-Ressource `OperationOutcome` StatusCodes und lesbare Fehlertexte in einer Liste von Fehlern `issue`|s transportieren.
+Im Fall von Fehlern, antwortet die Kasse mit einer Fehler-Nachricht `EEBFehler` als FHIR-Ressource `OperationOutcome`. Diese enthält Details mit StatusCodes und lesbaren Fehlertexten in einer Liste von Fehlern als `issue`|s.
 
-{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBFehlerBundle}}
+Details dazu sind auf der Seite {{pagelink:errorhandling}} zusammengestellt.
