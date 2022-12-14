@@ -20,13 +20,13 @@ Bei der Abfrage nach einer Ersatzbescheinigung zu einer Person sind zwei Fälle 
 
 Um der Kasse Hilfe zum Auffinden der versicherten Person in ihrem Bestandssystem zu geben, müssen personenbezogene Informationen in einer FHIR-Ressource `Patient` mitgegeben werden. Ist die Person bereits im PVS als Patient hinterlegt, genügt ein Eintrag in einer `KnownPatient`-Ressource mit Angabe der `kvnr` im `identifier`. Weitere Angaben sind optional.
 
-{{tree:https://gematik.de/fhir/eeb/StructureDefinition/KnownPatient}}
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient}}
 
 ### Patient ist im PVS unbekannt
 
 Ist die zu behandelnde Person als Patient im PVS unbekannt, sind Angaben in einer `UnknownPatient`-Ressource erforderlich. `name`, Ẁohn`address` und `birthDate` sind dabei mindestens anzugeben, um eine Suche in den Systemen der Kasse zu ermöglichen.
 
-{{tree:https://gematik.de/fhir/eeb/StructureDefinition/UnknownPatient}}
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient}}
 
 ## Angaben zur anfragenden Praxis
 
