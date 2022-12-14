@@ -19,7 +19,8 @@ Id: eeb-coverage-basis
     $zuzahlungsstatus named zuzahlungsstatus 0..1 and
     PersoenlicheVersichertendaten named persoenlicheVersichertendaten 0..1 and
     AllgemeineVersicherungsdaten named allgemeineVersicherungsdaten 0..1 and
-    GeschuetzteVersichertendaten named geschuetzteVersichertendaten 0..1
+    GeschuetzteVersichertendaten named geschuetzteVersichertendaten 0..1 and
+    $patient-genderIdentity named genderIdentity 0..1
 * status = #active (exactly)
 * type 1..1
 * type from $versicherungsart-de-basis (required)
