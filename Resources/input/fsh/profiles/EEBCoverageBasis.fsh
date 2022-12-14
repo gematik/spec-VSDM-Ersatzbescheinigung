@@ -20,7 +20,8 @@ Id: eeb-coverage-basis
     PersoenlicheVersichertendaten named persoenlicheVersichertendaten 0..1 and
     AllgemeineVersicherungsdaten named allgemeineVersicherungsdaten 0..1 and
     GeschuetzteVersichertendaten named geschuetzteVersichertendaten 0..1 and
-    $patient-genderIdentity named genderIdentity 0..1
+    $patient-genderIdentity named genderIdentity 0..1 and
+    Selektivvertraege named selektivvertraege 0..1
 * status = #active (exactly)
 * type 1..1
 * type from $versicherungsart-de-basis (required)
