@@ -24,7 +24,7 @@ Diese sind dem VZD-Eintrag der Praxis zu entnehmen und können bspw. über das P
  "telematikID": "2-01-7331073310"
 }
 ```
-<!--- generated at https://qr.io/?gclid=Cj0KCQiAmaibBhCAARIsAKUlaKS6Fc5U2WtQhnpeJi--cek12_qHdHOsKbkwxUp8AlsldhGeEtQCkF8aAo-TEALw_wcB -->
+<!--- generated at https://qr.io/ -->
 {{render:ImplementationGuide-images-qr-sample}}
 
 Diese JSON-Struktur wird dann durch die Kassen-App an das Kassen-Backend übertragen, wo die Kasse die Daten prüft:
