@@ -27,9 +27,9 @@
       "details": {
         "coding": [
           {
-            "code": "101",
+            "code": "311",
             "system": "https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS",
-            "display": "Die übermittelte eEB entspricht nicht den Vorgaben und/oder ist nicht lesbar."
+            "display": "Die Integrität der Nachricht wurde verletzt. Die Prüfung der Signatur hat ergeben, dass die Nachricht manipuliert wurde."
           }
         ],
         "text": "Hier könnte ihr Stacktrace stehen"
