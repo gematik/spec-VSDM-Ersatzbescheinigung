@@ -45,7 +45,7 @@ Usage: #example
 * issue.extension[EEBOperationOutcomeIssueIdentifier].extension[Message-ID].valueIdentifier.value = "96d6a790-afc2-4556-ab73-301e51a7bf30@kim.de"
 * issue.severity = #fatal
 * issue.code = #processing
-* issue.details = https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS#101 "Die übermittelte eEB entspricht nicht den Vorgaben und/oder ist nicht lesbar."
+* issue.details = https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS#311 "Die Integrität der Nachricht wurde verletzt. Die Prüfung der Signatur hat ergeben, dass die Nachricht manipuliert wurde."
 * issue.details.text = "Hier könnte ihr Stacktrace stehen"
 
 Instance: EEBFehlerSampleBundle
