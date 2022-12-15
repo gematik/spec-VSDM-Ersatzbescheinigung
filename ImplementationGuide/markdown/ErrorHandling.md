@@ -13,7 +13,7 @@ die Struktur des OperationOutcome zum Transport der Fehlermeldung vorgestellt.
 
 ## Liste der verwendeten Fehlercodes
 
-Es werden die Fehlercodes aus dem Projekteigenen `ValueSet` https://gematik.de/fhir/eeb/ValueSet/EEBErrorcodeVS verwendet.
+Es werden die Fehlercodes aus dem Projekteigenen `ValueSet` [https://gematik.de/fhir/eeb/ValueSet/EEBErrorcodeVS](https://simplifier.net/vsdm-ersatzbescheinigung/eeberrorcodevs) verwendet.
 In der FHIR-Resource `OperationOutcome` muss in `issue.details.coding`  ein Werte der Tabelle des folgenden Codesystems gemäß Definition des ValueSets verwendet werden.
 
 {{table:https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS}}
@@ -37,3 +37,5 @@ Der OperationOutcome.issue enthält immer eine `Extension` die das fehlerverursa
 Nachfolgend ist eine Beispiel-Fehlermeldung ["Patient hier nicht versichert"](https://simplifier.net/vsdm-ersatzbescheinigung/generated-resources-operationoutcome-bbd0690c-6939-4c90-979c-9ab9b1ed1552) dargestellt. D.h. die Fehlerursache ist im AnfrageBundle zu lokalisieren, anhand der Patienteninformationen kann kein Versicherungsverhältnis im Kassensystem lokalisiert werden.
 
 <iframe src="https://www.simplifier.net/embed/render?id=vsdm-ersatzbescheinigung/generated-resources-operationoutcome-bbd0690c-6939-4c90-979c-9ab9b1ed1552" style="width: 100%;height: 320px;"></iframe>
+
+Ein weiteres Beispiel einer Fehlermeldung im OperationOutcome ist hier zu finden, nach welchem die [KIM-Anfrage-Nachricht fehlerhaft](https://simplifier.net/vsdm-ersatzbescheinigung/generated-resources-operationoutcome-3f624395-be34-4fac-9773-d735cb3a1f73) ist.

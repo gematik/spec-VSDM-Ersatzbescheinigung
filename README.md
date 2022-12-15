@@ -6,13 +6,13 @@ This Repo holds the FHIR Short Hand profile defintions and compiled FHIR Profile
 
 - [VSDM Ersatzbescheinigung FHIR-Profiles](#vsdm-ersatzbescheinigung-fhir-profiles)
   - [Table of Contents](#table-of-contents)
-  - [About <a name = "about"></a>](#about-)
-  - [Getting Started <a name = "getting_started"></a>](#getting-started-)
+  - [About ](#about-)
+  - [Getting Started ](#getting-started-)
     - [Installing](#installing)
 
 ## About <a name = "about"></a>
 
-This Repo contains the fsh files to the published VSDM Ersatzbescheinigung files on <https://simplifier.net/vsdm-ersatzbescheinigung> and a script to validate them.
+This Repo contains the fsh files to the published VSDM Ersatzbescheinigung files on https://simplifier.net/vsdm-ersatzbescheinigung and a script to validate them.
 
 ## Getting Started <a name = "getting_started"></a>
 
