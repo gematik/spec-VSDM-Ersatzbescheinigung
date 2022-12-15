@@ -1,6 +1,6 @@
 # Inhalt
 
-Bei der Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM wird durch das Praxispersonal initiiert. Kann eine zu behandelnde Person keine Gesundheitskarte als Versicherungsnachweis vorlegen, erfolgt eine Anfrage einer Ersatzbescheinigung bei der von der Person benannten oder bereits im System bekannten Krankenkasse. Damit die Kasse die versicherte Person in ihrem Bestandssystem identifizieren kann, müssen der Anfrage personenbezogene Daten mitgegeben werden.
+Die Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM wird durch das Praxispersonal initiiert. Kann eine zu behandelnde Person keine Gesundheitskarte als Versicherungsnachweis vorlegen, erfolgt eine Anfrage einer Ersatzbescheinigung bei der von der Person benannten oder bereits im System bekannten Krankenkasse. Damit die Kasse die versicherte Person in ihrem Bestandssystem identifizieren kann, müssen der Anfrage personenbezogene Daten mitgegeben werden.
 
 - [Inhalt](#inhalt)
   - [Erfassung personenbezogener Daten](#erfassung-personenbezogener-daten)
@@ -14,23 +14,23 @@ Bei der Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM wird durch
 
 ## Erfassung personenbezogener Daten
 
-Bei der Abfrage nach einer Ersatzbescheinigung zu einer Person sind zwei Fälle zu unterscheiden, ist die 10-stellige Krankenversicherungsnummer `KVNR` der Person bekannt oder unbekannt. Da diese `KVNR` für eine Person (i.d.R.) lebenslang gültig ist, ergibt sich die Antwort aus der Frage, ob der Patient in dieser Praxis in der Vergangenheit bereits einmal vorstellig war.
+Bei der Abfrage nach einer Ersatzbescheinigung zu einer Person sind zwei Fälle zu unterscheiden, ist die 10-stellige Krankenversicherungsnummer `KVNR` der Person bekannt oder unbekannt. Da diese `KVNR` für eine Person (i.d.R.) lebenslang gültig ist, ergibt sich die Antwort aus der Frage, ob der Patient in dieser Praxis in der Vergangenheit bereits vorstellig war.
 
 ### Patient ist im PVS bekannt
 
-Um der Kasse Hilfe zum Auffinden der versicherten Person in ihrem Bestandssystem zu geben, müssen personenbezogene Informationen in einer FHIR-Ressource `Patient` mitgegeben werden. Ist die Person bereits im PVS als Patient hinterlegt, genügt ein Eintrag in einer `KnownPatient`-Ressource mit Angabe der `kvnr` im `identifier`. Weitere Angaben sind optional.
+Um der Kasse Hilfe zum Auffinden der versicherten Person in ihrem Bestandssystem zu geben, müssen personenbezogene Informationen in einer FHIR-Ressource `Patient` mitgegeben werden. Ist die Person bereits im PVS als Patient hinterlegt (wurden bspw. in der Vergangenheit Verordnungen/E-Rezepte ausgestellt) können die Daten aus einem Datensatz `KBV_PR_FOR_Patient` 1:1 verwendet werden. Es genügt auch der Eintrag der `kvnr` im `identifier` einer `KnownPatient`-Ressource. Weitere Angaben sind optional.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient}}
 
 ### Patient ist im PVS unbekannt
 
-Ist die zu behandelnde Person als Patient im PVS unbekannt, sind Angaben in einer `UnknownPatient`-Ressource erforderlich. `name`, Ẁohn`address` und `birthDate` sind dabei mindestens anzugeben, um eine Suche in den Systemen der Kasse zu ermöglichen.
+Ist die zu behandelnde Person als Patient im PVS unbekannt, sind Angaben in einer `UnknownPatient`-Ressource erforderlich. `name`, Ẁohn`address` und `birthDate` sind dabei mindestens abzufragen und in der FHIR-Ressource anzugeben, um eine Suche in den Systemen der Kasse zu ermöglichen.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient}}
 
 ## Angaben zur anfragenden Praxis
 
-Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen über die anfragende Praxis, um das Ausstellen von "Blanko"-Bescheinigungen zu unterbinden. Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") mitgegeben werden. Die Angaben zur `address` und `telecom`-Kontaktinformationen für Rückfragen sind dabei mindestens anzugeben.
+Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen über die anfragende Praxis, um das Ausstellen von "Blanko"-Bescheinigungen zu unterbinden. Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") mitgegeben werden. Die Anfrage muss die Betriebsstättennummer `BSNR` oder die KZV Abrechnungsnummer `KZVA` oder die TelematikID enthalten, um die Praxisdaten über den VZD-Eintrag zu verifizieren. Ebenso müssen die Angaben zur `address` und `telecom`-Kontaktinformationen für Rückfragen angegeben sein.
 
 <iframe src="https://www.simplifier.net/embed/render?id=for/kbvprfororganization" style="width: 100%;height: 320px;"></iframe>
 

@@ -10,6 +10,11 @@ participant KIMCM2 as "KIM-Clientmodul\n" #8da5c4
 participant Kasse as "PKV Versicherungsunternehmen\nGKV Krankenkasse" #009a7c
 
 Vers -> LE: "Ich habe meine\nGesundheitskarte\nnicht zur Hand"
+activate LE #ee8360
+LE -> Vers: "Darf ich bei \nihrer Kasse eine \nErsatzbescheinigung anfordern?"
+activate VErs #ee8360
+Vers --> LE: "Ich bin einverstanden"
+deactivate Vers
 LE -> PVS: VSDM Ersatzbescheinigung\nanfordern
 activate PVS #ee8360
 PVS -> PVS: Ggfs. bekannte\nPatientendaten erfassen\n(Name, KVNR, etc.)
@@ -40,6 +45,6 @@ deactivate KIMCM1
 PVS -> PVS: Ggfs. Anlage/Aktualisierung\ndes Patientendatensatzes
 PVS --> LE: :Hinweis zum Vorliegen\nder Ersatzbescheinigung
 deactivate PVS
-LE -> Vers: "Kein Problem,\nihre Kasse hat\nuns soeben eine\nErsatzbescheinigung\ngeschickt"
-
+LE -> Vers: "Ihre Kasse hat\nuns soeben eine\nErsatzbescheinigung\ngeschickt"
+deactivate LE
 @enduml

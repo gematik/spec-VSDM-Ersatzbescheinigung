@@ -28,8 +28,12 @@ Die Resource wird dabei analog zur Bescheinigung in einer KIM-Nachricht transpor
 Im OperationOutcome wird genau ein `issue` mit entsprechenden Details übertragen.
 Die `severity` ist dabei immer `#fatal`, es werden keine Warnungen angegeben.
 Das Feld `issue.details.coding` enthält den von der Kasse angegebenen Fehlercode zur Begründung,
-weshalb keine elektronische Ersatzbescheinigung ausgestellt werden konnte.
+weshalb keine elektronische Ersatzbescheinigung ausgestellt werden konnte, der dem Endnutzer mitgeteilt werden kann.
 
-Nachfolgend ist eine Beispiel-Fehlermeldung ["Patient hier nicht versichert"](https://simplifier.net/vsdm-ersatzbescheinigung/generated-resources-operationoutcome-bbd0690c-6939-4c90-979c-9ab9b1ed1552) dargestellt.
+Der optionale Text in `OperationOutcome.issue.details.text` dient der Unterstützung in der Entwicklung und wird ggfs. nur in Testsystemen gefüllt.
+
+Der OperationOutcome.issue enthält immer eine `Extension` die das fehlerverursachende Element (eEB-Anfrage-Bundle **oder** fehlerhafte KIM-Anfrage-Nachricht) referenziert.
+
+Nachfolgend ist eine Beispiel-Fehlermeldung ["Patient hier nicht versichert"](https://simplifier.net/vsdm-ersatzbescheinigung/generated-resources-operationoutcome-bbd0690c-6939-4c90-979c-9ab9b1ed1552) dargestellt. D.h. die Fehlerursache ist im AnfrageBundle zu lokalisieren, anhand der Patienteninformationen kann kein Versicherungsverhältnis im Kassensystem lokalisiert werden.
 
 <iframe src="https://www.simplifier.net/embed/render?id=vsdm-ersatzbescheinigung/generated-resources-operationoutcome-bbd0690c-6939-4c90-979c-9ab9b1ed1552" style="width: 100%;height: 320px;"></iframe>

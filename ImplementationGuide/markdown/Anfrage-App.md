@@ -5,11 +5,11 @@ Beim Check-In mittels einer Versicherten-App fordert die versicherte Person die 
 - [Inhalt](#inhalt)
   - [Identifikation und Autorisierung der versicherten Person](#identifikation-und-autorisierung-der-versicherten-person)
   - [Aufbau QR-Code](#aufbau-qr-code)
-  - [Anforderung zur Ausstellung einer Ersatzbescheinigung](#anforderung-zur-ausstellung-einer-ersatzbescheinigung)
+  - [Anforderung zur Ausstellung einer Versicherungsbescheinigung](#anforderung-zur-ausstellung-einer-versicherungsbescheinigung)
 
 ## Identifikation und Autorisierung der versicherten Person
 
-Die Identifikation und Autorisierung der versicherten Person zur Anforderung einer Ersatzbescheinigung gegenüber der Kasse ist nicht Gegenstand dieser Betrachtungen und wird zwischen der betreffenden Kasse und der durch sie bereitgestellten App umgesetzt.
+Die Identifikation und Autorisierung der versicherten Person zur Anforderung einer Versicherungsbescheinigung gegenüber der Kasse ist nicht Gegenstand dieser Betrachtungen und wird zwischen der betreffenden Kasse bzw. Versicherungsunternehmen und der durch sie bereitgestellten App umgesetzt.
 
 ## Aufbau QR-Code
 
@@ -20,7 +20,8 @@ Diese sind dem VZD-Eintrag der Praxis zu entnehmen und können bspw. über das P
 {
  "version": "1",
  "displayName": "Meine Praxis Dr. Müller",
- "komLeData": "1.0,praxis-drmueller03@akquinet.kim.telematik"
+ "komLeData": "1.0,praxis-drmueller03@akquinet.kim.telematik",
+ "telematikID": "2-01-7331073310"
 }
 ```
 <!--- generated at https://qr.io/?gclid=Cj0KCQiAmaibBhCAARIsAKUlaKS6Fc5U2WtQhnpeJi--cek12_qHdHOsKbkwxUp8AlsldhGeEtQCkF8aAo-TEALw_wcB -->
@@ -30,14 +31,14 @@ Diese JSON-Struktur wird dann durch die Kassen-App an das Kassen-Backend übertr
 
 - Existiert für diesen `displayName` ein Eintrag im VZD der Telematikinfrastruktur
 - Stimmt die KIM-Adresse aus `komLeData` mit der KIM-Adresse im VZD-Eintrag überein
-- (Optional je Kasse: Passt die im VZD hinterlegte `oid` zu einem Institutionstyp, für den Ersatzbescheinigungen ausgestellt werden)
+- (Optional je Kasse: Passt die im VZD hinterlegte `oid` zu einem Institutionstyp, für den Versicherungsbescheinigungen ausgestellt werden)
 
-## Anforderung zur Ausstellung einer Ersatzbescheinigung
+## Anforderung zur Ausstellung einer Versicherungsbescheinigung
 
 Der Aufbau und Inhalt der Kommunikation zwischen App und Kasse ist nicht Gegenstand dieser Beschreibung.
 Diese Kommunikation wird als `kassenintern` betrachtet.
 
-Nach Bedarf kann die Datenstruktur [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") genutzt werden, um die KIM-Empfängeradresse der Praxis zur Zustellung der Ersatzbescheinigung der Kasse mitzuteilen.
+Nach Bedarf kann die Datenstruktur [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") genutzt werden, um die KIM-Empfängeradresse der Praxis zur Zustellung der Versicherungsbescheinigung des Versicherungsunternehmens bzw. der Kasse mitzuteilen.
 Die KIM-Empfängeradresse würde dabei im Value-Feld des Attributes `telecom` und dem System `email` eingetragen werden.
 
 <iframe src="https://www.simplifier.net/embed/render?id=for/kbvprfororganization" style="width: 100%;height: 320px;"></iframe>
