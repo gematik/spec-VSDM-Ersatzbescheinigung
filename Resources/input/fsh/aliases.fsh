@@ -24,3 +24,4 @@ Alias: $zuzahlungsstatus = http://fhir.de/StructureDefinition/gkv/zuzahlungsstat
 Alias: $identifier-pseudo-kvid = http://fhir.de/StructureDefinition/identifier-pseudo-kvid
 Alias: $AbrechnendeIK = http://fhir.de/StructureDefinition/AbrechnendeIK
 Alias: $identifier-iknr = http://fhir.de/StructureDefinition/identifier-iknr
+Alias: $patient-genderIdentity = http://hl7.org/fhir/StructureDefinition/patient-genderIdentity
