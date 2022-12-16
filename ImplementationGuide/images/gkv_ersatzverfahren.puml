@@ -12,7 +12,7 @@ participant Kasse as "PKV Versicherungsunternehmen\nGKV Krankenkasse" #009a7c
 Vers -> LE: "Ich habe meine\nGesundheitskarte\nnicht zur Hand"
 activate LE #ee8360
 LE -> Vers: "Darf ich bei \nihrer Kasse eine \nErsatzbescheinigung anfordern?"
-activate VErs #ee8360
+activate Vers #ee8360
 Vers --> LE: "Ich bin einverstanden"
 deactivate Vers
 LE -> PVS: VSDM Ersatzbescheinigung\nanfordern
