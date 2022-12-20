@@ -24,7 +24,7 @@ Um der Kasse Hilfe zum Auffinden der versicherten Person in ihrem Bestandssystem
 
 ### Patient ist im PVS unbekannt
 
-Ist die zu behandelnde Person als Patient im PVS unbekannt, sind Angaben in einer `UnknownPatient`-Ressource erforderlich.Der Familienname `name`, mindestens ein Vorname `given`, Die Postleitzahl `postalCode` der Wohn`address` und das `birthDate` sind dabei mindestens abzufragen und in der FHIR-Ressource anzugeben, um eine Suche in den Systemen der Kasse zu ermöglichen.
+Ist die zu behandelnde Person als Patient im PVS unbekannt, sind Angaben in einer `UnknownPatient`-Ressource erforderlich. Der Familienname `name`, mindestens ein Vorname `given`, die Postleitzahl `postalCode`, die Wohn`address` und das `birthDate` sind dabei mindestens abzufragen und in der FHIR-Ressource anzugeben, um eine Suche in den Systemen der Kasse zu ermöglichen.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient}}
 
