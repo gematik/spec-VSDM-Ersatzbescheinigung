@@ -24,7 +24,7 @@ Um der Kasse Hilfe zum Auffinden der versicherten Person in ihrem Bestandssystem
 
 ### Patient ist im PVS unbekannt
 
-Ist die zu behandelnde Person als Patient im PVS unbekannt, sind Angaben in einer `UnknownPatient`-Ressource erforderlich. `name`, Ẁohn`address` und `birthDate` sind dabei mindestens abzufragen und in der FHIR-Ressource anzugeben, um eine Suche in den Systemen der Kasse zu ermöglichen.
+Ist die zu behandelnde Person als Patient im PVS unbekannt, sind Angaben in einer `UnknownPatient`-Ressource erforderlich.Der Familienname `name`, mindestens ein Vorname `given`, Die Postleitzahl `postalCode` der Wohn`address` und das `birthDate` sind dabei mindestens abzufragen und in der FHIR-Ressource anzugeben, um eine Suche in den Systemen der Kasse zu ermöglichen.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient}}
 
@@ -159,7 +159,8 @@ Liegen alle Informationen im PVS vor, werden diese in einer FHIR-Ressource `EEBA
 
 ### Anfrage Header
 
-Der für den genutzten Bundle-Typ `message` verpflichtende Header transportiert neben Metainformationen (Leistungsdatum, Referenz auf die anfragende Praxis `KBV_PR_FOR_Organization`) das Einverständnis des Patienten (`true` = eingewilligt), dass zuvor vom Praxispersonal mündlich eingeholt wurde.
+Der für den genutzten Bundle-Typ `message` verpflichtende Header transportiert neben Metainformationen (Leistungsdatum, Referenz auf die anfragende Praxis `KBV_PR_FOR_Organization`) das Einverständnis des Patienten (`true` = eingewilligt), dass zuvor vom Praxispersonal eingeholt wurde.
+Das Feld `MessageHeader.source.endpoint` ist dabei ein vom FHIR-Standard vorgesehenes Pflichtfeld, das mit einer vom PVS gewählten URL belegt werden kann.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader}}
 

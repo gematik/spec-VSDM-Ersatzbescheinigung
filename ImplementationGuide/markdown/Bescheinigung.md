@@ -257,4 +257,4 @@ Dieses ist innerhalb des oben genannten Signaturcontainers (PKCS#7 enveloping) e
 
 Im Fall von Fehlern, antwortet die Kasse mit einer Fehler-Nachricht `EEBFehler` als FHIR-Ressource `OperationOutcome`. Diese enthält Details mit StatusCodes und lesbaren Fehlertexten in einer Liste von Fehlern als `issue`|s.
 
-Details dazu sind auf der Seite {{pagelink:errorhandling}} zusammengestellt.
+Details dazu sind auf der Seite {{pagelink:ImplementationGuide/markdown/ErrorHandling.md}} zusammengestellt.
