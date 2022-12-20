@@ -159,7 +159,7 @@ Liegen alle Informationen im PVS vor, werden diese in einer FHIR-Ressource `EEBA
 
 ### Anfrage Header
 
-Der für den genutzten Bundle-Typ `message` verpflichtende Header transportiert neben Metainformationen (Leistungsdatum, Referenz auf die anfragende Praxis `KBV_PR_FOR_Organization`) das Einverständnis des Patienten (`true` = eingewilligt), dass zuvor vom Praxispersonal eingeholt wurde.
+Der für den genutzten Bundle-Typ `message` verpflichtende Header transportiert neben Metainformationen (Leistungsdatum, Referenz auf die anfragende Praxis `KBV_PR_FOR_Organization`) das Einverständnis des Patienten (`true` = eingewilligt), das zuvor vom Praxispersonal eingeholt wurde.
 Das Feld `MessageHeader.source.endpoint` ist dabei ein vom FHIR-Standard vorgesehenes Pflichtfeld, das mit einer vom PVS gewählten URL belegt werden kann.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader}}
