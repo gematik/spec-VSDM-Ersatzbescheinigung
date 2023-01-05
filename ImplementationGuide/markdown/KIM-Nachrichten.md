@@ -38,12 +38,13 @@ Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich a
 |X-KIM-Sendersystem      |\<PVS-Bezeichnung>;\<Releaseversion>   |ja|
 |X-KIM-Support           |\<Support-Email-Adresse PVS-Hersteller>|nein|
 |Subject                 |\<T/E>EEB0_ANF_\<UUID>                 |ja <br />T/E: *T*estsystem (RU) / *E*chtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)|
-|Content-Type            | application/xml;<br />name="<T/E>EEB0_ANF_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)<br />
+|Content-Type            | application/octet-stream;<br />name="<T/E>EEB0_ANF_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)<br />
 |Content-Transfer-Encoding |base64 |ja|
-|Content-Disposition     |attachment; filename="<T/E>EEB0_ANF_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)|
+|Content-Disposition     |attachment;<br />filename="<T/E>EEB0_ANF_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)|
 |Content-Description     |eEB_ANF                                |ja|
 
-Der Anhang enthält die Anfrage als FHIR-Ressource `EEBAnfrageBundle`
+Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Datei.
+
 ### KIM Anfrage Beispielnachricht
 
     Date: Fri, 4 Nov 2022 13:02:59 +0100 (CET)
@@ -64,62 +65,15 @@ Der Anhang enthält die Anfrage als FHIR-Ressource `EEBAnfrageBundle`
 
     eEB Anfrage TEEB0_ANF_cb67de30-a309-4f1d-9dd1-6cc73a65a3a6
     ------=_Part_6_1831919254.1667563379306
-    Content-Type: application/xml;
-     name=TEEB0_ANF_cb67de30-a309-4f1d-9dd1-6cc73a65a3a6.xml
+    Content-Type: application/octet-stream;
+     name=TEEB0_ANF_cb67de30-a309-4f1d-9dd1-6cc73a65a3a6.p7s
     Content-Transfer-Encoding: base64
     Content-Disposition: attachment;
-     filename=TEEB0_ANF_cb67de30-a309-4f1d-9dd1-6cc73a65a3a6.xml
+     filename=TEEB0_ANF_cb67de30-a309-4f1d-9dd1-6cc73a65a3a6.p7s
     Content-Description: eEB
 
-    PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48QnVuZGxlIHhtbG5zPSJodHRw
-    Oi8vaGw3Lm9yZy9maGlyIj48aWQgdmFsdWU9ImQ5OGZjZTcyLWNiNGEtNDY3OC04M2UwLTQ5OTNj
-    ODFjZGYwOCIvPjxtZXRhPjxwcm9maWxlIHZhbHVlPSJodHRwczovL2ZoaXIuZWhleC5kZS9TdHJ1
-    Y3R1cmVEZWZpbml0aW9uL0VFQkFuZnJhZ2VCdW5kbGV8MS4wLjAiLz48L21ldGE+PGlkZW50aWZp
-    ZXI+PHN5c3RlbSB2YWx1ZT0idXJuOmlldGY6cmZjOjM5ODYiLz48dmFsdWUgdmFsdWU9ImNiNjdk
-    ZTMwLWEzMDktNGYxZC05ZGQxLTZjYzczYTY1YTNhNiIvPjwvaWRlbnRpZmllcj48dHlwZSB2YWx1
-    ZT0ibWVzc2FnZSIvPjx0aW1lc3RhbXAgdmFsdWU9IjIwMjItMTEtMDRUMTM6MDI6NTcuNTczKzAx
-    OjAwIi8+PGVudHJ5PjxmdWxsVXJsIHZhbHVlPSJodHRwczovL2Vhc3l0aS5laGV4LmRlL2ZoaXIv
-    TWVzc2FnZUhlYWRlci8xNTdhNDUzOC0zYWZiLTQyZGMtOGQ2NS0zNzg2Njg1ZTA5MjciLz48cmVz
-    b3VyY2U+PE1lc3NhZ2VIZWFkZXI+PGlkIHZhbHVlPSIxNTdhNDUzOC0zYWZiLTQyZGMtOGQ2NS0z
-    Nzg2Njg1ZTA5MjciLz48bWV0YT48cHJvZmlsZSB2YWx1ZT0iaHR0cHM6Ly9maGlyLmVoZXguZGUv
-    U3RydWN0dXJlRGVmaW5pdGlvbi9FRUJBbmZyYWdlSGVhZGVyfDEuMC4wIi8+PC9tZXRhPjxleHRl
-    bnNpb24gdXJsPSJodHRwczovL2ZoaXIuZWhleC5kZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL0xlaXN0
-    dW5nc2RhdHVtIj48dmFsdWVEYXRlIHZhbHVlPSIyMDIyLTExLTAzIi8+PC9leHRlbnNpb24+PGV4
-    dGVuc2lvbiB1cmw9Imh0dHBzOi8vZmhpci5laGV4LmRlL1N0cnVjdHVyZURlZmluaXRpb24vRWlu
-    dmVyc3RhZW5kbmlzIj48dmFsdWVCb29sZWFuIHZhbHVlPSJ0cnVlIi8+PC9leHRlbnNpb24+PGV2
-    ZW50VXJpIHZhbHVlPSJodHRwczovL2ZoaXIuZWhleC5kZS9FRUJBbmZyYWdlIi8+PHNlbmRlcj48
-    cmVmZXJlbmNlIHZhbHVlPSJPcmdhbml6YXRpb24vNDY0MWI4NmUtMjBjYy00ZTlkLWFiODctYmFi
-    ZWRhYzY4NjVhIi8+PC9zZW5kZXI+PHNvdXJjZT48ZW5kcG9pbnQgdmFsdWU9Imh0dHBzOi8vZWhl
-    eC5kZS9LSU0iLz48L3NvdXJjZT48L01lc3NhZ2VIZWFkZXI+PC9yZXNvdXJjZT48L2VudHJ5Pjxl
-    bnRyeT48ZnVsbFVybCB2YWx1ZT0iaHR0cHM6Ly9lYXN5dGkuZWhleC5kZS9maGlyL1BhdGllbnQv
-    Y2Y1MDRiZmUtMWJlOS00ZTQ1LTg5Y2ItN2ZiMjczZWEyNzhlIi8+PHJlc291cmNlPjxQYXRpZW50
-    PjxpZCB2YWx1ZT0iY2Y1MDRiZmUtMWJlOS00ZTQ1LTg5Y2ItN2ZiMjczZWEyNzhlIi8+PG1ldGE+
-    PHByb2ZpbGUgdmFsdWU9Imh0dHBzOi8vZmhpci5laGV4LmRlL1N0cnVjdHVyZURlZmluaXRpb24v
-    VW5rbm93blBhdGllbnR8MS4wLjAiLz48L21ldGE+PG5hbWU+PHVzZSB2YWx1ZT0ib2ZmaWNpYWwi
-    Lz48ZmFtaWx5IHZhbHVlPSJUSy1lQVUtTcO8bGxlciI+PGV4dGVuc2lvbiB1cmw9Imh0dHA6Ly9o
-    bDcub3JnL2ZoaXIvU3RydWN0dXJlRGVmaW5pdGlvbi9odW1hbm5hbWUtb3duLW5hbWUiPjx2YWx1
-    ZVN0cmluZyB2YWx1ZT0iVEstZUFVLU3DvGxsZXIiLz48L2V4dGVuc2lvbj48L2ZhbWlseT48Z2l2
-    ZW4gdmFsdWU9IlBldGVyIi8+PC9uYW1lPjxiaXJ0aERhdGUgdmFsdWU9IjE5OTItMDEtMDEiLz48
-    YWRkcmVzcz48cG9zdGFsQ29kZSB2YWx1ZT0iNDAyMjEiLz48L2FkZHJlc3M+PC9QYXRpZW50Pjwv
-    cmVzb3VyY2U+PC9lbnRyeT48ZW50cnk+PGZ1bGxVcmwgdmFsdWU9Imh0dHBzOi8vZWFzeXRpLmVo
-    ZXguZGUvZmhpci9Pcmdhbml6YXRpb24vNDY0MWI4NmUtMjBjYy00ZTlkLWFiODctYmFiZWRhYzY4
-    NjVhIi8+PHJlc291cmNlPjxPcmdhbml6YXRpb24+PGlkIHZhbHVlPSI0NjQxYjg2ZS0yMGNjLTRl
-    OWQtYWI4Ny1iYWJlZGFjNjg2NWEiLz48bWV0YT48cHJvZmlsZSB2YWx1ZT0iaHR0cHM6Ly9maGly
-    Lmtidi5kZS9TdHJ1Y3R1cmVEZWZpbml0aW9uL0tCVl9QUl9GT1JfT3JnYW5pemF0aW9ufDEuMC4z
-    Ii8+PC9tZXRhPjxpZGVudGlmaWVyPjx0eXBlPjxjb2Rpbmc+PHN5c3RlbSB2YWx1ZT0iaHR0cDov
-    L3Rlcm1pbm9sb2d5LmhsNy5vcmcvQ29kZVN5c3RlbS92Mi0wMjAzIi8+PGNvZGUgdmFsdWU9IkJT
-    TlIiLz48L2NvZGluZz48L3R5cGU+PHN5c3RlbSB2YWx1ZT0iaHR0cHM6Ly9maGlyLmtidi5kZS9O
-    YW1pbmdTeXN0ZW0vS0JWX05TX0Jhc2VfQlNOUiIvPjx2YWx1ZSB2YWx1ZT0iMDEyMzQ1Njc4Ii8+
-    PC9pZGVudGlmaWVyPjxuYW1lIHZhbHVlPSJQcmF4aXMgQsO8bG93LUJvZ2VuIi8+PHRlbGVjb20+
-    PHN5c3RlbSB2YWx1ZT0icGhvbmUiLz48dmFsdWUgdmFsdWU9IjAxMjM0NTY3ODkiLz48L3RlbGVj
-    b20+PGFkZHJlc3M+PHR5cGUgdmFsdWU9ImJvdGgiLz48bGluZSB2YWx1ZT0iRW1pbC1GaWdnZS1T
-    dHJhw59lIDIiPjxleHRlbnNpb24gdXJsPSJodHRwOi8vaGw3Lm9yZy9maGlyL1N0cnVjdHVyZURl
-    ZmluaXRpb24vaXNvMjEwOTAtQURYUC1zdHJlZXROYW1lIj48dmFsdWVTdHJpbmcgdmFsdWU9IkVt
-    aWwtRmlnZ2UtU3RyYcOfZSIvPjwvZXh0ZW5zaW9uPjxleHRlbnNpb24gdXJsPSJodHRwOi8vaGw3
-    Lm9yZy9maGlyL1N0cnVjdHVyZURlZmluaXRpb24vaXNvMjEwOTAtQURYUC1ob3VzZU51bWJlciI+
-    PHZhbHVlU3RyaW5nIHZhbHVlPSIyIi8+PC9leHRlbnNpb24+PC9saW5lPjxjaXR5IHZhbHVlPSJE
-    b3J0bXVuZCIvPjxwb3N0YWxDb2RlIHZhbHVlPSI0NDIyNyIvPjxjb3VudHJ5IHZhbHVlPSJEIi8+
-    PC9hZGRyZXNzPjwvT3JnYW5pemF0aW9uPjwvcmVzb3VyY2U+PC9lbnRyeT48L0J1bmRsZT4=
+    TG9yZW0gSW1zcHVtIQpJIGFtIGEgQ0FkRVMgZW52ZWxvcGluZyBzaWdudGF0dXJlIG9mIGEgZUVC
+    LUFuZnJhZ2UgRkhJUi1CdW5kbGUgaW4gWE1MIHJlcHJlc2VudGF0aW9uLg==
     ------=_Part_6_1831919254.1667563379306--
 
 ## KIM Bescheinigung
@@ -131,9 +85,9 @@ Der Anhang enthält die Anfrage als FHIR-Ressource `EEBAnfrageBundle`
 |X-KIM-Support           |\<Support-Email-Adresse Kasse> |nein|
 |In-Reply-To             |Message-ID der Anfrage                 |ja - wenn die Anfrage über eine KIM-Nachricht gestellt wurde <br />Andernfalls nein|
 |Subject                 |\<T/E>EEB0_BES_\<UUID>                 |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
-|Content-Type            |application/octet-stream; name="<T/E>EEB0_BES_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Type            |application/octet-stream;<br />name="<T/E>EEB0_BES_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
 |Content-Transfer-Encoding |base64 |ja|
-|Content-Disposition     |attachment; filename="<T/E>EEB0_BES_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Disposition     |attachment;<br />filename="<T/E>EEB0_BES_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
 |Content-Description     |eEB_BES |ja|
 
 Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Datei
@@ -379,9 +333,9 @@ Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Dat
 |X-KIM-Support             |\<Support-Email-Adresse Kasse>                   |nein|
 |In-Reply-To               |Message-ID der Anfrage                           |ja|
 |Subject                   |\<T/E>EEB0_FEH_<UUID> |ja<br /><br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
-|Content-Type              |application/xml; name="<T/E>EEB0_FEH_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Type              |application/xml;<br />name="<T/E>EEB0_FEH_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
 |Content-Transfer-Encoding |base64	                                         |ja|
-|Content-Disposition       |attachment; filename="<T/E>EEB0_FEH_<UUID>.xml"  |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Disposition       |attachment;<br />filename="<T/E>EEB0_FEH_<UUID>.xml"  |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
 |Content-Description       |eEB_FEH                                          |ja|
 
 Der Anhang enthält eine Fehlermeldung als FHIR-Ressource `OperationOutcome`

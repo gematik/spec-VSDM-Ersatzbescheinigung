@@ -7,6 +7,7 @@ Die Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM wird durch das
     - [Patient ist im PVS bekannt](#patient-ist-im-pvs-bekannt)
     - [Patient ist im PVS unbekannt](#patient-ist-im-pvs-unbekannt)
   - [Angaben zur anfragenden Praxis](#angaben-zur-anfragenden-praxis)
+  - [Signatur der Anfrage](#signatur-der-anfrage)
   - [KIM-Empfängeradresse der Krankenkasse](#kim-empfängeradresse-der-krankenkasse)
   - [Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM](#anforderung-zur-ausstellung-einer-ersatzbescheinigung-via-kim)
     - [Anfrage Header](#anfrage-header)
@@ -30,9 +31,96 @@ Ist die zu behandelnde Person als Patient im PVS unbekannt, sind Angaben in eine
 
 ## Angaben zur anfragenden Praxis
 
-Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen über die anfragende Praxis, um das Ausstellen von "Blanko"-Bescheinigungen zu unterbinden. Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") mitgegeben werden. Die Anfrage muss die Betriebsstättennummer `BSNR` oder die KZV Abrechnungsnummer `KZVA` oder die TelematikID enthalten, um die Praxisdaten über den VZD-Eintrag zu verifizieren. Ebenso müssen die Angaben zur `address` und `telecom`-Kontaktinformationen für Rückfragen angegeben sein.
+Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen über die anfragende Praxis, um das Ausstellen von "Blanko"-Bescheinigungen zu unterbinden. Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") mitgegeben werden.
+Die Anfrage muss immer die `TelematikID` und zusätzlich entweder die Betriebsstättennummer `BSNR`, die KZV Abrechnungsnummer `KZVA` oder das Institutionskennzeichen enthalten, um die Praxisdaten über den VZD-Eintrag zu verifizieren
+Ebenso müssen die Angaben zur `address` und `telecom`-Kontaktinformationen für Rückfragen angegeben sein.
 
 <iframe src="https://www.simplifier.net/embed/render?id=for/kbvprfororganization" style="width: 100%;height: 320px;"></iframe>
+
+## Signatur der Anfrage
+
+Die Anfrage muss mittels der Institutionsidentität (SMC-B OSIG) signiert werden, um der angefragten Kasse einen Authentizitäts-Nachweis bereitzustellen.
+Die Signatur der KIM-Nachricht reicht dabei nicht aus, da diese nur die Integrität des Transports und Authentizität des KIM-Absenders sicherstellt, aber nicht, ob der Absender auch tatsächlich die Institution ist, gegenüber der der Patient eingewilligt hat.
+Daher ist der FHIR-Datensatz als Base64-Codierter PKCS#7-Container bereitzustellen (enveloping Signatur) in die KIM-Anfrage einzubetten.
+
+Mittels der Konnektoroperation `signDocument` wird die Signatur erstellt.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:m0="http://ws.gematik.de/conn/ConnectorCommon/v5.0"
+    xmlns:m1="http://ws.gematik.de/conn/ConnectorContext/v2.0"
+    xmlns:m2="urn:oasis:names:tc:dss:1.0:core:schema"
+    xmlns:m3="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:m4="urn:oasis:names:tc:dss-x:1.0:profiles:SignaturePolicy:schema#">
+    <SOAP-ENV:Body>
+        <m:SignDocument xmlns:m="http://ws.gematik.de/conn/SignatureService/v7.4">
+            <m0:CardHandle>SMCB1</m0:CardHandle>
+            <m1:Context>
+                <m0:MandantId>Mandant1</m0:MandantId>
+                <m0:ClientSystemId>ClientID1</m0:ClientSystemId>
+                <m0:WorkplaceId>Tisch2</m0:WorkplaceId>
+                <m0:UserId>4711</m0:UserId>
+            </m1:Context>
+            <m:TvMode>NONE</m:TvMode>
+            <m:JobNumber>MMD-636</m:JobNumber>
+            <m:SignRequest RequestID="Doc1">
+                <m:OptionalInputs>
+                    <m2:SignatureType>urn:ietf:rfc:5652</m2:SignatureType>
+                    <m:IncludeEContent>true</m:IncludeEContent>
+                </m:OptionalInputs>
+                <m:Document ID="CMS-Doc1" ShortText="eEB-Anfrage">
+                    <m2:Base64Data MimeType="text/plain; charset=utf-8">PEJ1bmRsZSB4bWxucz0iaHR0cDovL2hsNy5vcmcvZmhpciI+CiAgICA8aWQgdmFsdWU9IjFmMzExYzQwLWZlZTktNGIwMy1iMGM0LWMyOWQ0MzJmMjM3MSIgLz4KICAgIDxtZXRhPgogICAgICAgIDwhLS0gZWluIHN0YXJrIGdla/xyenRlcyBCZWlzcGllbCAtLT4KICAgIDwvbWV0YT4KICAgIDxpZGVudGlmaWVyPgogICAgICAgIDxzeXN0ZW0gdmFsdWU9InVybjppZXRmOnJmYzozOTg2IiAvPgogICAgICAgIDx2YWx1ZSB2YWx1ZT0idXJuOnV1aWQ6Nzk5MzllMzQtYzVjYy00ZGE2LWJhNTUtZjRiZDg1ODMyNzYwIiAvPgogICAgPC9pZGVudGlmaWVyPgogICAgPHRpbWVzdGFtcCB2YWx1ZT0iMjAyMi0wOC0yOVQwMjoxMDozNy4xNTQrMDI6MDAiIC8+CjwvQnVuZGxlPg==</m2:Base64Data>
+                </m:Document>
+                <m:IncludeRevocationInfo>true</m:IncludeRevocationInfo>
+            </m:SignRequest>
+        </m:SignDocument>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
+
+Hinweis: Der ShortText darf nicht länger als 30 Zeichen sein.
+
+
+Im Ergebnis liefert der Konnektor eine `SignDocumentResponse`, die anschließend in die zu verschickende KIM-Anfrage eingebettet wird.
+
+```xml
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns8:SignDocumentResponse
+            xmlns:ns10="urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#"
+            xmlns:ns11="http://uri.etsi.org/01903/v1.3.2#"
+            xmlns:ns12="http://uri.etsi.org/02231/v2#"
+            xmlns:ns2="http://ws.gematik.de/conn/EncryptionService/v6.1"
+            xmlns:ns3="http://ws.gematik.de/conn/ConnectorCommon/v5.0"
+            xmlns:ns4="http://ws.gematik.de/conn/ConnectorContext/v2.0"
+            xmlns:ns5="urn:oasis:names:tc:dss:1.0:core:schema"
+            xmlns:ns6="http://www.w3.org/2000/09/xmldsig#"
+            xmlns:ns7="http://ws.gematik.de/tel/error/v2.0"
+            xmlns:ns8="http://ws.gematik.de/conn/SignatureService/v7.4"
+            xmlns:ns9="urn:oasis:names:tc:dss-x:1.0:profiles:SignaturePolicy:schema#">
+            <ns8:SignResponse RequestID="Doc1">
+                <ns3:Status>
+                    <ns3:Result>OK</ns3:Result>
+                </ns3:Status>
+                <ns8:OptionalOutputs>
+                    <ns8:DocumentWithSignature ID="CMS-Doc1" ShortText="eEB-Anfrage">
+                        <ns5:Base64Data MimeType="text/plain; charset=utf-8"/>
+                    </ns8:DocumentWithSignature>
+                </ns8:OptionalOutputs>
+                <ns5:SignatureObject>
+                    <ns5:Base64Signature Type="urn:ietf:rfc:5652">TG9yZW0gSW1zcHVtIQpJIGFtIGEgQ0FkRVMgZW52ZWxvcGluZyBzaWdudGF0dXJlIG9mIGEgZUVCLUFuZnJhZ2UgRkhJUi1CdW5kbGUgaW4gWE1MIHJlcHJlc2VudGF0aW9uLg==</ns5:Base64Signature>
+                </ns5:SignatureObject>
+            </ns8:SignResponse>
+        </ns8:SignDocumentResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
 
 ## KIM-Empfängeradresse der Krankenkasse
 
