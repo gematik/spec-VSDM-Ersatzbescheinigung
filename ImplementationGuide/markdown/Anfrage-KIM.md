@@ -32,8 +32,7 @@ Ist die zu behandelnde Person als Patient im PVS unbekannt, sind Angaben in eine
 ## Angaben zur anfragenden Praxis
 
 Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen über die anfragende Praxis, um das Ausstellen von "Blanko"-Bescheinigungen zu unterbinden. Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") mitgegeben werden.
-Die Anfrage muss entweder die Betriebsstättennummer `BSNR`, die KZV Abrechnungsnummer `KZVA` oder das Institutionskennzeichen sowie die TelematikID enthalten,
-um die Praxisdaten über den VZD-Eintrag zu verifizieren.
+Die Anfrage muss immer die `TelematikID` und zusätzlich entweder die Betriebsstättennummer `BSNR`, die KZV Abrechnungsnummer `KZVA` oder das Institutionskennzeichen enthalten, um die Praxisdaten über den VZD-Eintrag zu verifizieren
 Ebenso müssen die Angaben zur `address` und `telecom`-Kontaktinformationen für Rückfragen angegeben sein.
 
 <iframe src="https://www.simplifier.net/embed/render?id=for/kbvprfororganization" style="width: 100%;height: 320px;"></iframe>
