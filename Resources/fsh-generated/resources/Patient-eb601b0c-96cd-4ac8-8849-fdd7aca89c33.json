@@ -39,27 +39,7 @@
   ],
   "address": [
     {
-      "type": "both",
-      "line": [
-        "Blumenweg 14"
-      ],
-      "_line": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-              "valueString": "14"
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-              "valueString": "Blumenweg"
-            }
-          ]
-        }
-      ],
-      "city": "Esens",
-      "postalCode": "26427",
-      "country": "D"
+      "type": "both"
     }
   ],
   "birthDate": "1935-06-22"
