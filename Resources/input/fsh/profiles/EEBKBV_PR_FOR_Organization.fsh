@@ -4,6 +4,7 @@ Id: eeb-KBV-PR-FOR-Organization
 * ^url = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.1.0"
 * insert Meta
 * obeys Organization-for-EEBAnfrageBundle-1
+* identifier[Telematik-ID] 1..1
 
 Invariant: Organization-for-EEBAnfrageBundle-1
 Description: "Identifier muss die Telematik-ID und entweder das Institutionskennzeichen, die Betriebsstaettennummer oder die KZV-Abrechnungsnummer sein."

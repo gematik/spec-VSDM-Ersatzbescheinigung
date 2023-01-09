@@ -38,6 +38,22 @@
       "display": "Es liegt ein Sonderfall/ eine Ausnahme vor. Bitten Sie den Patienten, mit der Krankenkasse Kontakt aufzunehmen."
     },
     {
+      "code": "201",
+      "display": "Die Signatur der eEB-Anfrage ist nicht gültig, da ein fehlerhaftes Zertifikat verwendet wurde oder nicht alle zur Zertifikatsprüfung erforderlichen Komponenten bzw. Ressourcen zur Verfügung standen."
+    },
+    {
+      "code": "202",
+      "display": "Die Signaturprüfung der eEB-Anfrage hat ergeben, dass die signierten Daten nicht mit den übermittelten Daten der eEB-Anfrage übereinstimmen."
+    },
+    {
+      "code": "210",
+      "display": "Die eEB-Anfrage ist nicht signiert. Die eEB-Anfrage ist ggf. manipuliert worden."
+    },
+    {
+      "code": "211",
+      "display": "Die Signatur der eEB-Anfrage konnte aufgrund eines falschen Formats nicht geprüft werden."
+    },
+    {
       "code": "307",
       "display": "Übermittlung ist fehlgeschlagen. Grund hierfür ist, dass die KIM-Nachricht zwar als eine verschlüsselte KIM-Nachricht gekennzeichnet wurde, aber auf Grund des falschen Formats nicht von der Krankenkasse entschlüsselt werden konnte."
     },
@@ -71,5 +87,5 @@
   ],
   "copyright": "gematik GmbH",
   "caseSensitive": true,
-  "count": 12
+  "count": 16
 }

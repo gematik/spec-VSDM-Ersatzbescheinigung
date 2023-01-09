@@ -50,6 +50,17 @@
             "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.1.0"
           }
         ]
+      },
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "min": 1
+      },
+      {
+        "id": "Organization.identifier:Telematik-ID",
+        "path": "Organization.identifier",
+        "sliceName": "Telematik-ID",
+        "min": 1
       }
     ]
   }
