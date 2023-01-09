@@ -268,42 +268,42 @@
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Organization",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization",
         "path": "Bundle.entry",
-        "sliceName": "Organization",
+        "sliceName": "EEBKBV_PR_FOR_Organization",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:Organization.link",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Organization.resource",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
             "code": "Organization",
             "profile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.1.0"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:Organization.search",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Organization.request",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:Organization.response",
+        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization.response",
         "path": "Bundle.entry.response",
         "max": "0"
       }

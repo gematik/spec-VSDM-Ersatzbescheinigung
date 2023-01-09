@@ -24,7 +24,7 @@ Id: eeb-anfrage-bundle
     EEBKnownPatient 0..1 and
     EEBUnknownPatient 0..1 and
     EEBKBV_PR_FOR_Patient 0..1 and
-    Organization 1..1
+    EEBKBV_PR_FOR_Organization 1..1
 * entry[EEBAnfrageHeader].link ..0
 * entry[EEBAnfrageHeader].resource 1..
 * entry[EEBAnfrageHeader].resource only EEBAnfrageHeader
@@ -49,12 +49,12 @@ Id: eeb-anfrage-bundle
 * entry[EEBKBV_PR_FOR_Patient].search ..0
 * entry[EEBKBV_PR_FOR_Patient].request ..0
 * entry[EEBKBV_PR_FOR_Patient].response ..0
-* entry[Organization].link ..0
-* entry[Organization].resource 1..
-* entry[Organization].resource only KBV_PR_FOR_Organization
-* entry[Organization].search ..0
-* entry[Organization].request ..0
-* entry[Organization].response ..0
+* entry[EEBKBV_PR_FOR_Organization].link ..0
+* entry[EEBKBV_PR_FOR_Organization].resource 1..
+* entry[EEBKBV_PR_FOR_Organization].resource only EEBKBV_PR_FOR_Organization
+* entry[EEBKBV_PR_FOR_Organization].search ..0
+* entry[EEBKBV_PR_FOR_Organization].request ..0
+* entry[EEBKBV_PR_FOR_Organization].response ..0
 
 
 // Beispielgenerierung
@@ -72,8 +72,8 @@ Usage: #example
 * entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample
 * entry[+][EEBKnownPatient].fullUrl = "https://gematik.de/fhir/Patient/b8f0f69c-af1a-480b-8abf-44ab11aa23c5"
 * entry[=][EEBKnownPatient].resource = EEBKnownPatientSample
-* entry[+][Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
-* entry[=][Organization].resource = KBV_PR_FOR_OrganizationSample
+* entry[+][EEBKBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* entry[=][EEBKBV_PR_FOR_Organization].resource = EEBKBV_PR_FOR_OrganizationSample
 
 Instance: EEBAnfrageBundleSampleKnownKBV_PR_FOR_Patient
 InstanceOf: EEBAnfrageBundle
@@ -89,8 +89,8 @@ Usage: #example
 * entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample
 * entry[+][EEBKBV_PR_FOR_Patient].fullUrl = "https://gematik.de/fhir/Patient/eb601b0c-96cd-4ac8-8849-fdd7aca89c33"
 * entry[=][EEBKBV_PR_FOR_Patient].resource = EEBKBV_PR_FOR_PatientKnownSample
-* entry[+][Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
-* entry[=][Organization].resource = KBV_PR_FOR_OrganizationSample
+* entry[+][EEBKBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* entry[=][EEBKBV_PR_FOR_Organization].resource = EEBKBV_PR_FOR_OrganizationSample
 
 
 Instance: EEBAnfrageBundleSampleUnknownPatient
@@ -107,8 +107,8 @@ Usage: #example
 * entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample
 * entry[+][EEBKnownPatient].fullUrl = "https://gematik.de/fhir/Patient/1df9e029-2505-4551-b735-f1c1a1e2d889"
 * entry[=][EEBKnownPatient].resource = EEBUnknownPatientSample
-* entry[+][Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
-* entry[=][Organization].resource = KBV_PR_FOR_OrganizationSample
+* entry[+][EEBKBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* entry[=][EEBKBV_PR_FOR_Organization].resource = EEBKBV_PR_FOR_OrganizationSample
 
 Instance: EEBAnfrageBundleSampleUnknownKBV_PR_FOR_Patient
 InstanceOf: EEBAnfrageBundle
@@ -124,5 +124,5 @@ Usage: #example
 * entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample
 * entry[+][EEBKBV_PR_FOR_Patient].fullUrl = "https://gematik.de/fhir/Patient/16c07b55-c7bd-4e64-86bc-bf00f0435ba7"
 * entry[=][EEBKBV_PR_FOR_Patient].resource = EEBKBV_PR_FOR_PatientUnknownSample
-* entry[+][Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
-* entry[=][Organization].resource = KBV_PR_FOR_OrganizationSample
+* entry[+][EEBKBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* entry[=][EEBKBV_PR_FOR_Organization].resource = EEBKBV_PR_FOR_OrganizationSample
