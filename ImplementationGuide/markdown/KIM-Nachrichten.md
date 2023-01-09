@@ -38,9 +38,9 @@ Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich a
 |X-KIM-Sendersystem      |\<PVS-Bezeichnung>;\<Releaseversion>   |ja|
 |X-KIM-Support           |\<Support-Email-Adresse PVS-Hersteller>|nein|
 |Subject                 |\<T/E>EEB0_ANF_\<UUID>                 |ja <br />T/E: *T*estsystem (RU) / *E*chtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)|
-|Content-Type            | application/octet-stream;<br />name="<T/E>EEB0_ANF_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)<br />
+|Content-Type            | application/octet-stream;<br />name="<T/E>EEB0_ANF_\<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)<br />
 |Content-Transfer-Encoding |base64 |ja|
-|Content-Disposition     |attachment;<br />filename="<T/E>EEB0_ANF_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)|
+|Content-Disposition     |attachment;<br />filename="<T/E>EEB0_ANF_\<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)|
 |Content-Description     |eEB_ANF                                |ja|
 
 Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Datei.
@@ -260,9 +260,9 @@ Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Date
 |X-KIM-Support           |\<Support-Email-Adresse Kasse> |nein|
 |In-Reply-To             |Message-ID der Anfrage                 |ja - wenn die Anfrage über eine KIM-Nachricht gestellt wurde <br />Andernfalls nein|
 |Subject                 |\<T/E>EEB0_BES_\<UUID>                 |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
-|Content-Type            |application/octet-stream;<br />name="<T/E>EEB0_BES_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Type            |application/octet-stream;<br />name="<T/E>EEB0_BES_\<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
 |Content-Transfer-Encoding |base64 |ja|
-|Content-Disposition     |attachment;<br />filename="<T/E>EEB0_BES_<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Disposition     |attachment;<br />filename="<T/E>EEB0_BES_\<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
 |Content-Description     |eEB_BES |ja|
 
 Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Datei

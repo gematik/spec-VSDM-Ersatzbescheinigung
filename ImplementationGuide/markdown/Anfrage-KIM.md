@@ -73,7 +73,13 @@ Mittels der Konnektoroperation `signDocument` wird die Signatur erstellt.
                     <m:IncludeEContent>true</m:IncludeEContent>
                 </m:OptionalInputs>
                 <m:Document ID="CMS-Doc1" ShortText="eEB-Anfrage">
-                    <m2:Base64Data MimeType="text/plain; charset=utf-8">PEJ1bmRsZSB4bWxucz0iaHR0cDovL2hsNy5vcmcvZmhpciI+CiAgICA8aWQgdmFsdWU9IjFmMzExYzQwLWZlZTktNGIwMy1iMGM0LWMyOWQ0MzJmMjM3MSIgLz4KICAgIDxtZXRhPgogICAgICAgIDwhLS0gZWluIHN0YXJrIGdla/xyenRlcyBCZWlzcGllbCAtLT4KICAgIDwvbWV0YT4KICAgIDxpZGVudGlmaWVyPgogICAgICAgIDxzeXN0ZW0gdmFsdWU9InVybjppZXRmOnJmYzozOTg2IiAvPgogICAgICAgIDx2YWx1ZSB2YWx1ZT0idXJuOnV1aWQ6Nzk5MzllMzQtYzVjYy00ZGE2LWJhNTUtZjRiZDg1ODMyNzYwIiAvPgogICAgPC9pZGVudGlmaWVyPgogICAgPHRpbWVzdGFtcCB2YWx1ZT0iMjAyMi0wOC0yOVQwMjoxMDozNy4xNTQrMDI6MDAiIC8+CjwvQnVuZGxlPg==</m2:Base64Data>
+                    <m2:Base64Data MimeType="text/plain; charset=utf-8">PEJ1bmRsZSB4bWxucz0iaHR0cDovL2hsNy5vcmcvZmhpciI
+                    +CiAgICA8aWQgdmFsdWU9IjFmMzExYzQwLWZlZTktNGIwMy1iMGM0LWMyOWQ0MzJmMjM3MSIgLz4K
+                    ICAgIDxtZXRhPgogICAgICAgIDwhLS0gZWluIHN0YXJrIGdla/xyenRlcyBCZWlzcGllbCAtLT4KI
+                    CAgIDwvbWV0YT4KICAgIDxpZGVudGlmaWVyPgogICAgICAgIDxzeXN0ZW0gdmFsdWU9InVybjppZX
+                    RmOnJmYzozOTg2IiAvPgogICAgICAgIDx2YWx1ZSB2YWx1ZT0idXJuOnV1aWQ6Nzk5MzllMzQtYzV
+                    jYy00ZGE2LWJhNTUtZjRiZDg1ODMyNzYwIiAvPgogICAgPC9pZGVudGlmaWVyPgogICAgPHRpbWVz
+                    dGFtcCB2YWx1ZT0iMjAyMi0wOC0yOVQwMjoxMDozNy4xNTQrMDI6MDAiIC8+CjwvQnVuZGxlPg==</m2:Base64Data>
                 </m:Document>
                 <m:IncludeRevocationInfo>true</m:IncludeRevocationInfo>
             </m:SignRequest>
@@ -114,7 +120,8 @@ Im Ergebnis liefert der Konnektor eine `SignDocumentResponse`, die anschließend
                     </ns8:DocumentWithSignature>
                 </ns8:OptionalOutputs>
                 <ns5:SignatureObject>
-                    <ns5:Base64Signature Type="urn:ietf:rfc:5652">TG9yZW0gSW1zcHVtIQpJIGFtIGEgQ0FkRVMgZW52ZWxvcGluZyBzaWdudGF0dXJlIG9mIGEgZUVCLUFuZnJhZ2UgRkhJUi1CdW5kbGUgaW4gWE1MIHJlcHJlc2VudGF0aW9uLg==</ns5:Base64Signature>
+                    <ns5:Base64Signature Type="urn:ietf:rfc:5652">TG9yZW0gSW1zcHVtIQpJIGFtIGEgQ0FkRVMgZW52ZWxvcGluZyBzaWdudGF0dXJlIG9mIGEgZUVCL
+                    UFuZnJhZ2UgRkhJUi1CdW5kbGUgaW4gWE1MIHJlcHJlc2VudGF0aW9uLg==</ns5:Base64Signature>
                 </ns5:SignatureObject>
             </ns8:SignResponse>
         </ns8:SignDocumentResponse>
