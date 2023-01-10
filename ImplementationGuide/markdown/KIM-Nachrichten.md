@@ -269,7 +269,7 @@ Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Dat
 
 ### KIM Bescheinigung Beispielnachricht
 
-```text
+```xml
     Date: Fri, 4 Nov 2022 13:03:45 +0100 (CET)
     From: tk@dgn.kim.telematik-test
     To: ehex-22@arv.kim.telematik-test
