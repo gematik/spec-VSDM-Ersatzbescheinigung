@@ -509,10 +509,10 @@ Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Dat
 |X-KIM-Sendersystem        |\<Kasse-Bezeichnung>;\<Releaseversion>           |nein|
 |X-KIM-Support             |\<Support-Email-Adresse Kasse>                   |nein|
 |In-Reply-To               |Message-ID der Anfrage                           |ja|
-|Subject                   |\<T/E>EEB0_FEH_<UUID> |ja<br /><br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
-|Content-Type              |application/xml;<br />name="<T/E>EEB0_FEH_<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Subject                   |\<T/E>EEB0_FEH_\<UUID> |ja<br /><br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Type              |application/xml;<br />name="<T/E>EEB0_FEH_\<UUID>.xml" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
 |Content-Transfer-Encoding |base64	                                         |ja|
-|Content-Disposition       |attachment;<br />filename="<T/E>EEB0_FEH_<UUID>.xml"  |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
+|Content-Disposition       |attachment;<br />filename="<T/E>EEB0_FEH_\<UUID>.xml"  |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
 |Content-Description       |eEB_FEH                                          |ja|
 
 Der Anhang enthält eine Fehlermeldung als FHIR-Ressource `OperationOutcome`
