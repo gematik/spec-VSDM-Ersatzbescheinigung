@@ -24,7 +24,7 @@ Id: eeb-anfrage-bundle
     EEBKnownPatient 0..1 and
     EEBUnknownPatient 0..1 and
     EEBKBV_PR_FOR_Patient 0..1 and
-    EEBKBV_PR_FOR_Organization 1..1
+    KBV_PR_FOR_Organization 1..1
 * entry[EEBAnfrageHeader].link ..0
 * entry[EEBAnfrageHeader].resource 1..
 * entry[EEBAnfrageHeader].resource only EEBAnfrageHeader
@@ -49,15 +49,54 @@ Id: eeb-anfrage-bundle
 * entry[EEBKBV_PR_FOR_Patient].search ..0
 * entry[EEBKBV_PR_FOR_Patient].request ..0
 * entry[EEBKBV_PR_FOR_Patient].response ..0
-* entry[EEBKBV_PR_FOR_Organization].link ..0
-* entry[EEBKBV_PR_FOR_Organization].resource 1..
-* entry[EEBKBV_PR_FOR_Organization].resource only EEBKBV_PR_FOR_Organization
-* entry[EEBKBV_PR_FOR_Organization].search ..0
-* entry[EEBKBV_PR_FOR_Organization].request ..0
-* entry[EEBKBV_PR_FOR_Organization].response ..0
+* entry[KBV_PR_FOR_Organization].link ..0
+* entry[KBV_PR_FOR_Organization].resource 1..
+* entry[KBV_PR_FOR_Organization].resource only KBV_PR_FOR_Organization
+* entry[KBV_PR_FOR_Organization].search ..0
+* entry[KBV_PR_FOR_Organization].request ..0
+* entry[KBV_PR_FOR_Organization].response ..0
+* obeys Organization-for-EEBAnfrageBundle-1
+
+
+Invariant: Organization-for-EEBAnfrageBundle-1
+Description: "Identifier muss die Telematik-ID und entweder das Institutionskennzeichen, die Betriebsstättennummer oder die KZV-Abrechnungsnummer sein."
+Severity: #error
+Expression: "entry.where(resource is Organization).resource.identifier.where(type.coding.code='PRN').exists() and (entry.where(resource is Organization).resource.identifier.where(type.coding.code='BSNR').exists() or entry.where(resource is Organization).resource.identifier.where(type.coding.code='XX').exists() or entry.where(resource is Organization).resource.identifier.where(type.coding.code='KZVA').exists())"
+
+
 
 
 // Beispielgenerierung
+Instance: KBV_PR_FOR_OrganizationSample
+InstanceOf: KBV_PR_FOR_Organization
+Title: "Organization for EEBAnfrageBundle"
+Usage: #example
+* id = "fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.1.0"
+* identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
+* identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
+* identifier[Telematik-ID].value = "123456"
+* identifier[Betriebsstaettennummer].type = http://terminology.hl7.org/CodeSystem/v2-0203#BSNR
+* identifier[Betriebsstaettennummer].system = "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"
+* identifier[Betriebsstaettennummer].value = "123456789"
+// To test invariant
+// * identifier[Standortnummer].type = https://fhir.kbv.de/CodeSystem/KBV_CS_Base_identifier_type#KSN
+// * identifier[Standortnummer].system = "http://fhir.de/sid/dkgev/standortnummer"
+// * identifier[Standortnummer].value = "123456789"
+* name = "Praxis Test"
+* telecom[telefon].system = #phone
+* telecom[telefon].value = "0123456789"
+* address[Strassenanschrift].type = #both
+* address[Strassenanschrift].line = "Testweg 10"
+* address[Strassenanschrift].line.extension[0][Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+* address[Strassenanschrift].line.extension[=][Hausnummer].valueString = "10"
+* address[Strassenanschrift].line.extension[+][Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
+* address[Strassenanschrift].line.extension[=][Strasse].valueString = "Testweg"
+* address[Strassenanschrift].city = "Berlin"
+* address[Strassenanschrift].postalCode = "10115"
+* address[Strassenanschrift].country = "D"
+
+
 Instance: EEBAnfrageBundleSampleKnownPatient
 InstanceOf: EEBAnfrageBundle
 Title:   "EEBAnfrageBundleKnownPatient"
@@ -72,8 +111,8 @@ Usage: #example
 * entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample
 * entry[+][EEBKnownPatient].fullUrl = "https://gematik.de/fhir/Patient/b8f0f69c-af1a-480b-8abf-44ab11aa23c5"
 * entry[=][EEBKnownPatient].resource = EEBKnownPatientSample
-* entry[+][EEBKBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
-* entry[=][EEBKBV_PR_FOR_Organization].resource = EEBKBV_PR_FOR_OrganizationSample
+* entry[+][KBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* entry[=][KBV_PR_FOR_Organization].resource = KBV_PR_FOR_OrganizationSample
 
 Instance: EEBAnfrageBundleSampleKnownKBV_PR_FOR_Patient
 InstanceOf: EEBAnfrageBundle
@@ -89,8 +128,8 @@ Usage: #example
 * entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample
 * entry[+][EEBKBV_PR_FOR_Patient].fullUrl = "https://gematik.de/fhir/Patient/eb601b0c-96cd-4ac8-8849-fdd7aca89c33"
 * entry[=][EEBKBV_PR_FOR_Patient].resource = EEBKBV_PR_FOR_PatientKnownSample
-* entry[+][EEBKBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
-* entry[=][EEBKBV_PR_FOR_Organization].resource = EEBKBV_PR_FOR_OrganizationSample
+* entry[+][KBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* entry[=][KBV_PR_FOR_Organization].resource = KBV_PR_FOR_OrganizationSample
 
 
 Instance: EEBAnfrageBundleSampleUnknownPatient
@@ -107,8 +146,8 @@ Usage: #example
 * entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample
 * entry[+][EEBKnownPatient].fullUrl = "https://gematik.de/fhir/Patient/1df9e029-2505-4551-b735-f1c1a1e2d889"
 * entry[=][EEBKnownPatient].resource = EEBUnknownPatientSample
-* entry[+][EEBKBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
-* entry[=][EEBKBV_PR_FOR_Organization].resource = EEBKBV_PR_FOR_OrganizationSample
+* entry[+][KBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* entry[=][KBV_PR_FOR_Organization].resource = KBV_PR_FOR_OrganizationSample
 
 Instance: EEBAnfrageBundleSampleUnknownKBV_PR_FOR_Patient
 InstanceOf: EEBAnfrageBundle
@@ -124,5 +163,5 @@ Usage: #example
 * entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample
 * entry[+][EEBKBV_PR_FOR_Patient].fullUrl = "https://gematik.de/fhir/Patient/16c07b55-c7bd-4e64-86bc-bf00f0435ba7"
 * entry[=][EEBKBV_PR_FOR_Patient].resource = EEBKBV_PR_FOR_PatientUnknownSample
-* entry[+][EEBKBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
-* entry[=][EEBKBV_PR_FOR_Organization].resource = EEBKBV_PR_FOR_OrganizationSample
+* entry[+][KBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* entry[=][KBV_PR_FOR_Organization].resource = KBV_PR_FOR_OrganizationSample
