@@ -49,6 +49,26 @@
   "differential": {
     "element": [
       {
+        "id": "Bundle",
+        "path": "Bundle",
+        "constraint": [
+          {
+            "key": "-eeb-angabeOrganizationIdentifier",
+            "severity": "error",
+            "human": "Als Identifier im Organization-Profil muss die Telematik-ID und entweder das Institutionskennzeichen, die Betriebsstättennummer oder die KZV-Abrechnungsnummer angegeben werden.",
+            "expression": "entry.where(resource is Organization).resource.identifier.type.coding.where(code='PRN').exists() and (entry.where(resource is Organization).resource.identifier.type.coding.where(code='BSNR' or code='XX' or code='KZVA').exists())",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+          },
+          {
+            "key": "-eeb-angabePatientIdentifier",
+            "severity": "error",
+            "human": "Im Patient-Profil muss entweder ein Identifier (GKV oder PKV) oder folgende Informationen (Name, Vorname, Geburtsdatum und Postleitzahl) angegeben werden.",
+            "expression": "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists() or entry.where(resource is Patient).resource.where(name.family and name.given and birthDate and address.postalCode).exists()",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+          }
+        ]
+      },
+      {
         "id": "Bundle.id",
         "path": "Bundle.id",
         "min": 1
@@ -228,82 +248,82 @@
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient",
+        "id": "Bundle.entry:KBV_PR_FOR_Patient",
         "path": "Bundle.entry",
-        "sliceName": "EEBKBV_PR_FOR_Patient",
+        "sliceName": "KBV_PR_FOR_Patient",
         "min": 0,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient.link",
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient.resource",
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
             "code": "Patient",
             "profile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient.search",
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient.request",
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Patient.response",
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization",
+        "id": "Bundle.entry:KBV_PR_FOR_Organization",
         "path": "Bundle.entry",
-        "sliceName": "EEBKBV_PR_FOR_Organization",
+        "sliceName": "KBV_PR_FOR_Organization",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization.link",
+        "id": "Bundle.entry:KBV_PR_FOR_Organization.link",
         "path": "Bundle.entry.link",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization.resource",
+        "id": "Bundle.entry:KBV_PR_FOR_Organization.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
           {
             "code": "Organization",
             "profile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.1.0"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
             ]
           }
         ]
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization.search",
+        "id": "Bundle.entry:KBV_PR_FOR_Organization.search",
         "path": "Bundle.entry.search",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization.request",
+        "id": "Bundle.entry:KBV_PR_FOR_Organization.request",
         "path": "Bundle.entry.request",
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBKBV_PR_FOR_Organization.response",
+        "id": "Bundle.entry:KBV_PR_FOR_Organization.response",
         "path": "Bundle.entry.response",
         "max": "0"
       }
