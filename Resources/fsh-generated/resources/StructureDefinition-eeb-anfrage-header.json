@@ -58,6 +58,15 @@
       {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
         "min": 2
       },
       {
@@ -121,7 +130,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.1.0"
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
             ]
           }
         ]
