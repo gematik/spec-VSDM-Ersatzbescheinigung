@@ -48,6 +48,20 @@ Id: eeb-bescheinigung-bundle
 * entry[EEBCoverageNoEgk].search ..0
 * entry[EEBCoverageNoEgk].request ..0
 * entry[EEBCoverageNoEgk].response ..0
+* obeys -eeb-angabeVersichertenID
+* obeys -eeb-angabePatientPLZ
+
+
+Invariant: -eeb-angabeVersichertenID
+Description: "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe bei Verwendung der Ressource vom Typ EEBCoverageEgk."
+Severity: #error
+Expression: "entry.where(resource is Coverage).resource.meta.where(profile='https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk').exists() implies entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()"
+
+
+Invariant: -eeb-angabePatientPLZ
+Description: "In der Ressource vom Typ Patient ist keine Postleitzahl vorhanden, diese ist aber eine Pflichtangabe."
+Severity: #error
+Expression: "entry.where(resource is Patient).resource.address.postalCode.exists()"
 
 
 // Beispielgenerierung
@@ -82,5 +96,5 @@ Usage: #example
 * entry[=][EEBBescheinigungHeader].resource = EEBBescheinigungHeaderSample
 * entry[+][KBVFORPatient].fullUrl = "https://gematik.de/fhir/Patient/d62d9d82-2396-4c64-a656-2e67b5761523"
 * entry[=][KBVFORPatient].resource = KBV_PR_FOR_PatientNoEgkSample
-* entry[+][EEBCoverageEgk].fullUrl = "https://gematik.de/fhir/Coverage/e9553161ca3c-413a-48fe-b908-04159be709fb"
-* entry[=][EEBCoverageEgk].resource = EEBCoverageNoEgkSample
+* entry[+][EEBCoverageNoEgk].fullUrl = "https://gematik.de/fhir/Coverage/e9553161ca3c-413a-48fe-b908-04159be709fb"
+* entry[=][EEBCoverageNoEgk].resource = EEBCoverageNoEgkSample
