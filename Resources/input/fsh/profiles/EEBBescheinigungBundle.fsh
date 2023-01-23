@@ -53,9 +53,9 @@ Id: eeb-bescheinigung-bundle
 
 
 Invariant: -eeb-angabeVersichertenID
-Description: "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe bei Verwendung der Ressource vom Typ EEBCoverageEgk."
+Description: "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe."
 Severity: #error
-Expression: "entry.where(resource is Coverage).resource.meta.where(profile='https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk').exists() implies entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()"
+Expression: "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()"
 
 
 Invariant: -eeb-angabePatientPLZ

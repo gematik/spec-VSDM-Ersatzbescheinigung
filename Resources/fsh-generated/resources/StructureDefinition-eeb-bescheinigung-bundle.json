@@ -55,8 +55,8 @@
           {
             "key": "-eeb-angabeVersichertenID",
             "severity": "error",
-            "human": "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe bei Verwendung der Ressource vom Typ EEBCoverageEgk.",
-            "expression": "entry.where(resource is Coverage).resource.meta.where(profile='https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk').exists() implies entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()",
+            "human": "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe.",
+            "expression": "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
           },
           {
