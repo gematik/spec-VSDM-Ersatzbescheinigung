@@ -49,6 +49,26 @@
   "differential": {
     "element": [
       {
+        "id": "Bundle",
+        "path": "Bundle",
+        "constraint": [
+          {
+            "key": "-eeb-angabeVersichertenID",
+            "severity": "error",
+            "human": "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe.",
+            "expression": "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+          },
+          {
+            "key": "-eeb-angabePatientPLZ",
+            "severity": "error",
+            "human": "In der Ressource vom Typ Patient ist keine Postleitzahl vorhanden, diese ist aber eine Pflichtangabe.",
+            "expression": "entry.where(resource is Patient).resource.address.postalCode.exists()",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+          }
+        ]
+      },
+      {
         "id": "Bundle.id",
         "path": "Bundle.id",
         "min": 1
