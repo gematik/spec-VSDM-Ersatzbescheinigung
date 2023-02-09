@@ -8,10 +8,14 @@ Id: eeb-bescheinigung-bundle
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle" (exactly)
 * id 1..1
 * identifier 1..
+* identifier.use 0..0
+* identifier.type 0..0
 * identifier.system 1..
 * identifier.system = "urn:ietf:rfc:3986" (exactly)
 * identifier.value 1..
 * identifier.value ^short = "Eindeutige UUID als übergreifender Identifier für mehrere Anfragen eines Vorgangs"
+* identifier.period 0..0
+* identifier.assigner 0..0
 * type = #message (exactly)
 * timestamp 1..
 * total 0..0
