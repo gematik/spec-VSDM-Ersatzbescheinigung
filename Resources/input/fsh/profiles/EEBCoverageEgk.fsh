@@ -8,7 +8,15 @@ Id: eeb-coverage-egk
 * extension[versionEgk].valueString 1..1
 * extension[allgemeineVersicherungsdaten] 1..1
 * extension[persoenlicheVersichertendaten] 1..1
-* extension[geschuetzteVersichertendaten] 1..1
+* extension[geschuetzteVersichertendaten] 0..1
+* obeys -eeb-angabeGeschuetzteVersichertendaten
+
+
+Invariant: -eeb-angabeGeschuetzteVersichertendaten
+Description: "Falls der Versicherungstyp GKV ist, müssen die geschützten Versichertendaten angegeben werden."
+Severity: #error
+Expression: "type.coding.code='GKV' implies extension('https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten').exists()"
+
 
 // Beispielgenerierung
 Instance: KBV_PR_FOR_PatientEgkSample
