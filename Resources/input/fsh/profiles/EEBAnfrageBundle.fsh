@@ -14,6 +14,9 @@ Id: eeb-anfrage-bundle
 * identifier.value ^short = "Eindeutige UUID"
 * type = #message (exactly)
 * timestamp 1..
+* total 0..0
+* link 0..0
+* signature 0..0
 * entry 1..
 * entry ^slicing.discriminator.type = #value
 * entry ^slicing.discriminator.path = "resource.meta.profile"

@@ -14,6 +14,9 @@ Id: eeb-bescheinigung-bundle
 * identifier.value ^short = "Eindeutige UUID als übergreifender Identifier für mehrere Anfragen eines Vorgangs"
 * type = #message (exactly)
 * timestamp 1..
+* total 0..0
+* link 0..0
+* signature 0..0
 * entry 1..
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
