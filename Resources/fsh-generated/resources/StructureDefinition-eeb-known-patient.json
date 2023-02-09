@@ -109,6 +109,81 @@
             ]
           }
         ]
+      },
+      {
+        "id": "Patient.active",
+        "path": "Patient.active",
+        "max": "0"
+      },
+      {
+        "id": "Patient.name",
+        "path": "Patient.name",
+        "max": "0"
+      },
+      {
+        "id": "Patient.telecom",
+        "path": "Patient.telecom",
+        "max": "0"
+      },
+      {
+        "id": "Patient.gender",
+        "path": "Patient.gender",
+        "max": "0"
+      },
+      {
+        "id": "Patient.birthDate",
+        "path": "Patient.birthDate",
+        "max": "0"
+      },
+      {
+        "id": "Patient.deceased[x]",
+        "path": "Patient.deceased[x]",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address",
+        "path": "Patient.address",
+        "max": "0"
+      },
+      {
+        "id": "Patient.maritalStatus",
+        "path": "Patient.maritalStatus",
+        "max": "0"
+      },
+      {
+        "id": "Patient.multipleBirth[x]",
+        "path": "Patient.multipleBirth[x]",
+        "max": "0"
+      },
+      {
+        "id": "Patient.photo",
+        "path": "Patient.photo",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact",
+        "path": "Patient.contact",
+        "max": "0"
+      },
+      {
+        "id": "Patient.communication",
+        "path": "Patient.communication",
+        "max": "0"
+      },
+      {
+        "id": "Patient.generalPractitioner",
+        "path": "Patient.generalPractitioner",
+        "max": "0"
+      },
+      {
+        "id": "Patient.managingOrganization",
+        "path": "Patient.managingOrganization",
+        "max": "0"
+      },
+      {
+        "id": "Patient.link",
+        "path": "Patient.link",
+        "max": "0"
       }
     ]
   }
