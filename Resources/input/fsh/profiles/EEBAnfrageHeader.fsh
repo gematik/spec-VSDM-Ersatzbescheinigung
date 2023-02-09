@@ -12,9 +12,11 @@ Id: eeb-anfrage-header
 * extension ^slicing.rules = #open
 * extension contains
     Leistungsdatum named Leistungsdatum 1..1 and
-    Einverstaendnis named Einverstaendnis 1..1
+    Einverstaendnis named Einverstaendnis 1..1 and
+    Institutionskennzeichen named Institutionskennzeichen 1..1
 * extension[Leistungsdatum].value[x] 1..1
 * extension[Einverstaendnis].value[x] 1..1
+* extension[Institutionskennzeichen].value[x] 1..1
 
 // hier OID Anfragender
 * event[x] only Coding
@@ -43,3 +45,6 @@ Usage: #example
 * extension[=][Leistungsdatum].valueDate = "2022-02-01"
 * extension[+][Einverstaendnis].url = "https://gematik.de/fhir/eeb/StructureDefinition/Einverstaendnis"
 * extension[=][Einverstaendnis].valueBoolean = true
+* extension[+][Institutionskennzeichen].url = "https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen"
+* extension[=][Institutionskennzeichen].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
+* extension[=][Institutionskennzeichen].valueIdentifier.value = "12345678"
