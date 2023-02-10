@@ -208,46 +208,6 @@
         "max": "0"
       },
       {
-        "id": "Bundle.entry:EEBUnknownPatient",
-        "path": "Bundle.entry",
-        "sliceName": "EEBUnknownPatient",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Bundle.entry:EEBUnknownPatient.link",
-        "path": "Bundle.entry.link",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:EEBUnknownPatient.resource",
-        "path": "Bundle.entry.resource",
-        "min": 1,
-        "type": [
-          {
-            "code": "Patient",
-            "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Bundle.entry:EEBUnknownPatient.search",
-        "path": "Bundle.entry.search",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:EEBUnknownPatient.request",
-        "path": "Bundle.entry.request",
-        "max": "0"
-      },
-      {
-        "id": "Bundle.entry:EEBUnknownPatient.response",
-        "path": "Bundle.entry.response",
-        "max": "0"
-      },
-      {
         "id": "Bundle.entry:KBV_PR_FOR_Patient",
         "path": "Bundle.entry",
         "sliceName": "KBV_PR_FOR_Patient",
