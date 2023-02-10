@@ -4,6 +4,7 @@ Id: eeb-coverage-egk
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
 * insert Meta
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk" (exactly)
+* payor.extension[abrechnendeIK] 0..0
 * extension[versionEgk] 1..1
 * extension[versionEgk].valueString 1..1
 * extension[versichertenart] 0..0

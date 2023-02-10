@@ -136,6 +136,12 @@
         "path": "Coverage.extension",
         "sliceName": "selektivvertraege",
         "max": "0"
+      },
+      {
+        "id": "Coverage.payor.extension:abrechnendeIK",
+        "path": "Coverage.payor.extension",
+        "sliceName": "abrechnendeIK",
+        "max": "0"
       }
     ]
   }
