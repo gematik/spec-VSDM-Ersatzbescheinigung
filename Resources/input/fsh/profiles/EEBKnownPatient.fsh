@@ -19,6 +19,21 @@ Id: eeb-known-patient
 * identifier[versichertenID_pkv] only $identifier-pkv
 * identifier[versichertenID_pkv].system
 * identifier[versichertenID_pkv].value
+* active 0..0
+* name 0..0
+* telecom 0..0
+* gender 0..0
+* birthDate 0..0
+* deceased[x] 0..0
+* address 0..0
+* maritalStatus 0..0
+* multipleBirth[x] 0..0
+* photo 0..0
+* contact 0..0
+* communication 0..0
+* generalPractitioner 0..0
+* managingOrganization 0..0
+* link 0..0
 
 
 // Beispielgenerierung

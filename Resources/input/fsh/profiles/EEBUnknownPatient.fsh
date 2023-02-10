@@ -6,12 +6,25 @@ Id: eeb-unknown-patient
 * meta 1..1
 * meta.profile 1..1
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient" (exactly)
+* identifier 0..0
+* active 0..0
 * name 1..1
 * name.family 1..1
 * name.given 1..1
+* telecom 0..0
+* gender 0..0
 * birthDate 1..1
+* deceased[x] 0..0
 * address 1..1
 * address.postalCode 1..1
+* maritalStatus 0..0
+* multipleBirth[x] 0..0
+* photo 0..0
+* contact 0..0
+* communication 0..0
+* generalPractitioner 0..0
+* managingOrganization 0..0
+* link 0..0
 
 
 // Beispielgenerierung

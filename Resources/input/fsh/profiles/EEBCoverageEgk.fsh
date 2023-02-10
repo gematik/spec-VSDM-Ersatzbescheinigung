@@ -6,9 +6,18 @@ Id: eeb-coverage-egk
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk" (exactly)
 * extension[versionEgk] 1..1
 * extension[versionEgk].valueString 1..1
+* extension[versichertenart] 0..0
+* extension[kostenerstattung] 0..0
+* extension[wop] 0..0
+* extension[besonderePersonengruppe] 0..0
+* extension[dmpKennzeichen] 0..0
+* extension[ruhenderLeistungsanspruch] 0..0
+* extension[zuzahlungsstatus] 0..0
 * extension[allgemeineVersicherungsdaten] 1..1
 * extension[persoenlicheVersichertendaten] 1..1
 * extension[geschuetzteVersichertendaten] 0..1
+* extension[genderIdentity] 0..0
+* extension[selektivvertraege] 0..0
 * obeys -eeb-angabeGeschuetzteVersichertendaten
 
 
