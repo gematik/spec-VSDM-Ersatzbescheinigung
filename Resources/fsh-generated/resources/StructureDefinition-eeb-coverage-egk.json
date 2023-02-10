@@ -126,12 +126,6 @@
         "min": 1
       },
       {
-        "id": "Coverage.extension:geschuetzteVersichertendaten",
-        "path": "Coverage.extension",
-        "sliceName": "geschuetzteVersichertendaten",
-        "min": 1
-      },
-      {
         "id": "Coverage.extension:genderIdentity",
         "path": "Coverage.extension",
         "sliceName": "genderIdentity",
