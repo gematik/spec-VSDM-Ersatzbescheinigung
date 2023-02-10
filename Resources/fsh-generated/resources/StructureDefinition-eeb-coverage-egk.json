@@ -59,6 +59,48 @@
         "max": "1"
       },
       {
+        "id": "Coverage.extension:versichertenart",
+        "path": "Coverage.extension",
+        "sliceName": "versichertenart",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:kostenerstattung",
+        "path": "Coverage.extension",
+        "sliceName": "kostenerstattung",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:wop",
+        "path": "Coverage.extension",
+        "sliceName": "wop",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:besonderePersonengruppe",
+        "path": "Coverage.extension",
+        "sliceName": "besonderePersonengruppe",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:dmpKennzeichen",
+        "path": "Coverage.extension",
+        "sliceName": "dmpKennzeichen",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:ruhenderLeistungsanspruch",
+        "path": "Coverage.extension",
+        "sliceName": "ruhenderLeistungsanspruch",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:zuzahlungsstatus",
+        "path": "Coverage.extension",
+        "sliceName": "zuzahlungsstatus",
+        "max": "0"
+      },
+      {
         "id": "Coverage.extension:persoenlicheVersichertendaten",
         "path": "Coverage.extension",
         "sliceName": "persoenlicheVersichertendaten",
@@ -75,6 +117,18 @@
         "path": "Coverage.extension",
         "sliceName": "geschuetzteVersichertendaten",
         "min": 1
+      },
+      {
+        "id": "Coverage.extension:genderIdentity",
+        "path": "Coverage.extension",
+        "sliceName": "genderIdentity",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.extension:selektivvertraege",
+        "path": "Coverage.extension",
+        "sliceName": "selektivvertraege",
+        "max": "0"
       }
     ]
   }

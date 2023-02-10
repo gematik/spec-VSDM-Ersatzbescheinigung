@@ -11,14 +11,27 @@ Id: eeb-bescheinigung-header
 * event[x] only Coding
 * event[x] from EEBAnfrageUrsprungVS
 
+* destination 0..0
+* sender 0..0
+* enterer 0..0
+* author 0..0
+* source.name 0..0
+* source.software 0..0
+* source.version 0..0
+* source.contact 0..0
 * source.endpoint 1..1
 * source.endpoint ^short = "Source endpoint URI of sender. E.g. https://Test-Krankenkasse.de/KIM"
+* responsible 0..0
+* reason 0..0
 * response 0..1
 * response ^short = "If there is an EEBAnfrageBundle, the Bundle.identifier is mandatory."
 * response.identifier 1..1
 * response.identifier ^short = "Identifier of EEBAnfrageBundle"
 * response.identifier ^definition = "The Bundle.identifier of the EEBAnfrageBundle to which this message is a response."
 * response.code = #ok (exactly)
+* response.details 0..0
+* focus 0..0
+* definition 0..0
 
 
 // Beispielgenerierung

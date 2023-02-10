@@ -8,12 +8,19 @@ Id: eeb-anfrage-bundle
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle" (exactly)
 * id 1..1
 * identifier 1..
+* identifier.use 0..0
+* identifier.type 0..0
 * identifier.system 1..
 * identifier.system = "urn:ietf:rfc:3986" (exactly)
 * identifier.value 1..
 * identifier.value ^short = "Eindeutige UUID"
+* identifier.period 0..0
+* identifier.assigner 0..0
 * type = #message (exactly)
 * timestamp 1..
+* total 0..0
+* link 0..0
+* signature 0..0
 * entry 1..
 * entry ^slicing.discriminator.type = #value
 * entry ^slicing.discriminator.path = "resource.meta.profile"
