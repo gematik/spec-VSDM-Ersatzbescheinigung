@@ -58,16 +58,7 @@
       {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "rules": "open"
-        },
-        "min": 2
+        "min": 3
       },
       {
         "id": "MessageHeader.extension:Leistungsdatum",
@@ -106,6 +97,26 @@
       },
       {
         "id": "MessageHeader.extension:Einverstaendnis.value[x]",
+        "path": "MessageHeader.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "MessageHeader.extension:Institutionskennzeichen",
+        "path": "MessageHeader.extension",
+        "sliceName": "Institutionskennzeichen",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.extension:Institutionskennzeichen.value[x]",
         "path": "MessageHeader.extension.value[x]",
         "min": 1
       },
