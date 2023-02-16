@@ -4,6 +4,7 @@ Id: eeb-coverage-egk
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
 * insert Meta
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk" (exactly)
+* payor.extension[abrechnendeIK] 0..0
 * extension[versionEgk] 1..1
 * extension[versionEgk].valueString 1..1
 * extension[versichertenart] 0..0
@@ -15,9 +16,17 @@ Id: eeb-coverage-egk
 * extension[zuzahlungsstatus] 0..0
 * extension[allgemeineVersicherungsdaten] 1..1
 * extension[persoenlicheVersichertendaten] 1..1
-* extension[geschuetzteVersichertendaten] 1..1
+* extension[geschuetzteVersichertendaten] 0..1
 * extension[genderIdentity] 0..0
 * extension[selektivvertraege] 0..0
+* obeys -eeb-angabeGeschuetzteVersichertendaten
+
+
+Invariant: -eeb-angabeGeschuetzteVersichertendaten
+Description: "Falls der Versicherungstyp GKV ist, müssen die geschützten Versichertendaten angegeben werden."
+Severity: #error
+Expression: "type.coding.code='GKV' implies extension('https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten').exists()"
+
 
 // Beispielgenerierung
 Instance: KBV_PR_FOR_PatientEgkSample

@@ -17,6 +17,19 @@
   "differential": {
     "element": [
       {
+        "id": "Coverage",
+        "path": "Coverage",
+        "constraint": [
+          {
+            "key": "-eeb-angabeGeschuetzteVersichertendaten",
+            "severity": "error",
+            "human": "Falls der Versicherungstyp GKV ist, müssen die geschützten Versichertendaten angegeben werden.",
+            "expression": "type.coding.code='GKV' implies extension('https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten').exists()",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
+          }
+        ]
+      },
+      {
         "id": "Coverage.meta.profile",
         "path": "Coverage.meta.profile",
         "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
@@ -24,7 +37,7 @@
       {
         "id": "Coverage.extension",
         "path": "Coverage.extension",
-        "min": 4
+        "min": 3
       },
       {
         "id": "Coverage.extension:versionEgk",
@@ -113,12 +126,6 @@
         "min": 1
       },
       {
-        "id": "Coverage.extension:geschuetzteVersichertendaten",
-        "path": "Coverage.extension",
-        "sliceName": "geschuetzteVersichertendaten",
-        "min": 1
-      },
-      {
         "id": "Coverage.extension:genderIdentity",
         "path": "Coverage.extension",
         "sliceName": "genderIdentity",
@@ -128,6 +135,12 @@
         "id": "Coverage.extension:selektivvertraege",
         "path": "Coverage.extension",
         "sliceName": "selektivvertraege",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.payor.extension:abrechnendeIK",
+        "path": "Coverage.payor.extension",
+        "sliceName": "abrechnendeIK",
         "max": "0"
       }
     ]
