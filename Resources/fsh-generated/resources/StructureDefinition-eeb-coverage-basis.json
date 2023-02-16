@@ -223,6 +223,11 @@
         ]
       },
       {
+        "id": "Coverage.identifier",
+        "path": "Coverage.identifier",
+        "max": "0"
+      },
+      {
         "id": "Coverage.status",
         "path": "Coverage.status",
         "fixedCode": "active"
@@ -234,6 +239,11 @@
           "strength": "required",
           "valueSet": "http://fhir.de/ValueSet/versicherungsart-de-basis"
         }
+      },
+      {
+        "id": "Coverage.subscriber",
+        "path": "Coverage.subscriber",
+        "max": "0"
       },
       {
         "id": "Coverage.beneficiary",
@@ -251,6 +261,31 @@
         "id": "Coverage.beneficiary.reference",
         "path": "Coverage.beneficiary.reference",
         "min": 1
+      },
+      {
+        "id": "Coverage.beneficiary.type",
+        "path": "Coverage.beneficiary.type",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.beneficiary.identifier",
+        "path": "Coverage.beneficiary.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.beneficiary.display",
+        "path": "Coverage.beneficiary.display",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.dependent",
+        "path": "Coverage.dependent",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.relationship",
+        "path": "Coverage.relationship",
+        "max": "0"
       },
       {
         "id": "Coverage.period",
@@ -288,6 +323,16 @@
         ]
       },
       {
+        "id": "Coverage.payor.reference",
+        "path": "Coverage.payor.reference",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.payor.type",
+        "path": "Coverage.payor.type",
+        "max": "0"
+      },
+      {
         "id": "Coverage.payor.identifier",
         "path": "Coverage.payor.identifier",
         "min": 1,
@@ -304,6 +349,26 @@
         "id": "Coverage.payor.display",
         "path": "Coverage.payor.display",
         "min": 1
+      },
+      {
+        "id": "Coverage.class",
+        "path": "Coverage.class",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.costToBeneficiary",
+        "path": "Coverage.costToBeneficiary",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.subrogation",
+        "path": "Coverage.subrogation",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.contract",
+        "path": "Coverage.contract",
+        "max": "0"
       }
     ]
   }

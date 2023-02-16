@@ -22,11 +22,26 @@ Id: eeb-anfrage-header
 * event[x] only Coding
 * event[x] from EEBAnfrageUrsprungVS
 
+* destination 0..0
 * sender 1..1
 * sender only Reference(KBV_PR_FOR_Organization)
 * sender.reference 1..1
+* sender.type 0..0
+* sender.identifier 0..0
+* sender.display 0..0
+* enterer 0..0
+* author 0..0
+* source.name 0..0
+* source.software 0..0
+* source.version 0..0
+* source.contact 0..0
 * source.endpoint 1..1
 * source.endpoint ^short = "Source endpoint URI of sender. E.g. https://pvs.de/KIM"
+* responsible 0..0
+* reason 0..0
+* response 0..0
+* focus 0..0
+* definition 0..0
 
 
 // Beispielgenerierung

@@ -69,9 +69,59 @@
         }
       },
       {
+        "id": "MessageHeader.destination",
+        "path": "MessageHeader.destination",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.sender",
+        "path": "MessageHeader.sender",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.enterer",
+        "path": "MessageHeader.enterer",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.author",
+        "path": "MessageHeader.author",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.source.name",
+        "path": "MessageHeader.source.name",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.source.software",
+        "path": "MessageHeader.source.software",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.source.version",
+        "path": "MessageHeader.source.version",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.source.contact",
+        "path": "MessageHeader.source.contact",
+        "max": "0"
+      },
+      {
         "id": "MessageHeader.source.endpoint",
         "path": "MessageHeader.source.endpoint",
         "short": "Source endpoint URI of sender. E.g. https://Test-Krankenkasse.de/KIM"
+      },
+      {
+        "id": "MessageHeader.responsible",
+        "path": "MessageHeader.responsible",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.reason",
+        "path": "MessageHeader.reason",
+        "max": "0"
       },
       {
         "id": "MessageHeader.response",
@@ -88,6 +138,21 @@
         "id": "MessageHeader.response.code",
         "path": "MessageHeader.response.code",
         "fixedCode": "ok"
+      },
+      {
+        "id": "MessageHeader.response.details",
+        "path": "MessageHeader.response.details",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.focus",
+        "path": "MessageHeader.focus",
+        "max": "0"
+      },
+      {
+        "id": "MessageHeader.definition",
+        "path": "MessageHeader.definition",
+        "max": "0"
       }
     ]
   }
