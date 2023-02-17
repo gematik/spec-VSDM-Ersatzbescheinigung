@@ -16,7 +16,7 @@
   "name": "EEBAnfrageHeader",
   "status": "draft",
   "experimental": false,
-  "date": "2022-10-30",
+  "date": "2023-02-17",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
