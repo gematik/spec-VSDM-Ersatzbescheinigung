@@ -46,7 +46,7 @@ Der Payload transportiert die für diesen Anwendungsfall notwendige TelematikID 
   "tid": "3-SMC-B-Testkarte-883110000116873"
 }
 ```
-<!--- generated at https://qr.io/ -->
+<!--- generated at https://gchq.github.io/CyberChef -->
 {{render:ImplementationGuide-images-qr-sample}}
 
 Das JWT wird durch die Kassen-App gescannt und an das Kassen-Backend übertragen, wo die Kasse die Daten und Signatur prüft.

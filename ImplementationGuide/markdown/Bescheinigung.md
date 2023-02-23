@@ -243,10 +243,14 @@ Der Header ist für den Bundle-Type `message` verpflichtend.
 Die Patient-Ressource vom Typ `KBV_PR_FOR_Patient` enthält die der Kasse bekannten Patientendaten gemäß KBV-Profilierung,
 wie sie in den Anwendungen *eAU*, *eRezept*, etc. verwendet werden.
 
+<iframe src="https://www.simplifier.net/embed/render?id=for/kbvprforpatient" style="width: 100%;height: 320px;"></iframe>
+
 ### Coverage
 
 In der Coverage-Ressource werden die Informationen zum Versicherungsverhältnis mitgeliefert.
-Mit dem Institutionskennzeichen `iknr` der Kasse und der `KVNR` des Patienten liegen der Praxis alle notwendigen Informationen zur späteren Abrechnung vor.
+Zudem enthalten sie in den Extensions `allgemeineVersicherungsdaten`, `persoenlicheVersichertendaten` und `geschuetzteVersichertendaten` die Versichertenstammdaten (insbesondere die KVNR als `Versicherten_ID` in den `allgemeineVersicherungsdaten`), um für PKV-Versicherten die Anwendungen der Telematikinfrastruktur nutzen zu können.
+
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk}}
 
 ## Bescheinigungsbundle (Beispiel)
 

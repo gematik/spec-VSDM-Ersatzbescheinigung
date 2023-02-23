@@ -15,31 +15,36 @@ Die Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM wird durch das
 
 ## Erfassung personenbezogener Daten
 
-Bei der Abfrage nach einer Ersatzbescheinigung zu einer Person sind zwei Fälle zu unterscheiden, ist die 10-stellige Krankenversicherungsnummer `KVNR` der Person bekannt oder unbekannt. Da diese `KVNR` für eine Person (i.d.R.) lebenslang gültig ist, ergibt sich die Antwort aus der Frage, ob der Patient in dieser Praxis in der Vergangenheit bereits vorstellig war.
+Bei der Abfrage nach einer Ersatzbescheinigung zu einer Person sind zwei Fälle zu unterscheiden, ist die 10-stellige Versicherten-ID `KVNR` der Person bekannt oder unbekannt. Da diese `KVNR` für eine Person (i.d.R.) lebenslang gültig ist, ergibt sich die Antwort aus der Frage, ob der Patient in dieser Praxis in der Vergangenheit bereits vorstellig war.
 
 ### Patient ist im PVS bekannt
 
-Um der Kasse Hilfe zum Auffinden der versicherten Person in ihrem Bestandssystem zu geben, müssen personenbezogene Informationen in einer FHIR-Ressource `Patient` mitgegeben werden. Ist die Person bereits im PVS als Patient hinterlegt (wurden bspw. in der Vergangenheit Verordnungen/E-Rezepte ausgestellt) können die Daten aus einem Datensatz `KBV_PR_FOR_Patient` 1:1 verwendet werden. Es genügt auch der Eintrag der `kvnr` im `identifier` einer `KnownPatient`-Ressource. Weitere Angaben sind optional.
+Um der Kasse Hilfe zum Auffinden der versicherten Person in ihrem Bestandssystem zu geben, müssen personenbezogene Informationen in einer FHIR-Ressource `Patient` mitgegeben werden. Ist die Person bereits im PVS als Patient hinterlegt (wurden bspw. in der Vergangenheit Behandlungen in der Praxis durchgeführt) können die Daten in einer Patienten-Ressource `KBV_PR_FOR_Patient` zusammengefasst werden, wie sie in anderen formularbasierten Anwendungen bereits genutzt wird. Es genügt auch der Eintrag der `kvnr` im `identifier` einer `KnownPatient`-Ressource. Weitere Angaben sind optional.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient}}
 
 ### Patient ist im PVS unbekannt
 
-Ist die zu behandelnde Person als Patient im PVS unbekannt, sind Angaben in einer `UnknownPatient`-Ressource erforderlich. Der Familienname `name`, mindestens ein Vorname `given`, die Postleitzahl `postalCode`, die Wohn`address` und das `birthDate` sind dabei mindestens abzufragen und in der FHIR-Ressource anzugeben, um eine Suche in den Systemen der Kasse zu ermöglichen.
+Ist die zu behandelnde Person als Patient im PVS unbekannt, sind folgende Angaben mindestens erforderlich, um der Kasse eine Suche nach einem Versichertenverhältnis zu ermöglichen:
 
-{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBUnknownPatient}}
+* Der Familienname `name`
+* mindestens ein Vorname `given`
+* die Postleitzahl `postalCode` der Wohn`address` (Straßenname und Hausnummer sind nicht erforderlich) und
+* das `birthDate`
+
+Diese Angaben sind in einer Patienten-Ressource `KBV_PR_FOR_Patient` einzutragen.
 
 ## Angaben zur anfragenden Praxis
 
 Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen über die anfragende Praxis, um das Ausstellen von "Blanko"-Bescheinigungen zu unterbinden. Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") mitgegeben werden.
-Die Anfrage muss immer die `TelematikID` und zusätzlich entweder die Betriebsstättennummer `BSNR`, die KZV Abrechnungsnummer `KZVA` oder das Institutionskennzeichen enthalten, um die Praxisdaten über den VZD-Eintrag zu verifizieren
+Die Anfrage muss entweder die Betriebsstättennummer `BSNR`, die KZV Abrechnungsnummer `KZVA` oder das Institutionskennzeichen enthalten, um die anfragende Praxis zu identifizieren, zusätzlich kann die `TelematikID` angegeben werden.
 Ebenso müssen die Angaben zur `address` und `telecom`-Kontaktinformationen für Rückfragen angegeben sein.
 
 <iframe src="https://www.simplifier.net/embed/render?id=for/kbvprfororganization" style="width: 100%;height: 320px;"></iframe>
 
 ## Signatur der Anfrage
 
-Die Anfrage muss mittels der Institutionsidentität (SMC-B OSIG) signiert werden, um der angefragten Kasse einen Authentizitäts-Nachweis bereitzustellen.
+Die Anfrage (das FHIR-Bundle) muss mittels der Institutionsidentität (SMC-B OSIG) signiert werden, um der angefragten Kasse einen Authentizitäts-Nachweis bereitzustellen.
 Die Signatur der KIM-Nachricht reicht dabei nicht aus, da diese nur die Integrität des Transports und Authentizität des KIM-Absenders sicherstellt, aber nicht, ob der Absender auch tatsächlich die Institution ist, gegenüber der der Patient eingewilligt hat.
 Daher ist der FHIR-Datensatz als Base64-Codierter PKCS#7-Container bereitzustellen (enveloping Signatur) in die KIM-Anfrage einzubetten.
 
