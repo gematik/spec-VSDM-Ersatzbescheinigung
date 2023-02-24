@@ -21,7 +21,7 @@ Der Transport als JWT (JSON Web Token, [rfc7519]) erlaubt die Signaturprüfung m
 
 Die Generierung erfolgt im Verzeichnisdienst der Telematikinfrastruktur, Leistungserbringer können über den Zugang zur Verwaltung ihres VZD-Eintrags einen Code aus den für sie hinterlegten Daten generieren lassen und herunterladen. Das JWT in `base64`-Darstellung
 
-```text
+```
 ewogICJhbGciOiAiRVMyNTYiLAogICJhcHAiOiAib2NpIiwKICAia2lkIjogIjQwNzc3NjAyNzM2NzM2NiIKfQ.ewogICJ0aWQiOiAiMy1TTUMtQi1UZXN0a2FydGUtODgzMTEwMDAwMTE2ODczIgp9.7ylIwW9XOYiow_axfTnk35PHYN4JJTi4n3KAeRxyZq-mYhwmR9bJAFeu55i65ajU-iUXT6E-0mDUwJYV5JW6Ug
 ```
 

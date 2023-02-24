@@ -16,14 +16,14 @@ die Struktur des OperationOutcome zum Transport der Fehlermeldung vorgestellt.
 Es werden die Fehlercodes aus dem Projekteigenen `ValueSet` [https://gematik.de/fhir/eeb/ValueSet/EEBErrorcodeVS](https://simplifier.net/vsdm-ersatzbescheinigung/eeberrorcodevs) verwendet.
 In der FHIR-Resource `OperationOutcome` muss in `issue.details.coding` ein Wert der Tabelle des folgenden Codesystems gemäß Definition des ValueSets verwendet werden. Die folgenden Codes sind gemäß der festgestellten Fehlerursache (siehe Beschreibung) vorgesehen:
 
-@'''
+@```
 from
   CodeSystem
 where
   name = 'EEBErrorcodeCS'
 for concept select
   *
-'''
+```
 
 ## OperationOutcome
 
