@@ -3,6 +3,7 @@
 - [Inhalt](#inhalt)
   - [Verwendung von KIM](#verwendung-von-kim)
   - [KIM Dienstkennungen](#kim-dienstkennungen)
+  - [Übermittlungsbestätigung und Lesebestätigung](#übermittlungsbestätigung-und-lesebestätigung)
   - [KIM Anfrage einer Ersatzbescheinigung](#kim-anfrage-einer-ersatzbescheinigung)
     - [KIM Anfrage Beispielnachricht](#kim-anfrage-beispielnachricht)
   - [KIM Bescheinigung](#kim-bescheinigung)
@@ -25,6 +26,12 @@ Dienstkennungen in KIM-Nachrichten kennzeichnen den transportierten Inhalt für 
 |Verantwortlich                     |gematik                                |
 |Anwendungsbeschreibung             |Verfahren zur Übertragung von Versichertenstammdaten (VSD) aus einem PKV Versicherungsunternehmen und Erstzbescheinigung nach §19 Abs. 2 BMV von einer Gesetzlichen Krankenkasse zu einem Leistungserbringer|
 |Dienstkennung & Kurzbeschreibung|**eEB;Anfrage;V1.0** <br /> Nachrichten-Typ: Anfragedaten zum Erhalt von Versichertendaten <br /> Verwendung: Vertragsärzte, Vertragszahnärzte, Krankenhäuser <br /><br />  **eEB;Bescheinigung;V1.0** <br /> Nachrichten-Typ: Versichertendaten in verschiedenen Ausprägungen <br /> Verwendung: Krankenkassen, Versicherungsunternehmen <br /> <br /> **eEB;Fehler;V1.0** <br /> Nachrichten-Typ: Fehlermeldung bzgl. der Ermittlung der Daten des Versicherten <br />  Verwendung: Krankenkassen, Versicherungsunternehmen |
+
+## Übermittlungsbestätigung und Lesebestätigung
+
+Eine Übermittlungsbestätigung (DSN) vom KIM-Mailserver des Nachrichtenempfängers signalisierte dem Sendesystem, dass eine Nachricht an den Empfänger ausgeliefert werden konnte. Die Anforderung einer solchen DSN unterstützt daher den automatisierten Prozess der elektronischen Ersatzbescheinigung.
+
+Die Anforderung einer Lesebestätigung (MDN) durch das Sendesystem führt in Empfangssystemen je nach Konfiguration zu einem Pop-up, ob eine Lesebestätigung versendet werden soll. Dieses stört ggfs. den Workflow der automatisierten Bearbeitung empfangener KIM-Nachrichten. Daher ist das Anfordern einer Lesenbestätigung durch das Sendesystem zu unterbinden.
 
 ## KIM Anfrage einer Ersatzbescheinigung
 
