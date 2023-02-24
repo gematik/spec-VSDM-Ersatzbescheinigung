@@ -29,8 +29,8 @@ Id: eeb-bescheinigung-bundle
 * entry contains
     EEBBescheinigungHeader 1..1 and
     KBVFORPatient 1..1 and
-    EEBCoverageEgk 0..1 and
-    EEBCoverageNoEgk 0..1
+    EEBCoverageEgk 1..1 //and
+//    EEBCoverageNoEgk 0..1
 * entry[EEBBescheinigungHeader].link ..0
 * entry[EEBBescheinigungHeader].resource 1..
 * entry[EEBBescheinigungHeader].resource only EEBBescheinigungHeader
@@ -49,12 +49,12 @@ Id: eeb-bescheinigung-bundle
 * entry[EEBCoverageEgk].search ..0
 * entry[EEBCoverageEgk].request ..0
 * entry[EEBCoverageEgk].response ..0
-* entry[EEBCoverageNoEgk].link ..0
-* entry[EEBCoverageNoEgk].resource 1..
-* entry[EEBCoverageNoEgk].resource only EEBCoverageNoEgk
-* entry[EEBCoverageNoEgk].search ..0
-* entry[EEBCoverageNoEgk].request ..0
-* entry[EEBCoverageNoEgk].response ..0
+//* entry[EEBCoverageNoEgk].link ..0
+//* entry[EEBCoverageNoEgk].resource 1..
+//* entry[EEBCoverageNoEgk].resource only EEBCoverageNoEgk
+//* entry[EEBCoverageNoEgk].search ..0
+//* entry[EEBCoverageNoEgk].request ..0
+//* entry[EEBCoverageNoEgk].response ..0
 * obeys -eeb-angabeVersichertenID
 * obeys -eeb-angabePatientPLZ
 
@@ -89,19 +89,19 @@ Usage: #example
 * entry[+][EEBCoverageEgk].fullUrl = "https://gematik.de/fhir/Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"
 * entry[=][EEBCoverageEgk].resource = EEBCoverageEgkSample
 
-Instance: EEBBescheinigungBundleSampleNoEgk
-InstanceOf: EEBBescheinigungBundle
-Title:   "EEBBescheinigungBundleNoEgk"
-Usage: #example
-* id = "43bb7e49-7d03-4dfe-b4d7-df4b6c370d6b"
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:4b06f5c4-dced-4904-b1d2-2e5c64087919"
-* type = #message
-* timestamp = "2022-08-29T02:09:37.157+02:00"
-* entry[+][EEBBescheinigungHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/bd901c08-0133-4276-b34b-eb810a62deda"
-* entry[=][EEBBescheinigungHeader].resource = EEBBescheinigungHeaderSample
-* entry[+][KBVFORPatient].fullUrl = "https://gematik.de/fhir/Patient/d62d9d82-2396-4c64-a656-2e67b5761523"
-* entry[=][KBVFORPatient].resource = KBV_PR_FOR_PatientNoEgkSample
-* entry[+][EEBCoverageNoEgk].fullUrl = "https://gematik.de/fhir/Coverage/e9553161ca3c-413a-48fe-b908-04159be709fb"
-* entry[=][EEBCoverageNoEgk].resource = EEBCoverageNoEgkSample
+//Instance: EEBBescheinigungBundleSampleNoEgk
+//InstanceOf: EEBBescheinigungBundle
+//Title:   "EEBBescheinigungBundleNoEgk"
+//Usage: #example
+//* id = "43bb7e49-7d03-4dfe-b4d7-df4b6c370d6b"
+//* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+//* identifier.system = "urn:ietf:rfc:3986"
+//* identifier.value = "urn:uuid:4b06f5c4-dced-4904-b1d2-2e5c64087919"
+//* type = #message
+//* timestamp = "2022-08-29T02:09:37.157+02:00"
+//* entry[+][EEBBescheinigungHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/bd901c08-0133-4276-b34b-eb810a62deda"
+//* entry[=][EEBBescheinigungHeader].resource = EEBBescheinigungHeaderSample
+//* entry[+][KBVFORPatient].fullUrl = "https://gematik.de/fhir/Patient/d62d9d82-2396-4c64-a656-2e67b5761523"
+//* entry[=][KBVFORPatient].resource = KBV_PR_FOR_PatientNoEgkSample
+//* entry[+][EEBCoverageNoEgk].fullUrl = "https://gematik.de/fhir/Coverage/e9553161ca3c-413a-48fe-b908-04159be709fb"
+//* entry[=][EEBCoverageNoEgk].resource = EEBCoverageNoEgkSample
