@@ -35,9 +35,9 @@ enthält einen Header mit folgenden Informationen
 }
 ```
 
-* `alg` kennzeichnet den Signaturalgorithmus zum Schutz des JWT
-* `app` ist ein proprietärer Header zur Kennzeichnung, dass der Payload Informationen für den *O*nline *C*heck*I*n enthält (s.u. TelematikID)
-* `kid` enthält die Seriennummer `407776027367366` des Zertifikats zur JWT-Signaturprüfung. Eine Einbettung des kompletten Signaturzertifikats würde den QR-Code derart vergrößern, dass er auf kleinen Displays nicht in ausreichender Scan-Qualität dargestellt werden kann.
+- `alg` kennzeichnet den Signaturalgorithmus zum Schutz des JWT
+- `app` ist ein proprietärer Header zur Kennzeichnung, dass der Payload Informationen für den *O*nline *C*heck*I*n enthält (s.u. TelematikID)
+- `kid` enthält die Seriennummer `407776027367366` des Zertifikats zur JWT-Signaturprüfung. Eine Einbettung des kompletten Signaturzertifikats würde den QR-Code derart vergrößern, dass er auf kleinen Displays nicht in ausreichender Scan-Qualität dargestellt werden kann.
 
 Der Payload transportiert die für diesen Anwendungsfall notwendige TelematikID `3-SMC-B-Testkarte-883110000116873"` mit der im Backend nach einer korrespondierenden KIM-Empfängeradresse der Praxis im VZD gesucht werden kann.
 

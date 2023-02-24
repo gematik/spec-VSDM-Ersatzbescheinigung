@@ -27,10 +27,10 @@ Um der Kasse Hilfe zum Auffinden der versicherten Person in ihrem Bestandssystem
 
 Ist die zu behandelnde Person als Patient im PVS unbekannt, sind folgende Angaben mindestens erforderlich, um der Kasse eine Suche nach einem Versichertenverhältnis zu ermöglichen:
 
-* Der Familienname `name`
-* mindestens ein Vorname `given`
-* die Postleitzahl `postalCode` der Wohn`address` (Straßenname und Hausnummer sind nicht erforderlich) und
-* das `birthDate`
+- Der Familienname `name`
+- mindestens ein Vorname `given`
+- die Postleitzahl `postalCode` der Wohn`address` (Straßenname und Hausnummer sind nicht erforderlich) und
+- das `birthDate`
 
 Diese Angaben sind in einer Patienten-Ressource `KBV_PR_FOR_Patient` einzutragen.
 

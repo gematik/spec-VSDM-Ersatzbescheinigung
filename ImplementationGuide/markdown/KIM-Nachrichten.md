@@ -14,8 +14,7 @@
 Die Übertragung der Daten bzw. der Anfrage erfolgt via KIM. Dabei sind drei Nachrichtentypen zu unterscheiden:
 
 - Anfrage des Leistungserbringers bei der Kasse nach Daten eines Versicherten (eEB Anfrage)
-- Übermittlung der Daten eines Versicherten von der Kasse zum Leistungserbringer (eEB Bescheinigung)
-- Rückgabe einer Fehlermeldung (eEB Fehler)
+- Übermittlung der Daten eines Versicherten von der Kasse zum Leistungserbringer (eEB Bescheinigung) oder Rückgabe einer Fehlermeldung (eEB Fehler)
 
 ## KIM Dienstkennungen
 
@@ -24,8 +23,8 @@ Dienstkennungen in KIM-Nachrichten kennzeichnen den transportierten Inhalt für 
 |Anwendung                          |elektronische Ersatzbescheinigung (eEB)|
 |:--------                          |:--------------------------------------|
 |Verantwortlich                     |gematik                                |
-|Anwendungsbeschreibung             |Ersatzverfahren zur Übertragung der Versichertenstammdaten (VSD) von einer Krankenkasse zu einem Leistungserbringer|
-|Dienstkennung & Kurzbeschreibung|**eEB;Anfrage;V1.0** <br /> Nachrichten-Typ: Anfragedaten zum Erhalt von Versichertendaten <br /> Verwendung: Vertragsärzte, Vertragszahnärzte, Krankenhäuser, Apotheken <br /><br />  **eEB;Bescheinigung;V1.0** <br /> Nachrichten-Typ: Versichertendaten in verschiedenen Ausprägungen <br /> Verwendung: Krankenkassen <br /> <br /> **eEB;Fehler;V1.0** <br /> Nachrichten-Typ: Fehlermeldung bzgl. der Ermittlung der Daten des Versicherten <br />  Verwendung: Krankenkassen |
+|Anwendungsbeschreibung             |Verfahren zur Übertragung von Versichertenstammdaten (VSD) aus einem PKV Versicherungsunternehmen und Erstzbescheinigung nach §19 Abs. 2 BMV von einer Gesetzlichen Krankenkasse zu einem Leistungserbringer|
+|Dienstkennung & Kurzbeschreibung|**eEB;Anfrage;V1.0** <br /> Nachrichten-Typ: Anfragedaten zum Erhalt von Versichertendaten <br /> Verwendung: Vertragsärzte, Vertragszahnärzte, Krankenhäuser <br /><br />  **eEB;Bescheinigung;V1.0** <br /> Nachrichten-Typ: Versichertendaten in verschiedenen Ausprägungen <br /> Verwendung: Krankenkassen, Versicherungsunternehmen <br /> <br /> **eEB;Fehler;V1.0** <br /> Nachrichten-Typ: Fehlermeldung bzgl. der Ermittlung der Daten des Versicherten <br />  Verwendung: Krankenkassen, Versicherungsunternehmen |
 
 ## KIM Anfrage einer Ersatzbescheinigung
 
@@ -56,7 +55,7 @@ Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Date
     boundary="===============5461036781536416417=="
     MIME-Version: 1.0
     X-KIM-Dienstkennung: eEB;Anfrage;V1.0
-    X-KIM-Sendersystem: Basis Consumer / python script
+    X-KIM-Sendersystem: Megapraxisprogramm;V1.0
     X-KIM-Support: kim-servicedesk@tk.de
     Subject: TEEB0_ANF_e71108ff-a936-44fa-9d7d-215a09428900
     Return-Path: <tk-bc-test@akquinet.kim.telematik-test>
@@ -256,6 +255,7 @@ Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Date
 |Header                  |Inhalt                                 |verpflichtend|
 |------------------------|---------------------------------------|-------------|
 |X-KIM-Dienstkennung     |eEB;Bescheinigung;V1.0                 |ja|
+|X-KIM-Ursprungssystem   |\<PVS-Bezeichnung>;\<Releaseversion>   |nein|
 |X-KIM-Sendersystem      |\<Kasse-Bezeichnung>;\<Releaseversion> |nein|
 |X-KIM-Support           |\<Support-Email-Adresse Kasse> |nein|
 |In-Reply-To             |Message-ID der Anfrage                 |ja - wenn die Anfrage über eine KIM-Nachricht gestellt wurde <br />Andernfalls nein|
@@ -280,6 +280,7 @@ Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Dat
      boundary="----=_Part_8_1818972272.1667563520030"
     X-System: DT02
     X-KIM-Dienstkennung: eEB;Bescheinigung;V1.0
+    X-KIM-Ursprungssystem: Megapraxisprogramm;V1.0
     X-TK-OBJECT-ID: 13901:0001000000000051795805000007996E
     X-TK-ARCHIVE-ID: SENT/EEB0/1.0/ehex-22@arv.kim.telematik-test/2022/11/04/1/<244928484.108.1667563425333@reai20v01.dst.tk-inline.net>
 
