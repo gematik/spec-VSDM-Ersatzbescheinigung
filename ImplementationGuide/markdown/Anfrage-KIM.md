@@ -140,7 +140,9 @@ Die Suche nach der KIM-Empfängeradresse der Kasse erfolgt im zentralen Verzeich
 
     $ ldapsearch  -x -H ldaps://10.24.11.11:1636  -b dc=data,dc=vzd  "(&(professionOID=1.2.276.0.76.4.59)(displayName=Techniker*))"
 
-Zur Vereinfachung der Praxisabläufe sollte die Suche ins Praxisverwaltungsystem integriert werden. Bei bekannten Patienten, kann die KIM-Adresse aus dem Verzeichnisdienst über den Filter des Haupt-IK (gemäß er Kostenträgerstammdatei) der Krankenkasse abgefragt werden. Hier der einfachheit halber ebenfalls als Konsolenaufruf:
+Zur Vereinfachung der Praxisabläufe sollte die Suche ins Praxisverwaltungsystem integriert werden. Bei bekannten Patienten, kann die KIM-Adresse aus dem Verzeichnisdienst über den Filter des Haupt-IK (gemäß er Kostenträgerstammdatei) der Krankenkasse abgefragt werden. (XML-Element `./kostentraeger/ik_liste/ik@V`)
+
+Hier der Einfachheit halber ebenfalls als Konsolenaufruf:
 
     ldapsearch  -x -H ldaps://10.24.11.11:1636  -b dc=data,dc=vzd  "(&(domainID=101577501)(entryType=5))"
 
@@ -248,6 +250,9 @@ Diese liefert folgendes Ergebnis
 
 Im Attribut `komLeData` steht die zu verwendende KIM-Adresse hier `komLeData: 1.0,tk-dt03@akquinet.kim.telematik-test`.
 
+Sollten zu dem ausgewählten Kostenträger mehrere IKs hinterletg sein, dann sollte geprüft werden, für welches dieser IKs eine KIM-Adresse hinterlegt ist. Sind mehrere KIM-Adressen hinterlegt, empfiehlt sich der Versand an die erste gefundene KIM-Adresse der jeweiligen Krankenkasse.
+
+Kann kein Empfänger aus dem VZD der TI ermittelt werden, muss der Anwendungsfall mit einer Fehlermeldung abgebrochen werden, demzufolge die Empfängeradresse der Krankenkasse mit den bereitgestellten Informationen nicht ermittelt werden konnte. Ggfs. müssen die Angaben durch den Patienten konkretisiert werden, bei welcher Krankenkasse er versichert ist.
 
 > **Hinweis**
 >
