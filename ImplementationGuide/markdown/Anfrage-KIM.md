@@ -136,9 +136,13 @@ Im Ergebnis liefert der Konnektor eine `SignDocumentResponse`, die anschließend
 
 ## KIM-Empfängeradresse der Krankenkasse
 
-Die Suche nach der KIM-Empfängeradresse der Kasse erfolgt im zentralen Verzeichnisdienst VZD mittels LDAP-Query und kann über das KIM-Clientmodul oder direkt durch das PVS über den Konnektor erfolgen. Folgendes Beispiel für einen Konsolenaufruf mittels `ldapsearch` im VZD der TI-Referenzumgebung RU mit der Suche nach einer Krankenkasse OID=`1.2.276.0.76.4.59` und Teil des Namens `Techniker` in einem kombinierten LDAP-Filter `(&(professionOID=1.2.276.0.76.4.59)(displayName=Techniker*))`:
+Die Suche nach der KIM-Empfängeradresse der Kasse erfolgt im zentralen Verzeichnisdienst VZD. Folgendes Beispiel für einen Konsolenaufruf mittels `ldapsearch` im VZD der TI-Referenzumgebung RU mit der Suche nach einer Krankenkasse OID=`1.2.276.0.76.4.59` und Teil des Namens `Techniker` in einem kombinierten LDAP-Filter `(&(professionOID=1.2.276.0.76.4.59)(displayName=Techniker*))`:
 
     $ ldapsearch  -x -H ldaps://10.24.11.11:1636  -b dc=data,dc=vzd  "(&(professionOID=1.2.276.0.76.4.59)(displayName=Techniker*))"
+
+Zur Vereinfachung der Praxisabläufe sollte die Suche ins Praxisverwaltungsystem integriert werden. Bei bekannten Patienten, kann die KIM-Adresse aus dem Verzeichnisdienst über den Filter des Haupt-IK (gemäß er Kostenträgerstammdatei) der Krankenkasse abgefragt werden. Hier der einfachheit halber ebenfalls als Konsolenaufruf:
+
+    ldapsearch  -x -H ldaps://10.24.11.11:1636  -b dc=data,dc=vzd  "(&(domainID=101577501)(entryType=5))"
 
 Diese liefert folgendes Ergebnis
 
@@ -150,7 +154,7 @@ Diese liefert folgendes Ergebnis
 
     # base <dc=data,dc=vzd> with scope subtree
 
-    # filter: (&(professionOID=1.2.276.0.76.4.59)(displayName=Techniker*))
+    # filter: (&(domainID=101577501)(entryType=5))
 
     # requesting: ALL
 
