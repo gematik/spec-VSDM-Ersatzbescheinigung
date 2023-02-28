@@ -250,7 +250,7 @@ Diese liefert folgendes Ergebnis
 
 Im Attribut `komLeData` steht die zu verwendende KIM-Adresse hier `komLeData: 1.0,tk-dt03@akquinet.kim.telematik-test`.
 
-Sollten zu dem ausgewählten Kostenträger mehrere IKs hinterletg sein, dann sollte geprüft werden, für welches dieser IKs eine KIM-Adresse hinterlegt ist. Sind mehrere KIM-Adressen hinterlegt, empfiehlt sich der Versand an die erste gefundene KIM-Adresse der jeweiligen Krankenkasse.
+Sollten zu dem ausgewählten Kostenträger mehrere Verzeichniseinträge hinterlegt sein, dann sollte geprüft werden, für welchen dieser Verzeichniseinträge eine KIM-Adresse hinterlegt ist. Sind mehrere KIM-Adressen hinterlegt, empfiehlt sich der Versand an die erste gefundene KIM-Adresse der jeweiligen Krankenkasse.
 
 Kann kein Empfänger aus dem VZD der TI ermittelt werden, muss der Anwendungsfall mit einer Fehlermeldung abgebrochen werden, demzufolge die Empfängeradresse der Krankenkasse mit den bereitgestellten Informationen nicht ermittelt werden konnte. Ggfs. müssen die Angaben durch den Patienten konkretisiert werden, bei welcher Krankenkasse er versichert ist.
 
