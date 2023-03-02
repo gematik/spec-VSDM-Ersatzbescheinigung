@@ -55,8 +55,8 @@
           {
             "key": "-eeb-angabeOrganizationIdentifier",
             "severity": "error",
-            "human": "Als Identifier im Organization-Profil muss die Telematik-ID und entweder das Institutionskennzeichen, die Betriebsstättennummer oder die KZV-Abrechnungsnummer angegeben werden.",
-            "expression": "entry.where(resource is Organization).resource.identifier.type.coding.where(code='PRN').exists() and (entry.where(resource is Organization).resource.identifier.type.coding.where(code='BSNR' or code='XX' or code='KZVA').exists())",
+            "human": "Im Organization-Profil muss als Identifier entweder das Institutionskennzeichen, die Betriebsstättennummer oder die KZV-Abrechnungsnummer angegeben werden.",
+            "expression": "entry.where(resource is Organization).resource.identifier.type.coding.where(code='BSNR' or code='XX' or code='KZVA').exists()",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
           },
           {
