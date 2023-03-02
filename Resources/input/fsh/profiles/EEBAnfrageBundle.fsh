@@ -67,9 +67,9 @@ Id: eeb-anfrage-bundle
 
 
 Invariant: -eeb-angabeOrganizationIdentifier
-Description: "Als Identifier im Organization-Profil muss die Telematik-ID und entweder das Institutionskennzeichen, die Betriebsstättennummer oder die KZV-Abrechnungsnummer angegeben werden."
+Description: "Im Organization-Profil muss als Identifier entweder das Institutionskennzeichen, die Betriebsstättennummer oder die KZV-Abrechnungsnummer angegeben werden."
 Severity: #error
-Expression: "entry.where(resource is Organization).resource.identifier.type.coding.where(code='PRN').exists() and (entry.where(resource is Organization).resource.identifier.type.coding.where(code='BSNR' or code='XX' or code='KZVA').exists())"
+Expression: "entry.where(resource is Organization).resource.identifier.type.coding.where(code='BSNR' or code='XX' or code='KZVA').exists()"
 
 Invariant: -eeb-angabePatientIdentifier
 Description: "Im Patient-Profil muss entweder ein Identifier (GKV oder PKV) oder folgende Informationen (Name, Vorname, Geburtsdatum und Postleitzahl) angegeben werden."
