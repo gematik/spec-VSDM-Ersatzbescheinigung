@@ -50,4 +50,4 @@ Für die Generierung stehen veschiedene Dienste im Internet zur Verfügung, beis
 ## Kommunikation zwischen App und Backendsystemen
 
 Der Aufbau und Inhalt der Kommunikation zwischen App und Backend einer Kasse bzw. eines Versicherungsunternehmens ist nicht Gegenstand dieser Beschreibung.
-Diese Kommunikation wird als `kassenintern` betrachtet.
+Diese Kommunikation wird als `intern` betrachtet.
