@@ -29,7 +29,7 @@ Für den Start des UseCases zum Online Check-In in der Praxis wird lediglich die
 
 - `mail` benennt die KIM-Adresse, an die die Praxis eine Ersatzbescheinigung bzw. Online Check-In gesendet haben möchte. Die Daten der Praxis werden dem Patienten zur Verifikation aus dem VZD über das Backend der App bereitgestellt.
 
-Im Folgenden ist ein Beispiel QR-Code für die KIM-Adresse einer fiktiven Praxis _Dr. Baldgesund_ dargestellt. Dr. Baldgesund erhält die KIM-Adresse `praxis-dr-baldgesund@kim-dienstleister.telematik` über die Beantragung eines Kontos bei einem KIM-Anbieter.
+Im Folgenden ist ein Beispiel QR-Code für die KIM-Adresse einer fiktiven Praxis _Dr. Baldgesund_ dargestellt. Dr. Baldgesund erhält die KIM-Adresse `praxis-dr-baldgesund@kim-dienstleister.kim.telematik` über die Beantragung eines Kontos bei einem KIM-Anbieter.
 
 <!--- generated at https://gchq.github.io/CyberChef -->
 {{render:ImplementationGuide-images-qr-sample}}
