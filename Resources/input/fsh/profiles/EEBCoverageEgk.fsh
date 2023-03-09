@@ -20,8 +20,7 @@ Id: eeb-coverage-egk
     PersoenlicheVersichertendaten named persoenlicheVersichertendaten 1..1 and
     AllgemeineVersicherungsdaten named allgemeineVersicherungsdaten 1..1 and
     GeschuetzteVersichertendaten named geschuetzteVersichertendaten 0..1 and
-    $patient-genderIdentity named genderIdentity 0..0 and
-    Selektivvertraege named selektivvertraege 0..0
+    $patient-genderIdentity named genderIdentity 0..0
 * extension[versionEgk].valueString 1..1
 * identifier 0..0
 * status = #active (exactly)
