@@ -32,7 +32,7 @@ Expression: "type.coding.code='GKV' implies extension('https://gematik.de/fhir/e
 Instance: KBV_PR_FOR_PatientEgkSample
 InstanceOf: KBV_PR_FOR_Patient
 Title: "Patient for EEBBescheinigungBundle"
-Usage: #example
+Usage: #inline
 * id = "437f2555-2396-4c64-a656-e9553161ca3c"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
 * identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
@@ -57,7 +57,7 @@ Usage: #example
 Instance: EEBCoverageEgkSample
 InstanceOf: EEBCoverageEgk
 Title:   "Coverage for EEBBescheinigungBundle"
-Usage: #example
+Usage: #inline
 * id = "2d4da53a-413a-48fe-b908-2e67b5761523"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
 * extension[versionEgk].url = "http://fhir.de/StructureDefinition/gkv/version-vsdm"

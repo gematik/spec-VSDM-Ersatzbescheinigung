@@ -40,7 +40,7 @@ Id: eeb-known-patient
 Instance: EEBKnownPatientSample
 InstanceOf: EEBKnownPatient
 Title: "EEBKnownPatient"
-Usage: #example
+Usage: #inline
 * id = "b8f0f69c-af1a-480b-8abf-44ab11aa23c5"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient"
 * identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV

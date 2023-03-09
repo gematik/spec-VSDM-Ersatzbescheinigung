@@ -48,7 +48,7 @@ Id: eeb-anfrage-header
 Instance: EEBAnfrageHeaderSample
 InstanceOf: EEBAnfrageHeader
 Title: "Header of EEBAnfrageBundle"
-Usage: #example
+Usage: #inline
 * id = "bb03a437-fe56-46f9-8622-ffc3766e7c70"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"

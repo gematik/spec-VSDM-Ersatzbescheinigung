@@ -74,7 +74,7 @@ Expression: "entry.where(resource is Patient).resource.identifier.type.coding.wh
 Instance: KBV_PR_FOR_OrganizationSample
 InstanceOf: KBV_PR_FOR_Organization
 Title: "Organization for EEBAnfrageBundle"
-Usage: #example
+Usage: #inline
 * id = "fad15347-a4b3-4899-a454-9fb43bdb0f30"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.1.0"
 * identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
@@ -103,7 +103,7 @@ Usage: #example
 Instance: KBV_PR_FOR_PatientKnownSample
 InstanceOf: KBV_PR_FOR_Patient
 Title: "KBV_PR_FOR_PatientKnownSample"
-Usage: #example
+Usage: #inline
 * id = "eb601b0c-96cd-4ac8-8849-fdd7aca89c33"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
 * identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
@@ -128,7 +128,7 @@ Usage: #example
 Instance: KBV_PR_FOR_PatientUnknownSample
 InstanceOf: KBV_PR_FOR_Patient
 Title: "KBV_PR_FOR_PatientUnknownSample"
-Usage: #example
+Usage: #inline
 * id = "16c07b55-c7bd-4e64-86bc-bf00f0435ba7"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
 * name[name].use = #official

@@ -38,7 +38,7 @@ Id: eeb-bescheinigung-header
 Instance: EEBBescheinigungHeaderSample
 InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle"
-Usage: #example
+Usage: #inline
 * id = "bd901c08-0133-4276-b34b-eb810a62deda"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
