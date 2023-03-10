@@ -15,7 +15,8 @@
 Die Übertragung der Daten bzw. der Anfrage erfolgt via KIM. Dabei sind drei Nachrichtentypen zu unterscheiden:
 
 - Anfrage des Leistungserbringers bei der Kasse nach Daten eines Versicherten (eEB Anfrage)
-- Übermittlung der Daten eines Versicherten von der Kasse zum Leistungserbringer (eEB Bescheinigung) oder Rückgabe einer Fehlermeldung (eEB Fehler)
+- Übermittlung der Daten eines Versicherten von der Kasse zum Leistungserbringer (eEB Bescheinigung) oder
+- Rückgabe einer Fehlermeldung (eEB Fehler)
 
 ## KIM Dienstkennungen
 
@@ -265,7 +266,7 @@ Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Date
 |X-KIM-Ursprungssystem   |\<PVS-Bezeichnung>;\<Releaseversion>   |nein|
 |X-KIM-Sendersystem      |\<Kasse-Bezeichnung>;\<Releaseversion> |nein|
 |X-KIM-Support           |\<Support-Email-Adresse Kasse> |nein|
-|In-Reply-To             |Message-ID der Anfrage                 |ja - wenn die Anfrage über eine KIM-Nachricht gestellt wurde <br />Andernfalls nein|
+|In-Reply-To             |Message-ID der Anfrage                 |ja - wenn die Anfrage über eine KIM-Nachricht gestellt wurde -<br />andernfalls nein|
 |Subject                 |\<T/E>EEB0_BES_\<UUID>                 |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
 |Content-Type            |application/octet-stream;<br />name="<T/E>EEB0_BES_\<UUID>.p7s" |ja<br />T/E: Testsystem (RU) / Echtsystem (PU)<br />UUID: bundle-identifier (AZ der Kasse)|
 |Content-Transfer-Encoding |base64 |ja|

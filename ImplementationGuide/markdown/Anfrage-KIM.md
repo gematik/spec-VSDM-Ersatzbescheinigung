@@ -1,6 +1,8 @@
 # Inhalt
 
-Die Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM wird durch das Praxispersonal initiiert. Kann eine zu behandelnde Person keine Gesundheitskarte als Versicherungsnachweis vorlegen, erfolgt eine Anfrage einer Ersatzbescheinigung bei der von der Person benannten oder bereits im System bekannten Krankenkasse. Damit die Kasse die versicherte Person in ihrem Bestandssystem identifizieren kann, müssen der Anfrage personenbezogene Daten mitgegeben werden.
+Die Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM wird durch das Praxispersonal initiiert.
+Kann eine zu behandelnde Person keine Gesundheitskarte als Versicherungsnachweis vorlegen, kann eine Anfrage einer Ersatzbescheinigung bei der von der Person benannten oder bereits im System bekannten Krankenkasse erfolgen.
+Damit die Kasse die versicherte Person in ihrem Bestandssystem identifizieren kann, müssen der Anfrage ein Mindestsatz an personenbezogenen Daten der versicherten Person mitgegeben werden.
 
 - [Inhalt](#inhalt)
   - [Erfassung personenbezogener Daten](#erfassung-personenbezogener-daten)
@@ -34,10 +36,13 @@ Ist die zu behandelnde Person als Patient im PVS unbekannt, sind folgende Angabe
 
 Diese Angaben sind in einer Patienten-Ressource `KBV_PR_FOR_Patient` einzutragen.
 
+Es wird empfohlen, dass das Praxispersonal darauf hingewiesen wird, die versicherte Person nach der aktuellen Krankenkasse zu befragen und ggfs. die hinterlegte Krankenkasse für die Anfrage zu aktualisieren.
+
 ## Angaben zur anfragenden Praxis
 
-Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen über die anfragende Praxis, um das Ausstellen von "Blanko"-Bescheinigungen zu unterbinden. Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") mitgegeben werden.
-Die Anfrage muss entweder die Betriebsstättennummer `BSNR`, die KZV Abrechnungsnummer `KZVA` oder das Institutionskennzeichen enthalten, um die anfragende Praxis zu identifizieren, zusätzlich kann die `TelematikID` angegeben werden.
+Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen über die anfragende Praxis, um das Ausstellen von "Blanko"-Bescheinigungen zu unterbinden.
+Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") mitgegeben werden.
+Die Anfrage muss entweder die Betriebsstättennummer `BSNR`, die KZV Abrechnungsnummer `KZVA`, Standortnummer des Krankenhauses oder das Institutionskennzeichen enthalten, um die anfragende Praxis zu identifizieren, zusätzlich kann die `TelematikID` angegeben werden.
 Ebenso müssen die Angaben zur `address` und `telecom`-Kontaktinformationen für Rückfragen angegeben sein.
 
 <iframe src="https://www.simplifier.net/embed/render?id=for/kbvprfororganization" style="width: 100%;height: 320px;"></iframe>
@@ -140,7 +145,9 @@ Die Suche nach der KIM-Empfängeradresse der Kasse erfolgt im zentralen Verzeich
 
     $ ldapsearch  -x -H ldaps://10.24.11.11:1636  -b dc=data,dc=vzd  "(&(professionOID=1.2.276.0.76.4.59)(displayName=Techniker*))"
 
-Zur Vereinfachung der Praxisabläufe sollte die Suche ins Praxisverwaltungsystem integriert werden. Bei bekannten Patienten, kann die KIM-Adresse aus dem Verzeichnisdienst über den Filter des Haupt-IK (gemäß er Kostenträgerstammdatei) der Krankenkasse abgefragt werden. (XML-Element `./kostentraeger/ik_liste/ik@V`)
+Zur Vereinfachung der Praxisabläufe sollte die Suche ins Praxisverwaltungsystem integriert werden.
+Bei bekannten Patienten kann die KIM-Adresse aus dem Verzeichnisdienst über den Filter des Haupt-IK (gemäß er Kostenträgerstammdatei) der Krankenkasse abgefragt werden
+(XML-Element `./kostentraeger/ik_liste/ik@V`).
 
 Hier der Einfachheit halber ebenfalls als Konsolenaufruf:
 
@@ -250,7 +257,9 @@ Diese liefert folgendes Ergebnis
 
 Im Attribut `komLeData` steht die zu verwendende KIM-Adresse hier `komLeData: 1.0,tk-dt03@akquinet.kim.telematik-test`.
 
-Sollten zu dem ausgewählten Kostenträger mehrere Verzeichniseinträge hinterlegt sein, dann sollte geprüft werden, für welchen dieser Verzeichniseinträge eine KIM-Adresse hinterlegt ist. Sind mehrere KIM-Adressen hinterlegt, empfiehlt sich der Versand an die erste gefundene KIM-Adresse der jeweiligen Krankenkasse.
+Sollten zu dem ausgewählten Kostenträger mehrere Verzeichniseinträge hinterlegt sein (in der PU - Produktivumgebung - kann das aktuell jedoch nicht vorkommen),
+dann sollte geprüft werden, für welchen dieser Verzeichniseinträge eine KIM-Adresse hinterlegt ist.
+Sind mehrere KIM-Adressen hinterlegt - auch dieser Fall ist aktuell in der PU nicht vorgesehen, empfiehlt sich der Versand an die erste gefundene KIM-Adresse der jeweiligen Krankenkasse.
 
 Kann kein Empfänger aus dem VZD der TI ermittelt werden, muss der Anwendungsfall mit einer Fehlermeldung abgebrochen werden, demzufolge die Empfängeradresse der Krankenkasse mit den bereitgestellten Informationen nicht ermittelt werden konnte. Ggfs. müssen die Angaben durch den Patienten konkretisiert werden, bei welcher Krankenkasse er versichert ist.
 
@@ -277,4 +286,4 @@ Das Feld `MessageHeader.source.endpoint` ist dabei ein vom FHIR-Standard vorgese
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle}}
 
-Im folgendem Link ist ein Beispiel-Bundle [Patient mit bekannter KVNR](https://simplifier.net/vsdm-ersatzbescheinigung/1f311c40-fee9-4b03-b0c4-c29d432f2371) dargestellt
+Im folgenden Link ist ein Beispiel-Bundle [Patient mit bekannter KVNR](https://simplifier.net/vsdm-ersatzbescheinigung/1f311c40-fee9-4b03-b0c4-c29d432f2371) dargestellt.
