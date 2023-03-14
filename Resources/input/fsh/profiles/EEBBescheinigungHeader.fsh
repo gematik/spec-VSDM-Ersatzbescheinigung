@@ -30,7 +30,7 @@ Id: eeb-bescheinigung-header
 * response.identifier ^definition = "The Bundle.identifier of the EEBAnfrageBundle to which this message is a response."
 * response.code = #ok (exactly)
 * response.details 0..0
-* focus 0..0
+//* focus 0..0
 * definition 0..0
 
 
@@ -47,3 +47,5 @@ Usage: #inline
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
 * response.identifier = "e71108ff-a936-44fa-9d7d-215a09428194"
 * response.code = #ok
+* focus[+].reference = "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
+* focus[+].reference = "Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"

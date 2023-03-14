@@ -145,11 +145,6 @@
         "max": "0"
       },
       {
-        "id": "MessageHeader.focus",
-        "path": "MessageHeader.focus",
-        "max": "0"
-      },
-      {
         "id": "MessageHeader.definition",
         "path": "MessageHeader.definition",
         "max": "0"

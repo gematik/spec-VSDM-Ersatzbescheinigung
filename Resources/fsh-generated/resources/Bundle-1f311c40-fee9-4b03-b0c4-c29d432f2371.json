@@ -50,7 +50,12 @@
         },
         "source": {
           "endpoint": "https://pvs.de/KIM"
-        }
+        },
+        "focus": [
+          {
+            "reference": "Patient/b8f0f69c-af1a-480b-8abf-44ab11aa23c5"
+          }
+        ]
       }
     },
     {
