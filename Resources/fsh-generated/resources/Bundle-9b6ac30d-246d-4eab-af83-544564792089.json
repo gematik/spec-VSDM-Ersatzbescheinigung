@@ -34,7 +34,15 @@
         },
         "source": {
           "endpoint": "https://Test-Krankenkasse.de/KIM"
-        }
+        },
+        "focus": [
+          {
+            "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
+          },
+          {
+            "reference": "Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"
+          }
+        ]
       }
     },
     {

@@ -14,10 +14,10 @@
   "timestamp": "2022-08-29T02:10:37.154+02:00",
   "entry": [
     {
-      "fullUrl": "https://gematik.de/fhir/MessageHeader/bb03a437-fe56-46f9-8622-ffc3766e7c70",
+      "fullUrl": "https://gematik.de/fhir/MessageHeader/591371dd-1ff4-48e7-ac25-29988a7ee903",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "bb03a437-fe56-46f9-8622-ffc3766e7c70",
+        "id": "591371dd-1ff4-48e7-ac25-29988a7ee903",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
@@ -50,7 +50,12 @@
         },
         "source": {
           "endpoint": "https://pvs.de/KIM"
-        }
+        },
+        "focus": [
+          {
+            "reference": "Patient/16c07b55-c7bd-4e64-86bc-bf00f0435ba7"
+          }
+        ]
       }
     },
     {

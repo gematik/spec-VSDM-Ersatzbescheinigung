@@ -8,11 +8,11 @@
     }
   ],
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler",
-  "version": "1.0",
+  "version": "1.0.0-rc2",
   "name": "EEBFehler",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
-  "date": "2023-02-17",
+  "date": "2023-03-09",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -55,6 +55,7 @@
               "path": "url"
             }
           ],
+          "description": "Extensions are always sliced by (at least) url",
           "rules": "closed"
         },
         "min": 1
