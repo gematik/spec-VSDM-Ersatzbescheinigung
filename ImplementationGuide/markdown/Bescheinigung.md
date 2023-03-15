@@ -251,8 +251,18 @@ Dieses Profil hat ausschließlich informativen Charakter für die Verarbeitung d
 ### Coverage
 
 In der Coverage-Ressource werden die Informationen zum Versicherungsverhältnis mitgeliefert.
-Zudem enthalten sie in den Extensions `allgemeineVersicherungsdaten`, `persoenlicheVersichertendaten` und `geschuetzteVersichertendaten` die Versichertenstammdaten (insbesondere die KVNR als `Versicherten_ID` in den `allgemeineVersicherungsdaten`), um für PKV-Versicherten die Anwendungen der Telematikinfrastruktur nutzen zu können.
-Im Element `period` wird die Gültigkeitsdauer (start/end) der Ersatzbescheinigung angegeben.
+
+Das Feld `period` gibt an, ob zum Zeitpunkt der Befüllung des Elements ein Versicherungsverhältnis besteht.
+Dabei wird `period.start` = `period.end` = <Tag der Ausstellung> gesetzt, da Aussagen über die Vergangenheit und Zukunft eines Versicherungsverhältnisses irrelevant sind.
+
+Zudem enthält die Coverage in den Extensions `allgemeineVersicherungsdaten`, `persoenlicheVersichertendaten` und `geschuetzteVersichertendaten` die Versichertenstammdaten (insbesondere die KVNR als `Versicherten_ID` in den `allgemeineVersicherungsdaten`), um für PKV-Versicherten die Anwendungen der Telematikinfrastruktur nutzen zu können.
+Die Versichertenstammdaten sind dort in `base64`-Codierung und `gzip`-komprimiert enthalten.
+
+Die Extension `Coverage.extension:versionEgk` gibt die verwendete Schemaversion der Versichertenstammdaten an.
+
+Für GKV-Versicherte werden diese gemäß [VSD-Schema](https://github.com/gematik/api-telematik/blob/OPB4/fa/vsds/Schema_VSD.xsd) formatiert (aktuelle Version 5.2.0).
+
+Für PKV-Versicherte werden diese gemäß [VSD-Schema_PKV](https://github.com/gematik/api-telematik/blob/OPB4/fa/vsds/Schema_VSD_PKV.xsd) formatiert (aktuelle Version 1.0.0).
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk}}
 
