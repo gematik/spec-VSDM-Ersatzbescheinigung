@@ -43,7 +43,7 @@ Ist die Bescheinigung auf Grundlage der Anfrage via App eingetroffen, so wird zu
 
 Das Praxisverwaltungssystem kann diesen FHIR-Datensatz der Bescheinigung in beiden Fällen in analoger Weise zum Einlesen der Versichertenstammdaten der eGK verarbeiten und nach Bedarf eine neue digitale Patientenkartei anlegen.
 
-_Dieser Anwendungsfall der Anforderung via App wird aktuell nur für Versicherte der Privaten Krankenversicherung eingesetzt, über den der Praxis die Versichertendaten (KVNR, Name, Adresse, Geburtsdatum, etc.)  des Patienten bereitgestellt werden._
+_Dieser Anwendungsfall der Anforderung via App wird aktuell nur für Versicherte der Privaten Krankenversicherung eingesetzt, über den der Praxis die Versichertendaten (KVNR, Name, Adresse, Geburtsdatum, etc.) des Patienten bereitgestellt werden._
 
 {{render:ImplementationGuide-images-out-pkv-ersatzverfahren}}
 
