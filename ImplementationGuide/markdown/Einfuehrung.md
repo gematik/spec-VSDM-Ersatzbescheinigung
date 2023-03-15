@@ -6,7 +6,7 @@ Der bisherige papierbasierte Prozess für die Übermittlung von Ersatzbescheinig
 Mit dem eEB-Verfahren wird die Anforderung und Ausstellung einer Ersatzbescheinigung für Versicherte der gesetzlichen Krankenkassen automatisierbar.
 Ebenso kann über dieses Verfahren ein Versichertennachweis (insbesondere die Bereitstellung der Krankenversicherungsnummer KVNR) für privat Versicherte angefordert werden.
 
-Das auslösende Ereignis (Anforderung) kann ein "Check-In" in der Praxis mittels einer App oder eine manuelle Anforderung aus dem Praxisverwaltungssystem durch Mitarbeitende einer sein.
+Das auslösende Ereignis (Anforderung) kann ein "Check-In" in der Praxis mittels einer App oder eine manuelle Anforderung aus dem Praxisverwaltungssystem durch Mitarbeitende der Praxis sein.
 
 - [Inhalt](#inhalt)
   - [Rechtliche Einordnung](#rechtliche-einordnung)
