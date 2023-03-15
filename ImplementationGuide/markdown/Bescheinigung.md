@@ -3,7 +3,9 @@ topic: bescheinigung
 ---
 # Inhalt
 
-Als Ergebnis einer Bescheinigungsanfrage antwortet die Kasse eine KIM-Nachricht, die im Positiv-Fall ein signiertes Bescheinigungsbundle enthält.
+Als Ergebnis einer Anfrage für eine Ersatzbescheinigung per KIM antwortet die angefragte Krankenkasse mittels einer KIM-Nachricht, die im Positiv-Fall ein signiertes Bescheinigungsbundle (Ersatzbescheinigung) enthält.
+
+Ebenso sendet das Versicherungsunternehmen einer Praxis eine KIM-Nachricht mit einem Bescheinigungsbundle (Versichertennachweis) bei der positiven Antwort auf ein externes "Check-In" durch eine Versicherten-App.
 
 - [Inhalt](#inhalt)
   - [Signatur](#signatur)
@@ -242,6 +244,7 @@ Der Header ist für den Bundle-Type `message` verpflichtend.
 
 Die Patient-Ressource vom Typ `KBV_PR_FOR_Patient` enthält die der Kasse bekannten Patientendaten gemäß KBV-Profilierung,
 wie sie in den Anwendungen *eAU*, *eRezept*, etc. verwendet werden.
+Dieses Profil hat ausschließlich informativen Charakter für die Verarbeitung der Bescheinigung, da es als Referenz im MUSS-element `beneficiary` des Profils der nachfolgend beschriebenen `EEBCoverageEgk` verwendet wird.
 
 <iframe src="https://www.simplifier.net/embed/render?id=for/kbvprforpatient" style="width: 100%;height: 320px;"></iframe>
 
@@ -249,6 +252,7 @@ wie sie in den Anwendungen *eAU*, *eRezept*, etc. verwendet werden.
 
 In der Coverage-Ressource werden die Informationen zum Versicherungsverhältnis mitgeliefert.
 Zudem enthalten sie in den Extensions `allgemeineVersicherungsdaten`, `persoenlicheVersichertendaten` und `geschuetzteVersichertendaten` die Versichertenstammdaten (insbesondere die KVNR als `Versicherten_ID` in den `allgemeineVersicherungsdaten`), um für PKV-Versicherten die Anwendungen der Telematikinfrastruktur nutzen zu können.
+Im Element `period` wird die Gültigkeitsdauer (start/end) der Ersatzbescheinigung angegeben.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk}}
 
@@ -259,6 +263,7 @@ Dieses ist innerhalb des oben genannten Signaturcontainers (PKCS#7 enveloping) e
 
 ## Fehlerfälle
 
-Im Fall von Fehlern, antwortet die Kasse mit einer Fehler-Nachricht `EEBFehler` als FHIR-Ressource `OperationOutcome`. Diese enthält Details mit StatusCodes und lesbaren Fehlertexten in einer Liste von Fehlern als `issue`|s.
+Im Fall von Fehlern antwortet die Kasse mit einer Fehler-Nachricht `EEBFehler` als FHIR-Ressource `OperationOutcome`.
+Diese enthält Details mit StatusCodes und lesbaren Fehlertexten in einer Liste von Fehlern als `issue`|s.
 
 Details dazu sind auf der Seite {{pagelink:ImplementationGuide/markdown/ErrorHandling.md}} zusammengestellt.
