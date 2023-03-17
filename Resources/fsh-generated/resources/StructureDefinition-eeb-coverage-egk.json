@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "eeb-coverage-egk",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk",
-  "version": "1.0.0-rc2",
+  "version": "1.0.0-rc3",
   "name": "EEBCoverageEgk",
   "status": "active",
   "experimental": false,

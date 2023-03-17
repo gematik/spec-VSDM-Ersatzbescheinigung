@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "eeb-operation-outcome-issue-identifier",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBOperationOutcomeIssueIdentifier",
-  "version": "1.0.0-rc2",
+  "version": "1.0.0-rc3",
   "name": "EEBOperationOutcomeIssueIdentifier",
   "status": "active",
   "experimental": false,

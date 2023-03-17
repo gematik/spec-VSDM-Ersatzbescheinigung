@@ -8,7 +8,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler",
-  "version": "1.0.0-rc2",
+  "version": "1.0.0-rc3",
   "name": "EEBFehler",
   "status": "active",
   "experimental": false,
