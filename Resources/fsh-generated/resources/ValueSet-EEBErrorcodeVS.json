@@ -1,23 +1,15 @@
 {
   "resourceType": "ValueSet",
-  "status": "draft",
+  "status": "active",
   "name": "EEBErrorcodeVS",
   "id": "EEBErrorcodeVS",
   "title": "ValueSet für eEB Fehler",
   "description": "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausstellen kann",
-  "version": "1.0",
+  "version": "1.0.0-rc2",
   "url": "https://gematik.de/fhir/eeb/ValueSet/EEBErrorcodeVS",
+  "experimental": false,
   "publisher": "gematik GmbH",
-  "contact": [
-    {
-      "telecom": [
-        {
-          "system": "url",
-          "value": "http://www.gematik.de"
-        }
-      ]
-    }
-  ],
+  "date": "2023-03-09",
   "compose": {
     "include": [
       {

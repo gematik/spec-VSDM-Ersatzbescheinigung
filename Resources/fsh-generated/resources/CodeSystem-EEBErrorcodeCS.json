@@ -1,12 +1,12 @@
 {
   "resourceType": "CodeSystem",
-  "status": "draft",
+  "status": "active",
   "content": "complete",
   "name": "EEBErrorcodeCS",
   "id": "EEBErrorcodeCS",
   "title": "CodeSystem für eEB Fehler",
   "description": "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausstellen kann",
-  "version": "1.0",
+  "version": "1.0.0-rc2",
   "url": "https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS",
   "concept": [
     {
@@ -74,18 +74,9 @@
       "display": "Die KIM-Nachricht konnte auf Grund eines nicht verfügbaren Schlüssels nicht entschlüsselt werden."
     }
   ],
+  "experimental": false,
   "publisher": "gematik GmbH",
-  "contact": [
-    {
-      "telecom": [
-        {
-          "system": "url",
-          "value": "http://www.gematik.de"
-        }
-      ]
-    }
-  ],
-  "copyright": "gematik GmbH",
+  "date": "2023-03-09",
   "caseSensitive": true,
   "count": 16
 }

@@ -3,12 +3,7 @@ Id: EEBErrorcodeCS
 Title: "CodeSystem für eEB Fehler"
 Description: "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausstellen kann"
 * ^url = "https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS"
-* ^version = "1.0"
-* ^status = #draft
-* ^publisher = "gematik GmbH"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://www.gematik.de"
-* ^copyright = "gematik GmbH"
+* insert Meta
 * ^caseSensitive = true
 * ^content = #complete
 * #100 "Der Patient ist nicht bei der adressierten Krankenkasse versichert."
