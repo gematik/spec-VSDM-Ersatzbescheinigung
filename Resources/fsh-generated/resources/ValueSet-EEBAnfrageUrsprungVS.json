@@ -8,18 +8,8 @@
   "version": "1.0.0-rc2",
   "url": "https://gematik.de/fhir/eeb/ValueSet/EEBAnfrageUrsprungVS",
   "experimental": false,
-  "date": "2023-03-09",
   "publisher": "gematik GmbH",
-  "contact": [
-    {
-      "telecom": [
-        {
-          "system": "url",
-          "value": "http://www.gematik.de"
-        }
-      ]
-    }
-  ],
+  "date": "2023-03-17",
   "compose": {
     "include": [
       {

@@ -75,19 +75,8 @@
     }
   ],
   "experimental": false,
-  "date": "2023-03-09",
   "publisher": "gematik GmbH",
-  "contact": [
-    {
-      "telecom": [
-        {
-          "system": "url",
-          "value": "http://www.gematik.de"
-        }
-      ]
-    }
-  ],
-  "copyright": "gematik GmbH",
+  "date": "2023-03-17",
   "caseSensitive": true,
   "count": 16
 }

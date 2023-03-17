@@ -16,7 +16,7 @@
   "name": "EEBAnfrageHeader",
   "status": "active",
   "experimental": false,
-  "date": "2023-03-09",
+  "date": "2023-03-17",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -58,6 +58,15 @@
       {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
         "min": 3
       },
       {
