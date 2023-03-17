@@ -1,6 +1,6 @@
 # Inhalt
 
-Die UseCases der Ersatzbescheinigung digitalisieren den papierbasierten Prozess für Anwendungsfälle in der (Zahn-)Arztparxis, in denen keine eGK als Versicherungsnachweis vorgelegt werden kann.
+Die UseCases der Ersatzbescheinigung digitalisieren den papierbasierten Prozess für Anwendungsfälle in der (Zahn-)Arztpraxis, in denen keine eGK als Versicherungsnachweis vorgelegt werden kann.
 Der bisherige papierbasierte Prozess für die Übermittlung von Ersatzbescheinigungen wie bspw. Faxen, Papierausstellung usw. und der anschließenden händischen Übernahme der Daten sind langwierig, fehleranfällig und unkomfortabel für einen Großteil der Beteiligten.
 
 Mit dem eEB-Verfahren wird die Anforderung und Ausstellung einer Ersatzbescheinigung für Versicherte der gesetzlichen Krankenkassen automatisierbar.
