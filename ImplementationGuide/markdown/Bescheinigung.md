@@ -1,6 +1,3 @@
----
-topic: bescheinigung
----
 # Inhalt
 
 Als Ergebnis einer Anfrage für eine Ersatzbescheinigung per KIM antwortet die angefragte Krankenkasse mittels einer KIM-Nachricht, die im Positiv-Fall ein signiertes Bescheinigungsbundle (Ersatzbescheinigung) enthält.
