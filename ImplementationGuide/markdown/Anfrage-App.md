@@ -35,7 +35,7 @@ Für den Start des UseCases zum "Online Check-In" in der Praxis wird lediglich d
 > https://developer.android.com/training/app-links/verify-android-applinks#multi-app-same-domain und
 > https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content
 
-Im Folgenden ist ein Beispiel QR-Code für die KIM-Adresse (*URL-Safe codiert*) einer fiktiven Praxis _Dr. Baldgesund_ dargestellt. Dr. Baldgesund erhält die KIM-Adresse `praxis-dr-baldgesund@kim-dienstleister.kim.telematik` über die Beantragung eines Kontos bei einem KIM-Anbieter.
+Im Folgenden ist ein Beispiel QR-Code für die KIM-Adresse (`URL-Safe` codiert) einer fiktiven Praxis _Dr. Baldgesund_ dargestellt. Dr. Baldgesund erhält die KIM-Adresse `praxis-dr-baldgesund@kim-dienstleister.kim.telematik` über die Beantragung eines Kontos bei einem KIM-Anbieter.
 
 <!--- generated at https://gchq.github.io/CyberChef -->
 {{render:ImplementationGuide-images-qr-sample}}
