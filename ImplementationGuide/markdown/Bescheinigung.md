@@ -262,7 +262,9 @@ Die Extension `Coverage.extension:versionEgk` gibt die verwendete Schemaversion 
 
 Für GKV-Versicherte werden diese gemäß [VSD-Schema](https://github.com/gematik/api-telematik/blob/OPB4/fa/vsds/Schema_VSD.xsd) formatiert (aktuelle Version 5.2.0).
 
-Für PKV-Versicherte werden diese gemäß [VSD-Schema_PKV](https://github.com/gematik/api-telematik/blob/OPB4/fa/vsds/Schema_VSD_PKV.xsd) formatiert (aktuelle Version 1.0.0).
+Für PKV-Versicherte wurde festgelegt, dass hier ebenfalls das GKV-Schema verwendet wird [VSD-Schema](https://github.com/gematik/api-telematik/blob/OPB4/fa/vsds/Schema_VSD.xsd) formatiert (aktuelle Version 5.2.0). Hintergrund ist die Definition des VSD-Schema_PKV für die in der Vergangenheit avisierte Ausgabe von elektronischen Gesundheitskarten. Da diese beim Online Check-In nicht benötigt wird, soll das GKV-Schema verwendet werden, was die Implementierung im Primärsystemen vereinfacht.
+
+Details zur Befüllung der VSD für PKV-Versicherte sind auf der folgenden Unterseite angegeben [Details VSD-Befüllung PKV](pkvvsd.md)
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk}}
 
