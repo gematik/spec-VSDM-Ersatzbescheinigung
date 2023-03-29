@@ -33,7 +33,13 @@
         {
           "nameUrl": "ImplementationGuide/markdown/Bescheinigung.md",
           "title": "Bescheinigung",
-          "generation": "markdown"
+          "generation": "markdown",
+          "page": [
+          {
+            "nameUrl": "ImplementationGuide/markdown/pkvvsd.md",
+            "title": "Befüllung PKV-VSD",
+            "generation": "markdown"
+          }]
         },
         {
           "nameUrl": "ImplementationGuide/markdown/KIM-Nachrichten.md",
