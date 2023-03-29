@@ -16,7 +16,7 @@ Für PKV-Versicherte soll das [VSD-Schema](https://github.com/gematik/api-telema
 | Ende | VSD:ISO8601Date | 0..1  |  | nicht relevant |
 | Kostentraeger | VSD:Kostentraeger | 1..1 | | |
 | Kostentraegerkennung | xs:integer | 1..1  |  | Institutionskennzeichen (IK) gemäß [IK-Liste](https://github.com/PKV-Verband/PKV-IK-Liste) |
-| Kostentraegerlaendercode | xs:string (maxLen 3) | 1..1  |  | Kostentraegerlaendercode (siehe Anlage 8 (Staatsangehörigkeit und Länderkennzeichen für Auslandsanschriften) zur DEÜV, siehe www.gkv-datenaustausch.de/arbeitgeber/deuev/gemeinsame_rundschreiben/gemeinsame_rundschreiben.jsp) |
+| Kostentraegerlaendercode | xs:string (maxLen 3) | 1..1  |  | Kostentraegerlaendercode (siehe Anlage 8 (Staatsangehörigkeit und Länderkennzeichen für Auslandsanschriften) zur DEÜV, siehe [GKV-Rundschreiben](https://www.gkv-datenaustausch.de/arbeitgeber/deuev/gemeinsame_rundschreiben/gemeinsame_rundschreiben.jsp)) |
 | Name | VSD:Name (maxLen 45) | 1..1 | | Kostenträgername gemäß [IK-Liste](https://github.com/PKV-Verband/PKV-IK-Liste)|
 | AbrechnenderKostentraeger | VSD:Kostentraeger | 0..1| | nicht relevant |
 | Zusatzinfos | |  1..1 | | |
@@ -72,13 +72,13 @@ Versicherten_ID | VSD:insurantId | 1..1 | | Die Versicherten-ID ist der 10-stell
 | Hausnummer | xs:string (maxLen 9) | 0..1 | |  siehe KBV_PR_FOR_Patient |
 | Anschriftenzusatz | xs:string (maxLen 40) | 0..1 |  |  siehe KBV_PR_FOR_Patient|
 | Land | VSD:LandType | 1..1 | | |
-| Wohnsitzländercode | xs:string (maxLen 3) | 1..1 |  | Laendercode (siehe Anlage 8 (Staatsangehörigkeit und Länderkennzeichen für Auslandsanschriften) zur DEÜV, siehe www.gkv-datenaustausch.de/arbeitgeber/deuev/gemeinsame_rundschreiben/gemeinsame_rundschreiben.jsp)|
+| Wohnsitzländercode | xs:string (maxLen 3) | 1..1 |  | Laendercode (siehe Anlage 8 (Staatsangehörigkeit und Länderkennzeichen für Auslandsanschriften) zur DEÜV, siehe [GKV-Rundschreiben](https://www.gkv-datenaustausch.de/arbeitgeber/deuev/gemeinsame_rundschreiben/gemeinsame_rundschreiben.jsp))|
 | PostfachAdresse | | 0..1 | | |
 | Postleitzahl | xs:string (maxLen 10) | 0..1 |  | siehe KBV_PR_FOR_Patient|
 | Ort | xs:string (maxLen 40) | 1..1 |  | siehe KBV_PR_FOR_Patient|
 | Postfach | xs:string (maxLen 8) | 1..1 |  | siehe KBV_PR_FOR_Patient|
 | Land | VSD:LandType | 1..1 | | |
-| Wohnsitzländercode | xs:string (maxLen 3) | 1..1 |  | Laendercode (siehe Anlage 8 (Staatsangehörigkeit und Länderkennzeichen für Auslandsanschriften) zur DEÜV, siehe www.gkv-datenaustausch.de/arbeitgeber/deuev/gemeinsame_rundschreiben/gemeinsame_rundschreiben.jsp)|
+| Wohnsitzländercode | xs:string (maxLen 3) | 1..1 |  | Laendercode (siehe Anlage 8 (Staatsangehörigkeit und Länderkennzeichen für Auslandsanschriften) zur DEÜV, siehe [GKV-Rundschreiben](https://www.gkv-datenaustausch.de/arbeitgeber/deuev/gemeinsame_rundschreiben/gemeinsame_rundschreiben.jsp))|
 
 Beispiel:
 
