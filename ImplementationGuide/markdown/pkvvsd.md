@@ -12,12 +12,12 @@ Für PKV-Versicherte soll das [VSD-Schema](https://github.com/gematik/api-telema
 | ---- | --------- | ------------ | -------------------- | --------- |
 | Versicherter | |  1..1 | | |
 | Versicherungsschutz | | 1..1 | | |
-| Beginn | VSD:ISO8601Date | 1..1 | [Aktuelles Datum] | Beginn des Versicherungsschutzes (hier: Leistungsanspruch) |
+| Beginn | VSD:ISO8601Date | 1..1 | [Aktuelles Datum] | Datum des Versands der Nachricht |
 | Ende | VSD:ISO8601Date | 0..1  |  | nicht relevant |
 | Kostentraeger | VSD:Kostentraeger | 1..1 | | |
-| Kostentraegerkennung | xs:integer | 1..1  |  | Kostentraeger des Versicherten (Institutionskennzeichen (IK)) |
+| Kostentraegerkennung | xs:integer | 1..1  |  | Institutionskennzeichen (IK) gemäß [IK-Liste](https://github.com/PKV-Verband/PKV-IK-Liste) |
 | Kostentraegerlaendercode | xs:string (maxLen 3) | 1..1  |  | Kostentraegerlaendercode (siehe Anlage 8 (Staatsangehörigkeit und Länderkennzeichen für Auslandsanschriften) zur DEÜV, siehe www.gkv-datenaustausch.de/arbeitgeber/deuev/gemeinsame_rundschreiben/gemeinsame_rundschreiben.jsp) |
-| Name | VSD:Name (maxLen 45) | 1..1 | |  Gibt den Namen der Instiution/Organisation an|
+| Name | VSD:Name (maxLen 45) | 1..1 | | Kostenträgername gemäß [IK-Liste](https://github.com/PKV-Verband/PKV-IK-Liste)|
 | AbrechnenderKostentraeger | VSD:Kostentraeger | 0..1| | nicht relevant |
 | Zusatzinfos | |  1..1 | | |
 | Zusatzinfos GKV | |  1..1 | | |
