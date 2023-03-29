@@ -1,3 +1,7 @@
+---
+topic: pkv-vsd
+---
+
 # VSD-Befüllung für PKV-Versicherte
 
 Für PKV-Versicherte soll das [VSD-Schema](https://github.com/gematik/api-telematik/blob/OPB4/fa/vsds/Schema_VSD.xsd) für GKV-Versicherte nachgenutzt werden. Da nicht alle Informationen zu Pflichtfeldern bei Versicherungsunternehmen vorliegen oder in der Privatversicherung irrelevant sind, wird hier eine Übersicht zur Befüllung mit konkreten Werten bzw. Ersatzwerten angegeben.
