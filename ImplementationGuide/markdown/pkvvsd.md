@@ -93,6 +93,15 @@ Beispiel:
    <Vorname>Mensch</Vorname>
    <Nachname>Meier</Nachname>
    <Geschlecht>X</Geschlecht>
+   <StrassenAdresse>
+    <Postleitzahl>59174</Postleitzahl>
+    <Ort>Kamen</Ort>
+    <Land>
+     <Wohnsitzlaendercode>D</Wohnsitzlaendercode>
+    </Land>
+    <Strasse>Luisenstraße</Strasse>
+    <Hausnummer>16</Hausnummer>
+   </StrassenAdresse>
   </Person>
  </Versicherter>
 </UC_PersoenlicheVersichertendatenXML>
