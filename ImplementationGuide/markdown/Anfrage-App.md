@@ -50,8 +50,14 @@ Für die Generierung stehen verschiedene Dienste im Internet zur Verfügung, bei
 >
 > Die Praxis muss sich ihrer KIM-Adresse bewusst sein.
 > Diese erhält sie üblicherweise mit der Einrichtung des KIM-Kontos bei einem KIM-Dienstanbieter.
-> Für das korrekte Einlesen ist es notwendig, die KIM-Adresse in die oben gezeigte `json`-Struktur einzubetten.
+> Für das korrekte Einlesen ist es notwendig, die KIM-Adresse in die oben gezeigte URL als URL-Parameter `mail` einzubetten.
 > Die gematik unterstützt bei Bedarf bei der Generierung des QR-Codes für eine Praxis.
+
+> **Hinweis**
+>
+> Den Patienten kann eine Hilfestellung neben den QR-Code gedruckt werden.
+> Bspw. hilft es, wenn die Praxis ihren Namen und Adresse noch einmal neben den QR-Code schreibt,
+> damit Patienten diese mit den Anzeigedaten in der App bei Erteilung der Einwilligung abgleichen können.
 
 ## Kommunikation zwischen App und Backendsystemen
 
