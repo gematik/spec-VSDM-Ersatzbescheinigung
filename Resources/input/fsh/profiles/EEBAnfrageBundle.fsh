@@ -125,6 +125,23 @@ Usage: #inline
 // * address[Strassenanschrift].postalCode = "26427"
 // * address[Strassenanschrift].country = "D"
 
+Instance: KBV_PR_FOR_PatientKnownPkvSample
+InstanceOf: KBV_PR_FOR_Patient
+Title: "KBV_PR_FOR_PatientKnownPkvSample"
+Usage: #inline
+* id = "77355dc2-07cc-4cc6-bd78-afccfb7d0106"
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+* identifier[versichertenID_pkv].type = http://fhir.de/CodeSystem/identifier-type-de-basis#PKV
+* identifier[versichertenID_pkv].system = "http://fhir.de/sid/pkv/kvid-10"
+* identifier[versichertenID_pkv].value = "A123456789"
+* name[name].use = #official
+* name[name].family = "Königstein"
+* name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+* name[name].family.extension[nachname].valueString = "Königstein"
+* name[name].given = "Ludger"
+* birthDate = "1935-06-22"
+* address[Strassenanschrift].type = #both
+
 Instance: KBV_PR_FOR_PatientUnknownSample
 InstanceOf: KBV_PR_FOR_Patient
 Title: "KBV_PR_FOR_PatientUnknownSample"
@@ -196,5 +213,39 @@ Usage: #example
 * entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample3
 * entry[+][KBV_PR_FOR_Patient].fullUrl = "https://gematik.de/fhir/Patient/16c07b55-c7bd-4e64-86bc-bf00f0435ba7"
 * entry[=][KBV_PR_FOR_Patient].resource = KBV_PR_FOR_PatientUnknownSample
+* entry[+][KBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* entry[=][KBV_PR_FOR_Organization].resource = KBV_PR_FOR_OrganizationSample
+
+Instance: EEBAnfrageBundleSampleKnownPatientPkv
+InstanceOf: EEBAnfrageBundle
+Title:   "EEBAnfrageBundleKnownPatientPkv"
+Usage: #example
+* id = "eae51ab8-d813-4b7e-849e-3a5b83cde9d2"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:79939e34-c5cc-4da6-ba55-f4bd85832760"
+* type = #message
+* timestamp = "2022-08-29T02:10:37.154+02:00"
+* entry[+][EEBAnfrageHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/97d364a4-33ca-4968-8cea-89ef50e006b6"
+* entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample4
+* entry[+][EEBKnownPatient].fullUrl = "https://gematik.de/fhir/Patient/4149fdf9-2417-4a58-ac02-3473f5eb5431"
+* entry[=][EEBKnownPatient].resource = EEBKnownPatientPkvSample
+* entry[+][KBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* entry[=][KBV_PR_FOR_Organization].resource = KBV_PR_FOR_OrganizationSample
+
+Instance: EEBAnfrageBundleSampleKnownKBV_PR_FOR_PatientPkv
+InstanceOf: EEBAnfrageBundle
+Title:   "EEBAnfrageBundleKnownKBV_PR_FOR_PatientPkv"
+Usage: #example
+* id = "48effb6a-2f00-4cc1-8f3f-2598c6e1f33f"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:1407c1c4-392f-4c63-940d-ffea9344e0dc"
+* type = #message
+* timestamp = "2022-08-29T02:10:37.154+02:00"
+* entry[+][EEBAnfrageHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/35c13445-127b-4c88-b819-68bff12293c2"
+* entry[=][EEBAnfrageHeader].resource = EEBAnfrageHeaderSample5
+* entry[+][KBV_PR_FOR_Patient].fullUrl = "https://gematik.de/fhir/Patient/77355dc2-07cc-4cc6-bd78-afccfb7d0106"
+* entry[=][KBV_PR_FOR_Patient].resource = KBV_PR_FOR_PatientKnownPkvSample
 * entry[+][KBV_PR_FOR_Organization].fullUrl = "https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
 * entry[=][KBV_PR_FOR_Organization].resource = KBV_PR_FOR_OrganizationSample

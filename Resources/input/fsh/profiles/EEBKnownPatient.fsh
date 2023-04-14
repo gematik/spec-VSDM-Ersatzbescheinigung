@@ -46,3 +46,13 @@ Usage: #inline
 * identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
 * identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[versichertenId_GKV].value = "T024791905"
+
+Instance: EEBKnownPatientPkvSample
+InstanceOf: EEBKnownPatient
+Title: "EEBKnownPatientPkv"
+Usage: #inline
+* id = "4149fdf9-2417-4a58-ac02-3473f5eb5431"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient"
+* identifier[versichertenID_pkv].type = http://fhir.de/CodeSystem/identifier-type-de-basis#PKV
+* identifier[versichertenID_pkv].system = "http://fhir.de/sid/pkv/kvid-10"
+* identifier[versichertenID_pkv].value = "T024791905"
