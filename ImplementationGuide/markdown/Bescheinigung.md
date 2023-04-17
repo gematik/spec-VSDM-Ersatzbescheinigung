@@ -247,10 +247,13 @@ Dieses Profil hat ausschließlich informativen Charakter für die Verarbeitung d
 
 ### Coverage
 
-In der Coverage-Ressource werden die Informationen zum Versicherungsverhältnis mitgeliefert.
+In der Coverage-Ressource werden von den Krankenkassen der GKV die Ersatzbescheinigung und von Versicherungsunternehmen der PKV Informationen zum Versicherungsnachweis geliefert.
 
-Das Feld `period` gibt an, ob zum Zeitpunkt der Befüllung des Elements ein Versicherungsverhältnis besteht.
-Dabei wird `period.start` = `period.end` = <Tag der Ausstellung> gesetzt, da Aussagen über die Vergangenheit und Zukunft eines Versicherungsverhältnisses irrelevant sind.
+Das Feld period mit `period.start` und `period.end` wird unterschiedlich von GKV und PKV verwendet.
+
+* Die Krankenkassen der GKV prüfen, ob zum angefragten Leistungsdatum der EEB-Anfrage ein Versicherungsverhältnis (inkl. Leistungsanspruch) besteht. Ist dieses „Versicherungsverhältnis“ vorhanden, so wird als Beginn (`period.start`) das angefragte Leistungsdatum gesetzt. Als Ende-Datum (`period.end`) wird in der Regel das zugehörige Quartalsendedatum bescheinigt. In Ausnahmefällen wird das Ende-Datum vor dem Quartalsende liegen, z.B. wenn bereits bekannt ist, dass das Versicherungsverhältnis vor dem Quartalsende beendet sein wird. Eine Bescheinigung über mehrere Quartale ist nicht vorgesehen.
+* Die Versicherungsunternehmen der PKV übertragen mit der Bescheinigung die Versichertenstammdaten, so dass im Feld period der Zeitpunkt der Stammdatenübertragung angegeben wird. Daher wird `period.start = period.end` gesetzt.
+
 
 Zudem enthält die Coverage in den Extensions `allgemeineVersicherungsdaten`, `persoenlicheVersichertendaten` und `geschuetzteVersichertendaten` die Versichertenstammdaten (insbesondere die KVNR als `Versicherten_ID` in den `allgemeineVersicherungsdaten`), um für PKV-Versicherten die Anwendungen der Telematikinfrastruktur nutzen zu können.
 Die Versichertenstammdaten sind dort in `base64`-Codierung und `gzip`-komprimiert enthalten.
