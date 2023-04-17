@@ -137,7 +137,7 @@ Usage: #inline
 * beneficiary.reference =  "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
 * payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
 * payor.identifier.value = "12345678"
-* payor.display = "Test Krankenkasse"
+* payor.display = "Test GKV Krankenkasse"
 
 Instance: EEBCoverageEgkPkvSample
 InstanceOf: EEBCoverageEgk
@@ -159,5 +159,5 @@ Usage: #inline
 * period.end = "2027-07-31"
 * beneficiary.reference =  "Patient/e36f9476-0d04-4394-a626-8b4706b005b0"
 * payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
-* payor.identifier.value = "12345678"
-* payor.display = "Test Krankenkasse"
+* payor.identifier.value = "23456789"
+* payor.display = "Test PKV Krankenkasse"
