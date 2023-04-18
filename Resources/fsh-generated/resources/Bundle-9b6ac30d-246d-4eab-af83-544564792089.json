@@ -28,9 +28,9 @@
           "identifier": "e71108ff-a936-44fa-9d7d-215a09428194"
         },
         "eventCoding": {
-          "system": "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID",
-          "code": "1.2.276.0.76.4.49",
-          "display": "Versicherte/-r"
+          "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+          "code": "1.2.276.0.76.4.50",
+          "display": "Betriebsstätte Arzt"
         },
         "source": {
           "endpoint": "https://Test-Krankenkasse.de/KIM"
@@ -149,7 +149,7 @@
               "system": "http://fhir.de/sid/arge-ik/iknr",
               "value": "12345678"
             },
-            "display": "Test Krankenkasse"
+            "display": "Test GKV Krankenkasse"
           }
         ],
         "type": {
