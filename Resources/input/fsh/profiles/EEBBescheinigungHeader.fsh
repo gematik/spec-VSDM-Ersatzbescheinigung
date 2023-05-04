@@ -45,7 +45,7 @@ Usage: #inline
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
-* response.identifier = "e71108ff-a936-44fa-9d7d-215a09428194"
+* response.identifier = "79939e34-c5cc-4da6-ba55-f4bd85832760"
 * response.code = #ok
 * focus[+].reference = "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
 * focus[+].reference = "Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"
