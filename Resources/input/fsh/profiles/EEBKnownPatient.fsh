@@ -55,4 +55,4 @@ Usage: #inline
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient"
 * identifier[versichertenID_pkv].type = http://fhir.de/CodeSystem/identifier-type-de-basis#PKV
 * identifier[versichertenID_pkv].system = "http://fhir.de/sid/pkv/kvid-10"
-* identifier[versichertenID_pkv].value = "T024791905"
+* identifier[versichertenID_pkv].value = "A987654321"

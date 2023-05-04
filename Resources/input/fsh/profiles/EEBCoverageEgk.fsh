@@ -97,21 +97,21 @@ Usage: #inline
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
 * identifier[versichertenID_pkv].type = http://fhir.de/CodeSystem/identifier-type-de-basis#PKV
 * identifier[versichertenID_pkv].system = "http://fhir.de/sid/pkv/kvid-10"
-* identifier[versichertenID_pkv].value = "A123456789"
+* identifier[versichertenID_pkv].value = "A987654321"
 * name[name].use = #official
-* name[name].family = "Königstein"
+* name[name].family = "Meier"
 * name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-* name[name].family.extension[nachname].valueString = "Königstein"
-* name[name].given = "Ludger"
-* birthDate = "1935-06-22"
+* name[name].family.extension[nachname].valueString = "Meier"
+* name[name].given = "Hans"
+* birthDate = "1965-04-11"
 * address[Strassenanschrift].type = #both
-* address[Strassenanschrift].line = "Blumenweg 14"
+* address[Strassenanschrift].line = "Musterstraße 1"
 * address[Strassenanschrift].line.extension[0][Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address[Strassenanschrift].line.extension[=][Hausnummer].valueString = "14"
+* address[Strassenanschrift].line.extension[=][Hausnummer].valueString = "1"
 * address[Strassenanschrift].line.extension[+][Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address[Strassenanschrift].line.extension[=][Strasse].valueString = "Blumenweg"
-* address[Strassenanschrift].city = "Esens"
-* address[Strassenanschrift].postalCode = "26427"
+* address[Strassenanschrift].line.extension[=][Strasse].valueString = "Musterstraße"
+* address[Strassenanschrift].city = "Dortmund"
+* address[Strassenanschrift].postalCode = "44227"
 * address[Strassenanschrift].country = "D"
 
 Instance: EEBCoverageEgkSample
@@ -148,9 +148,9 @@ Usage: #inline
 * extension[versionEgk].url = "http://fhir.de/StructureDefinition/gkv/version-vsdm"
 * extension[versionEgk].valueString = "5.2.0"
 * extension[allgemeineVersicherungsdaten].url = "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten"
-* extension[allgemeineVersicherungsdaten].valueBase64Binary = "H4sIAAAAAAAAALVS0U7CMBT9laXv0A1cGKYrQTCGTMCIovFlqdtlLNvuTFtQ+Xo7gmYjBH3xpc25p+fck97LBh9Fbm1BqrREnzhtm1iAURmnmPhkspi3PM/ttxyXWEoLjEVeIvjkExQZcPY4Cod5nkABKcKyMonWIDeYqFhowOfprTUaT8Pl9f1iMp/5xG13qgamJSqfrLV+u6T0XbWNg9Bp1o6BrgTdqrioDro17wlnP8YaZA1VbVS03ugdZ1eQpIi8Y3ds2+t4jB4KLCiVCaKlgKQSN2AGiMaEO7bj9lzX6TN6km+qcgEYgzRfBHx8pKhzbCYK4A8QrTHNQFqBFGgcM6EUMLon2fBVVvxe9Lek3Ytez7W7/5E0+E5Fz8Six/jkOF42SuhdiqtSNcBNsGyME4XU3KmZHEp1TXhIY/zDvf5pfmcGzWh1M3ruJT1uTRvBaHOx6O/bzL8A/lor0i8DAAA="
+* extension[allgemeineVersicherungsdaten].valueBase64Binary = "H4sIALDZU2QA/71SXW+bMBT9K8jvwcDKmlTGUZZUU0Tzoaaj016QCzeAApfJdtItvz4GRRNkUdanvYDOPT7nHvmYjX9VpXUAqYoaA+LaDrEAkzotMAvIfLMaDIf+aOD6xFJaYCrKGiEgv0GRMWffpvGkLDOooECIGpMkB7nHTKVCA35fPFnT2SKOHp8389UyIL7tNQvMSlQBybX++UDpu7KNg9DFzk6BbgU9qLRqPvRgzhPO/hhrkB3UrFFJvtdHzr5AViByz/Ecx3VcRs8DFtbKBNFSQNaIe3AHiMaED+8/+3efPKO6SvdFpQBMQZobAj67UHQ5thQV8BdQ2lqHkRVKgcZwJ5QCRluOTd4kJDm2mo/kHJ2D/u+c9EbQvrHBV+v5sVdCHwvc1qoHvoZRr14UUnPTw+Woq4nPaYx/3OpfV2veVN78Gb11skv+Nehmbx8a/ffr5idMEw56PwMAAA=="
 * extension[persoenlicheVersichertendaten].url = "https://gematik.de/fhir/eeb/StructureDefinition/PersoenlicheVersichertendaten"
-* extension[persoenlicheVersichertendaten].valueBase64Binary = "H4sIAAAAAAAAAI1RbU/CQAz+K+S+QxlhMkx3xIBRAgMjEf1Gzq2yxe1m7m748mf9K3YICMYPfmn79Nqnz7U4eCvyxoaMzUodCq/VFg3ScZlkeh2K8WLeDAK/3/R80bBO6UTlpaZQvJMVA4l3w9UNt5ak8yxOaVnTsDeOuJLNQzRtDEfRanl5uxjPZ6HwW516As/UNhSpcy/nAK+2taZCuey5lRA8KdjYpKgNbLheSDziNSdIr8YjGflBr9P1At9H+P2GW3la4hU9VsZZVlUVstNu++2gEyCcpHFZGq0KkpNcVZbJdhBnKk63UUQZGYQDZlobpznFqZNRzXZAuHBGWUv6IjHEnpWU1uWUuQ+V5tLve70uwkkO58bJCdNqhDrEKe9b4n2ZasslueKlkuHTkBwh/JVG+G7ZzZbTKmMFltEnIeyzeM2/01VR8DK9M4QjeCj6kQ37DcLpFeAft5dfJRi8TF4CAAA="
+* extension[persoenlicheVersichertendaten].valueBase64Binary = "H4sIAOXZU2QA/41R0Y7TMBD8lcjvjZuQ3LVo46q6IK7S5YqoKLxVJlkuEbGNvE45+Fl+pZujLS3igRc7M5mdHY1h8Wz6aI+eOmcLkcRTEaGtXdPZp0KsNuvJbJbPJ0kuIgraNrp3FgvxA0ksFHy4273jUYe27+oWt6MN3z4gK/n4VD1Ed2W12755v1mtHwuRx+m4gXdaKkQbwrfXUn6n+AmNDt3XuEH5Rcs9NWY85J71QsGFr79Cdrcq1XI+u73Js1dpAvLvf/ASzyp4i58HH4hTDUYl85t8miWsv6Jh67zVBtW9tsReRwSPum5fvirs0IM8Y3aluu2xboOqRrMzgk3wmgjtsvHINwdxFHrswk/d9irL0vQW5BUHax9U6Xwwg21AjggeuHEFH11riVW95lrR8+OgKkH+iwb5e+S4XlUDcWfE6BeCPLFwrweygzFcJ5dwgc6aP8HlqcLLckflfzy+OgDTCNF/XwIAAA=="
 * status = #active
 * type.coding.system = "http://fhir.de/CodeSystem/versicherungsart-de-basis"
 * type.coding.code = #PKV
