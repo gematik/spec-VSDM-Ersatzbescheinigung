@@ -156,7 +156,7 @@ Usage: #inline
 * type.coding.code = #PKV
 * type.coding.display = "private Krankenversicherung"
 * period.start = "2022-04-01"
-* period.end = "2027-07-31"
+* period.end = "2022-04-01"
 * beneficiary.reference =  "Patient/e36f9476-0d04-4394-a626-8b4706b005b0"
 * payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
 * payor.identifier.value = "23456789"
