@@ -79,23 +79,23 @@
               ]
             },
             "system": "http://fhir.de/sid/pkv/kvid-10",
-            "value": "A123456789"
+            "value": "A987654321"
           }
         ],
         "name": [
           {
             "use": "official",
-            "family": "Königstein",
+            "family": "Meier",
             "_family": {
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                  "valueString": "Königstein"
+                  "valueString": "Meier"
                 }
               ]
             },
             "given": [
-              "Ludger"
+              "Hans"
             ]
           }
         ],
@@ -104,7 +104,7 @@
             "type": "both"
           }
         ],
-        "birthDate": "1935-06-22"
+        "birthDate": "1965-04-11"
       }
     },
     {

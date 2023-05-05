@@ -133,13 +133,13 @@ Usage: #inline
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
 * identifier[versichertenID_pkv].type = http://fhir.de/CodeSystem/identifier-type-de-basis#PKV
 * identifier[versichertenID_pkv].system = "http://fhir.de/sid/pkv/kvid-10"
-* identifier[versichertenID_pkv].value = "A123456789"
+* identifier[versichertenID_pkv].value = "A987654321"
 * name[name].use = #official
-* name[name].family = "Königstein"
+* name[name].family = "Meier"
 * name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-* name[name].family.extension[nachname].valueString = "Königstein"
-* name[name].given = "Ludger"
-* birthDate = "1935-06-22"
+* name[name].family.extension[nachname].valueString = "Meier"
+* name[name].given = "Hans"
+* birthDate = "1965-04-11"
 * address[Strassenanschrift].type = #both
 
 Instance: KBV_PR_FOR_PatientUnknownSample
