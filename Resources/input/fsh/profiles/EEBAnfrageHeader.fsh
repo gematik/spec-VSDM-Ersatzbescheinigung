@@ -104,3 +104,44 @@ Usage: #inline
 * extension[=][Institutionskennzeichen].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
 * extension[=][Institutionskennzeichen].valueIdentifier.value = "12345678"
 * focus[+].reference = "Patient/16c07b55-c7bd-4e64-86bc-bf00f0435ba7"
+
+Instance: EEBAnfrageHeaderSample4
+InstanceOf: EEBAnfrageHeader
+Title: "Header of EEBAnfrageBundle"
+Usage: #inline
+* id = "97d364a4-33ca-4968-8cea-89ef50e006b6"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
+* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.code = #1.2.276.0.76.4.50
+* eventCoding.display = "Betriebsstätte Arzt"
+* sender.reference = "Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* source.endpoint = "https://pvs.de/KIM"
+* extension[0][Leistungsdatum].url = "https://gematik.de/fhir/eeb/StructureDefinition/Leistungsdatum"
+* extension[=][Leistungsdatum].valueDate = "2022-02-01"
+* extension[+][Einverstaendnis].url = "https://gematik.de/fhir/eeb/StructureDefinition/Einverstaendnis"
+* extension[=][Einverstaendnis].valueBoolean = true
+* extension[+][Institutionskennzeichen].url = "https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen"
+* extension[=][Institutionskennzeichen].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
+* extension[=][Institutionskennzeichen].valueIdentifier.value = "12345678"
+* focus[+].reference = "Patient/4149fdf9-2417-4a58-ac02-3473f5eb5431"
+
+Instance: EEBAnfrageHeaderSample5
+InstanceOf: EEBAnfrageHeader
+Title: "Header of EEBAnfrageBundle"
+Usage: #inline
+* id = "35c13445-127b-4c88-b819-68bff12293c2"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
+* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.code = #1.2.276.0.76.4.50
+* eventCoding.display = "Betriebsstätte Arzt"
+* sender.reference = "Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
+* source.endpoint = "https://pvs.de/KIM"
+* extension[0][Leistungsdatum].url = "https://gematik.de/fhir/eeb/StructureDefinition/Leistungsdatum"
+* extension[=][Leistungsdatum].valueDate = "2022-02-01"
+* extension[+][Einverstaendnis].url = "https://gematik.de/fhir/eeb/StructureDefinition/Einverstaendnis"
+* extension[=][Einverstaendnis].valueBoolean = true
+* extension[+][Institutionskennzeichen].url = "https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen"
+* extension[=][Institutionskennzeichen].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
+* extension[=][Institutionskennzeichen].valueIdentifier.value = "12345678"
+* focus[+].reference = "Patient/77355dc2-07cc-4cc6-bd78-afccfb7d0106"
+
