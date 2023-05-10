@@ -219,7 +219,7 @@ Usage: #example
 Instance: EEBAnfrageBundleSampleKnownPatientPkv
 InstanceOf: EEBAnfrageBundle
 Title:   "EEBAnfrageBundleKnownPatientPkv"
-Usage: #example
+Usage: #inline
 * id = "eae51ab8-d813-4b7e-849e-3a5b83cde9d2"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -236,7 +236,7 @@ Usage: #example
 Instance: EEBAnfrageBundleSampleKnownKBV_PR_FOR_PatientPkv
 InstanceOf: EEBAnfrageBundle
 Title:   "EEBAnfrageBundleKnownKBV_PR_FOR_PatientPkv"
-Usage: #example
+Usage: #inline
 * id = "48effb6a-2f00-4cc1-8f3f-2598c6e1f33f"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
 * identifier.system = "urn:ietf:rfc:3986"
