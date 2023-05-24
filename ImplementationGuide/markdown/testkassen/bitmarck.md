@@ -2,7 +2,7 @@
 
 In der folgenden Tabelle sind sowohl die Testversicherte, als auch die KIM-Adressen der jeweiligen Krankenkassen in der RU hinterlegt.
 
-HINWEIS: Die Testsysteme sind ab Mitte Juni 2023 für die testbereit.
+HINWEIS: Die Testsysteme sind ab Mitte Juni 2023 für die Tests bereit.
 
 |Name der Kasse|IK der Kasse|KIM-Mailadresse|KNVR|Versichertenart|Besondere Personen-gruppe|Name|Vorname|Geburts-datum|Titel|Namens-zusatz|Vorsatzwort|Straße|Haus-nummer|Postleitzahl|Ort|L„ndercode|Versicherungsschutzbeginn|Versicherungsschutzende|WOP|DMP-Kennzeichen|Zuzahlung befreit|Geschlecht|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
