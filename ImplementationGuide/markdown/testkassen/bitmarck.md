@@ -2,6 +2,8 @@
 
 In der folgenden Tabelle sind sowohl die Testversicherte, als auch die KIM-Adressen der jeweiligen Krankenkassen in der RU hinterlegt.
 
+HINWEIS: Die Testsysteme sind ab Mitte Juni 2023 für die testbereit.
+
 |Name der Kasse|IK der Kasse|KIM-Mailadresse|KNVR|Versichertenart|Besondere Personen-gruppe|Name|Vorname|Geburts-datum|Titel|Namens-zusatz|Vorsatzwort|Straße|Haus-nummer|Postleitzahl|Ort|L„ndercode|Versicherungsschutzbeginn|Versicherungsschutzende|WOP|DMP-Kennzeichen|Zuzahlung befreit|Geschlecht|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |DAK|105830016|dak@ru.bitmarck.kim.telematik-test|A990000012|3|00|DAKeEB-Schmidt|Matteo|25.03.2007||||Wilhelmstraße|4a|10117|Berlin|D|01.10.2023||72||nein|Männlich|
