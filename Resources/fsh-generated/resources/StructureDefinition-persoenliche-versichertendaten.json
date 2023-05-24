@@ -32,7 +32,7 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "Persoenliche Versichertendaten"
+        "short": "Persoenliche Versichertendaten als base64-codierter und gzip-komprimierter String analog zu den Containern der eGK"
       },
       {
         "id": "Extension.extension",

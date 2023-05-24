@@ -41,11 +41,26 @@ Title:   "Header for EEBBescheinigungBundle"
 Usage: #inline
 * id = "bd901c08-0133-4276-b34b-eb810a62deda"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.code = #1.2.276.0.76.4.50
+* eventCoding.display = "Betriebsstätte Arzt"
+* source.endpoint = "https://Test-Krankenkasse.de/KIM"
+* response.identifier = "79939e34-c5cc-4da6-ba55-f4bd85832760"
+* response.code = #ok
+* focus[+].reference = "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
+* focus[+].reference = "Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"
+
+Instance: EEBBescheinigungHeaderPkvSample
+InstanceOf: EEBBescheinigungHeader
+Title:   "Header for EEBBescheinigungBundle"
+Usage: #inline
+* id = "aafed78c-696c-4805-9e7b-d454e1aeb538"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.49
 * eventCoding.display = "Versicherte/-r"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
-* response.identifier = "e71108ff-a936-44fa-9d7d-215a09428194"
+* response.identifier = "79939e34-c5cc-4da6-ba55-f4bd85832760"
 * response.code = #ok
-* focus[+].reference = "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
-* focus[+].reference = "Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"
+* focus[+].reference = "Patient/e36f9476-0d04-4394-a626-8b4706b005b0"
+* focus[+].reference = "Coverage/d7fbdcd7-f220-4a11-8526-d846e4db2a82"
