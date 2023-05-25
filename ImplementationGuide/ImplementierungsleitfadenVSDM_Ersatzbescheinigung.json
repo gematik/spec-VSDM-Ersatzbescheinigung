@@ -54,7 +54,18 @@
         {
           "nameUrl": "ImplementationGuide/markdown/Testsystem.md",
           "title": "Testsystem",
-          "generation": "markdown"
+          "generation": "markdown",
+          "page": [
+          {
+            "nameUrl": "ImplementationGuide/markdown/tk.md",
+            "title": "Techniker Krankenkasse",
+            "generation": "markdown"
+          },
+          {
+            "nameUrl": "ImplementationGuide/markdown/bitmarck.md",
+            "title": "DAK, BKK VBU, IKK classic, SBK, SLVFG",
+            "generation": "markdown"
+          }]
         },
         {
           "nameUrl": "ImplementationGuide/markdown/ReleaseNotes.md",
