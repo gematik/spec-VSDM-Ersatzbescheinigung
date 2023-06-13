@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
+    <title>QR Code Generierung für Online Check-In</title>
+    <meta name="description" content="Beschreibungstext">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <style>
+        #qrcode {
+            background-color: #ffffff;
+            color: #000e52;
+            /* Hintergrundfarbe des QR-Codes */
+            margin:30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>QR-Code Generator</h1>
+
+    <script>
+
+        function generateQRCode() {
+            var kim = document.getElementById("kimaddr").value;
+            var baseurl = "https://wwww.praxis-check-in.de?mail=";
+            document.getElementById('kimcontrol').innerText = kim;
+
+            var qr = qrcode(8, 'M');
+            qr.addData(baseurl+kim);
+            qr.make();
+
+            var canvas = document.getElementById("qrcode");
+            var context = canvas.getContext("2d");
+
+            var qrSize = qr.getModuleCount();
+            var cellSize = 6;  // Größe jedes QR-Code-Zellen-Pixels
+
+            canvas.width = qrSize * cellSize;
+            canvas.height = qrSize * cellSize;
+
+            for (var row = 0; row < qrSize; row++) {
+                for (var col = 0; col < qrSize; col++) {
+                    var isDark = qr.isDark(row, col);
+
+                    // Zeichne den QR-Code mit Hintergrundfarbe und Zellenfarbe
+                    context.fillStyle = isDark ? "#000e52" : "#ffffff";
+                    context.fillRect(col * cellSize, row * cellSize, cellSize, cellSize);
+                }
+            }
+
+            var icon = new Image();
+            icon.src = "g.png";  // Pfad zu deinem Icon-Bild
+            icon.onload = function () {
+                var iconSize = qrSize * cellSize * 0.2;  // Größe des Icons im QR-Code (40% der Zellengröße)
+                var iconX = (canvas.width - iconSize) / 2;
+                var iconY = (canvas.height - iconSize) / 2;
+
+                // Zeichne das Icon im Zentrum des QR-Codes
+                context.drawImage(icon, iconX, iconY, iconSize, iconSize);
+            };
+        }
+
+        function clearText() {
+            document.getElementById('kimaddr').value = "";
+            document.getElementById('kimcontrol').innerText = "...";
+            document.getElementById('qrcode').innerHTML = "";
+        }
+
+        function generatePDF() {
+
+            const element = document.getElementById("ausdruck"); // HTML-Element, das in PDF konvertiert werden soll
+
+            const opt = {
+                filename: 'mein_pdf_dokument.pdf',
+                margin: 10,
+                jsPDF: { format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+
+
+    <p>Lorem ipsum dolor sit amet, consetetur elitr sadipscing.</p>
+    <div>
+        KIM-Adresse: <input id="kimaddr" type="text" value="" width="80" title="praxis-dr-baldgesund@kim-dienstleister.kim.telematik" />
+        <button onclick="generateQRCode()">QR-Code erzeugen</button>
+        <button onclick="clearText()">Löschen</button>&nbsp;&nbsp;&nbsp;
+        <button onclick="generatePDF()">PDF erzeugen</button>
+    </div>
+
+    <hr>
+
+    <div id="ausdruck">
+        <h1>Online Check-In</h1>
+        <p>Scannen Sie diesen Barcode mit ihrer Versicherungs-App, um in unserer Praxis online einzuchecken.</p>
+        <p>Sind sie in Ihrer Versicherungs-App digital angemeldet, starten sie von dort aus den Versand ihrer Stammdaten direkt in unser Praxisverwaltungssystem.</p>
+        <p>Folgende Daten werden dabei übertragen:
+            <ul>
+                <li>Krankenversicherungsnummer (KNVR)</li>
+                <li>Name, Vorname</li>
+                <li>Adresse</li>
+            </ul>
+        </p>
+
+        <canvas id="qrcode">
+            hier wird der QR-Code erzeugt
+        </canvas>
+
+        <p>Unsere Empfängeradresse zu ihrer Kontrolle lautet dabei: <span id="kimcontrol">...</span></p>
+
+    </div>
+
+</body>
+
+</html>
