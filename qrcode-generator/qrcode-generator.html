@@ -23,7 +23,7 @@
 
 <body>
 
-    <h1>QR-Code Generator</h1>
+    <h1>Erzeugen Sie ihren QR-Code zum Online Check-in für Privatversicherte</h1>
 
     <script>
 
@@ -101,7 +101,11 @@
     </script>
 
 
-    <p>Lorem ipsum dolor sit amet, consetetur elitr sadipscing.</p>
+    <p>Sichere Datenübermittlung ohne Gesundheitskarte: Mit dem Online Check-in können Privatversicherte persönliche Daten wie
+    ihre Krankenversichertennummer (KVNR) digital an Praxen senden. Damit lassen sich anschließend E-Rezepte ausstellen und
+    elektronische Patientenakten befüllen.</p>
+    <p>Ihre Praxis kann KIM-Nachrichten empfangen und Ihre Praxissoftware unterstützt den Online Check-in? Dann erstellen Sie
+    jetzt den individuellen QR-Code für Ihre Praxis und stellen Sie diesen für Privatversicherte bereit.</p>
     <div>
         KIM-Adresse: <input id="kimaddr" type="text" value="" width="80" title="praxis-dr-baldgesund@kim-dienstleister.kim.telematik" />
         <button onclick="generateQRCode()">QR-Code erzeugen</button>
@@ -109,12 +113,14 @@
         <button onclick="generatePDF()">PDF erzeugen</button>
     </div>
 
+    <p>Mehr Informationen zum Online Check-in <a href="www.PKV-Seitenname.de">www.PKV-Seitenname.de</a></p>
+
     <hr>
 
     <div id="ausdruck">
-        <h1>Online Check-In</h1>
-        <p>Scannen Sie diesen Barcode mit ihrer Versicherungs-App, um in unserer Praxis online einzuchecken.</p>
-        <p>Sind sie in Ihrer Versicherungs-App digital angemeldet, starten sie von dort aus den Versand ihrer Stammdaten direkt in unser Praxisverwaltungssystem.</p>
+        <h1>Online Check-in für Privatversicherte</h1>
+        <p>Sie möchten sich ein E-Rezept ausstellen oder die elektronische Patientenakte befüllen lassen? </p>
+        <p>Dann nutzen Sie die Funktion zum Online Check-in in der App Ihrer Versicherung und scannen Sie diesen QR-Code ein</p>
         <p>Folgende Daten werden dabei übertragen:
             <ul>
                 <li>Krankenversicherungsnummer (KNVR)</li>
@@ -128,6 +134,11 @@
         </canvas>
 
         <p>Unsere Empfängeradresse zu ihrer Kontrolle lautet dabei: <span id="kimcontrol">...</span></p>
+
+        <p><b>Gut zu wissen:</b> Mit dem Online Check-in übermitteln Sie uns nur Ihre in der App angezeigten Basis-Daten. Auf Ihre
+        elektronische Patientenakte können wir erst zugreifen, nachdem Sie uns zusätzlich per ePA-App dafür berechtigt haben.
+        Weitere Informationen zum Online Check-in erhalten Sie von Ihrer privaten Krankenversicherung und unter
+        <a href="www.PKV-Seitenname.de">www.PKV-Seitenname.de</a> .</p>
 
     </div>
 
