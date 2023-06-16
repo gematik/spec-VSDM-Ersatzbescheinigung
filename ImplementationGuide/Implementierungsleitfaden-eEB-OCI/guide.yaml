@@ -1,0 +1,5 @@
+title: Implementierungsleitfaden eEB/OCI
+description: Mit dem eEB-Verfahren wird die Anforderung und Ausstellung einer Ersatzbescheinigung für Versicherte der gesetzlichen Krankenkassen automatisierbar. Ebenso kann über dieses Verfahren ein Versichertennachweis (insbesondere die Bereitstellung der Krankenversicherungsnummer KVNR) für privat Versicherte angefordert werden.
+version: 0.1.0
+style-root: styles
+style-name: treetable
