@@ -92,6 +92,8 @@
 
         function clearText() {
             document.getElementById('kimaddr').value = "";
+            document.getElementById('pname').value = "";
+            document.getElementById('paddress').value = "";
             document.getElementById('namecontrol').innerText = "...";
             document.getElementById('addrcontrol').innerText = "...";
             document.getElementById('qrcode').innerHTML = "";
@@ -160,7 +162,7 @@
 
         <p>
             Unsere Adresse zu ihrer Kontrolle: <span id="addrcontrol">...</span><br />
-            Ihre : <span id="namecontrol">...</span>
+            <span id="namecontrol">...</span>
         </p>
 
         <p><b>Gut zu wissen:</b> Mit dem Online Check-in übermitteln Sie uns nur Ihre in der App angezeigten Basis-Daten. Auf Ihre
