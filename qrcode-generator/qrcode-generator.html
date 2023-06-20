@@ -20,6 +20,10 @@
             /* Hintergrundfarbe des QR-Codes */
             margin:30px;
         }
+        .label {
+            display: inline-block;
+            width: 150px;
+        }
     </style>
 </head>
 
@@ -38,6 +42,8 @@
 
         function generateQRCode() {
             var kim = document.getElementById("kimaddr").value;
+            var addr = document.getElementById("paddress").value;
+            var name = document.getElementById("pname").value;
 
             if (!isEmailValid(kim)) {
                 alert(`Die E-Mail-Adresse "${kim}" ist ungültig.`);
@@ -45,7 +51,9 @@
             }
 
             var baseurl = "https://wwww.praxis-check-in.de?mail=";
-            document.getElementById('kimcontrol').innerText = kim;
+
+            document.getElementById('addrcontrol').innerText = addr;
+            document.getElementById('namecontrol').innerText = name;
 
             var qr = qrcode(8, 'M');
             qr.addData(baseurl+kim);
@@ -84,7 +92,8 @@
 
         function clearText() {
             document.getElementById('kimaddr').value = "";
-            document.getElementById('kimcontrol').innerText = "...";
+            document.getElementById('namecontrol').innerText = "...";
+            document.getElementById('addrcontrol').innerText = "...";
             document.getElementById('qrcode').innerHTML = "";
         }
 
@@ -107,17 +116,31 @@
     ihre Krankenversichertennummer (KVNR) digital an Praxen senden. Damit lassen sich anschließend E-Rezepte ausstellen und
     elektronische Patientenakten befüllen.</p>
     <p>Ihre Praxis kann KIM-Nachrichten empfangen und Ihre Praxissoftware unterstützt den Online Check-in? Dann erstellen Sie
-    jetzt den individuellen QR-Code für Ihre Praxis und stellen Sie diesen für Privatversicherte bereit.</p>
-    <div>
-        KIM-Adresse: <input id="kimaddr" type="text" value="" width="80" title="praxis-dr-baldgesund@kim-dienstleister.kim.telematik" />
-        <button onclick="generateQRCode()">QR-Code erzeugen</button>
-        <button onclick="clearText()">Löschen</button>&nbsp;&nbsp;&nbsp;
-        <button onclick="generatePDF()">PDF erzeugen</button>
-    </div>
+    jetzt den individuellen QR-Code für Ihre Praxis und stellen Sie diesen für Privatversicherte bereit.
+        <div>
+            <span class="label">KIM-Adresse:</span><input id="kimaddr" type="text" value="" width="80" title="praxis-dr-baldgesund@kim-dienstleister.kim.telematik" />
+            <button onclick="generateQRCode()">QR-Code erzeugen</button>
+            <button onclick="clearText()">Löschen</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="generatePDF()">PDF erzeugen</button>
+        </div>
+    </p>
+
+    <p>Geben Sie hier Zusatzinformationen für ihre Patienten ein.
+        <div>
+            <span class="label">Ihr Praxisname:</span><input id="pname" type="text" value="" width="80" title="Ihr Praxisname" /><br />
+            <span class="label">Ihre Praxisadresse:</span><input id="paddress" type="text" value="" width="80" title="Ihre Praxisadresse" />
+        </div>
+    </p>
 
     <p>Mehr Informationen zum Online Check-in <a href="www.PKV-Seitenname.de">www.PKV-Seitenname.de</a></p>
 
     <hr>
+
+    <p>Im Folgenden finden Sie ein Template, für die Erzeugung einer Druckversion des QR-Codes.
+        Benutzen Sie dazu den Knopf zum "PDF erzeugen, wenn Sie alle Daten eingegeben und einen QR-Code erstellt haben."
+    </p>
+
+    ----8<----8<----8<----8<----8<----8<----8<----8<----8<----8<----
 
     <div id="ausdruck">
         <h1>Online Check-in für Privatversicherte</h1>
@@ -135,7 +158,10 @@
             hier wird der QR-Code erzeugt
         </canvas>
 
-        <p>Unsere Empfängeradresse zu ihrer Kontrolle lautet dabei: <span id="kimcontrol">...</span></p>
+        <p>
+            Unsere Adresse zu ihrer Kontrolle: <span id="addrcontrol">...</span><br />
+            Ihre : <span id="namecontrol">...</span>
+        </p>
 
         <p><b>Gut zu wissen:</b> Mit dem Online Check-in übermitteln Sie uns nur Ihre in der App angezeigten Basis-Daten. Auf Ihre
         elektronische Patientenakte können wir erst zugreifen, nachdem Sie uns zusätzlich per ePA-App dafür berechtigt haben.
