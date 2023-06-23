@@ -29,7 +29,7 @@
 
 <body>
 
-    <h1>Erzeugen Sie ihren QR-Code zum Online Check-in für Privatversicherte</h1>
+    <h1>Erzeugen Sie ihren QR-Code zum Online Check-in für Patienten</h1>
 
     <script>
 
@@ -114,11 +114,11 @@
     </script>
 
 
-    <p>Sichere Datenübermittlung ohne Gesundheitskarte: Mit dem Online Check-in können Privatversicherte persönliche Daten wie
+    <p>Sichere Datenübermittlung ohne Gesundheitskarte: Mit dem Online Check-in können Patienten persönliche Daten wie
     ihre Krankenversichertennummer (KVNR) digital an Praxen senden. Damit lassen sich anschließend E-Rezepte ausstellen und
     elektronische Patientenakten befüllen.</p>
-    <p>Ihre Praxis kann KIM-Nachrichten empfangen und Ihre Praxissoftware unterstützt den Online Check-in? Dann erstellen Sie
-    jetzt den individuellen QR-Code für Ihre Praxis und stellen Sie diesen für Privatversicherte bereit.
+    <p>Ihre Praxis kann KIM-Nachrichten empfangen und Ihre Praxissoftware unterstützt den Online Check-in bzw. die elektronische Ersatzbescheinigung? Dann erstellen Sie
+    jetzt den individuellen QR-Code für Ihre Praxis und stellen Sie diesen für Patienten bereit.
         <div>
             <span class="label">KIM-Adresse:</span><input id="kimaddr" type="text" value="" width="80" title="praxis-dr-baldgesund@kim-dienstleister.kim.telematik" />
             <button onclick="generateQRCode()">QR-Code erzeugen</button>
@@ -145,7 +145,7 @@
     ----8<----8<----8<----8<----8<----8<----8<----8<----8<----8<----
 
     <div id="ausdruck">
-        <h1>Online Check-in für Privatversicherte</h1>
+        <h1>Online Check-in für Patienten</h1>
         <p>Sie möchten sich ein E-Rezept ausstellen oder die elektronische Patientenakte befüllen lassen? </p>
         <p>Dann nutzen Sie die Funktion zum Online Check-in in der App Ihrer Versicherung und scannen Sie diesen QR-Code ein</p>
         <p>Folgende Daten werden dabei übertragen:
@@ -153,6 +153,7 @@
                 <li>Krankenversicherungsnummer (KVNR)</li>
                 <li>Name, Vorname</li>
                 <li>Adresse</li>
+                <li>Zusätzlich bei gesetzlich Versicherten: Versicherungsstatus</li>
             </ul>
         </p>
 
@@ -167,7 +168,7 @@
 
         <p><b>Gut zu wissen:</b> Mit dem Online Check-in übermitteln Sie uns nur Ihre in der App angezeigten Basis-Daten. Auf Ihre
         elektronische Patientenakte können wir erst zugreifen, nachdem Sie uns zusätzlich per ePA-App dafür berechtigt haben.
-        Weitere Informationen zum Online Check-in erhalten Sie von Ihrer privaten Krankenversicherung und unter
+        Weitere Informationen zum Online Check-in erhalten Sie von Ihrer Krankenversicherung und unter
         <a href="www.PKV-Seitenname.de">www.PKV-Seitenname.de</a> .</p>
 
     </div>
