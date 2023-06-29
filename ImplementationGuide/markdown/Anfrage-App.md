@@ -23,7 +23,7 @@ Im Sinne eines geführten Check-Ins in die Praxis können dem Patienten die aus 
 Für den Start des UseCases zum "Online Check-In" in der Praxis wird lediglich die KIM-Adresse benötigt, an welche die Praxis die Daten über den Patienten gesendet bekommen möchte. Der Aufbau des QR-Codes gestaltet sich daher sehr schlank. Basis ist eine `URL`, die als Landing-Page Hinweise geben kann, wenn Versicherte die jeweilige App ihrer Krankenversicherung noch nicht installiert haben. Ist sie installiert, kann sie beim Abscannen mit der Kamera-App durch das Betriebsystem (z.B. Android, iOS) direkt geöffnet werden.
 
 ```json
-  https://wwww.praxis-check-in.de?mail=<KIM-Adresse>
+  https://www.praxis-check-in.de?mail=<KIM-Adresse>
 ```
 
 - `mail` benennt die KIM-Adresse, an die die Praxis eine Ersatzbescheinigung bzw. "Online Check-In" gesendet haben möchte. Die Daten der Praxis werden dem Patienten zur Verifikation aus dem VZD über das Backend der App bereitgestellt.
@@ -37,8 +37,8 @@ Für den Start des UseCases zum "Online Check-In" in der Praxis wird lediglich d
 
 Im Folgenden ist ein Beispiel QR-Code für die KIM-Adresse (`URL-Safe` codiert) einer fiktiven Praxis _Dr. Baldgesund_ dargestellt. Dr. Baldgesund erhält die KIM-Adresse `praxis-dr-baldgesund@kim-dienstleister.kim.telematik` über die Beantragung eines Kontos bei einem KIM-Anbieter.
 
-<!--- generated at https://www.qr.io wegen Logo und Farbe --->
-<!--- https://wwww.praxis-check-in.de?mail=praxis-dr-baldgesund@kim-dienstleister.kim.telematik --->
+<!--- generated at https://www.qr.io wegen Logo und Farbe (#000e52) --->
+<!--- https://www.praxis-check-in.de?mail=praxis-dr-baldgesund@kim-dienstleister.kim.telematik --->
 {{render:ImplementationGuide-images-qr-sample}}
 
 Für die Generierung stehen verschiedene Dienste im Internet zur Verfügung, beispielsweise
@@ -62,7 +62,7 @@ Für die Generierung stehen verschiedene Dienste im Internet zur Verfügung, bei
 
 > **Hinweis**
 >
-> Die gematik veröffentlicht unter der URL https://wwww.praxis-check-in.de/.well-known/ eine Konfiguration
+> Die gematik veröffentlicht unter der URL https://www.praxis-check-in.de/.well-known/ eine Konfiguration
 > für Anroid ([assetlinks.json](https://developer.android.com/training/app-links/verify-android-applinks)) und iOS-Geräte([apple-app-site-association](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html)),
 > mittels der die App auf Smartphones von Versicherten beim Scannen des QR-Codes automatisch gestartet werden kann.
 > App-Hersteller können der gematik via [JIRA-Service Desk Anfrage](http://service.gematik.de/servicedesk/customer/portals) ihre benötigte Konfiguration als JSON-Datei bereitstellen.
