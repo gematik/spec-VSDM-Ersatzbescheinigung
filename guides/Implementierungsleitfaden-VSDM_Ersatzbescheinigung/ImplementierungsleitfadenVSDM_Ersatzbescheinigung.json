@@ -68,7 +68,7 @@
           }]
         },
         {
-          "nameUrl": "markdown/ReleaseNotes.md",
+          "nameUrl": "ReleaseNotes.md",
           "title": "Release Notes",
           "generation": "markdown"
         },
