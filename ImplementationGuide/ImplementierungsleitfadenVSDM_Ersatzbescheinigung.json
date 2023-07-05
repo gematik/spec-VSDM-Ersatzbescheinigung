@@ -16,65 +16,65 @@
       }
     ],
     "page": {
-      "nameUrl": "markdown/Einfuehrung.md",
+      "nameUrl": "ImplementationGuide/markdown/Einfuehrung.md",
       "title": "Einführung",
       "generation": "markdown",
       "page": [
         {
-          "nameUrl": "markdown/Anfrage-App.md",
+          "nameUrl": "ImplementationGuide/markdown/Anfrage-App.md",
           "title": "Anfrage (Check-In) via App",
           "generation": "markdown"
         },
         {
-          "nameUrl": "markdown/Anfrage-KIM.md",
+          "nameUrl": "ImplementationGuide/markdown/Anfrage-KIM.md",
           "title": "Anfrage (durch MFA) via KIM",
           "generation": "markdown"
         },
         {
-          "nameUrl": "markdown/Bescheinigung.md",
+          "nameUrl": "ImplementationGuide/markdown/Bescheinigung.md",
           "title": "Bescheinigung",
           "generation": "markdown",
           "page": [
           {
-            "nameUrl": "markdown/pkvvsd.md",
+            "nameUrl": "ImplementationGuide/markdown/pkvvsd.md",
             "title": "Befüllung PKV-VSD",
             "generation": "markdown"
           }]
         },
         {
-          "nameUrl": "markdown/KIM-Nachrichten.md",
+          "nameUrl": "ImplementationGuide/markdown/KIM-Nachrichten.md",
           "title": "KIM-Nachrichtenstruktur",
           "generation": "markdown"
         },
         {
-          "nameUrl": "markdown/ErrorHandling.md",
+          "nameUrl": "ImplementationGuide/markdown/ErrorHandling.md",
           "title": "Error-Handling",
           "generation": "markdown"
         },
         {
-          "nameUrl": "markdown/Testsystem.md",
+          "nameUrl": "ImplementationGuide/markdown/Testsystem.md",
           "title": "Testsysteme",
           "generation": "markdown",
           "page": [
           {
-            "nameUrl": "markdown/tk.md",
+            "nameUrl": "ImplementationGuide/markdown/tk.md",
             "title": "Techniker Krankenkasse",
             "generation": "markdown"
           },
           {
-            "nameUrl": "markdown/bitmarck.md",
+            "nameUrl": "ImplementationGuide/markdown/bitmarck.md",
             "title": "DAK, BKK VBU, IKK classic, SBK, SLVFG",
             "generation": "markdown"
           }]
         },
         {
-          "nameUrl": "ReleaseNotes.md",
+          "nameUrl": "ImplementationGuide/ReleaseNotes.md",
           "title": "Release Notes",
           "generation": "markdown"
         },
         {
           "generation": "markdown",
-          "nameUrl": "Implementierungsleitfaden-VSDM-Ersatzbescheinigung-markdown-Terminologie",
+          "nameUrl": "ImplementationGuide/Terminologie.md",
           "title": "Terminologie"
         }
       ]
