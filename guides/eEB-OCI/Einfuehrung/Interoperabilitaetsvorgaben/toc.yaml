@@ -1,4 +1,4 @@
-- name: Interoperabilitätsvorgaben
+- name: "Interoperabilitätsvorgaben"
   filename: Index.page.md
 - name: FHIR-Profile
   filename: FHIR-Profile.page.md
