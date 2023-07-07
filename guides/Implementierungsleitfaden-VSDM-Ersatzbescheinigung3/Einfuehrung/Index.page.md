@@ -1,5 +1,5 @@
 ---
-parent: 
+parent:
 ---
 # Inhalt
 
@@ -48,7 +48,7 @@ Das Praxisverwaltungssystem kann diesen FHIR-Datensatz der Bescheinigung in beid
 
 _Dieser Anwendungsfall der Anforderung via App wird aktuell nur für Versicherte der Privaten Krankenversicherung eingesetzt, über den der Praxis die Versichertendaten (KVNR, Name, Adresse, Geburtsdatum, etc.) des Patienten bereitgestellt werden._
 
-{{render:ImplementationGuide-images-out-pkv-ersatzverfahren}}
+{{render:VSDM-Ersatzbescheinigung3-images-pkv-ersatzverfahren}}
 
 ## UseCase und Funktionsweise (Anforderung aus der Praxis)
 
@@ -58,4 +58,4 @@ Die Kasse erstellt zur angefragten Person automatisiert, anhand der in ihrem Bac
 
 Das Praxisverwaltungssystem kann die bereits erfassten bzw. vorhandenen Patientendaten mit den von der Kasse bereitgestellten Versichertenstammdaten aktualisieren.
 
-{{render:ImplementationGuide-images-out-gkv-ersatzverfahren}}
+{{render:vsdm-ersatzbescheinigung3-images-gkv-ersatzverfahren}}
