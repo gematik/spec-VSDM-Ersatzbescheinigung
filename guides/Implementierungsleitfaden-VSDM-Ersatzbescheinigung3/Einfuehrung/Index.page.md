@@ -1,3 +1,6 @@
+---
+parent: 
+---
 # Inhalt
 
 Die UseCases der Ersatzbescheinigung digitalisieren den papierbasierten Prozess für Anwendungsfälle in der (Zahn-)Arztpraxis, in denen keine eGK als Versicherungsnachweis vorgelegt werden kann.

@@ -1,3 +1,6 @@
+---
+parent: 
+---
 # Inhalt
 
 Die Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM wird durch das Praxispersonal initiiert.
