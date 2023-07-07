@@ -1,5 +1,5 @@
 ---
-parent: 
+parent:
 ---
 # Inhalt
 
@@ -267,7 +267,7 @@ Für GKV-Versicherte werden diese gemäß [VSD-Schema](https://github.com/gemati
 
 Für PKV-Versicherte wurde festgelegt, dass hier ebenfalls das GKV-Schema verwendet wird [VSD-Schema](https://github.com/gematik/api-telematik/blob/OPB4/fa/vsds/Schema_VSD.xsd) formatiert (aktuelle Version 5.2.0). Hintergrund ist die Definition des VSD-Schema_PKV für die in der Vergangenheit avisierte Ausgabe von elektronischen Gesundheitskarten. Da diese beim Online Check-In nicht benötigt wird, soll das GKV-Schema verwendet werden, was die Implementierung im Primärsystemen vereinfacht.
 
-Details zur Befüllung der VSD für PKV-Versicherte sind auf der folgenden Unterseite angegeben [Details VSD-Befüllung PKV](ImplementationGuide/markdown/pkvvsd.md)
+Details zur Befüllung der VSD für PKV-Versicherte sind auf der folgenden Unterseite angegeben {{pagelink:Einfuehrung/Bescheinigung/pkvvsd.page.md}}
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk}}
 
@@ -281,4 +281,4 @@ Dieses ist innerhalb des oben genannten Signaturcontainers (PKCS#7 enveloping) e
 Im Fall von Fehlern antwortet die Kasse mit einer Fehler-Nachricht `EEBFehler` als FHIR-Ressource `OperationOutcome`.
 Diese enthält Details mit StatusCodes und lesbaren Fehlertexten in einer Liste von Fehlern als `issue`|s.
 
-Details dazu sind auf der Seite {{pagelink:ImplementationGuide/markdown/ErrorHandling.md}} zusammengestellt.
+Details dazu sind auf der Seite {{pagelink:Einfuehrung/ErrorHandling.page.md}} zusammengestellt.

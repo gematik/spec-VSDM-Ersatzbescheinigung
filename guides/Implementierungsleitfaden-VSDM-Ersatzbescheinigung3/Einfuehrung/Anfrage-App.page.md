@@ -1,5 +1,5 @@
 ---
-parent: 
+parent:
 ---
 # Inhalt
 
@@ -42,7 +42,7 @@ Im Folgenden ist ein Beispiel QR-Code für die KIM-Adresse (`URL-Safe` codiert) 
 
 <!--- generated at https://www.qr.io wegen Logo und Farbe (#000e52) --->
 <!--- https://www.praxis-check-in.de?mail=praxis-dr-baldgesund@kim-dienstleister.kim.telematik --->
-{{render:ImplementationGuide-images-qr-sample}}
+{{render:guides-implementierungsleitfaden-vsdm-ersatzbescheinigung3-images-qr-sample}}
 
 Für die Generierung stehen verschiedene Dienste im Internet zur Verfügung, beispielsweise
 
