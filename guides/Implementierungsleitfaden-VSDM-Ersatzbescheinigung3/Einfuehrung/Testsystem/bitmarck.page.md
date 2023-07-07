@@ -1,3 +1,6 @@
+---
+parent: 
+---
 # Testsystem der Krankenkassen in BITMARCK-Betreuung in der Referenzumgebung (RU)
 
 In der folgenden Tabelle sind sowohl die Testversicherte, als auch die KIM-Adressen der jeweiligen Krankenkassen in der RU hinterlegt.

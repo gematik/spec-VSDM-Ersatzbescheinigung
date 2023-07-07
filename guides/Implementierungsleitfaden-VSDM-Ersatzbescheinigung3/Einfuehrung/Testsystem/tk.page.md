@@ -1,3 +1,6 @@
+---
+parent: 
+---
 # Testsystem der Techniker Krankenkasse in der Referenzumgebung (RU)
 
 Die Techniker Krankenkasse stellt in der RU ein Testsystem bereit. Die KIM-Adressen und weitere Details können dem Verzeichnisdienst VZD-Eintrag der TK entnommen werden.

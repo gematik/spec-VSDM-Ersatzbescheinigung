@@ -1,3 +1,6 @@
+---
+parent: 
+---
 # Inhalt
 
 Beim "Check-In" mittels einer Versicherten-App fordert die versicherte Person das Versicherungsunternehmen auf, die Versichertendaten an eine konkrete Praxis zu übermitteln.
