@@ -1,5 +1,7 @@
-- name: "Gesamtüberblick System"
+- name: eEB
   filename: Index.page.md
+- name: Gesamtüberblick System
+  filename: gesamtsystem.page.md
 - name: Error Handling
   filename: Error-Handling.page.md
 - name: Testsystem

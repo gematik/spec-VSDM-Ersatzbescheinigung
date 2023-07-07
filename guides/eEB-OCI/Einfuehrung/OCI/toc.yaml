@@ -1,5 +1,7 @@
-- name: Überblick zum Online Check-in
+- name: OCI
   filename: Index.page.md
+- name: Überblick zum Online Check-in
+  filename: ueberblick-oci.page.md
 - name: QR-Code und Suche über den Verzeichnisdienst
   filename: QR-VZD.page.md
 - name: App-Funktionalitäten zum Online Check-in
