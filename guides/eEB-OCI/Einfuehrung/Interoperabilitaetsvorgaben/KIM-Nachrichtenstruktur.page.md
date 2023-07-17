@@ -4,17 +4,17 @@ parent:
 # Inhalt
 
 - [Inhalt](#inhalt)
-  - [Verwendung von KIM](#verwendung-von-kim)
-  - [KIM Dienstkennungen](#kim-dienstkennungen)
-  - [Übermittlungsbestätigung und Lesebestätigung](#übermittlungsbestätigung-und-lesebestätigung)
-  - [KIM Anfrage einer Ersatzbescheinigung](#kim-anfrage-einer-ersatzbescheinigung)
-    - [KIM Anfrage Beispielnachricht](#kim-anfrage-beispielnachricht)
-  - [KIM Bescheinigung](#kim-bescheinigung)
-    - [KIM Bescheinigung Beispielnachricht](#kim-bescheinigung-beispielnachricht)
-  - [KIM Fehlernachricht](#kim-fehlernachricht)
-    - [KIM Fehler Beispielnachricht](#kim-fehler-beispielnachricht)
+- [Verwendung von KIM](#verwendung-von-kim)
+- [KIM Dienstkennungen](#kim-dienstkennungen)
+- [Übermittlungsbestätigung und Lesebestätigung](#übermittlungsbestätigung-und-lesebestätigung)
+- [KIM Anfrage einer Ersatzbescheinigung](#kim-anfrage-einer-ersatzbescheinigung)
+  - [KIM Anfrage Beispielnachricht](#kim-anfrage-beispielnachricht)
+- [KIM Bescheinigung](#kim-bescheinigung)
+  - [KIM Bescheinigung Beispielnachricht](#kim-bescheinigung-beispielnachricht)
+- [KIM Fehlernachricht](#kim-fehlernachricht)
+  - [KIM Fehler Beispielnachricht](#kim-fehler-beispielnachricht)
 
-## Verwendung von KIM
+# Verwendung von KIM
 
 Die Übertragung der Daten bzw. der Anfrage erfolgt via KIM. Dabei sind drei Nachrichtentypen zu unterscheiden:
 
@@ -22,7 +22,7 @@ Die Übertragung der Daten bzw. der Anfrage erfolgt via KIM. Dabei sind drei Nac
 - Übermittlung der Daten eines Versicherten von der Kasse zum Leistungserbringer (eEB Bescheinigung) oder
 - Rückgabe einer Fehlermeldung (eEB Fehler)
 
-## KIM Dienstkennungen
+# KIM Dienstkennungen
 
 Dienstkennungen in KIM-Nachrichten kennzeichnen den transportierten Inhalt für das Empfangssystem. Diese erlauben damit eine Dunkelverarbeitung bei Nachrichtenempfang und ggfs. die vollautomatisierte Erstellung und den Versand einer Antwortnachricht.
 
@@ -32,13 +32,13 @@ Dienstkennungen in KIM-Nachrichten kennzeichnen den transportierten Inhalt für 
 |Anwendungsbeschreibung             |Verfahren zur Übertragung von Versichertenstammdaten (VSD) aus einem PKV Versicherungsunternehmen und Erstzbescheinigung nach §19 Abs. 2 BMV von einer Gesetzlichen Krankenkasse zu einem Leistungserbringer|
 |Dienstkennung & Kurzbeschreibung|**eEB;Anfrage;V1.0** <br /> Nachrichten-Typ: Anfragedaten zum Erhalt von Versichertendaten <br /> Verwendung: Vertragsärzte, Vertragszahnärzte, Krankenhäuser <br /><br />  **eEB;Bescheinigung;V1.0** <br /> Nachrichten-Typ: Versichertendaten in verschiedenen Ausprägungen <br /> Verwendung: Krankenkassen, Versicherungsunternehmen <br /> <br /> **eEB;Fehler;V1.0** <br /> Nachrichten-Typ: Fehlermeldung bzgl. der Ermittlung der Daten des Versicherten <br />  Verwendung: Krankenkassen, Versicherungsunternehmen |
 
-## Übermittlungsbestätigung und Lesebestätigung
+# Übermittlungsbestätigung und Lesebestätigung
 
 Eine Übermittlungsbestätigung (DSN) vom KIM-Mailserver des Nachrichtenempfängers signalisierte dem Sendesystem, dass eine Nachricht an den Empfänger ausgeliefert werden konnte. Die Anforderung einer solchen DSN unterstützt daher den automatisierten Prozess der elektronischen Ersatzbescheinigung.
 
 Die Anforderung einer Lesebestätigung (MDN) durch das Sendesystem führt in Empfangssystemen je nach Konfiguration zu einem Pop-up, ob eine Lesebestätigung versendet werden soll. Dieses stört ggfs. den Workflow der automatisierten Bearbeitung empfangener KIM-Nachrichten. Daher ist das Anfordern einer Lesenbestätigung durch das Sendesystem zu unterbinden.
 
-## KIM Anfrage einer Ersatzbescheinigung
+# KIM Anfrage einer Ersatzbescheinigung
 
 Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich als Anhang in der KIM Nachricht übertragen.
 **siehe unten**
@@ -56,7 +56,7 @@ Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich a
 
 Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Datei.
 
-### KIM Anfrage Beispielnachricht
+## KIM Anfrage Beispielnachricht
 
 ```xml
   Date: Mon, 17 Apr 2023 16:35:58 +0200 (CEST)
@@ -184,7 +184,7 @@ Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Date
 
 ```
 
-## KIM Bescheinigung
+# KIM Bescheinigung
 
 |Header                  |Inhalt                                 |verpflichtend|
 |------------------------|---------------------------------------|-------------|
@@ -201,7 +201,7 @@ Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Date
 
 Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Datei
 
-### KIM Bescheinigung Beispielnachricht
+## KIM Bescheinigung Beispielnachricht
 
 ```xml
   Date: Mon, 17 Apr 2023 16:36:52 +0200 (CEST)
@@ -455,7 +455,7 @@ Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Dat
 
 ```
 
-## KIM Fehlernachricht
+# KIM Fehlernachricht
 
 |Header                    |Inhalt                                          |verpflichtend|
 |------                    |-------                                          |-------------|
@@ -472,7 +472,7 @@ Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Dat
 
 Der Anhang enthält eine Fehlermeldung als FHIR-Ressource `OperationOutcome`
 
-### KIM Fehler Beispielnachricht
+## KIM Fehler Beispielnachricht
 
 ```xml
   Date: Fri, 16 Dec 2022 14:34:51 +0100 (CET)
