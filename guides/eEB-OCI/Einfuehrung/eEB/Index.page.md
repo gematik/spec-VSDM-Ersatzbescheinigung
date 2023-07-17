@@ -23,4 +23,4 @@ Die Kasse erstellt zur angefragten Person automatisiert, anhand der in ihrem Bac
 
 Das Praxisverwaltungssystem kann die bereits erfassten bzw. vorhandenen Patientendaten mit den von der Kasse bereitgestellten Versichertenstammdaten aktualisieren.
 
-{{render:eeb-oci-images-gkv-ersatzverfahren}}
+{{render:guides-eeb-oci-images-gkv-ersatzverfahren}}
