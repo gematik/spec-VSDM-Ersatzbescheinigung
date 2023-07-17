@@ -1,0 +1,62 @@
+@startuml pkv_ersatzverfahren
+
+hide footbox
+title Verfahren KVNR/VSD Anforderung via App
+actor Vers as "Versicherte" #ee8360
+participant IDP as "IDP\n" #009a7c
+participant App as "PKV App\nGKV App" #009a7c
+actor LE as "Praxis" #ee8360
+participant PVS as "Primärsystem\n" #ee8360
+participant KIMCM1 as "KIM-Clientmodul\n" #8da5c4
+participant KIMFD as "KIM-Fachdienste\n(Weiterleitung)" #8da5c4
+participant KIMCM2 as "KIM-Clientmodul\n" #8da5c4
+participant Kasse as "PKV Versicherungsunternehmen\nGKV Krankenkasse" #009a7c
+
+Vers -> App: Praxis Check-In
+activate App #009a7c
+App <-> IDP: Authentifizierung
+activate IDP #009a7c
+note right: Die Identifikation und Autorisierung der versicherten Person zur Anforderung einer Versicherungsbescheinigung von einem Versicherungsunternehmen/Kasse\n ist nicht Gegenstand dieser Betrachtungen und wird zwischen der dem Versicherungsunternehmen/Kasse und der durch sie bereitgestellten App umgesetzt.
+deactivate IDP
+App -> App: QR-Code\nscannen
+App -> App: Praxis-KIM-Adresse extrahieren
+App -> Kasse: Check-In bei Praxis\n( KIM-Adresse )
+activate Kasse #00907c
+App --> Vers:
+deactivate App
+Kasse -> Kasse: Prüfung\nVersicherungsverhältnis\nund Ausstellung einer\nVersicherungsbescheinigung
+Kasse -> KIMCM2: Versand via KIM\nan die benannte\nKIM-Adresse\nder Praxis
+deactivate Kasse
+activate KIMCM2 #8da5c4
+KIMCM2 -> KIMFD: Weiterleitung an\nKIM-Fachdienst der\nEmpfängerpraxis
+deactivate KIMCM2
+activate KIMFD #8da5c4
+KIMFD -> KIMCM1: Nachrichtenempfang
+deactivate KIMFD
+activate KIMCM1 #8da5c4
+KIMCM1 -> PVS: Einlesen der\nVersicherungsbescheinigung
+deactivate KIMCM1
+activate PVS #ee8360
+PVS -> PVS: Ggfs. Anlage/Aktualisierung\ndes Patientendatensatzes
+PVS ---> LE: :Hinweis Check-In\n(neuer) Patient
+deactivate PVS
+alt Übermittlungsbestätigung
+    KIMFD -> KIMFD: Nachricht an\nEmpfängerfachdienst\nzugestellt
+    activate KIMFD #8da5c4
+    KIMFD -> KIMCM2
+    deactivate KIMFD
+    activate KIMCM2 #8da5c4
+    KIMCM2 -> Kasse
+    deactivate KIMCM2
+    activate Kasse #00907c
+    Kasse -> App: Notification "Statuscode"
+    deactivate Kasse
+    activate App #00907c
+    App -> App: Benachrichtigung "Ihr Check-In\nist in der Praxis eingegangen"
+    activate App
+    deactivate App
+    deactivate App
+
+end
+
+@enduml
