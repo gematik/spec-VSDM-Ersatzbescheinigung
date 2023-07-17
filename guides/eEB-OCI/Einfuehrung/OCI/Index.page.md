@@ -23,4 +23,4 @@ Das Praxisverwaltungssystem kann diesen FHIR-Datensatz der Bescheinigung in beid
 
 _Dieser Anwendungsfall der Anforderung via App wird aktuell nur für Versicherte der Privaten Krankenversicherung eingesetzt, über den der Praxis die Versichertendaten (KVNR, Name, Adresse, Geburtsdatum, etc.) des Patienten bereitgestellt werden._
 
-{{render:eeb-oci-images-pkv-ersatzverfahren}}
+{{render:guides-eeb-oci-images-pkv-ersatzverfahren}}
