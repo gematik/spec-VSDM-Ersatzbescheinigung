@@ -27,7 +27,7 @@ Hier ein Beispiel einer fiktiven Praxis Baldgesund mit der KIM-Adresse `praxis-d
 
 {{render:guides-eeb-oci-images-qr-sample}}
 
-Die Praxis erstellt den QR-Code. Dazu kann beispielsweise der QR-Code-Generator auf der von der gematik bereitgestellten Seite <https://wwww.praxis-check-in.de> genutzt werden. Perspektivisch ist auch denkbar, dass Primärsystemhersteller eine solche Funktionalität direkt im System zur Verfügung stellen.
+Die Praxis erstellt den QR-Code. Dazu kann beispielsweise der QR-Code-Generator auf der von der gematik bereitgestellten Seite <https://www.praxis-check-in.de> genutzt werden. Perspektivisch ist auch denkbar, dass Primärsystemhersteller eine solche Funktionalität direkt im System zur Verfügung stellen.
 
 Weitere QR-Code-Generatoren:
 
@@ -49,7 +49,7 @@ Versicherte könnten den Hinweis auf die Scan-Funktion in ihrer App übersehen u
 
 > **Hinweis**
 >
-> Die gematik veröffentlicht unter der URL <https://wwww.praxis-check-in.de/.well-known/> eine Konfiguration für Anroid (assetlinks.json) und iOS-Geräte(apple-app-site-association),
+> Die gematik veröffentlicht unter der URL <https://www.praxis-check-in.de/.well-known/> eine Konfiguration für Anroid (assetlinks.json) und iOS-Geräte(apple-app-site-association),
 > mittels der die App auf Smartphones von Versicherten beim Scannen des QR-Codes automatisch gestartet werden kann.
 > App-Hersteller können der gematik via [JIRA-Service Desk Anfrage](http://service.gematik.de/servicedesk/customer/portals) ihre benötigte Konfiguration als JSON-Datei bereitstellen.
 
