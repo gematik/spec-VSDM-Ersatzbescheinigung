@@ -1,6 +1,6 @@
 - name: eEB
   filename: Index.page.md
-- name: Gesamtüberblick System
+- name: Funktionsweise Gesamtsystem
   filename: gesamtsystem.page.md
 - name: Error Handling
   filename: Error-Handling.page.md
