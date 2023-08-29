@@ -1,9 +1,9 @@
 ---
 parent:
 ---
-# Inhalt
+# KIM-Nachrichtenstruktur
 
-- [Inhalt](#inhalt)
+- [KIM-Nachrichtenstruktur](#kim-nachrichtenstruktur)
 - [Verwendung von KIM](#verwendung-von-kim)
 - [KIM Dienstkennungen](#kim-dienstkennungen)
 - [Übermittlungsbestätigung und Lesebestätigung](#übermittlungsbestätigung-und-lesebestätigung)

@@ -1,9 +1,9 @@
 ---
 parent:
 ---
-# Inhalt
+# App-Funktionalitäten OCI
 
-- [Inhalt](#inhalt)
+- [App-Funktionalitäten OCI](#app-funktionalitäten-oci)
   - [Auswahl des Leistungserbringers in der App](#auswahl-des-leistungserbringers-in-der-app)
     - [QR-Code-Scan](#qr-code-scan)
     - [VZD-Suche](#vzd-suche)
@@ -15,7 +15,7 @@ parent:
   - [Feedback zum Versandstatus](#feedback-zum-versandstatus)
   - [Was ist wichtig in Hinblick auf eine gute User Experience?](#was-ist-wichtig-in-hinblick-auf-eine-gute-user-experience)
 
-Die Funktionalität zum OCI kann in eine beliebige App der privaten Krankenversicherung integriert werden - zum Beispiel die Service-App oder die ePA-App. Wichtig ist, dass vor der Nutzung eine sichere Authentisierung erfolgt - idealerweise mit der GesundheitsID.
+Die Funktionalität zum OCI kann in eine beliebige App der privaten Krankenversicherung integriert werden - zum Beispiel die Service-App oder die ePA-App. Wichtig ist, dass vor der Nutzung eine **sichere Authentisierung** erfolgt - idealerweise mit der GesundheitsID.
 
 Folgende Kernfunktionalitäten sind vorgesehen:
 

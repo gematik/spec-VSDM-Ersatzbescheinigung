@@ -1,9 +1,9 @@
 ---
 parent:
 ---
-# Inhalt
+# OCI
 
-- [Inhalt](#inhalt)
+- [OCI](#oci)
   - [UseCase und Funktionsweise (Check-In mittels App)](#usecase-und-funktionsweise-check-in-mittels-app)
 - [Häufig gestellte Fragen zum Online Check-in](#häufig-gestellte-fragen-zum-online-check-in)
   - [Welche Personengruppen können den Online Check-in nutzen?](#welche-personengruppen-können-den-online-check-in-nutzen)

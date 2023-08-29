@@ -6,13 +6,13 @@ parent:
 topic: errorhandling
 ---
 
-# Inhalt
+# Error Handling
 
 Auf dieser Seite wird das Error-Handling vorgestellt.
 Dazu werden die Liste der verwendeten Fehlercodes aus dem entsprechenden ValueSet und
 die Struktur des OperationOutcome zum Transport der Fehlermeldung vorgestellt.
 
-- [Inhalt](#inhalt)
+- [Error Handling](#error-handling)
 - [Liste der verwendeten Fehlercodes](#liste-der-verwendeten-fehlercodes)
 - [OperationOutcome](#operationoutcome)
 

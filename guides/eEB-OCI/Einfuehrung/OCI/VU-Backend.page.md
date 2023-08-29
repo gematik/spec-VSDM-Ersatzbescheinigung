@@ -1,12 +1,13 @@
 ---
 parent:
 ---
-# Inhalt
+# Erstellung und Versand KIM-Nachricht
 
-- [Inhalt](#inhalt)
+- [Erstellung und Versand KIM-Nachricht](#erstellung-und-versand-kim-nachricht)
   - [Allgemeine Versicherungsdaten (VD)](#allgemeine-versicherungsdaten-vd)
   - [Persönliche Versichertendaten (PD)](#persönliche-versichertendaten-pd)
 - [Versand der KIM-Nachricht](#versand-der-kim-nachricht)
+  - [Textempfehlung für die KIM-Nachricht](#textempfehlung-für-die-kim-nachricht)
 - [Häufig gestellte Fragen zur Erstellung und zum Versand der KIM-Nachricht](#häufig-gestellte-fragen-zur-erstellung-und-zum-versand-der-kim-nachricht)
   - [Soll die Adresse der versicherten Person (VP) oder des Versicherungsnehmers (VN) übergeben werden?](#soll-die-adresse-der-versicherten-person-vp-oder-des-versicherungsnehmers-vn-übergeben-werden)
   - [Führen Anpassungen von Daten im Primärsystem auch zu einer Datenanpassung beim Versicherungsunternehmen?](#führen-anpassungen-von-daten-im-primärsystem-auch-zu-einer-datenanpassung-beim-versicherungsunternehmen)
@@ -121,7 +122,7 @@ Beispiel:
 Um Fehler zu vermeiden, sollten ausgehende Nachrichten validiert werden. Außerdem muss der Versand so gestaltet sein, dass es nicht zu vermeidbaren zeitlichen Verzögerungen kommt, die den Gesamtprozess verlängern.
 Beim Versand der Bescheinigung mit der KIM-Nachricht ist im EEBMessageHeader hinterlegt (s. Element eventCoding), ob die Anfrage von einem Leistungserbringer per KIM oder vom Versicherten via App angefordert wurde. Da die Anfrage beim OCI für Privatversicherte immer per App kommt, wird das optionale Element response weggelassen, mit dem ansonsten die Referenz auf die vorangegangene EEB-Anfrage via KIM gegeben wäre.
 
-##Textempfehlung für die KIM-Nachricht
+## Textempfehlung für die KIM-Nachricht
 
 Für eine bessere Unterscheidbarkeit der Nachrichten zum eEB-Verfahren sowie zum OCI sollte der Text in der KIM-Nachricht auf den OCI zu beziehen. Vorschlag:
 
