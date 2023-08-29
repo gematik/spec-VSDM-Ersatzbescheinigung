@@ -238,7 +238,9 @@ Das Bescheinigungs-Bundle besteht aus einem Bescheinigungs-Header `MessageHeader
 Der `MessageHeader` enthält eine Statusinformation und einen `event`-Coding-Code über die Herkunft der Anfrage zur Ausstellung einer Ersatzbescheinigung als `OID` über die fachlichen Rollen der Telematikinfrastruktur. Die Liste der zulässigen OIDs findet sich als `ProfessionOID` in gemSpec_OID bzw. als CodeSystem des [VZD-FHIR-Projekts](https://simplifier.net/vzd-fhir-directory/practitionerprofessionoid).
 Der Header ist für den Bundle-Type `message` verpflichtend.
 
-{{tree:<https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle}}>
+> **Hinweis** Bei der Anfrage via App ist die `response` im MessageHeader nicht enthalten, da kein Bezug zu einem EEBAnfrageBundle hergestellt werden kann.
+
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle}}
 
 ## Patient
 
@@ -268,7 +270,7 @@ Für PKV-Versicherte wurde festgelegt, dass hier ebenfalls das GKV-Schema verwen
 
 Details zur Befüllung der VSD für PKV-Versicherte sind auf der folgenden Unterseite angegeben {{pagelink:Einfuehrung/OCI/VU-Backend.page.md}}
 
-{{tree:<https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk}}>
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk}}
 
 # Bescheinigungsbundle (Beispiel)
 

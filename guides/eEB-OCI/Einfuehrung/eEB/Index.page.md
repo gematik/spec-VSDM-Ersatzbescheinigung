@@ -54,7 +54,7 @@ Bei der Abfrage nach einer Ersatzbescheinigung zu einer Person sind zwei Fälle 
 
 Um der Kasse Hilfe zum Auffinden der versicherten Person in ihrem Bestandssystem zu geben, müssen personenbezogene Informationen in einer FHIR-Ressource `Patient` mitgegeben werden. Ist die Person bereits im PVS als Patient hinterlegt (wurden bspw. in der Vergangenheit Behandlungen in der Praxis durchgeführt) können die Daten in einer Patienten-Ressource `KBV_PR_FOR_Patient` zusammengefasst werden, wie sie in anderen formularbasierten Anwendungen bereits genutzt wird. Es genügt auch der Eintrag der `kvnr` im `identifier` einer `KnownPatient`-Ressource. Weitere Angaben sind optional.
 
-{{tree:<https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient}}>
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient}}
 
 ## Patient ist im PVS unbekannt
 
@@ -310,10 +310,10 @@ Liegen alle Informationen im PVS vor, werden diese in einer FHIR-Ressource `EEBA
 Der für den genutzten Bundle-Typ `message` verpflichtende Header transportiert neben Metainformationen (Leistungsdatum, Referenz auf die anfragende Praxis `KBV_PR_FOR_Organization`) das Einverständnis des Patienten (`true` = eingewilligt), das zuvor vom Praxispersonal eingeholt wurde.
 Das Feld `MessageHeader.source.endpoint` ist dabei ein vom FHIR-Standard vorgesehenes Pflichtfeld, das mit einer vom PVS gewählten URL belegt werden kann.
 
-{{tree:<https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader}}>
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader}}
 
 ## Anfrage Bundle
 
-{{tree:<https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle}}>
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle}}
 
 Im folgenden Link ist ein Beispiel-Bundle [Patient mit bekannter KVNR](https://simplifier.net/vsdm-ersatzbescheinigung/1f311c40-fee9-4b03-b0c4-c29d432f2371) dargestellt.
