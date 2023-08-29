@@ -1,14 +1,10 @@
 - name: OCI
   filename: Index.page.md
-- name: Überblick zum Online Check-in
-  filename: ueberblick-oci.page.md
-- name: QR-Code und Suche über den Verzeichnisdienst
-  filename: QR-VZD.page.md
-- name: App-Funktionalitäten zum Online Check-in
+- name: App-Funktionalitäten OCI
   filename: App-OCI.page.md
-- name: "Versicherungsunternehmen: Backendsystem"
+- name: Erstellung und Versand KIM-Nachricht
   filename: VU-Backend.page.md
-- name: "Leistungserbringer: KIM und Primärsystem"
+- name: Empfang und Verarbeitung KIM-Nachricht
   filename: LE-KIM-PVS.page.md
 - name: Testing
   filename: Testing.page.md
