@@ -2,9 +2,9 @@
 parent:
 ---
 
-# Inhalt
+# eEB
 
-- [Inhalt](#inhalt)
+- [eEB](#eeb)
 - [Implementierungsleitfaden elektronische Ersatzbescheinigung (eEB/GKV)](#implementierungsleitfaden-elektronische-ersatzbescheinigung-eebgkv)
   - [Rechtliche Einordnung](#rechtliche-einordnung)
   - [UseCase und Funktionsweise (Anforderung aus der Praxis)](#usecase-und-funktionsweise-anforderung-aus-der-praxis)

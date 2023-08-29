@@ -1,9 +1,9 @@
 ---
 parent:
 ---
-# Inhalt
+# Empfang und Verarbeitung KIM-Nachricht
 
-- [Inhalt](#inhalt)
+- [Empfang und Verarbeitung KIM-Nachricht](#empfang-und-verarbeitung-kim-nachricht)
 - [Übernahme der Daten ins Primärsystem](#übernahme-der-daten-ins-primärsystem)
 - [Validierung und Fehlermeldungen](#validierung-und-fehlermeldungen)
 - [User Experience](#user-experience)

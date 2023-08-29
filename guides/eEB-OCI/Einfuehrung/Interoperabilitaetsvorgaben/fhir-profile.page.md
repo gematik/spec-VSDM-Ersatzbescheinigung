@@ -1,13 +1,13 @@
 ---
 parent:
 ---
-# Inhalt
+# FHIR-Profile
 
 Als Ergebnis einer Anfrage für eine Ersatzbescheinigung per KIM antwortet die angefragte Krankenkasse mittels einer KIM-Nachricht, die im Positiv-Fall ein signiertes Bescheinigungsbundle (Ersatzbescheinigung) enthält.
 
 Ebenso sendet das Versicherungsunternehmen einer Praxis eine KIM-Nachricht mit einem Bescheinigungsbundle (Versichertennachweis) bei der positiven Antwort auf ein externes "Check-In" durch eine Versicherten-App.
 
-- [Inhalt](#inhalt)
+- [FHIR-Profile](#fhir-profile)
 - [Signatur](#signatur)
 - [FHIR Datenstruktur Bescheinigung](#fhir-datenstruktur-bescheinigung)
   - [Patient](#patient)
