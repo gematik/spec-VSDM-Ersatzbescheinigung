@@ -5,20 +5,20 @@ parent:
 # eEB
 
 - [eEB](#eeb)
-- [Implementierungsleitfaden elektronische Ersatzbescheinigung (eEB/GKV)](#implementierungsleitfaden-elektronische-ersatzbescheinigung-eebgkv)
-  - [Rechtliche Einordnung](#rechtliche-einordnung)
-  - [UseCase und Funktionsweise (Anforderung aus der Praxis)](#usecase-und-funktionsweise-anforderung-aus-der-praxis)
-- [Erfassung personenbezogener Daten](#erfassung-personenbezogener-daten)
-  - [Patient ist im PVS bekannt](#patient-ist-im-pvs-bekannt)
-  - [Patient ist im PVS unbekannt](#patient-ist-im-pvs-unbekannt)
-- [Angaben zur anfragenden Praxis](#angaben-zur-anfragenden-praxis)
-- [Signatur der Anfrage](#signatur-der-anfrage)
-- [KIM-Empfängeradresse der Krankenkasse](#kim-empfängeradresse-der-krankenkasse)
-- [Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM](#anforderung-zur-ausstellung-einer-ersatzbescheinigung-via-kim)
-  - [Anfrage Header](#anfrage-header)
-  - [Anfrage Bundle](#anfrage-bundle)
+  - [Implementierungsleitfaden elektronische Ersatzbescheinigung (eEB/GKV)](#implementierungsleitfaden-elektronische-ersatzbescheinigung-eebgkv)
+    - [Rechtliche Einordnung](#rechtliche-einordnung)
+    - [UseCase und Funktionsweise (Anforderung aus der Praxis)](#usecase-und-funktionsweise-anforderung-aus-der-praxis)
+  - [Erfassung personenbezogener Daten](#erfassung-personenbezogener-daten)
+    - [Patient ist im PVS bekannt](#patient-ist-im-pvs-bekannt)
+    - [Patient ist im PVS unbekannt](#patient-ist-im-pvs-unbekannt)
+  - [Angaben zur anfragenden Praxis](#angaben-zur-anfragenden-praxis)
+  - [Signatur der Anfrage](#signatur-der-anfrage)
+  - [KIM-Empfängeradresse der Krankenkasse](#kim-empfängeradresse-der-krankenkasse)
+  - [Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM](#anforderung-zur-ausstellung-einer-ersatzbescheinigung-via-kim)
+    - [Anfrage Header](#anfrage-header)
+    - [Anfrage Bundle](#anfrage-bundle)
 
-# Implementierungsleitfaden elektronische Ersatzbescheinigung (eEB/GKV)
+## Implementierungsleitfaden elektronische Ersatzbescheinigung (eEB/GKV)
 
 Die UseCases der elektronischen Ersatzbescheinigung digitalisieren den papierbasierten Prozess für Anwendungsfälle in der (Zahn-)Arztpraxis, in denen keine eGK als Versicherungsnachweis vorgelegt werden kann. Der bisherige papierbasierte Prozess für die Übermittlung von Ersatzbescheinigungen wie bspw. Fax, Papierausstellung usw. und der anschließenden händischen Übernahme der Daten sind langwierig, fehleranfällig und unkomfortabel für einen Großteil der Beteiligten.
 
@@ -28,7 +28,7 @@ Die Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM wird durch das
 Kann eine zu behandelnde Person keine Gesundheitskarte als Versicherungsnachweis vorlegen, kann eine Anfrage einer Ersatzbescheinigung bei der von der Person benannten oder bereits im System bekannten Krankenkasse erfolgen.
 Damit die Kasse die versicherte Person in ihrem Bestandssystem identifizieren kann, müssen der Anfrage ein Mindestsatz an personenbezogenen Daten der versicherten Person mitgegeben werden.
 
-## Rechtliche Einordnung
+### Rechtliche Einordnung
 
 Für Versicherte der gesetzlichen Krankenkassen ist der Nachweis der Anspruchsberechtigung vertraglich in §19 BMV geregelt.
 Die vorliegende Spezifikation soll eine Möglichkeit schaffen, mit der Arztpraxen, Zahnarztpraxen und Krankenhäuser eine Ersatzbescheinigung nach §19 Abs. 2 BMV auf elektronischem Weg erhalten können.
@@ -36,7 +36,7 @@ Die vorliegende Spezifikation befreit die gesetzlichen Krankenkassen nicht davon
 
 Die Nutzung dieses Verfahrens ist für Praxen, Zahnarztpraxen und Krankenhäuser freiwillig.
 
-## UseCase und Funktionsweise (Anforderung aus der Praxis)
+### UseCase und Funktionsweise (Anforderung aus der Praxis)
 
 Die Anforderung zur Ausstellung einer Ersatzbescheinigung für eine gesetzlich versicherte Person kann durch das Praxispersonal initiiert werden.
 Für die Anforderung einer Ersatzbescheinigung muss in der Prxis ein minimaler Satz an Informationen zur zu behandelnden Person erfasst und aus dem Praxisverwaltungssystem via KIM an die bekannte bzw. benannte Kasse als Anfrage gesendet werden.
@@ -46,17 +46,19 @@ Das Praxisverwaltungssystem kann die bereits erfassten bzw. vorhandenen Patiente
 
 {{render:guides-eeb-oci-images-gkv-ersatzverfahren}}
 
-# Erfassung personenbezogener Daten
+## Erfassung personenbezogener Daten
 
 Bei der Abfrage nach einer Ersatzbescheinigung zu einer Person sind zwei Fälle zu unterscheiden, ist die 10-stellige Versicherten-ID `KVNR` der Person bekannt oder unbekannt. Da diese `KVNR` für eine Person (i.d.R.) lebenslang gültig ist, ergibt sich die Antwort aus der Frage, ob der Patient in dieser Praxis in der Vergangenheit bereits vorstellig war.
 
-## Patient ist im PVS bekannt
+Es hat sich bei Nutzung der KVNR als sinnvoll erwiesen, die KVNR vor Verwendung in der EEB-Anfrage ggf. einmal formal zu prüfen (Länge, Aufbau und Prüfziffer - siehe auch <https://de.wikipedia.org/wiki/Krankenversichertennummer>). Denken Sie daran, Tippfehler sind menschlich.
+
+### Patient ist im PVS bekannt
 
 Um der Kasse Hilfe zum Auffinden der versicherten Person in ihrem Bestandssystem zu geben, müssen personenbezogene Informationen in einer FHIR-Ressource `Patient` mitgegeben werden. Ist die Person bereits im PVS als Patient hinterlegt (wurden bspw. in der Vergangenheit Behandlungen in der Praxis durchgeführt) können die Daten in einer Patienten-Ressource `KBV_PR_FOR_Patient` zusammengefasst werden, wie sie in anderen formularbasierten Anwendungen bereits genutzt wird. Es genügt auch der Eintrag der `kvnr` im `identifier` einer `KnownPatient`-Ressource. Weitere Angaben sind optional.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient}}
 
-## Patient ist im PVS unbekannt
+### Patient ist im PVS unbekannt
 
 Ist die zu behandelnde Person als Patient im PVS unbekannt, sind folgende Angaben mindestens erforderlich, um der Kasse eine Suche nach einem Versichertenverhältnis zu ermöglichen:
 
@@ -69,7 +71,7 @@ Diese Angaben sind in einer Patienten-Ressource `KBV_PR_FOR_Patient` einzutragen
 
 Es wird empfohlen, dass das Praxispersonal darauf hingewiesen wird, die versicherte Person nach der aktuellen Krankenkasse zu befragen und ggfs. die hinterlegte Krankenkasse für die Anfrage zu aktualisieren.
 
-# Angaben zur anfragenden Praxis
+## Angaben zur anfragenden Praxis
 
 Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen über die anfragende Praxis, um das Ausstellen von "Blanko"-Bescheinigungen zu unterbinden.
 Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") mitgegeben werden.
@@ -78,7 +80,7 @@ Ebenso müssen die Angaben zur `address` und `telecom`-Kontaktinformationen für
 
 <iframe src="https://www.simplifier.net/embed/render?id=for/kbvprfororganization" style="width: 100%;height: 320px;"></iframe>
 
-# Signatur der Anfrage
+## Signatur der Anfrage
 
 Die Anfrage (das FHIR-Bundle) muss mittels der Institutionsidentität (SMC-B OSIG) signiert werden, um der angefragten Kasse einen Authentizitäts-Nachweis bereitzustellen.
 Die Signatur der KIM-Nachricht reicht dabei nicht aus, da diese nur die Integrität des Transports und Authentizität des KIM-Absenders sicherstellt, aber nicht, ob der Absender auch tatsächlich die Institution ist, gegenüber der der Patient eingewilligt hat.
@@ -169,7 +171,7 @@ Im Ergebnis liefert der Konnektor eine `SignDocumentResponse`, die anschließend
 </SOAP-ENV:Envelope>
 ```
 
-# KIM-Empfängeradresse der Krankenkasse
+## KIM-Empfängeradresse der Krankenkasse
 
 Die Suche nach der KIM-Empfängeradresse der Kasse erfolgt im zentralen Verzeichnisdienst VZD. Folgendes Beispiel für einen Konsolenaufruf mittels `ldapsearch` im VZD der TI-Referenzumgebung RU mit der Suche nach einer Krankenkasse OID=`1.2.276.0.76.4.59` und Teil des Namens `Techniker` in einem kombinierten LDAP-Filter `(&(professionOID=1.2.276.0.76.4.59)(displayName=Techniker*))`:
 
@@ -301,18 +303,18 @@ Kann kein Empfänger aus dem VZD der TI ermittelt werden, muss der Anwendungsfal
 
 Details und weitere Hinweise zur Suche finden sich in der [API-Beschreibung zum VZD](https://github.com/gematik/api-vzd/blob/main/docs/LDAP_Search.adoc#suche-bei-bekanntem-namen).
 
-# Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM
+## Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM
 
 Liegen alle Informationen im PVS vor, werden diese in einer FHIR-Ressource `EEBAnfrageBundle` zusammengestellt und als Anhang einer KIM-Nachricht an die Kasse gesendet.
 
-## Anfrage Header
+### Anfrage Header
 
 Der für den genutzten Bundle-Typ `message` verpflichtende Header transportiert neben Metainformationen (Leistungsdatum, Referenz auf die anfragende Praxis `KBV_PR_FOR_Organization`) das Einverständnis des Patienten (`true` = eingewilligt), das zuvor vom Praxispersonal eingeholt wurde.
 Das Feld `MessageHeader.source.endpoint` ist dabei ein vom FHIR-Standard vorgesehenes Pflichtfeld, das mit einer vom PVS gewählten URL belegt werden kann.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader}}
 
-## Anfrage Bundle
+### Anfrage Bundle
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle}}
 
