@@ -64,6 +64,7 @@ Eine Datenübermittlung darf nur nach erfolgter transaktionsbasierter ausdrückl
 ### Dokumentation der Einwilligung zum OCI
 
 Um Privatversicherten die Wahrnehmung ihrer Rechte zu erleichtern, müssen erfolgte OCI in einer Historie einsehbar sein. Dabei wird empfohlen, mindestens das Datum und die Uhrzeit des Versands, die Daten der empfangenden Praxis (Name und Adresse) sowie den Übertragungsstatus (Versand erfolgt/ nicht erfolgt) zu nennen. Es wird eine Speicherdauer von 3 Jahren empfohlen. Der Versicherte sollte über die Speicherdauer sowie die nach Ablauf dieser Speicherdauer erfolgende Löschung seiner Daten informiert werden. Um Versicherten bei Bedarf einen dauerhaften Zugriff auf diese Daten zu ermöglichen, sollte ein Export der Daten (z. B. im PDF-Format) ermöglicht werden.
+
 ## Feedback zum Versandstatus
 
 Der Versicherte soll ein einfaches Feedback dazu bekommen, ob der Versand der KIM-Nachricht erfolgen konnte oder nicht. Im Fall einer fehlgeschlagenen Datenübermittlung soll er einen aussagekräftigen Hinweis dazu bekommen, wie er nun weiter vorgehen soll.

@@ -8,14 +8,14 @@ Als Ergebnis einer Anfrage für eine Ersatzbescheinigung per KIM antwortet die a
 Ebenso sendet das Versicherungsunternehmen einer Praxis eine KIM-Nachricht mit einem Bescheinigungsbundle (Versichertennachweis) bei der positiven Antwort auf ein externes "Check-In" durch eine Versicherten-App.
 
 - [FHIR-Profile](#fhir-profile)
-- [Signatur](#signatur)
-- [FHIR Datenstruktur Bescheinigung](#fhir-datenstruktur-bescheinigung)
-  - [Patient](#patient)
-  - [Coverage](#coverage)
-- [Bescheinigungsbundle (Beispiel)](#bescheinigungsbundle-beispiel)
-- [Fehlerfälle (Anfrage für GKV-Ersatzbescheinigung fehlgeschlagen)](#fehlerfälle-anfrage-für-gkv-ersatzbescheinigung-fehlgeschlagen)
+  - [Signatur](#signatur)
+  - [FHIR Datenstruktur Bescheinigung](#fhir-datenstruktur-bescheinigung)
+    - [Patient](#patient)
+    - [Coverage](#coverage)
+  - [Bescheinigungsbundle (Beispiel)](#bescheinigungsbundle-beispiel)
+  - [Fehlerfälle (Anfrage für GKV-Ersatzbescheinigung fehlgeschlagen)](#fehlerfälle-anfrage-für-gkv-ersatzbescheinigung-fehlgeschlagen)
 
-# Signatur
+## Signatur
 
 Die Signatur ist als Base64-Codierter PKCS#7-Container der KIM-Antwort zu entnehmen.
 Sie trägt die signierte Bescheinigung innerhalb des Signaturcontainers (enveloping Signatur).
@@ -231,7 +231,7 @@ Im Ergebnis liefert der Konnektor eine `verifyDocumentResponse`, die im einfache
 
 Gibt es Hinweise im Zusammenhang mit ggfs. veralteten, eingebetteten OCSP-Responses antwortet der Konnektor mit einem HighLevelResult `INCONCLUSIVE` und Status:Result `Warning`, das zusätzliche Informationen liefert.
 
-# FHIR Datenstruktur Bescheinigung
+## FHIR Datenstruktur Bescheinigung
 
 Das Bescheinigungs-Bundle besteht aus einem Bescheinigungs-Header `MessageHeader`, Patienteninformationen `Patient` und der Deckungsinformation `Coverage`.
 
@@ -242,7 +242,7 @@ Der Header ist für den Bundle-Type `message` verpflichtend.
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle}}
 
-## Patient
+### Patient
 
 Die Patient-Ressource vom Typ `KBV_PR_FOR_Patient` enthält die der Kasse bekannten Patientendaten gemäß KBV-Profilierung,
 wie sie in den Anwendungen *eAU*, *eRezept*, etc. verwendet werden.
@@ -250,7 +250,7 @@ Dieses Profil hat ausschließlich informativen Charakter für die Verarbeitung d
 
 <iframe src="https://www.simplifier.net/embed/render?id=for/kbvprforpatient" style="width: 100%;height: 320px;"></iframe>
 
-## Coverage
+### Coverage
 
 In der Coverage-Ressource werden von den Krankenkassen der GKV die Ersatzbescheinigung und von Versicherungsunternehmen der PKV Informationen zum Versicherungsnachweis geliefert.
 
@@ -272,12 +272,12 @@ Details zur Befüllung der VSD für PKV-Versicherte sind auf der folgenden Unter
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk}}
 
-# Bescheinigungsbundle (Beispiel)
+## Bescheinigungsbundle (Beispiel)
 
 Unter folgendem Link ist ein ["Beispiel-Bescheinigungs-Bundle"](https://simplifier.net/vsdm-ersatzbescheinigung/9b6ac30d-246d-4eab-af83-544564792089) dargestellt.
 Dieses ist innerhalb des oben genannten Signaturcontainers (PKCS#7 enveloping) enthalten.
 
-# Fehlerfälle (Anfrage für GKV-Ersatzbescheinigung fehlgeschlagen)
+## Fehlerfälle (Anfrage für GKV-Ersatzbescheinigung fehlgeschlagen)
 
 Im Fall von Fehlern antwortet die Kasse mit einer Fehler-Nachricht `EEBFehler` als FHIR-Ressource `OperationOutcome`.
 Diese enthält Details mit StatusCodes und lesbaren Fehlertexten in einer Liste von Fehlern als `issue`|s.

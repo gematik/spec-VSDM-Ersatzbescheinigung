@@ -4,7 +4,7 @@ parent:
 # QR-Code-Scan
 
 - [QR-Code-Scan](#qr-code-scan)
-- [Aufbau und Inhalt des QR-Codes](#aufbau-und-inhalt-des-qr-codes)
+  - [Aufbau und Inhalt des QR-Codes](#aufbau-und-inhalt-des-qr-codes)
 
 Der QR-Code-Scan ist Voraussetzung für folgende zwei Use Cases, die von den Versicherten über ihre Versicherten-App (PKV) bzw. Kassen-App (GKV) angestoßen werden können:
 
@@ -15,7 +15,7 @@ Auf der Seite <https://www.praxis-check-in.de> finden Leistungserbringer Hinweis
 
 Der QR-Code wird durch Leistungserbringer nur dann bereitgestellt, wenn die Praxisverwaltungssoftware bzw. das Krankenhausinformationssystem eEB-Bescheinigungen und Nachrichten zum Online Check-in annehmen und verarbeiten kann sowie die rechtlichen organisatorischen Rahmenbedingungen erfüllt sind. So ist sichergestellt, dass die Verfahren nur von Leistungserbringern durchgeführt werden, die auch die Voraussetzungen dafür mitbringen.
 
-# Aufbau und Inhalt des QR-Codes
+## Aufbau und Inhalt des QR-Codes
 
 Der QR-Code für den Online Check-in enthält die KIM-Adresse einer Praxis. Das folgende Beispiel enthält die KIM-Adresse einer fiktiven Praxis Dr. Baldgesund: `praxis-dr-baldgesund@kim-dienstleister.kim.telematik`
 

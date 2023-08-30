@@ -9,10 +9,10 @@ Dazu werden die Liste der verwendeten Fehlercodes aus dem entsprechenden ValueSe
 die Struktur des OperationOutcome zum Transport der Fehlermeldung vorgestellt.
 
 - [Error Handling](#error-handling)
-- [Liste der verwendeten Fehlercodes](#liste-der-verwendeten-fehlercodes)
-- [OperationOutcome](#operationoutcome)
+  - [Liste der verwendeten Fehlercodes](#liste-der-verwendeten-fehlercodes)
+  - [OperationOutcome](#operationoutcome)
 
-# Liste der verwendeten Fehlercodes
+## Liste der verwendeten Fehlercodes
 
 Es werden die Fehlercodes aus dem Projekteigenen `ValueSet` [https://gematik.de/fhir/eeb/ValueSet/EEBErrorcodeVS](https://simplifier.net/vsdm-ersatzbescheinigung/eeberrorcodevs) verwendet.
 In der FHIR-Ressource `OperationOutcome` muss in `issue.details.coding` ein Wert der Tabelle des folgenden Codesystems gemäß Definition des ValueSets verwendet werden. Die folgenden Codes sind gemäß der festgestellten Fehlerursache (siehe Beschreibung) vorgesehen:
@@ -27,7 +27,7 @@ for concept select
 
 ```
 
-# OperationOutcome
+## OperationOutcome
 
 Die FHIR-Ressource `OperationOutcome` transportiert die Fehlermeldung inkl. Fehlerursache, weshalb eine angefragte elektronische Ersatzbescheinigung nicht ausgestellt werden konnte.
 Die Ressource wird dabei analog zur Bescheinigung in einer KIM-Nachricht transportiert, OHNE ein klammerndes Bundle.
