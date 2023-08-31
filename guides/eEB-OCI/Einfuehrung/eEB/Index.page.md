@@ -31,7 +31,7 @@ Damit die Kasse die versicherte Person in ihrem Bestandssystem identifizieren ka
 ### Rechtliche Einordnung
 
 Für Versicherte der gesetzlichen Krankenkassen ist der Nachweis der Anspruchsberechtigung vertraglich in §19 BMV geregelt.
-Die vorliegende Spezifikation soll eine Möglichkeit schaffen, mit der Arztpraxen, und Ambulanzen der Krankenhäuser eine Ersatzbescheinigung nach §19 Abs. 2 BMV auf elektronischem Weg erhalten können.
+Die vorliegende Spezifikation soll eine Möglichkeit schaffen, mit der Arztpraxen und Ambulanzen der Krankenhäuser eine Ersatzbescheinigung nach §19 Abs. 2 BMV auf elektronischem Weg erhalten können.
 Die vorliegende Spezifikation befreit die gesetzlichen Krankenkassen nicht davon, den Versicherten auf Wunsch eine Ersatzbescheinigung in Papierform auszustellen.
 
 Die Nutzung dieses Verfahrens ist freiwillig.
