@@ -135,7 +135,7 @@ Für eine bessere Unterscheidbarkeit der Nachrichten zum eEB-Verfahren sowie zum
 
 ### Soll die Adresse der versicherten Person (VP) oder des Versicherungsnehmers (VN) übergeben werden?
 
-Optimalerweise wird die Adresse der VP übergeben. Ist nur die Adresse des VN hinterlegt, kann diese beim OCI übergeben werden. Eventuelle Abweichungen werden als akzeptabel erachtet, zumal die Problematik bereits bei Karten für Privatversicherte besteht. Ggf. kann das Praxispersonal die Adresse im Primärsystem anpassen. Zudem bietet auch die E-Rezept-App die Möglichkeit an, die Lieferadresse zu editieren, damit Arzneimittel an die erwünschte Adresse versendet werden.
+Beim Online Check-in muss zwingend eine Versicherten-Adresse übergeben werden. Optimalerweise handelt es sich dabei um die Adresse der VP. Ist nur die Adresse des VN hinterlegt, kann diese beim OCI übergeben werden. Eventuelle Abweichungen werden als akzeptabel erachtet, zumal die Problematik bereits bei Karten für Privatversicherte besteht. Ggf. kann das Praxispersonal die Adresse im Primärsystem anpassen. Zudem bietet auch die E-Rezept-App die Möglichkeit an, die Lieferadresse zu editieren, damit Arzneimittel an die erwünschte Adresse versendet werden.
 
 ### Führen Anpassungen von Daten im Primärsystem auch zu einer Datenanpassung beim Versicherungsunternehmen?
 
