@@ -36,7 +36,7 @@ Dienstkennungen in KIM-Nachrichten kennzeichnen den transportierten Inhalt für 
 
 Eine Übermittlungsbestätigung (DSN) vom KIM-Mailserver des Nachrichtenempfängers signalisierte dem Sendesystem, dass eine Nachricht an den Empfänger ausgeliefert werden konnte. Die Anforderung einer solchen DSN unterstützt daher den automatisierten Prozess der elektronischen Ersatzbescheinigung.
 
-Die Anforderung einer Lesebestätigung (MDN) durch das Sendesystem führt in Empfangssystemen je nach Konfiguration zu einem Pop-up, ob eine Lesebestätigung versendet werden soll. Dieses stört ggfs. den Workflow der automatisierten Bearbeitung empfangener KIM-Nachrichten. Daher ist das Anfordern einer Lesenbestätigung durch das Sendesystem zu unterbinden.
+Die Anforderung einer Lesebestätigung (MDN) durch das Sendesystem führt in Empfangssystemen je nach Konfiguration zu einem Pop-up, ob eine Lesebestätigung versendet werden soll. Dieses stört ggfs. den Workflow der automatisierten Bearbeitung empfangener KIM-Nachrichten. Daher ist das Anfordern einer Lesebestätigung durch das Sendesystem in diesem Verfahren durch die Primärsysteme und Krankenkassensysteme zu unterbinden.
 
 ## KIM Anfrage einer Ersatzbescheinigung
 

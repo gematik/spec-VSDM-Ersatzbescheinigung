@@ -31,16 +31,16 @@ Damit die Kasse die versicherte Person in ihrem Bestandssystem identifizieren ka
 ### Rechtliche Einordnung
 
 Für Versicherte der gesetzlichen Krankenkassen ist der Nachweis der Anspruchsberechtigung vertraglich in §19 BMV geregelt.
-Die vorliegende Spezifikation soll eine Möglichkeit schaffen, mit der Arztpraxen und Ambulanzen der Krankenhäuser eine Ersatzbescheinigung nach §19 Abs. 2 BMV auf elektronischem Weg erhalten können.
+Die vorliegende Spezifikation soll eine Möglichkeit schaffen, mit der Arztpraxen und Krankenhäuser eine Ersatzbescheinigung nach §19 Abs. 2 BMV auf elektronischem Weg erhalten können.
 Die vorliegende Spezifikation befreit die gesetzlichen Krankenkassen nicht davon, den Versicherten auf Wunsch eine Ersatzbescheinigung in Papierform auszustellen.
 
-Die Nutzung dieses Verfahrens ist freiwillig.
+Die Nutzung dieses Verfahrens ist für alle Beteiligten freiwillig.
 
 ### UseCase und Funktionsweise (Anforderung aus der Praxis)
 
 Die Anforderung zur Ausstellung einer Ersatzbescheinigung für eine gesetzlich versicherte Person kann durch das Praxispersonal initiiert werden.
-Für die Anforderung einer Ersatzbescheinigung muss in der Prxis ein minimaler Satz an Informationen zur zu behandelnden Person erfasst und aus dem Praxisverwaltungssystem via KIM an die bekannte bzw. benannte Kasse als Anfrage gesendet werden.
-Die Kasse erstellt zur angefragten Person automatisiert, anhand der in ihrem Backend vorliegenden Versicherungsdaten einen FHIR-Datensatz (inkl. des bekannten VSD-Datensatzes), der dann via KIM der Praxis zugestellt wird.
+Für die Anforderung einer Ersatzbescheinigung muss in der Praxis ein minimaler Satz an Informationen zur zu behandelnden Person erfasst und aus dem Praxisverwaltungssystem via KIM an die bekannte bzw. benannte Kasse als Anfrage gesendet werden.
+Die Kasse erstellt zur angefragten Person automatisiert, anhand der in ihrem Backend vorliegenden Versicherungsdaten einen FHIR-Datensatz, der dann via KIM der Praxis zugestellt wird.
 
 Das Praxisverwaltungssystem kann die bereits erfassten bzw. vorhandenen Patientendaten mit den von der Kasse bereitgestellten Versichertenstammdaten aktualisieren.
 
@@ -177,7 +177,7 @@ Die Suche nach der KIM-Empfängeradresse der Kasse erfolgt im zentralen Verzeich
 
     ldapsearch  -x -H ldaps://10.24.11.11:1636  -b dc=data,dc=vzd  "(&(professionOID=1.2.276.0.76.4.59)(displayName=Techniker*))"
 
-Zur Vereinfachung der Praxisabläufe sollte die Suche ins Praxisverwaltungsystem integriert werden.
+Zur Vereinfachung der Praxisabläufe sollte die Suche ins Praxisverwaltungssystem integriert werden.
 Bei bekannten Patienten kann die KIM-Adresse aus dem Verzeichnisdienst über den Filter des Haupt-IK (gemäß er Kostenträgerstammdatei) der Krankenkasse abgefragt werden
 (XML-Element `./kostentraeger/ik_liste/ik@V`).
 
