@@ -36,8 +36,7 @@ Die Ressource wird dabei analog zur Bescheinigung in einer KIM-Nachricht transpo
 
 Im OperationOutcome wird genau ein `issue` mit entsprechenden Details übertragen.
 Die `severity` ist dabei immer `#fatal`, es werden keine Warnungen angegeben.
-Das Feld `issue.details.coding` enthält den von der Kasse angegebenen Fehlercode zur Begründung,
-weshalb keine elektronische Ersatzbescheinigung ausgestellt werden konnte, der dem Endnutzer mitgeteilt werden kann.
+Das Feld `issue.details.coding` enthält den von der Kasse angegebenen Fehlercode zur Begründung, weshalb keine elektronische Ersatzbescheinigung ausgestellt werden konnte, der dem Endnutzer mitgeteilt wird.
 
 Der optionale Text in `OperationOutcome.issue.details.text` dient der Unterstützung in der Entwicklung und wird ggfs. nur in Testsystemen gefüllt.
 

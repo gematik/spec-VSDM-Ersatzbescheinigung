@@ -3,7 +3,9 @@ parent:
 ---
 # FHIR-Profile
 
-Als Ergebnis einer Anfrage für eine Ersatzbescheinigung per KIM antwortet die angefragte Krankenkasse mittels einer KIM-Nachricht, die im Positiv-Fall ein signiertes Bescheinigungsbundle (Ersatzbescheinigung) enthält.
+Als Ergebnis einer Anfrage für eine Ersatzbescheinigung per KIM aus einer Praxis antwortet die angefragte Krankenkasse mittels einer KIM-Nachricht, die im Positiv-Fall ein signiertes Bescheinigungsbundle (Ersatzbescheinigung) enthält.
+
+Gesetzlich Versicherte können die Anfrage einer Ersatzbescheinigung auch über ihre Kassen-App per Scan eines QR-Codes auslösen. Der QR-Code enthält die KIM-Adresse der Praxis, die die Ersatzbescheinigung erhalten soll. Bei positiver Prüfung sendet die Kasse das Bescheinigungsbundle (Ersatzbescheinigung) mittels einer KIM-Nachricht an die Praxis. Negative Prüfungen werden in diesem Fall nur dem Versicherten nicht aber der Praxis mitgeteilt.
 
 Ebenso sendet das Versicherungsunternehmen einer Praxis eine KIM-Nachricht mit einem Bescheinigungsbundle (Versichertennachweis) bei der positiven Antwort auf ein externes "Check-In" durch eine Versicherten-App.
 
@@ -17,7 +19,7 @@ Ebenso sendet das Versicherungsunternehmen einer Praxis eine KIM-Nachricht mit e
 
 ## Signatur
 
-Die Signatur ist als Base64-Codierter PKCS#7-Container der KIM-Antwort zu entnehmen.
+Die Signatur ist als Base64-Codierter PKCS#7-Container der KIM-Nachricht des Versicherungsunternehmens zu entnehmen.
 Sie trägt die signierte Bescheinigung innerhalb des Signaturcontainers (enveloping Signatur).
 Mit der Konnektoroperation `verifyDocument` kann die Signatur der Kasse geprüft werden.
 
@@ -199,7 +201,7 @@ Mit der Konnektoroperation `verifyDocument` kann die Signatur der Kasse geprüft
 </SOAP-ENV:Envelope>
 ```
 
-Im Ergebnis liefert der Konnektor eine `verifyDocumentResponse`, die im einfachen Fall ein ein-eindeutiges `VALID` zurückiliefert (siehe folgendes XML-Fragment).
+Im Ergebnis der Signaturprüfung liefert der Konnektor eine `verifyDocumentResponse`, die im einfachen Fall ein ein-eindeutiges `VALID` zurückliefert (siehe folgendes XML-Fragment).
 
 ```xml
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
@@ -252,11 +254,11 @@ Dieses Profil hat ausschließlich informativen Charakter für die Verarbeitung d
 
 ### Coverage
 
-In der Coverage-Ressource werden von den Krankenkassen der GKV die Ersatzbescheinigung und von Versicherungsunternehmen der PKV Informationen zum Versicherungsnachweis geliefert.
+In der Coverage-Ressource werden von den Krankenkassen der GKV die Ersatzbescheinigung und von Versicherungsunternehmen der PKV Versichertenstammdaten wie insbesondere die Krankenversichertennummer geliefert.
 
 Das Feld period mit `period.start` und `period.end` wird unterschiedlich von GKV und PKV verwendet.
 
-- Die Krankenkassen der GKV prüfen, ob zum angefragten Leistungsdatum der EEB-Anfrage ein Versicherungsverhältnis (inkl. Leistungsanspruch) besteht. Ist dieses „Versicherungsverhältnis“ vorhanden, so wird als Beginn (`period.start`) das angefragte Leistungsdatum gesetzt. Als Ende-Datum (`period.end`) wird in der Regel das zugehörige Quartalsendedatum bescheinigt. In Ausnahmefällen wird das Ende-Datum vor dem Quartalsende liegen, z.B. wenn bereits bekannt ist, dass das Versicherungsverhältnis vor dem Quartalsende beendet sein wird. Eine Bescheinigung über mehrere Quartale ist nicht vorgesehen.
+- Die Krankenkassen der GKV prüfen, ob zum angefragten Leistungsdatum der eEB-Anfrage ein Versicherungsverhältnis (inkl. Leistungsanspruch) besteht. Ist dieses „Versicherungsverhältnis“ vorhanden, so wird als Beginn (`period.start`) das angefragte Leistungsdatum gesetzt. Als Ende-Datum (`period.end`) wird in der Regel das zugehörige Quartalsendedatum bescheinigt. In Ausnahmefällen wird das Ende-Datum vor dem Quartalsende liegen, z.B. wenn bereits bekannt ist, dass das Versicherungsverhältnis vor dem Quartalsende beendet sein wird. Eine Bescheinigung über mehrere Quartale ist nicht vorgesehen.
 - Die Versicherungsunternehmen der PKV übertragen mit der Bescheinigung die Versichertenstammdaten, so dass im Feld period der Zeitpunkt der Stammdatenübertragung angegeben wird. Daher wird `period.start = period.end` gesetzt.
 
 Zudem enthält die Coverage in den Extensions `allgemeineVersicherungsdaten`, `persoenlicheVersichertendaten` und `geschuetzteVersichertendaten` die Versichertenstammdaten (insbesondere die KVNR als `Versicherten_ID` in den `allgemeineVersicherungsdaten`), um für PKV-Versicherten die Anwendungen der Telematikinfrastruktur nutzen zu können.

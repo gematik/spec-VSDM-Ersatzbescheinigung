@@ -36,7 +36,7 @@ Die Bereitstellung des QR-Codes ermöglicht eine eindeutige Zuordnung, die vor a
 
 ### VZD-Suche
 
-Die Suchfunktionalität in der App greift auf Daten des Verzeichnisdienstes der gematik zurück. Somit funktioniert sie auch unabhängig von der Bereitstellung eines QR-Codes und bietet sich vor allem für einen OCI vor dem Arztbesuch an. Jedoch sind Praxen aufgrund der Datenqualität mitunter schwer zu finden. Hinzu kommt, dass große Praxen und Kliniken über mehrere KIM-Adressen verfügen können, was Versicherten die Auswahl erschweren und die Fehleranfälligkeit erhöhen würde. Somit wird empfohlen, die Suchfunktion nachgelagert in Ergänzung zum QR-Code-Scanner anzubieten.
+Die Suchfunktionalität in der App greift auf Daten des Verzeichnisdienstes der gematik zurück. Somit funktioniert sie auch unabhängig von der Bereitstellung eines QR-Codes und bietet sich vor allem für einen OCI vor dem Arztbesuch an. Allerdings können große Praxen und Kliniken über mehrere KIM-Adressen verfügen, was Versicherten die Auswahl erschweren und die Fehleranfälligkeit bei der richtigen Auswahl erhöhen kann. Es empfiehlt sich, die Suchfunktion zu einem späteren Zeitpunkt einzuführen, um Erfahrungen aus der Pilotierung und Feedback zur Benutzerführung als Ergänzung zum QR-Code-Scanner umzusetzen.
 
 ## Unter welchen Bedingungen darf ein Versicherter sein Versicherungsunternehmen mit der Übermittlung der Daten beauftragen?
 
