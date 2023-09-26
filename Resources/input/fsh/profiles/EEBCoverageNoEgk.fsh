@@ -41,7 +41,7 @@ Id: eeb-coverage-no-egk
 * payor.extension ^slicing.discriminator.type = #value
 * payor.extension ^slicing.discriminator.path = "url"
 * payor.extension ^slicing.rules = #open
-* payor.extension contains $AbrechnendeIK named abrechnendeIK 0..0
+* payor.extension contains $AbrechnendeIK named abrechnendeIK 1..1
 * payor.reference 0..0
 * payor.type 0..0
 * payor.identifier only $identifier-iknr
