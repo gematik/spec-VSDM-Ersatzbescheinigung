@@ -1,0 +1,239 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "eeb-coverage-no-egk",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk",
+  "version": "1.0.0-rc3",
+  "name": "EEBCoverageNoEgk",
+  "status": "active",
+  "experimental": false,
+  "date": "2023-03-17",
+  "publisher": "gematik GmbH",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Coverage",
+  "baseDefinition": "http://fhir.de/StructureDefinition/coverage-de-basis",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coverage.meta",
+        "path": "Coverage.meta",
+        "min": 1
+      },
+      {
+        "id": "Coverage.meta.profile",
+        "path": "Coverage.meta.profile",
+        "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk"
+      },
+      {
+        "id": "Coverage.extension:versichertenart",
+        "path": "Coverage.extension",
+        "sliceName": "versichertenart",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gkv/versichertenart"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Coverage.extension:wop",
+        "path": "Coverage.extension",
+        "sliceName": "wop",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gkv/wop"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Coverage.extension:besonderePersonengruppe",
+        "path": "Coverage.extension",
+        "sliceName": "besonderePersonengruppe",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Coverage.extension:zuzahlungsstatus",
+        "path": "Coverage.extension",
+        "sliceName": "zuzahlungsstatus",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/gkv/zuzahlungsstatus"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Coverage.identifier",
+        "path": "Coverage.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.status",
+        "path": "Coverage.status",
+        "fixedCode": "active"
+      },
+      {
+        "id": "Coverage.type",
+        "path": "Coverage.type",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.de/ValueSet/versicherungsart-de-basis"
+        }
+      },
+      {
+        "id": "Coverage.subscriber",
+        "path": "Coverage.subscriber",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.beneficiary",
+        "path": "Coverage.beneficiary",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Coverage.beneficiary.reference",
+        "path": "Coverage.beneficiary.reference",
+        "min": 1
+      },
+      {
+        "id": "Coverage.beneficiary.type",
+        "path": "Coverage.beneficiary.type",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.beneficiary.identifier",
+        "path": "Coverage.beneficiary.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.beneficiary.display",
+        "path": "Coverage.beneficiary.display",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.dependent",
+        "path": "Coverage.dependent",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.relationship",
+        "path": "Coverage.relationship",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.period",
+        "path": "Coverage.period",
+        "min": 1
+      },
+      {
+        "id": "Coverage.period.start",
+        "path": "Coverage.period.start",
+        "min": 1
+      },
+      {
+        "id": "Coverage.period.end",
+        "path": "Coverage.period.end",
+        "min": 1
+      },
+      {
+        "id": "Coverage.payor",
+        "path": "Coverage.payor",
+        "max": "1"
+      },
+      {
+        "id": "Coverage.payor.extension:abrechnendeIK",
+        "path": "Coverage.payor.extension",
+        "sliceName": "abrechnendeIK",
+        "min": 0,
+        "max": "0",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.de/StructureDefinition/AbrechnendeIK"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Coverage.payor.reference",
+        "path": "Coverage.payor.reference",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.payor.type",
+        "path": "Coverage.payor.type",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.payor.identifier",
+        "path": "Coverage.payor.identifier",
+        "min": 1,
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-iknr"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Coverage.payor.display",
+        "path": "Coverage.payor.display",
+        "min": 1
+      },
+      {
+        "id": "Coverage.class",
+        "path": "Coverage.class",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.costToBeneficiary",
+        "path": "Coverage.costToBeneficiary",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.subrogation",
+        "path": "Coverage.subrogation",
+        "max": "0"
+      },
+      {
+        "id": "Coverage.contract",
+        "path": "Coverage.contract",
+        "max": "0"
+      }
+    ]
+  }
+}
