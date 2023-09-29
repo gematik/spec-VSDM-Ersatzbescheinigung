@@ -50,7 +50,7 @@ Das Praxisverwaltungssystem kann die bereits erfassten bzw. vorhandenen Patiente
 
 Bei der Abfrage nach einer Ersatzbescheinigung zu einer Person sind zwei Fälle zu unterscheiden, ist die 10-stellige Versicherten-ID `KVNR` der Person bekannt oder unbekannt. Da diese `KVNR` für eine Person (i.d.R.) lebenslang gültig ist, ergibt sich die Antwort aus der Frage, ob der Patient in dieser Praxis in der Vergangenheit bereits vorstellig war.
 
-Es hat sich bei Nutzung der KVNR als sinnvoll erwiesen, die KVNR vor Verwendung in der EEB-Anfrage ggf. einmal formal zu prüfen (Länge, Aufbau und Prüfziffer - siehe auch <https://de.wikipedia.org/wiki/Krankenversichertennummer>). Denken Sie daran, Tippfehler sind menschlich.
+Es hat sich bei Nutzung der KVNR als sinnvoll erwiesen, die KVNR vor Verwendung in der EEB-Anfrage ggf. einmal formal zu prüfen (Länge, Aufbau und Prüfziffer - siehe auch <https://gkv-datenaustausch.de/kvnr/kvnr.jsp>). Diese Hinweise helfen, Tippfehler zu vermeiden.
 
 ### Patient ist im PVS bekannt
 
