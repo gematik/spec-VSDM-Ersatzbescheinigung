@@ -7,13 +7,14 @@ Als Ergebnis einer Anfrage für eine Ersatzbescheinigung per KIM aus einer Praxi
 
 Gesetzlich Versicherte können die Anfrage einer Ersatzbescheinigung auch über ihre Kassen-App per Scan eines QR-Codes auslösen. Der QR-Code enthält die KIM-Adresse der Praxis, die die Ersatzbescheinigung erhalten soll. Bei positiver Prüfung sendet die Kasse das Bescheinigungsbundle (Ersatzbescheinigung) mittels einer KIM-Nachricht an die Praxis. Negative Prüfungen werden in diesem Fall nur dem Versicherten nicht aber der Praxis mitgeteilt.
 
-Ebenso sendet das Versicherungsunternehmen einer Praxis eine KIM-Nachricht mit einem Bescheinigungsbundle (Versichertennachweis) bei der positiven Antwort auf ein externes "Check-In" durch eine Versicherten-App.
+Ebenso sendet das Versicherungsunternehmen einer Praxis eine KIM-Nachricht mit einem Bescheinigungsbundle (Versichertennachweis) bei einer versichertenseitigen Anforderung in einer Versicherten-App.
 
 - [FHIR-Profile](#fhir-profile)
   - [Signatur](#signatur)
   - [FHIR Datenstruktur Bescheinigung](#fhir-datenstruktur-bescheinigung)
     - [Patient](#patient)
     - [Coverage](#coverage)
+    - [Sonderfall Coverage ohne KVNR](#sonderfall-coverage-ohne-kvnr)
   - [Bescheinigungsbundle (Beispiel)](#bescheinigungsbundle-beispiel)
   - [Fehlerfälle (Anfrage für GKV-Ersatzbescheinigung fehlgeschlagen)](#fehlerfälle-anfrage-für-gkv-ersatzbescheinigung-fehlgeschlagen)
 
@@ -273,6 +274,12 @@ Für PKV-Versicherte wurde festgelegt, dass hier ebenfalls das GKV-Schema verwen
 Details zur Befüllung der VSD für PKV-Versicherte sind auf der folgenden Unterseite angegeben {{pagelink:Einfuehrung/OCI/VU-Backend.page.md}}
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk}}
+
+### Sonderfall Coverage ohne KVNR
+
+In wenigen Fällen der EEB-Anfrage kommt es vor, dass die zuständige Krankenkasse noch **keine KVNR** für den Versicherten vorliegen bzw. erhalten hat **(z.B. für Kassen-Wechsler und Säuglinge)**. Hat der Versicherte gem. Prüfung der EEB-Anfrage einen Anpruch auf Leistungen, aber die eGK kann jedoch wegen aktuell fehlender KVNR noch nicht erstellt werden, dann kann in der EEB-Bescheinigung eine Coverage mit dem Profil `EEBCoverageNoEgK` verwendet werden. Die Extensions `allgemeineVersicherungsdaten`, `persoenlicheVersichertendaten` und `geschuetzteVersichertendaten` des Profils `EEBCoverageEgK` sind daher **nicht im Profil EEBCoverageNoEgK enthalten**.
+
+Mit dem Profil `EEBCoverageNoEgK` werden nur die Versichertendaten geliefert, die für eine Abrechnung von Leistungen benötigt werden. Hierzu gehören die Versichertenart, das Wohnortprinzip, die Besondere Personengruppe und der Zuzahlungsstatus des Versicherten sowie das Abrechnungsinstitutionskennzeichen der Krankenkasse. Die zuehörigen Adress- und persönlichen Daten des Versicherten werden nach wie vor über das Profil `KBV_PR_FOR_Patient` beigestellt.
 
 ## Bescheinigungsbundle (Beispiel)
 

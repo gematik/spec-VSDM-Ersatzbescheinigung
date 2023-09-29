@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "eeb-coverage-egk",
-  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk",
+  "id": "eeb-coverage-no-egk",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk",
   "version": "1.0.1",
-  "name": "EEBCoverageEgk",
+  "name": "EEBCoverageNoEgk",
   "status": "draft",
   "experimental": false,
   "date": "2023-09-26",
@@ -17,19 +17,6 @@
   "differential": {
     "element": [
       {
-        "id": "Coverage",
-        "path": "Coverage",
-        "constraint": [
-          {
-            "key": "-eeb-angabeGeschuetzteVersichertendaten",
-            "severity": "error",
-            "human": "Falls der Versicherungstyp GKV ist, müssen die geschützten Versichertendaten angegeben werden.",
-            "expression": "type.coding.code='GKV' implies extension('https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten').exists()",
-            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
-          }
-        ]
-      },
-      {
         "id": "Coverage.meta",
         "path": "Coverage.meta",
         "min": 1
@@ -37,60 +24,14 @@
       {
         "id": "Coverage.meta.profile",
         "path": "Coverage.meta.profile",
-        "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
-      },
-      {
-        "id": "Coverage.extension",
-        "path": "Coverage.extension",
-        "min": 3
-      },
-      {
-        "id": "Coverage.extension:versionEgk",
-        "path": "Coverage.extension",
-        "sliceName": "versionEgk",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/version-vsdm"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:versionEgk.extension",
-        "path": "Coverage.extension.extension",
-        "max": "0"
-      },
-      {
-        "id": "Coverage.extension:versionEgk.value[x]",
-        "path": "Coverage.extension.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
-        "min": 1
-      },
-      {
-        "id": "Coverage.extension:versionEgk.valueString",
-        "path": "Coverage.extension.valueString",
-        "min": 1,
-        "max": "1"
+        "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk"
       },
       {
         "id": "Coverage.extension:versichertenart",
         "path": "Coverage.extension",
         "sliceName": "versichertenart",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -101,26 +42,11 @@
         ]
       },
       {
-        "id": "Coverage.extension:kostenerstattung",
-        "path": "Coverage.extension",
-        "sliceName": "kostenerstattung",
-        "min": 0,
-        "max": "0",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/kostenerstattung"
-            ]
-          }
-        ]
-      },
-      {
         "id": "Coverage.extension:wop",
         "path": "Coverage.extension",
         "sliceName": "wop",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -135,7 +61,7 @@
         "path": "Coverage.extension",
         "sliceName": "besonderePersonengruppe",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "type": [
           {
             "code": "Extension",
@@ -146,106 +72,16 @@
         ]
       },
       {
-        "id": "Coverage.extension:dmpKennzeichen",
-        "path": "Coverage.extension",
-        "sliceName": "dmpKennzeichen",
-        "min": 0,
-        "max": "0",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:ruhenderLeistungsanspruch",
-        "path": "Coverage.extension",
-        "sliceName": "ruhenderLeistungsanspruch",
-        "min": 0,
-        "max": "0",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://fhir.de/StructureDefinition/gkv/ruhender-leistungsanspruch"
-            ]
-          }
-        ]
-      },
-      {
         "id": "Coverage.extension:zuzahlungsstatus",
         "path": "Coverage.extension",
         "sliceName": "zuzahlungsstatus",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
               "http://fhir.de/StructureDefinition/gkv/zuzahlungsstatus"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:persoenlicheVersichertendaten",
-        "path": "Coverage.extension",
-        "sliceName": "persoenlicheVersichertendaten",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/PersoenlicheVersichertendaten"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:allgemeineVersicherungsdaten",
-        "path": "Coverage.extension",
-        "sliceName": "allgemeineVersicherungsdaten",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:geschuetzteVersichertendaten",
-        "path": "Coverage.extension",
-        "sliceName": "geschuetzteVersichertendaten",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Coverage.extension:genderIdentity",
-        "path": "Coverage.extension",
-        "sliceName": "genderIdentity",
-        "min": 0,
-        "max": "0",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/patient-genderIdentity"
             ]
           }
         ]
@@ -336,11 +172,16 @@
         "max": "1"
       },
       {
+        "id": "Coverage.payor.extension",
+        "path": "Coverage.payor.extension",
+        "min": 1
+      },
+      {
         "id": "Coverage.payor.extension:abrechnendeIK",
         "path": "Coverage.payor.extension",
         "sliceName": "abrechnendeIK",
-        "min": 0,
-        "max": "0",
+        "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "Extension",

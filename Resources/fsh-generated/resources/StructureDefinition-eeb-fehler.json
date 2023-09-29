@@ -8,11 +8,11 @@
     }
   ],
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler",
-  "version": "1.0.0-rc3",
+  "version": "1.0.1",
   "name": "EEBFehler",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
-  "date": "2023-03-17",
+  "date": "2023-09-26",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
