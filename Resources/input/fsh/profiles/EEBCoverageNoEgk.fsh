@@ -10,13 +10,13 @@ Id: eeb-coverage-no-egk
 * extension ^slicing.rules = #open
 * extension contains
 //    $version-vsdm named versionEgk 1..1 and
-    $versichertenart named versichertenart 0..1 and
+    $versichertenart named versichertenart 1..1 and
 //    $kostenerstattung named kostenerstattung 0..0 and
-    $wop named wop 0..1 and
-    $besondere-personengruppe named besonderePersonengruppe 0..1 and
+    $wop named wop 1..1 and
+    $besondere-personengruppe named besonderePersonengruppe 1..1 and
 //    $dmp-kennzeichen named dmpKennzeichen 0..0 and
 //    $ruhender-leistungsanspruch named ruhenderLeistungsanspruch 0..0 and
-    $zuzahlungsstatus named zuzahlungsstatus 0..1
+    $zuzahlungsstatus named zuzahlungsstatus 1..1
 //    $patient-genderIdentity named genderIdentity 0..0
 //* extension[versionEgk].valueString 1..1
 * identifier 0..0
