@@ -1,16 +1,6 @@
 {
   "resourceType": "StructureDefinition",
   "id": "eeb-bescheinigung-bundle",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
-      "valueString": "Foundation.Other"
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
-      "valueCode": "not-classified"
-    }
-  ],
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle",
   "version": "1.0.1",
   "name": "EEBBescheinigungBundle",
@@ -52,13 +42,6 @@
         "id": "Bundle",
         "path": "Bundle",
         "constraint": [
-          {
-            "key": "-eeb-angabeVersichertenID",
-            "severity": "error",
-            "human": "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe.",
-            "expression": "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()",
-            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
-          },
           {
             "key": "-eeb-angabePatientPLZ",
             "severity": "error",
