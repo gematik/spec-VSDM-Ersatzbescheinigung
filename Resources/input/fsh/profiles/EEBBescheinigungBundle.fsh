@@ -55,14 +55,14 @@ Id: eeb-bescheinigung-bundle
 * entry[EEBCoverageNoEgk].search ..0
 * entry[EEBCoverageNoEgk].request ..0
 * entry[EEBCoverageNoEgk].response ..0
-* obeys -eeb-angabeVersichertenID
+//* obeys -eeb-angabeVersichertenID
 * obeys -eeb-angabePatientPLZ
 
-
-Invariant: -eeb-angabeVersichertenID
-Description: "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe."
-Severity: #error
-Expression: "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()"
+// 11.10.2023 - KVNR not applicable for CoverageNoEgk, Babies may not have a KVNR from the day of birth
+//Invariant: -eeb-angabeVersichertenID
+//Description: "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe."
+//Severity: #error
+//Expression: "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()"
 
 
 Invariant: -eeb-angabePatientPLZ
@@ -99,8 +99,8 @@ Usage: #example
 * identifier.value = "urn:uuid:4b06f5c4-dced-4904-b1d2-2e5c64087919"
 * type = #message
 * timestamp = "2022-08-29T02:09:37.157+02:00"
-* entry[+][EEBBescheinigungHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/bd901c08-0133-4276-b34b-eb810a62deda"
-* entry[=][EEBBescheinigungHeader].resource = EEBBescheinigungHeaderSample
+* entry[+][EEBBescheinigungHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/5b3c588d-36f5-42be-a10e-1c48eb800cc3"
+* entry[=][EEBBescheinigungHeader].resource = EEBBescheinigungHeaderNoEGKSample
 * entry[+][KBVFORPatient].fullUrl = "https://gematik.de/fhir/Patient/d62d9d82-2396-4c64-a656-2e67b5761523"
 * entry[=][KBVFORPatient].resource = KBV_PR_FOR_PatientNoEgkSample
 * entry[+][EEBCoverageNoEgk].fullUrl = "https://gematik.de/fhir/Coverage/e9553161ca3c-413a-48fe-b908-04159be709fb"

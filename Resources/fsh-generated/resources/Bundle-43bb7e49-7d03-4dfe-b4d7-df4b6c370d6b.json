@@ -14,10 +14,10 @@
   "timestamp": "2022-08-29T02:09:37.157+02:00",
   "entry": [
     {
-      "fullUrl": "https://gematik.de/fhir/MessageHeader/bd901c08-0133-4276-b34b-eb810a62deda",
+      "fullUrl": "https://gematik.de/fhir/MessageHeader/5b3c588d-36f5-42be-a10e-1c48eb800cc3",
       "resource": {
         "resourceType": "MessageHeader",
-        "id": "bd901c08-0133-4276-b34b-eb810a62deda",
+        "id": "5b3c588d-36f5-42be-a10e-1c48eb800cc3",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
@@ -37,10 +37,10 @@
         },
         "focus": [
           {
-            "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
+            "reference": "Patient/d62d9d82-2396-4c64-a656-2e67b5761523"
           },
           {
-            "reference": "Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"
+            "reference": "Coverage/e9553161ca3c-413a-48fe-b908-04159be709fb"
           }
         ]
       }
