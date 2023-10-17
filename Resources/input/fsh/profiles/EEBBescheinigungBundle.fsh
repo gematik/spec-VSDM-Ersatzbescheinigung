@@ -55,14 +55,14 @@ Id: eeb-bescheinigung-bundle
 * entry[EEBCoverageNoEgk].search ..0
 * entry[EEBCoverageNoEgk].request ..0
 * entry[EEBCoverageNoEgk].response ..0
-* obeys -eeb-angabeVersichertenID
+//* obeys -eeb-angabeVersichertenID
 * obeys -eeb-angabePatientPLZ
 
-
-Invariant: -eeb-angabeVersichertenID
-Description: "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe."
-Severity: #error
-Expression: "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()"
+// 11.10.2023 - KVNR not applicable for CoverageNoEgk, Babies may not have a KVNR from the day of birth
+//Invariant: -eeb-angabeVersichertenID
+//Description: "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe."
+//Severity: #error
+//Expression: "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()"
 
 
 Invariant: -eeb-angabePatientPLZ
