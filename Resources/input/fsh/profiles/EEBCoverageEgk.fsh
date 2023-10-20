@@ -20,8 +20,10 @@ Id: eeb-coverage-egk
     PersoenlicheVersichertendaten named persoenlicheVersichertendaten 1..1 and
     AllgemeineVersicherungsdaten named allgemeineVersicherungsdaten 1..1 and
     GeschuetzteVersichertendaten named geschuetzteVersichertendaten 0..1 and
+    Pruefungsnachweis named pruefungsnachweis 0..1 and
     $patient-genderIdentity named genderIdentity 0..0
 * extension[versionEgk].valueString 1..1
+* extension[pruefungsnachweis].valueBase64Binary 1..1
 * identifier 0..0
 * status = #active (exactly)
 * type 1..1
@@ -91,7 +93,7 @@ Usage: #inline
 
 Instance: KBV_PR_FOR_PatientEgkPkvSample
 InstanceOf: KBV_PR_FOR_Patient
-Title: "Patient for EEBBescheinigungBundle"
+Title: "PKV Patient for EEBBescheinigungBundle"
 Usage: #inline
 * id = "e36f9476-0d04-4394-a626-8b4706b005b0"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
@@ -141,7 +143,7 @@ Usage: #inline
 
 Instance: EEBCoverageEgkPkvSample
 InstanceOf: EEBCoverageEgk
-Title:   "Coverage for EEBBescheinigungBundle"
+Title:   "Coverage for PKV EEBBescheinigungBundle"
 Usage: #inline
 * id = "d7fbdcd7-f220-4a11-8526-d846e4db2a82"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
@@ -151,6 +153,31 @@ Usage: #inline
 * extension[allgemeineVersicherungsdaten].valueBase64Binary = "H4sIACSWtmQA/71SXW+bQBD8K+jezQENqV0dZ7l2VFnEH6pTWvUFXWANyLBUd2c39a/3gawIHMvJU19As7MzO7pdNn6pSusAUhU1BsS1HWIBJnVaYBaQ+WY1GA790cD1iaW0wFSUNUJA/oEiY85+TONJWWZQQYEQNSZJDnKPmUqFBvy1eLSms0UcPXzfzFfLgPi21wwwI1EFJNf6zxdK/yrbOAhd7OwU6FbQg0qr5kMPpp9w9mqsQXZQM0Yl+V4fOfsKWYHIPcdzHNdxGT0XWFgrE0RLAVkj7sEdIBoTPvx879998ozqKt0XlQIwBWleCPjsQtHl2FJUwJ9AaWsdRlYoBRrDnVAKGG05NnmWkOTYaj6Sc3QO+r9z0htB+8YGX13P770S+ljgtlY98C2MeutFITU3e7gsdTXxOY3xj1v9z9WaOw6jzZ/RW51d8k2hm709NPr+dfMTAkWMED8DAAA="
 * extension[persoenlicheVersichertendaten].url = "https://gematik.de/fhir/eeb/StructureDefinition/PersoenlicheVersichertendaten"
 * extension[persoenlicheVersichertendaten].valueBase64Binary = "H4sIAOXZU2QA/41R0Y7TMBD8lcjvjZuQ3LVo46q6IK7S5YqoKLxVJlkuEbGNvE45+Fl+pZujLS3igRc7M5mdHY1h8Wz6aI+eOmcLkcRTEaGtXdPZp0KsNuvJbJbPJ0kuIgraNrp3FgvxA0ksFHy4273jUYe27+oWt6MN3z4gK/n4VD1Ed2W12755v1mtHwuRx+m4gXdaKkQbwrfXUn6n+AmNDt3XuEH5Rcs9NWY85J71QsGFr79Cdrcq1XI+u73Js1dpAvLvf/ASzyp4i58HH4hTDUYl85t8miWsv6Jh67zVBtW9tsReRwSPum5fvirs0IM8Y3aluu2xboOqRrMzgk3wmgjtsvHINwdxFHrswk/d9irL0vQW5BUHax9U6Xwwg21AjggeuHEFH11riVW95lrR8+OgKkH+iwb5e+S4XlUDcWfE6BeCPLFwrweygzFcJ5dwgc6aP8HlqcLLckflfzy+OgDTCNF/XwIAAA=="
+* status = #active
+* type.coding.system = "http://fhir.de/CodeSystem/versicherungsart-de-basis"
+* type.coding.code = #PKV
+* type.coding.display = "private Krankenversicherung"
+* period.start = "2022-04-01"
+* period.end = "2022-04-01"
+* beneficiary.reference =  "Patient/e36f9476-0d04-4394-a626-8b4706b005b0"
+* payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
+* payor.identifier.value = "23456789"
+* payor.display = "Test PKV Krankenkasse"
+
+Instance: EEBCoverageEgkPkvVSDMppSample
+InstanceOf: EEBCoverageEgk
+Title:   "Coverage for EEBBescheinigungBundle and VSDMpp"
+Usage: #inline
+* id = "d7fbdcd7-f220-4a11-8526-d846e4db2a82"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
+* extension[versionEgk].url = "http://fhir.de/StructureDefinition/gkv/version-vsdm"
+* extension[versionEgk].valueString = "5.2.0"
+* extension[allgemeineVersicherungsdaten].url = "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten"
+* extension[allgemeineVersicherungsdaten].valueBase64Binary = "H4sIACSWtmQA/71SXW+bQBD8K+jezQENqV0dZ7l2VFnEH6pTWvUFXWANyLBUd2c39a/3gawIHMvJU19As7MzO7pdNn6pSusAUhU1BsS1HWIBJnVaYBaQ+WY1GA790cD1iaW0wFSUNUJA/oEiY85+TONJWWZQQYEQNSZJDnKPmUqFBvy1eLSms0UcPXzfzFfLgPi21wwwI1EFJNf6zxdK/yrbOAhd7OwU6FbQg0qr5kMPpp9w9mqsQXZQM0Yl+V4fOfsKWYHIPcdzHNdxGT0XWFgrE0RLAVkj7sEdIBoTPvx879998ozqKt0XlQIwBWleCPjsQtHl2FJUwJ9AaWsdRlYoBRrDnVAKGG05NnmWkOTYaj6Sc3QO+r9z0htB+8YGX13P770S+ljgtlY98C2MeutFITU3e7gsdTXxOY3xj1v9z9WaOw6jzZ/RW51d8k2hm709NPr+dfMTAkWMED8DAAA="
+* extension[persoenlicheVersichertendaten].url = "https://gematik.de/fhir/eeb/StructureDefinition/PersoenlicheVersichertendaten"
+* extension[persoenlicheVersichertendaten].valueBase64Binary = "H4sIAOXZU2QA/41R0Y7TMBD8lcjvjZuQ3LVo46q6IK7S5YqoKLxVJlkuEbGNvE45+Fl+pZujLS3igRc7M5mdHY1h8Wz6aI+eOmcLkcRTEaGtXdPZp0KsNuvJbJbPJ0kuIgraNrp3FgvxA0ksFHy4273jUYe27+oWt6MN3z4gK/n4VD1Ed2W12755v1mtHwuRx+m4gXdaKkQbwrfXUn6n+AmNDt3XuEH5Rcs9NWY85J71QsGFr79Cdrcq1XI+u73Js1dpAvLvf/ASzyp4i58HH4hTDUYl85t8miWsv6Jh67zVBtW9tsReRwSPum5fvirs0IM8Y3aluu2xboOqRrMzgk3wmgjtsvHINwdxFHrswk/d9irL0vQW5BUHax9U6Xwwg21AjggeuHEFH11riVW95lrR8+OgKkH+iwb5e+S4XlUDcWfE6BeCPLFwrweygzFcJ5dwgc6aP8HlqcLLckflfzy+OgDTCNF/XwIAAA=="
+* extension[pruefungsnachweis].url = "https://gematik.de/fhir/eeb/StructureDefinition/Pruefungsnachweis"
+* extension[pruefungsnachweis].valueBase64Binary = "H4sIAAAAAAAAAB2N3U6DMABGX4X01khbCM6YtssiNf5RRFiXeGPAdghbC1pk4tPb7Oa7OMl3Dln/mmMw62/XDZYCHCIQaPsxqM62FGyru8trELiptqo+DlZTsGgH1oy8iMAfraPgc5rGGwhPLmy1qafuECoN9zWcnTJwtCc4n6W3afYu+Wv5kItzxjNGqpJFKIpRgq/QCsV4RaBHhLOIQO4jb0ymGyR6jrK+SPKKR3laLFm/wXmlpEzvHy+K7V+72zX78qkZXaKbRfAvYw5KPsf4J6MEeokfwf4Bl4Neo+oAAAA="
 * status = #active
 * type.coding.system = "http://fhir.de/CodeSystem/versicherungsart-de-basis"
 * type.coding.code = #PKV

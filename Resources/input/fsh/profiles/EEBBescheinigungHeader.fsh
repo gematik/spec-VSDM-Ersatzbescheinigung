@@ -50,6 +50,21 @@ Usage: #inline
 * focus[+].reference = "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
 * focus[+].reference = "Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"
 
+Instance: EEBBescheinigungHeaderNoEGKSample
+InstanceOf: EEBBescheinigungHeader
+Title:   "Header for EEBBescheinigungBundle"
+Usage: #inline
+* id = "5b3c588d-36f5-42be-a10e-1c48eb800cc3"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.code = #1.2.276.0.76.4.50
+* eventCoding.display = "Betriebsstätte Arzt"
+* source.endpoint = "https://Test-Krankenkasse.de/KIM"
+* response.identifier = "79939e34-c5cc-4da6-ba55-f4bd85832760"
+* response.code = #ok
+* focus[+].reference = "Patient/d62d9d82-2396-4c64-a656-2e67b5761523"
+* focus[+].reference = "Coverage/e9553161ca3c-413a-48fe-b908-04159be709fb"
+
 Instance: EEBBescheinigungHeaderPkvSample
 InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle"

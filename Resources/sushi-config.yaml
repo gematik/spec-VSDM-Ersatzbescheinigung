@@ -1,17 +1,8 @@
-id: Implementierungsleitfaden-VSDM-Ersatzbescheinigung
 canonical: https://gematik.de/fhir/eeb
 fhirVersion: 4.0.1
 applyExtensionMetadataToRoot: false
-name: Implementierungsleitfaden-VSDM-Ersatzbescheinigung
 FSHOnly: true
-copyrightYear: 2022
-releaseLabel: draft
-status: draft
 version: "1.0"
-publisher:
-  name: gematik GmbH
-  url: https://www.gematik.de/
-  email: info@gematik.de
 dependencies:
   hl7.fhir.r4.core: 4.0.1
   de.basisprofil.r4: 1.3.2

@@ -1,12 +1,6 @@
 {
   "resourceType": "StructureDefinition",
   "id": "eeb-fehler",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
-      "valueString": "Foundation.Other"
-    }
-  ],
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler",
   "version": "1.0.1",
   "name": "EEBFehler",
@@ -55,6 +49,7 @@
               "path": "url"
             }
           ],
+          "description": "Extensions are always sliced by (at least) url",
           "rules": "closed"
         },
         "min": 1

@@ -1,16 +1,6 @@
 {
   "resourceType": "StructureDefinition",
   "id": "eeb-anfrage-header",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
-      "valueString": "Foundation.Other"
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
-      "valueCode": "not-classified"
-    }
-  ],
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader",
   "version": "1.0.1",
   "name": "EEBAnfrageHeader",
@@ -58,15 +48,6 @@
       {
         "id": "MessageHeader.extension",
         "path": "MessageHeader.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "rules": "open"
-        },
         "min": 3
       },
       {
