@@ -14,7 +14,8 @@ Ebenso sendet das Versicherungsunternehmen einer Praxis eine KIM-Nachricht mit e
   - [FHIR Datenstruktur Bescheinigung](#fhir-datenstruktur-bescheinigung)
     - [Patient](#patient)
     - [Coverage](#coverage)
-    - [Sonderfall Coverage ohne KVNR](#sonderfall-coverage-ohne-kvnr)
+      - [Sonderfall Coverage ohne KVNR](#sonderfall-coverage-ohne-kvnr)
+      - [Coverage mit Prüfungsnachweis für ePA-Befungniserteilung](#coverage-mit-prüfungsnachweis-für-epa-befungniserteilung)
   - [Bescheinigungsbundle (Beispiel)](#bescheinigungsbundle-beispiel)
   - [Fehlerfälle (Anfrage für GKV-Ersatzbescheinigung fehlgeschlagen)](#fehlerfälle-anfrage-für-gkv-ersatzbescheinigung-fehlgeschlagen)
 
@@ -275,11 +276,15 @@ Details zur Befüllung der VSD für PKV-Versicherte sind auf der folgenden Unter
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk}}
 
-### Sonderfall Coverage ohne KVNR
+#### Sonderfall Coverage ohne KVNR
 
 In wenigen Fällen der EEB-Anfrage kommt es vor, dass die zuständige Krankenkasse noch **keine KVNR** für den Versicherten vorliegen bzw. erhalten hat **(z.B. für Kassen-Wechsler und Säuglinge)**. Hat der Versicherte gem. Prüfung der EEB-Anfrage einen Anpruch auf Leistungen, aber die eGK kann jedoch wegen aktuell fehlender KVNR noch nicht erstellt werden, dann kann in der EEB-Bescheinigung eine Coverage mit dem Profil `EEBCoverageNoEgK` verwendet werden. Die Extensions `allgemeineVersicherungsdaten`, `persoenlicheVersichertendaten` und `geschuetzteVersichertendaten` des Profils `EEBCoverageEgK` sind daher **nicht im Profil EEBCoverageNoEgK enthalten**.
 
 Mit dem Profil `EEBCoverageNoEgK` werden nur die Versichertendaten geliefert, die für eine Abrechnung von Leistungen benötigt werden. Hierzu gehören die Versichertenart, das Wohnortprinzip, die Besondere Personengruppe und der Zuzahlungsstatus des Versicherten sowie das Abrechnungsinstitutionskennzeichen der Krankenkasse. Die zuehörigen Adress- und persönlichen Daten des Versicherten werden nach wie vor über das Profil `KBV_PR_FOR_Patient` beigestellt.
+
+#### Coverage mit Prüfungsnachweis für ePA-Befungniserteilung
+
+Möchte ein PKV-Versicherter der Praxis mittels OCI eine ePA-Befugnis erteilen, enthält die Coverage einen `Prüfungsnachweis`, wie er für GKV-Versicherte durch die Konnektor-Operation `ReadVSD()` erstellt wird.
 
 ## Bescheinigungsbundle (Beispiel)
 

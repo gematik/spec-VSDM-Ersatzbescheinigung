@@ -5,6 +5,7 @@ parent:
 
 - [Empfang und Verarbeitung KIM-Nachricht](#empfang-und-verarbeitung-kim-nachricht)
   - [Übernahme der Daten ins Primärsystem](#übernahme-der-daten-ins-primärsystem)
+    - [Anwendungsfall ePA-Befugniserteilung](#anwendungsfall-epa-befugniserteilung)
   - [Validierung und Fehlermeldungen](#validierung-und-fehlermeldungen)
   - [User Experience](#user-experience)
   - [Prozessdauer](#prozessdauer)
@@ -16,6 +17,10 @@ Für das Angebot des OCI auf Leistungserbringerseite ist Voraussetzung, dass gru
 Eingehende Daten aus dem OCI müssen zunächst mit den Bestandsdaten abgeglichen werden. In den meisten Fällen wird im Primärsystem noch keine Krankenversichertennummer (KVNR) als Identifier vorliegen.
 
 Um eine korrekte Zuordnung der eingehenden Daten sicherzustellen, bietet sich in diesen Fällen eine kurze manuelle Prüfung durch das Praxispersonal an. Über ein Matching von Vorname, Nachname und Geburtsdatum könnten die passendsten Patienten aus dem Bestandsystem vorgeschlagen werden. Das Praxispersonal entscheidet (bei Bedarf nach Abstimmung mit dem Patienten), welche Daten aus dem OCI übernommen werden sollen.
+
+### Anwendungsfall ePA-Befugniserteilung
+
+Enthält der empfangene Datensatz in der FHIR-Ressource `Coverage` die optionale Extension `Pruefungsnachweis`, hat der Patient eingewilligt, der Praxis über das VSDM++ verfahren (analog zu GKV-Versicherten) eine ePA-Befugnis zu erteilen. Eine detaillierte Beschreibung zur Nutzung des Prüfungsnachweises gegenüber einem ePA-Aktensystem ist in den Spezifikationen zur ePA-für-Alle zu finden und unterscheidet sich für PKV- und GKV-Versicherte ab diesem Prozessschritt nicht.
 
 ## Validierung und Fehlermeldungen
 

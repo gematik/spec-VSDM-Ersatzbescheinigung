@@ -59,6 +59,10 @@ Der Zustimmungs-Screen enthält folgende Bestandteile:
    2. Vollständige Auflistung der zu übermittelnden persönlichen Daten. Die Daten dürfen abstrakt aufgelistet werden (Name, Adresse...). Jedoch hat die konkrete Anzeige der zu übermittelnden Daten den Vorteil, dass der Versicherte nachvollziehen kann, welche Daten an die Praxis übertragen werden.
 2. **Ausdrückliche und aktive Einwilligung**: Der Versicherte muss der konkreten Datenübermittlung ausdrücklich und aktiv zustimmen - zum Beispiel über das Anhaken einer Checkbox mit einem entsprechenden Hinweis. Dabei sollten die Bedingungen noch einmal verlinkt sein.
 
+> **Hinweis**
+>
+> Für die optionale ePA-Befugnniserteilung muss eine zusätzliche Checkbox für eine zusätzliche Einwilligung verwendet werden, da hierdurch der Zugriff auf medizinische Daten eingräumt wird.
+
 Eine Datenübermittlung darf nur nach erfolgter transaktionsbasierter ausdrücklicher und aktiver Einwilligung erfolgen. Liegt diese Einwilligung nicht vor, darf eine Datenübermittlung an den Leistungserbringer in keinem Fall erfolgen.
 
 ### Dokumentation der Einwilligung zum OCI

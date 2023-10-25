@@ -21,7 +21,9 @@ Das Versicherungsunternehmen bzw. ein beauftragter Dienstleister erstellt eine s
 
 Sobald die Bescheinigung via KIM in der Praxis eingeht, werden die Daten eingelesen und mit den Bestandsdaten aus dem Primärsystem abgeglichen. Das Praxispersonal kann die eingetroffenen Daten noch einmal prüfen, um eine korrekte Zuordnung zu einem Bestandspatienten bzw. eine korrekte Neuanlage sicherzustellen.
 
-Da sich die KVNR nur in äußerst seltenen Fällen ändert und der Prozess nicht dem Versicherungsnachweis dient, braucht der OCI in der Regel nur einmal pro Praxis zu erfolgen. Spätere Änderungen der Adresse oder Versicherung können wie bisher manuell im Praxissystem vorgenommen werden.
+Da sich die KVNR nur in äußerst seltenen Fällen ändert und der Prozess nicht dem Versicherungsnachweis dient, braucht der OCI **in der Regel** nur einmal pro Praxis zu erfolgen. Spätere Änderungen der Adresse oder Versicherung können wie bisher manuell im Praxissystem vorgenommen werden.
+
+Möchte der Patient hingegen den Online Check-In nutzen, um der Praxis eine **ePA-Befugnis** zu erteilen, empfiehlt es sich, den **OCI vor jedem Praxisbesuch** durchzuführen, da die ePA-Befugnis standardmäßig nur für 90 Tage erteilt wird. Alternativ kann über das ePA-FdV eine dauerhafte Befugnis erteilt werden.
 
 {{render:guides-eeb-oci-images-pkv-ersatzverfahren}}
 

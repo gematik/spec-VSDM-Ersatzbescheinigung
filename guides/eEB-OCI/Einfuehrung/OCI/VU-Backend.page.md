@@ -6,6 +6,7 @@ parent:
 - [Erstellung und Versand KIM-Nachricht](#erstellung-und-versand-kim-nachricht)
   - [Allgemeine Versicherungsdaten (VD)](#allgemeine-versicherungsdaten-vd)
   - [Persönliche Versichertendaten (PD)](#persönliche-versichertendaten-pd)
+  - [Prüfungsnachweis für die ePA-Befugniserteilung](#prüfungsnachweis-für-die-epa-befugniserteilung)
   - [Versand der KIM-Nachricht](#versand-der-kim-nachricht)
     - [Textempfehlung für die KIM-Nachricht](#textempfehlung-für-die-kim-nachricht)
   - [Häufig gestellte Fragen zur Erstellung und zum Versand der KIM-Nachricht](#häufig-gestellte-fragen-zur-erstellung-und-zum-versand-der-kim-nachricht)
@@ -116,6 +117,23 @@ Beispiel:
  </Versicherter>
 </UC_PersoenlicheVersichertendatenXML>
 ```
+
+## Prüfungsnachweis für die ePA-Befugniserteilung
+
+- \<TS> = Timestamp der Erstellung des Prüfungsnachweis
+- \<E>  = Fester Wert `2`, ergibt sich aus der Nachnutzung des VSDM-Schemas
+- \<PZ> = strukturierte und signierte Prüfziffer inkl. KVNR gemäß VSDM++, siehe Kapitel 6 in <https://fachportal.gematik.de/fachportal-import/files/gemSpec_SST_FD_VSDM_V1.7.0.pdf>
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PN
+ xmlns="http://ws.gematik.de/fa/vsdm/pnw/v1.0" CDM_VERSION="1.0.0">
+ <TS>20230516070317</TS>
+ <E>2</E>
+ <PZ>VDA0NjE0MjQ5OTE2ODQyMjA1OTdVVDHJ+QUzgWWbfSKbps5ebyNEqmmkdVL31uM=</PZ>
+</PN>
+```
+
 
 ## Versand der KIM-Nachricht
 
