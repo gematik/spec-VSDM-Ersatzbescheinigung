@@ -4,9 +4,9 @@
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/Leistungsdatum",
   "version": "1.0.1",
   "name": "Leistungsdatum",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
-  "date": "2023-09-26",
+  "date": "2023-11-15",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
