@@ -7,7 +7,7 @@
   "description": "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausstellen kann",
   "url": "https://gematik.de/fhir/eeb/ValueSet/EEBErrorcodeVS",
   "experimental": false,
-  "version": "1.0.1",
+  "version": "1.0.0",
   "publisher": "gematik GmbH",
   "date": "2023-11-15",
   "compose": {

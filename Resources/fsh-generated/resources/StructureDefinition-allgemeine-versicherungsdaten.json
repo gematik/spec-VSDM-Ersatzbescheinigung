@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "allgemeine-versicherungsdaten",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "name": "AllgemeineVersicherungsdaten",
   "status": "active",
   "experimental": false,

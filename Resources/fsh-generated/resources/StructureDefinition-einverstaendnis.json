@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "einverstaendnis",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/Einverstaendnis",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "name": "Einverstaendnis",
   "status": "active",
   "experimental": false,

@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "eeb-anfrage-header",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "name": "EEBAnfrageHeader",
   "status": "active",
   "experimental": false,

@@ -74,7 +74,7 @@
     }
   ],
   "experimental": false,
-  "version": "1.0.1",
+  "version": "1.0.0",
   "publisher": "gematik GmbH",
   "date": "2023-11-15",
   "caseSensitive": true,

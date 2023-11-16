@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "geschuetzte-versichertendaten",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "name": "GeschuetzteVersichertendaten",
   "status": "active",
   "experimental": false,

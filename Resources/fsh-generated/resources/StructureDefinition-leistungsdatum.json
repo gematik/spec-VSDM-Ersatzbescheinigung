@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "leistungsdatum",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/Leistungsdatum",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "name": "Leistungsdatum",
   "status": "active",
   "experimental": false,

@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "eeb-anfrage-bundle",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "name": "EEBAnfrageBundle",
   "status": "active",
   "experimental": false,

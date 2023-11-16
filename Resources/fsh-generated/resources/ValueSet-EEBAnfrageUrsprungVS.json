@@ -7,7 +7,7 @@
   "description": "eEB Message Header Event codes of request orgin",
   "url": "https://gematik.de/fhir/eeb/ValueSet/EEBAnfrageUrsprungVS",
   "experimental": false,
-  "version": "1.0.1",
+  "version": "1.0.0",
   "publisher": "gematik GmbH",
   "date": "2023-11-15",
   "compose": {

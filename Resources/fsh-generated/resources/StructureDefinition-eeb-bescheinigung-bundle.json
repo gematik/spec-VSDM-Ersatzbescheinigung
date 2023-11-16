@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "eeb-bescheinigung-bundle",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "name": "EEBBescheinigungBundle",
   "status": "active",
   "experimental": false,
