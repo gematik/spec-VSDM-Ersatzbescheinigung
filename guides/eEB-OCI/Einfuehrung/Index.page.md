@@ -13,7 +13,7 @@ Das auslösende Ereignis (Anforderung) kann ein von einem Patienten durchgeführ
 
 # Aktueller Hinweis zum Digital-Gesetz
 
-Mit Stand vom 6.12.2023 ist der fachliche Regelungsvorschlag 21 Artikel 1 Nummer 20 (§ 291 SGB V) - erweiterte GesundheitsID-Nutzung und digitale Ersatzbescheinigung - eingebracht worden.
+Mit Stand vom 6.12.2023 ist der fachliche Regelungsvorschlag 21 zu Artikel 1 Nummer 20 (§ 291 SGB V) - erweiterte GesundheitsID-Nutzung und digitale Ersatzbescheinigung - eingebracht worden.
 
 In dem Regelungsvorschlag 21 werden nachfolgende Themen behandelt (s.a. Verweis auf PDF-Ausschnitt)
 
