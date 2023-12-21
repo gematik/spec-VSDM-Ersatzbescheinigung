@@ -10,3 +10,13 @@ Sowohl der Versand der elektronischen Ersatzbescheinigung (eEB) für gesetzlich 
 Um den PVS-Herstellern die Umsetzung durch das Einlesen von Patientendaten über das etablierte VSDM-Standardverfahren im GKV-Bereich zu erleichtern, verwenden die PKV Versicherungsunternehmen in der EEB-Bescheinigung die gleichen FHIR-Profile wie die Krankenkassen der GKV. Das FHIR-Profil `EEBCoverageEgk` bietet dazu mit der optionalen Extension geschuetzteVersichertendaten die Möglichkeit, dass PKV-Versicherungsunternehmen auf diesen Eintrag verzichten können.
 
 Das auslösende Ereignis (Anforderung) kann ein von einem Patienten durchgeführter "QR-Code-Scan" in der Praxis mittels seiner Kassen- bzw. Versicherten-App oder bei der eEB auch eine manuelle Anforderung aus dem Praxisverwaltungssystem durch Mitarbeitende der Praxis sein.
+
+# Aktueller Hinweis zum Digital-Gesetz
+
+Mit Stand vom 6.12.2023 ist der fachliche Regelungsvorschlag 21 Artikel 1 Nummer 20 (§ 291 SGB V) - erweiterte GesundheitsID-Nutzung und digitale Ersatzbescheinigung - eingebracht worden.
+
+In dem Regelungsvorschlag 21 werden nachfolgende Themen behandelt (s.a. Verweis auf PDF-Ausschnitt)
+
+* Die GesundheitsID kann durch weitere Berechtigte genutzt werden, die von der gematik im Beschlussweg diskriminierungsfrei festgelegt werden können
+* Die Versicherten können über eigene Endgeräte einen elektronischen Nachweis zur Inanspruchnahme von Leistungen der gesetzlichen Krankenversicherung von ihrer gesetzlichen Krankenkasse für einen Leistungserbringer anfordern
+* Schaffung eines Online-Check-in für Versicherte für Videosprechstunden und zur Entlastung der Anmeldung in der Arztpraxis
