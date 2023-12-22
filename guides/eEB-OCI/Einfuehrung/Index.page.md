@@ -15,7 +15,7 @@ Das auslösende Ereignis (Anforderung) kann ein von einem Patienten durchgeführ
 
 Mit Stand vom 6.12.2023 ist der fachliche Regelungsvorschlag 21 zu Artikel 1 Nummer 20 (§ 291 SGB V) - erweiterte GesundheitsID-Nutzung und digitale Ersatzbescheinigung - eingebracht worden.
 
-In dem Regelungsvorschlag 21 werden nachfolgende Themen behandelt (s.a. Verweis auf PDF-Ausschnitt)
+In dem [Regelungsvorschlag 21](https://raw.githubusercontent.com/gematik/spec-VSDM-Ersatzbescheinigung/master/Resources/downloads/DigiG_RV_21.pdf) werden nachfolgende Themen behandelt (s.a. Verweis auf PDF-Ausschnitt)
 
 * Die GesundheitsID kann durch weitere Berechtigte genutzt werden, die von der gematik im Beschlussweg diskriminierungsfrei festgelegt werden können
 * Die Versicherten können über eigene Endgeräte einen elektronischen Nachweis zur Inanspruchnahme von Leistungen der gesetzlichen Krankenversicherung von ihrer gesetzlichen Krankenkasse für einen Leistungserbringer anfordern
