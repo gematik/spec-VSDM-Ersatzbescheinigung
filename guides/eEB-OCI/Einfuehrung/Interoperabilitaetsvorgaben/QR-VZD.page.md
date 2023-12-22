@@ -4,6 +4,7 @@ parent:
 # QR-Code-Scan
 
 - [QR-Code-Scan](#qr-code-scan)
+  - [Nutzung des QR-Codes durch Versicherte](#nutzung-des-qr-codes-durch-versicherte)
   - [Aufbau und Inhalt des QR-Codes](#aufbau-und-inhalt-des-qr-codes)
 
 Der QR-Code-Scan ist Voraussetzung für folgende zwei Use Cases, die von den Versicherten über ihre Versicherten-App (PKV) bzw. Kassen-App (GKV) angestoßen werden können:
@@ -11,9 +12,20 @@ Der QR-Code-Scan ist Voraussetzung für folgende zwei Use Cases, die von den Ver
 - PKV: Übermittlung der Versichertenstammdaten via Online Check-in
 - GKV: Übermittlung der elektronischen Ersatzbescheinigung
 
-Auf der Seite <https://www.praxis-check-in.de> finden Leistungserbringer Hinweise zur Bereitstellung des QR-Codes sowie einen Code-Generator, um einen Code für ihre Einrichtung zu erstellen. Perspektivisch ist auch denkbar, dass Primärsystemhersteller eine die Funktionalität zum Generieren des QR-Codes direkt in ihrem System zur Verfügung stellen.
+Auf der Seite <https://www.praxis-check-in.de/leistungserbringer> finden Leistungserbringer Hinweise zur Bereitstellung des QR-Codes sowie einen Code-Generator, um einen Code für ihre Einrichtung zu erstellen. Perspektivisch ist auch denkbar, dass Primärsystemhersteller eine die Funktionalität zum Generieren des QR-Codes direkt in ihrem System zur Verfügung stellen.
 
 Der QR-Code wird durch Leistungserbringer nur dann bereitgestellt, wenn die Praxisverwaltungssoftware bzw. das Krankenhausinformationssystem eEB-Bescheinigungen und Nachrichten zum Online Check-in annehmen und verarbeiten kann sowie die rechtlichen organisatorischen Rahmenbedingungen erfüllt sind. So ist sichergestellt, dass die Verfahren nur von Leistungserbringern durchgeführt werden, die auch die Voraussetzungen dafür mitbringen.
+
+## Nutzung des QR-Codes durch Versicherte
+
+Der QR-Code kann auf zwei Wegen von Versicherten gescannt werden:
+
+1. Der QR-Code wird in der geöffneten Versicherten-App (PKV) bzw. Kassen-App (GKV) durch eine Scanfunktion in der App eingelesen und anschließend verarbeitet.
+2. Der QR-Code wird zunächst mit der Kamera-App auf dem Gerät (Smartphone) gelesen, welche die im QR-Code hinterlegte URL <https://www.praxis-check-in.de> im Browser des Geräts öffnet.
+
+Auf der Seite <https://www.praxis-check-in.de> haben Versicherte dann die Möglichkeit der Wahl der zu startenden App, mit welcher dann ein Online Check-In durchgeführt bzw. eine elektronische Ersatzbescheinigung angefordert werden soll. Der App-Start erfolgt durch eine Weiterleitung zu einer gemeldeten URL (Landing-Page) des jeweiligen App-Herausgebers.
+
+Von einem automatischen Öffnen durch einheitliche .well-known-Dateien auf der Seite <https://www.praxis-check-in.de> wurde Abstand genommen, da das Multi-App-Szenario (Unterschiedliche Kassen-Apps für Eltern- und Kind-Versicherung, Private Zusatzversicherung, etc.) als zu verbreitet angenommen wird. App-Herausgeber können den Eintrag einer Weiterleitungs-URL zum Öffnen ihrer App im Service Portal <https://service.gematik.de/servicedesk/customer/portals> der gematik melden.
 
 ## Aufbau und Inhalt des QR-Codes
 
@@ -37,9 +49,8 @@ Weitere QR-Code-Generatoren:
 
 > **Hinweis**
 >
-> Die gematik veröffentlicht unter der URL <https://www.praxis-check-in.de/.well-known/> eine Konfiguration für Anroid (assetlinks.json) und iOS-Geräte(apple-app-site-association),
-> mittels der die App auf Smartphones von Versicherten beim Scannen des QR-Codes automatisch gestartet werden kann.
-> App-Hersteller können der gematik via [JIRA-Service Desk Anfrage](http://service.gematik.de/servicedesk/customer/portals) ihre benötigte Konfiguration als JSON-Datei bereitstellen.
+> Die gematik veröffentlicht auf der Landing-Page <https://www.praxis-check-in.de/> eine Liste von Kassen bzw. Versicherungen, die der gematik eine Weiterleitungs-URL gemeldet haben. Durch Auswahl der eigenen Kasse bzw. Versicherung werden Nutzende auf eine Seite weitergeleitet, auf der die Kasse bzw. Versicherung Informationen und Hinweise zum Bezug der jeweiligen App gegeben werden oder sich bei bereits installierter App selbige automatisch öffnet.
+> App-Hersteller können der gematik via [JIRA-Service Desk Anfrage](http://service.gematik.de/servicedesk/customer/portals) ihre gewünschte Weiterleitungs-URL mitteilen.
 
 Weitere Hinweise zum Hinterlegen technischer Informationen für die Betriebssysteme:
 
