@@ -34,8 +34,8 @@
     <script>
 
         function isEmailValid(email) {
-            // RFC 5322-konforme E-Mail-Adresse-Muster
-            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            // RFC 5322-semi-konforme E-Mail-Adresse-Muster, endet mit RU-KIM-Adresse
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.kim\.telematik$/;
 
             return emailRegex.test(email);
         }
