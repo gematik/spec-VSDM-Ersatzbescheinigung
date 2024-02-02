@@ -6,6 +6,7 @@ parent:
 - [QR-Code-Scan](#qr-code-scan)
   - [Nutzung des QR-Codes durch Versicherte](#nutzung-des-qr-codes-durch-versicherte)
   - [Aufbau und Inhalt des QR-Codes](#aufbau-und-inhalt-des-qr-codes)
+    - [Weitere QR-Code-Generatoren:](#weitere-qr-code-generatoren)
 
 Der QR-Code-Scan ist Voraussetzung für folgende zwei Use Cases, die von den Versicherten über ihre Versicherten-App (PKV) bzw. Kassen-App (GKV) angestoßen werden können:
 
@@ -39,9 +40,22 @@ Versicherte könnten den Hinweis auf die Scan-Funktion in ihrer App übersehen u
   https://www.praxis-check-in.de?mail=<KIM-Adresse>
 ```
 
+oder auch
+
+```json
+  https://www.praxis-check-in.de/?mail=<KIM-Adresse>
+```
+
 - `mail` benennt dabei die KIM-Adresse, an welche die Daten für den Online Check-in gesendet werden sollen.
 
-Weitere QR-Code-Generatoren:
+> **Hinweis**
+>
+> Die URL ist sowohl mit "/" als auch ohne "/" vor dem "?" `rfc-3986`-konform.
+> Die gematik empfiehlt hier ein URL-Fomat, hat jedoch keinen Einfluss auf frei im Internet genutzte Schreibweisen.
+>
+> **Ebenso ist es (immer) ratsam, in der App zum Einlesen des QR-Codes jeglichen User-Input zu validieren.**
+
+### Weitere QR-Code-Generatoren:
 
 - https://qr.io/
 - https://qr-code-styling.com/
