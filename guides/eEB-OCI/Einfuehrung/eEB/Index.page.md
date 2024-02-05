@@ -6,7 +6,6 @@ parent:
 
 - [eEB](#eeb)
   - [Implementierungsleitfaden elektronische Ersatzbescheinigung (eEB/GKV)](#implementierungsleitfaden-elektronische-ersatzbescheinigung-eebgkv)
-    - [Rechtliche Einordnung](#rechtliche-einordnung)
     - [UseCase und Funktionsweise (Anforderung aus der Praxis)](#usecase-und-funktionsweise-anforderung-aus-der-praxis)
   - [Erfassung personenbezogener Daten](#erfassung-personenbezogener-daten)
     - [Patient ist im PVS bekannt](#patient-ist-im-pvs-bekannt)
@@ -24,17 +23,11 @@ Die UseCases der elektronischen Ersatzbescheinigung digitalisieren den papierbas
 
 Mit dem eEB-Verfahren wird die Anforderung und Ausstellung einer Ersatzbescheinigung für Versicherte der gesetzlichen Krankenkassen automatisierbar.
 
-Die Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM wird durch das Praxispersonal initiiert.
-Kann eine zu behandelnde Person keine Gesundheitskarte als Versicherungsnachweis vorlegen, kann eine Anfrage einer Ersatzbescheinigung bei der von der Person benannten oder bereits im System bekannten Krankenkasse erfolgen.
-Damit die Kasse die versicherte Person in ihrem Bestandssystem identifizieren kann, müssen der Anfrage ein Mindestsatz an personenbezogenen Daten der versicherten Person mitgegeben werden.
+Mit Verabschiedung des DigiG am 02.02.2024 können die Versicherten gemäß §291 SGB V Absatz (9) einen Nachweis der Berechtigung zur Inanspruchnahme von Leistungen im Rahmen der vertragsärztlichen Versorgung von ihrer gesetzlichen Krankenkasse für die Vorlage bei einem Leistungserbringer anfordern, der unmittelbar von der Krankenkasse über ein sicheres Übermittlungsverfahren nach § 311 Absatz 6 (KIM) an den Leistungserbringer übermittelt wird.
 
-### Rechtliche Einordnung
+Die Leistungserbringer stellen dazu den Versicherten ihre KIM-Adresse in maschinenlesbarer Form zur Verfügung (QR-Code-Scan), damit die Versicherten die KIM-Adresse mit der eEB-Beantragung ihrer Kasse übermitteln können.
 
-Für Versicherte der gesetzlichen Krankenkassen ist der Nachweis der Anspruchsberechtigung vertraglich in §19 BMV geregelt.
-Die vorliegende Spezifikation soll eine Möglichkeit schaffen, mit der Arztpraxen und Krankenhäuser eine Ersatzbescheinigung nach §19 Abs. 2 BMV auf elektronischem Weg erhalten können.
-Die vorliegende Spezifikation befreit die gesetzlichen Krankenkassen nicht davon, den Versicherten auf Wunsch eine Ersatzbescheinigung in Papierform auszustellen.
-
-Die Nutzung dieses Verfahrens ist für alle Beteiligten freiwillig.
+Versicherte, die nicht über die technischen Voraussetzungen verfügen, an diesem KIM-Verfahren teilnehmen zu können, können den Leistungserbringer bitten, die Anforderung zur Ausstellung einer elektronischen Ersatzbescheinigung via KIM durch das Praxispersonal zu initiieren. In diesem Fall kann ein Leistungserbringer für eine zu behandelnde Person, die keine Gesundheitskarte als Versicherungsnachweis vorlegen kann, eine Anfrage einer Ersatzbescheinigung bei der von der Person benannten oder bereits im System bekannten Krankenkasse erfolgen. Damit die Kasse die versicherte Person in ihrem Bestandssystem identifizieren kann, müssen der Anfrage ein Mindestsatz an personenbezogenen Daten der versicherten Person mitgegeben werden.
 
 ### UseCase und Funktionsweise (Anforderung aus der Praxis)
 
