@@ -29,6 +29,11 @@ Die Leistungserbringer stellen dazu den Versicherten ihre KIM-Adresse in maschin
 
 Damit Versicherte, die nicht über die technischen Voraussetzungen verfügen, an diesem KIM-Verfahren teilnehmen zu können, können den Leistungserbringer bitten, die Anforderung zur Ausstellung einer elektronischen Ersatzbescheinigung via KIM durch das Praxispersonal zu initiieren. In diesem Fall kann ein Leistungserbringer für eine zu behandelnde Person, die keine Gesundheitskarte als Versicherungsnachweis vorlegen kann, eine Anfrage einer Ersatzbescheinigung bei der von der Person benannten oder bereits im System bekannten Krankenkasse erfolgen. Damit die Kasse die versicherte Person in ihrem Bestandssystem identifizieren kann, müssen der Anfrage ein Mindestsatz an personenbezogenen Daten der versicherten Person mitgegeben werden.
 
+> <span style="color:red">**Hinweis** zur Behandlung auf Basis einer Ersatzbescheinigung</span>
+>
+> <span style="color:red">Werden dem Patienten im Rahmen der Behandlung Medikamente verschrieben, muss der  Einlöseweg eines E-Rezepts für den Patienten berücksichtigt werden.
+> Ist die mitgeführte eGK nicht funktionsfähig, sollte dem Patienten der **E-Rezept-Einlösecode als Ausdruck mitgegeben** werden.</span>
+
 ### UseCase und Funktionsweise (Anforderung aus der Praxis)
 
 Die Anforderung zur Ausstellung einer Ersatzbescheinigung für eine gesetzlich versicherte Person kann durch das Praxispersonal initiiert werden.

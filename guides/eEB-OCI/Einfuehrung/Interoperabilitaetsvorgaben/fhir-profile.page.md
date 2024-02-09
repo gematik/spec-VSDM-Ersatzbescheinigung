@@ -241,7 +241,14 @@ Das Bescheinigungs-Bundle besteht aus einem Bescheinigungs-Header `MessageHeader
 Der `MessageHeader` enthält eine Statusinformation und einen `event`-Coding-Code über die Herkunft der Anfrage zur Ausstellung einer Ersatzbescheinigung als `OID` über die fachlichen Rollen der Telematikinfrastruktur. Die Liste der zulässigen OIDs findet sich als `ProfessionOID` in gemSpec_OID bzw. als CodeSystem des [VZD-FHIR-Projekts](https://simplifier.net/vzd-fhir-directory/practitionerprofessionoid).
 Der Header ist für den Bundle-Type `message` verpflichtend.
 
-> **Hinweis** Bei der Anfrage via App ist die `response` im MessageHeader nicht enthalten, da kein Bezug zu einem EEBAnfrageBundle hergestellt werden kann.
+> **Hinweis** zur Bescheinigung via Kassen-App
+>
+> Erfolgt die EEB-Anforderung nicht von einem Leistungserbringer, sondern durch den Versicherten über die Kassen-App, ergeben sich folgende zwei Änderungen im Profil des EEBBescheinigungHeader
+>
+> 1. Das Element response ist im MessageHeader nicht mehr enthalten, da kein Bezug zu einem EEBAnfrageBundle hergestellt werden kann
+> 2. Im Element eventCoding wird zur Kennzeichnung des Auslösers der EEB-Bescheinigung die ProfessionOID eines Versicherten (1.2.276.0.76.4.49) statt der einer Organization (z.B. 1.2.276.0.76.4.50 -  Betriebsstätte Arzt) gesetzt
+>
+> Als Beispiel einer EEB-Bescheinigung auf Basis einer App-Anforderung siehe [EEB-Bescheinigung-App.xml](https://github.com/gematik/spec-VSDM-Ersatzbescheinigung/blob/master/guides/eEB-OCI/samples/EEB-Bescheinigung-App.xml)
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle}}
 

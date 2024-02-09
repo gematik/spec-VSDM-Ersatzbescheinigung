@@ -1,5 +1,5 @@
 ---
-parent: 
+parent:
 ---
 # Testsystem der Techniker Krankenkasse in der Referenzumgebung (RU)
 
@@ -12,6 +12,19 @@ Die Techniker Krankenkasse stellt in der RU ein Testsystem bereit. Die KIM-Adres
 |TelematikID | 8-20a1201-002|
 
 Zum Testen der EEB-Use Cases sind nachfolgende Testversicherte für EEB-Anfragen bei der TK nutzbar. **Testversicherte, deren Versicherungsverhältnis beendet ist (s. Spalte Bemerkung), werden entsprechend mit einer Fehler-Nachricht (Fehlercode: 100) beantwortet.** Bei allen anderen Versicherten wird bei korrekter EEB-Anfrage mit einer EEB-Bescheinigung geantwortet.
+
+Für den Test der beiden Sonderfälle:
+
+* EEB-Bescheinigung mit dem Profil EEBCoverageNoEgk
+* EEB-Bescheinigung über eine Kassen-App
+
+werden 2 Testversicherte (TK31 und TK32) bereitgestellt.
+
+Mit dem Testversicherten TK31 – Max TK-eEB – kann eine EEB-Bescheinigung mit dem  Profil EEBCoverageNoEgk angefordert werden. Diese Form der Bescheinigung wird verwendet, wenn der Versicherte einen Leistungsanspruch zum angefragten Zeitpunkt hat, bei der Kasse jedoch noch keine KVNR vorliegt (z. B. Neugeborenes).
+
+Mit dem Testversicherten TK32 – Lisa TK-eEB-QR-Code – kann eine EEB-Anforderung simuliert werden, als hätte der Versicherte über seine Kassen-App die EEB-Anforderung gestellt, d.h. im EEBBescheinigungBundle wird als Anfragender (Feld eventCoding) die professionOID eines Versicherten eingetragen (1.2.276.0.76.4.49) und der Bezug zur EEB-Anforderung (Feld response) entfällt.
+
+
 
 |Datensatz-nummer|Geschlecht|Vorname|Nachname|KvNr|Geburtsdatum|PLZ|Ort|Straße|Hausnummer|Bemerkung|
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -45,3 +58,5 @@ Zum Testen der EEB-Use Cases sind nachfolgende Testversicherte für EEB-Anfragen
 |TK28|M|Hans|TK-eAU-Schmitz|T026608281|14.01.1983|76135|Karlsruhe|Pulverhausstr.|42|Fehlerfall: Versicherungsverhältnis beendet zum 31.05.2021
 |TK29|M|Josef|TK-eAU-Krause|T021724507|28.02.2003|76135|Karlsruhe|Pulverhausstr.|42|Fehlerfall: Versicherungsverhältnis beendet zum 28.02.2021
 |TK30|M|Günter|TK-eAU-Meier|T026508594|28.06.1999|76135|Karlsruhe|Pulverhausstr.|42|Fehlerfall: Versicherungsverhältnis beendet zum 01.08.2020|
+|TK31|M|Max|TK-eEB||23.02.1969|80805|München|Berliner Str.|85|Vers für Profil EEBCoverageNoEgk
+|TK32|W|Lisa|TK-eEB-QR-Code|A819745621|23.02.1969|80805|München|Berliner Str.|85|Vers für Kassen-App-Simulation
