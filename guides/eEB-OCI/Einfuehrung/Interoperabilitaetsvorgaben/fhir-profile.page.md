@@ -3,9 +3,9 @@ parent:
 ---
 # FHIR-Profile
 
-<span style="font-weight:bold;font-size:1.1em">
-    Für sämtliche FHIR-Profile für eEB-Anfragen, - Bescheinigungen und -Fehlermeldungen wird ausschließlich die Codierung im XML-Format unterstützt.
-</span>
+> **Hinweis** zur Codierung der FHIR-Profile
+>
+> Für sämtliche FHIR-Profile für eEB-Anfragen, - Bescheinigungen und -Fehlermeldungen wird ausschließlich die Codierung im XML-Format unterstützt.
 
 Als Ergebnis einer Anfrage für eine Ersatzbescheinigung per KIM aus einer Praxis antwortet die angefragte Krankenkasse mittels einer KIM-Nachricht, die im Positiv-Fall ein signiertes Bescheinigungsbundle (Ersatzbescheinigung) enthält.
 
