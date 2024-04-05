@@ -3,6 +3,10 @@ parent:
 ---
 # FHIR-Profile
 
+> **Hinweis** zur Codierung der FHIR-Profile
+>
+> Für sämtliche FHIR-Profile für eEB-Anfragen, - Bescheinigungen und -Fehlermeldungen wird ausschließlich die Codierung im XML-Format unterstützt.
+
 Als Ergebnis einer Anfrage für eine Ersatzbescheinigung per KIM aus einer Praxis antwortet die angefragte Krankenkasse mittels einer KIM-Nachricht, die im Positiv-Fall ein signiertes Bescheinigungsbundle (Ersatzbescheinigung) enthält.
 
 Gesetzlich Versicherte können die Anfrage einer Ersatzbescheinigung auch über ihre Kassen-App per Scan eines QR-Codes auslösen. Der QR-Code enthält die KIM-Adresse der Praxis, die die Ersatzbescheinigung erhalten soll. Bei positiver Prüfung sendet die Kasse das Bescheinigungsbundle (Ersatzbescheinigung) mittels einer KIM-Nachricht an die Praxis. Negative Prüfungen werden in diesem Fall nur dem Versicherten nicht aber der Praxis mitgeteilt.
