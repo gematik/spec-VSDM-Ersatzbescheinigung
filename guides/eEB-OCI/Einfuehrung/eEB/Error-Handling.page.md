@@ -42,8 +42,6 @@ Der optionale Text in `OperationOutcome.issue.details.text` dient der Unterstüt
 
 Der OperationOutcome.issue enthält immer eine `Extension` die das fehlerverursachende Element (eEB-Anfrage-Bundle **oder** fehlerhafte KIM-Anfrage-Nachricht) referenziert.
 
-Nachfolgend ist eine Beispiel-Fehlermeldung ["Patient hier nicht versichert"](https://simplifier.net/vsdm-ersatzbescheinigung/generated-resources-operationoutcome-bbd0690c-6939-4c90-979c-9ab9b1ed1552) dargestellt. D.h. die Fehlerursache ist im AnfrageBundle zu lokalisieren, anhand der Patienteninformationen kann kein Versicherungsverhältnis im Kassensystem lokalisiert werden.
-
-<iframe src="https://www.simplifier.net/embed/render?id=vsdm-ersatzbescheinigung/generated-resources-operationoutcome-bbd0690c-6939-4c90-979c-9ab9b1ed1552" style="width: 100%;height: 320px;"></iframe>
+Hinter folgendem Link ist eine Beispiel-Fehlermeldung ["Patient hier nicht versichert"](https://simplifier.net/vsdm-ersatzbescheinigung/generated-resources-operationoutcome-bbd0690c-6939-4c90-979c-9ab9b1ed1552) dargestellt. D.h. die Fehlerursache ist im AnfrageBundle zu lokalisieren, anhand der Patienteninformationen kann kein Versicherungsverhältnis im Kassensystem lokalisiert werden.
 
 Ein weiteres Beispiel einer Fehlermeldung im OperationOutcome ist hier zu finden, nach welchem die [KIM-Anfrage-Nachricht fehlerhaft](https://simplifier.net/vsdm-ersatzbescheinigung/generated-resources-operationoutcome-3f624395-be34-4fac-9773-d735cb3a1f73) ist.
