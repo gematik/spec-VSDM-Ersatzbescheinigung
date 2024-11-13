@@ -82,7 +82,7 @@ Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Date
   Content-Transfer-Encoding: base64
   Content-Disposition: attachment;
   filename=TEEB0_ANF_90c9ae58-5a9d-4861-b77d-665d10b2789d.p7s
-  Content-Description: eEB
+  Content-Description: eEB_ANF
 
   MIIVQwYJKoZIhvcNAQcCoIIVNDCCFTACAQExDzANBglghkgBZQMEAgEFADCCDBsGCSqGSIb3DQEH
   AaCCDAwEggwIPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48QnVuZGxlIHht
