@@ -12,3 +12,12 @@ Um den PVS-Herstellern die Umsetzung durch das Einlesen von Patientendaten über
 Das auslösende Ereignis (Anforderung) kann ein von einem Patienten durchgeführter "QR-Code-Scan" in der Praxis mittels seiner Kassen- bzw. Versicherten-App oder bei der eEB auch eine manuelle Anforderung aus dem Praxisverwaltungssystem durch Mitarbeitende der Praxis sein.
 
 Hier gehts zu den [FHIR-Profilen](https://simplifier.net/vsdm-ersatzbescheinigung)
+
+> **Aktueller Hinweis**
+>
+> Folgender Hinweis aufgrund von Rückmeldungen im Feld:
+> Einige Systeme zur Validierung der FHIR-Ressourcen dieses Projekts vermelden Fehler bei strenger Validierung, wenn **keine** `fullURL` zu einer Ressource im EEBAnfrageBundle angegeben ist.
+> Systeme zur Erstellung von FHIR-Ressourcen müssen neben den Angaben in den FHIR-Profilen auch immer die Spezifikation inkl. der Constraints konditionaler Abhängigkeiten berücksichtigen.
+> So ist die `fullUrl` in eines Bundle-Entry zunächst optional, jedoch nur für Transaktions-Bundles und Batches, siehe https://www.hl7.org/fhir/R4/bundle.html#bundle-unique
+>
+> Die gematik stellt mit dem [TI-Validator](https://github.com/gematik/app-referencevalidator) ein Tool bereit, um solch eine strenge FHIR-Validierung in herstellereigenen Tests zu berücksichtigen.
