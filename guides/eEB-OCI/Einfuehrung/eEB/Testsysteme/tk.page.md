@@ -8,8 +8,8 @@ Die Techniker Krankenkasse stellt in der RU ein Testsystem bereit. Die KIM-Adres
 |VZD-Attribut| Inhalt|
 |---|---|
 |Institutionskennzeichen (DomainID) |101575519|
-|KIM-eMail-Adressen RU |*tk@akquinet.kim.telematik-test<br/>* tk-eau@akquinet.kim.telematik-test<br/>*tk@arv.kim.telematik-test<br/>* tk@cgm-ref.komle.telematik-test<br/>*tk@dgn.kim.telematik-test<br/>* tk@tsi.kim.telematik-test|
-|TelematikID | 8-20a1201-002|
+|KIM-eMail-Adressen RU |*tk@akquinet.kim.telematik-test<br/>* tk-eau@akquinet.kim.telematik-test|
+|TelematikID | 8-01-0000000090|
 
 Zum Testen der EEB-Use Cases sind nachfolgende Testversicherte für EEB-Anfragen bei der TK nutzbar. **Testversicherte, deren Versicherungsverhältnis beendet ist (s. Spalte Bemerkung), werden entsprechend mit einer Fehler-Nachricht (Fehlercode: 100) beantwortet.** Bei allen anderen Versicherten wird bei korrekter EEB-Anfrage mit einer EEB-Bescheinigung geantwortet.
 
