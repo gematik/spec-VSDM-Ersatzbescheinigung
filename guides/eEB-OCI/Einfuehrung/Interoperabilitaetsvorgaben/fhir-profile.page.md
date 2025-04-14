@@ -293,14 +293,22 @@ In wenigen Fällen der EEB-Anfrage kommt es vor, dass die zuständige Krankenkas
 Mit dem Profil `EEBCoverageNoEgK` werden nur die Versichertendaten geliefert, die für eine Abrechnung von Leistungen benötigt werden. Hierzu gehören die Versichertenart, das Wohnortprinzip, die Besondere Personengruppe und der Zuzahlungsstatus des Versicherten sowie das Abrechnungsinstitutionskennzeichen der Krankenkasse. Die zugehörigen Adress- und persönlichen Daten des Versicherten werden nach wie vor über das Profil `KBV_PR_FOR_Patient` beigestellt.
 Anstelle der noch nicht bekannten KVNR muss eine kassen-individuelle "Ersatznummer", die den Versicherten eineindeutig referenziert, mit der Bescheinigung bereitgestellt werden. Die Ersatznummer wird im Element `versichertennummer_kvk` (ehemalige Versichertennummer der Krankenversichertenkarte) des Profils `KBV_PR_FOR_Patient` geliefert.
 
-## Bescheinigungsbundle (Beispiel)
+## Beispiele für Anfragen, Bescheinigungen und Fehler
 
-Unter folgendem Link ist ein ["Beispiel-Bescheinigungs-Bundle"](https://simplifier.net/vsdm-ersatzbescheinigung/9b6ac30d-246d-4eab-af83-544564792089) dargestellt.
-Dieses ist innerhalb des oben genannten Signaturcontainers (PKCS#7 enveloping) enthalten.
+### Beispiele für eEB-Anfragen
+| Voraussetzung | verwendetes Anfrage-FHIR-Profil für Versicherten | Beispiel der eEB-Anfrage |
+| :---- | :---- | :---- |
+| KVNR des Versicherten ist bekannt / vorhanden | [EEBKnownPatient](https://simplifier.net/vsdm-ersatzbescheinigung/eebknownpatient)| [EEBAnfrageBundle mit EEBKownPatient](https://simplifier.net/vsdm-ersatzbescheinigung/1f311c40-fee9-4b03-b0c4-c29d432f2371)|
+| KVNR des Versicherten ist bekannt / vorhanden | [KBV_PR_FOR_Patient](https://simplifier.net/for/kbvprforpatient) | [EEBAnfrageBundle mit KBV_PR_FOR_Patient](https://simplifier.net/vsdm-ersatzbescheinigung/96120812-a785-4fe3-a1e9-244314fdad9d)|
+| KVNR des Versicherten ist **NICHT** bekannt / vorhanden | [KBV_PR_FOR_Patient](https://simplifier.net/for/kbvprforpatient) | [EEBAnfrageBundle mit KBV_PR_FOR_Patient](https://simplifier.net/vsdm-ersatzbescheinigung/cef4c975-753e-4b25-bec3-6549c7360e0a)|
 
-## Fehlerfälle (Anfrage für GKV-Ersatzbescheinigung fehlgeschlagen)
+### Beispiele für eEB-Bescheinigungen mit gültigem Versicherungsverhältnis
+| Voraussetzung | verwendetes Bescheinigungs-FHIR-Profil für Versicherten | Beispiel der eEB-Bescheinigung |
+| :---- | :---- | :---- |
+| KVNR liegt bei der Kasse vor                  | [EEBCoverageEgk](https://simplifier.net/vsdm-ersatzbescheinigung/eebcoverageegk)| [EEBBescheinigungBundle mit EEBCoverageEgK](https://simplifier.net/vsdm-ersatzbescheinigung/9b6ac30d-246d-4eab-af83-544564792089)|
+| KVNR liegt (noch) **NICHT** bei der Kasse vor | [EEBCoverageNoEgk](https://simplifier.net/vsdm-ersatzbescheinigung/eebcoveragenoegk) | [EEBBescheinigungBundle mit EEBCoverageNoEgK](https://simplifier.net/vsdm-ersatzbescheinigung/43bb7e49-7d03-4dfe-b4d7-df4b6c370d6b)|
 
-Im Fall von Fehlern antwortet die Kasse mit einer Fehler-Nachricht `EEBFehler` als FHIR-Ressource `OperationOutcome`.
-Diese enthält Details mit StatusCodes und lesbaren Fehlertexten in einer Liste von Fehlern als `issue`|s.
-
-Details dazu sind auf der Seite {{pagelink:Einfuehrung/eEB/Error-Handling.page.md}} zusammengestellt.
+### Beispiel für eEB-Fehler
+| Voraussetzung | verwendetes Fehler-FHIR-Profil | Beispiel für eEB-Fehler |
+| :---- | :---- | :---- |
+| eEB-Anfrage führt **NICHT** zu einer eEB-Bescheinigung | [EEBFehler](https://simplifier.net/vsdm-ersatzbescheinigung/eebfehler)| [eEB-Fehler](https://simplifier.net/vsdm-ersatzbescheinigung/07ddeb8a-e41e-473a-8724-a513ffb7afce)|
