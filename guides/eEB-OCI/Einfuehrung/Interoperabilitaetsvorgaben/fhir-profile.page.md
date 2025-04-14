@@ -299,8 +299,8 @@ Anstelle der noch nicht bekannten KVNR muss eine kassen-individuelle "Ersatznumm
 | Voraussetzung | verwendetes Anfrage-FHIR-Profil für Versicherten | Beispiel der eEB-Anfrage |
 | :---- | :---- | :---- |
 | KVNR des Versicherten ist bekannt / vorhanden | [EEBKnownPatient](https://simplifier.net/vsdm-ersatzbescheinigung/eebknownpatient)| [EEBAnfrageBundle mit EEBKownPatient](https://simplifier.net/vsdm-ersatzbescheinigung/1f311c40-fee9-4b03-b0c4-c29d432f2371)|
-| KVNR des Versicherten ist bekannt / vorhanden | [KBV_PR_FOR_Patient](https://simplifier.net/for/kbvprforpatient) | [EEBAnfrageBundle mit KBV_PR_FOR_Patient](https://simplifier.net/vsdm-ersatzbescheinigung/96120812-a785-4fe3-a1e9-244314fdad9d)|
-| KVNR des Versicherten ist **NICHT** bekannt / vorhanden | [KBV_PR_FOR_Patient](https://simplifier.net/for/kbvprforpatient) | [EEBAnfrageBundle mit KBV_PR_FOR_Patient](https://simplifier.net/vsdm-ersatzbescheinigung/cef4c975-753e-4b25-bec3-6549c7360e0a)|
+| KVNR des Versicherten ist bekannt / vorhanden | [KBV_PR_FOR_Patient](https://simplifier.net/for/kbv_pr_for_patient) | [EEBAnfrageBundle mit KBV_PR_FOR_Patient](https://simplifier.net/vsdm-ersatzbescheinigung/96120812-a785-4fe3-a1e9-244314fdad9d)|
+| KVNR des Versicherten ist **NICHT** bekannt / vorhanden | [KBV_PR_FOR_Patient](https://simplifier.net/for/kbv_pr_for_patient) | [EEBAnfrageBundle mit KBV_PR_FOR_Patient](https://simplifier.net/vsdm-ersatzbescheinigung/cef4c975-753e-4b25-bec3-6549c7360e0a)|
 
 ### Beispiele für eEB-Bescheinigungen mit gültigem Versicherungsverhältnis
 | Voraussetzung | verwendetes Bescheinigungs-FHIR-Profil für Versicherten | Beispiel der eEB-Bescheinigung |
