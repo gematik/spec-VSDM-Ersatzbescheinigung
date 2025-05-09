@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "status": "active",
+  "status": "draft",
   "name": "EEBAnfrageUrsprungVS",
   "id": "EEBAnfrageUrsprungVS",
   "title": "ValueSet of eEB Message Header Events",
@@ -9,7 +9,7 @@
   "experimental": false,
   "version": "1.0.0",
   "publisher": "gematik GmbH",
-  "date": "2023-11-15",
+  "date": "2025-05-15",
   "compose": {
     "include": [
       {

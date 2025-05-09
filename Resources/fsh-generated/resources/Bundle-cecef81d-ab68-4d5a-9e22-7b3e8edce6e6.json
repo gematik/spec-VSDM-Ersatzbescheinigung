@@ -23,10 +23,6 @@
             "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
           ]
         },
-        "response": {
-          "code": "ok",
-          "identifier": "79939e34-c5cc-4da6-ba55-f4bd85832760"
-        },
         "eventCoding": {
           "system": "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID",
           "code": "1.2.276.0.76.4.49",

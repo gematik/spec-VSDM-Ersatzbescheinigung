@@ -68,7 +68,7 @@ Instance: KBV_PR_FOR_PatientEgkSampleInvalidHCVcheck
 InstanceOf: KBV_PR_FOR_Patient
 Title: "Patient for EEBBescheinigungBundle"
 Usage: #example
-* id = "437f2555-2396-4c64-a656-e9553161ca3c"
+* id = "437f2555-2396-4c64-a656-e9553161ca3u"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
 * identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
 * identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"

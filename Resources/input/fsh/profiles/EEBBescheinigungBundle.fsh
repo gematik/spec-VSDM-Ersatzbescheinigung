@@ -57,7 +57,7 @@ Id: eeb-bescheinigung-bundle
 * entry[EEBCoverageNoEgk].response ..0
 * obeys -eeb-angabePatientPLZ
 * obeys -eeb-checkAddressIfIdentifierExists
-* obeys -eeb-checkAddressLineBasedOnEventCod
+* obeys -eeb-checkAddressLineBasedOnEventCode
 
 Invariant: -eeb-angabePatientPLZ
 Description: "In der Ressource vom Typ Patient ist keine Postleitzahl vorhanden, diese ist aber eine Pflichtangabe."

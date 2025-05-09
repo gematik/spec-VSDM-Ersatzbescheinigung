@@ -4,9 +4,9 @@
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle",
   "version": "1.0.0",
   "name": "EEBBescheinigungBundle",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
-  "date": "2023-11-15",
+  "date": "2025-05-15",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -47,6 +47,20 @@
             "severity": "error",
             "human": "In der Ressource vom Typ Patient ist keine Postleitzahl vorhanden, diese ist aber eine Pflichtangabe.",
             "expression": "entry.where(resource is Patient).resource.address.postalCode.exists()",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+          },
+          {
+            "key": "-eeb-checkAddressIfIdentifierExists",
+            "severity": "error",
+            "human": "Wenn im EEBBescheinigungHeader ein Eintrag in response.identifier vorhanden ist, muss das Feld entry.where(resource is Patient).resource.address.line für Straßenadresse und Postfachadresse leer sein.",
+            "expression": "entry.where(resource is EEBBescheinigungHeader).resource.response.identifier.exists() implies entry.where(resource is Patient).resource.address.line.count() = 0",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+          },
+          {
+            "key": "-eeb-checkAddressLineBasedOnEventCode",
+            "severity": "error",
+            "human": "Wenn im EEBBescheinigungHeader.eventCoding.code = #1.2.276.0.76.4.49 eingetragen ist, muss genau eine entry.where(resource is Patient).resource.address.line vorhanden sein, sonst nicht.",
+            "expression": "entry.where(resource is EEBBescheinigungHeader).resource.eventCoding.code != '1.2.276.0.76.4.49' implies entry.where(resource is Patient).resource.address.line.count() = 0",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
           }
         ]
