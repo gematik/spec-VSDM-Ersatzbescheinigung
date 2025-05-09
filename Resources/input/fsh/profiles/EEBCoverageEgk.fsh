@@ -64,11 +64,11 @@ Expression: "type.coding.code='GKV' implies extension('https://gematik.de/fhir/e
 
 
 // Beispielgenerierung
-Instance: KBV_PR_FOR_PatientEgkSample
+Instance: KBV_PR_FOR_PatientEgkSampleInvalidHCVcheck
 InstanceOf: KBV_PR_FOR_Patient
 Title: "Patient for EEBBescheinigungBundle"
-Usage: #inline
-* id = "437f2555-2396-4c64-a656-e9553161ca3c"
+Usage: #example
+* id = "437f2555-2396-4c64-a656-e9553161ca3u"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
 * identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
 * identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
@@ -85,6 +85,27 @@ Usage: #inline
 * address[Strassenanschrift].line.extension[=][Hausnummer].valueString = "14"
 * address[Strassenanschrift].line.extension[+][Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
 * address[Strassenanschrift].line.extension[=][Strasse].valueString = "Blumenweg"
+* address[Strassenanschrift].city = "Esens"
+* address[Strassenanschrift].postalCode = "26427"
+* address[Strassenanschrift].country = "D"
+
+// new sample, wegen hcv-Anpassung keine Adressenstraße
+Instance: KBV_PR_FOR_PatientEgkSample
+InstanceOf: KBV_PR_FOR_Patient
+Title: "Patient for EEBBescheinigungBundle"
+Usage: #example
+* id = "437f2555-2396-4c64-a656-e9553161ca3c"
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+* identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
+* identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[versichertenId_GKV].value = "T024791905"
+* name[name].use = #official
+* name[name].family = "Königstein"
+* name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+* name[name].family.extension[nachname].valueString = "Königstein"
+* name[name].given = "Ludger"
+* birthDate = "1935-06-22"
+* address[Strassenanschrift].type = #both
 * address[Strassenanschrift].city = "Esens"
 * address[Strassenanschrift].postalCode = "26427"
 * address[Strassenanschrift].country = "D"

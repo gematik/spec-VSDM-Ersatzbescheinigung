@@ -4,9 +4,9 @@
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader",
   "version": "1.0.0",
   "name": "EEBBescheinigungHeader",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
-  "date": "2023-11-15",
+  "date": "2025-05-15",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -116,7 +116,7 @@
       {
         "id": "MessageHeader.response",
         "path": "MessageHeader.response",
-        "short": "If there is an EEBAnfrageBundle, the Bundle.identifier is mandatory."
+        "short": "If there is an EEBAnfrageBundle (eEBRequest aus der Praxis)), the Bundle.identifier is mandatory."
       },
       {
         "id": "MessageHeader.response.identifier",

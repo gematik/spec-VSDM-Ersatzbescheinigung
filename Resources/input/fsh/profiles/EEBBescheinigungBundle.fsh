@@ -55,21 +55,26 @@ Id: eeb-bescheinigung-bundle
 * entry[EEBCoverageNoEgk].search ..0
 * entry[EEBCoverageNoEgk].request ..0
 * entry[EEBCoverageNoEgk].response ..0
-//* obeys -eeb-angabeVersichertenID
 * obeys -eeb-angabePatientPLZ
-
-// 11.10.2023 - KVNR not applicable for CoverageNoEgk, Babies may not have a KVNR from the day of birth
-//Invariant: -eeb-angabeVersichertenID
-//Description: "In der Ressource vom Typ Patient ist keine VersichertenID (GKV oder PKV) vorhanden, diese ist aber eine Pflichtangabe."
-//Severity: #error
-//Expression: "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists()"
-
+* obeys -eeb-checkAddressIfIdentifierExists
+* obeys -eeb-checkAddressLineBasedOnEventCode
 
 Invariant: -eeb-angabePatientPLZ
 Description: "In der Ressource vom Typ Patient ist keine Postleitzahl vorhanden, diese ist aber eine Pflichtangabe."
 Severity: #error
 Expression: "entry.where(resource is Patient).resource.address.postalCode.exists()"
 
+// Invariante zum Prüfen, dass ePA-hcv-Merkmale nicht gesendet werden, wenn eine Anfrage aus der Arztpraxis kommt
+Invariant: -eeb-checkAddressIfIdentifierExists
+Description: "Wenn im EEBBescheinigungHeader ein Eintrag in response.identifier vorhanden ist, muss das Feld entry.where(resource is Patient).resource.address.line für Straßenadresse und Postfachadresse leer sein."
+Severity: #error
+Expression: "entry.where(resource is EEBBescheinigungHeader).resource.response.identifier.exists() implies entry.where(resource is Patient).resource.address.line.count() = 0"
+
+// Invariante zum Prüfen, dass Patient.Adresse.Straße NUR vorhanden sein darf, wenn die eEB-Anfrage aus der App des Versicherten kommt.
+Invariant: -eeb-checkAddressLineBasedOnEventCode
+Description: "Wenn im EEBBescheinigungHeader.eventCoding.code = #1.2.276.0.76.4.49 eingetragen ist, muss genau eine entry.where(resource is Patient).resource.address.line vorhanden sein, sonst nicht."
+Severity: #error
+Expression: "entry.where(resource is EEBBescheinigungHeader).resource.eventCoding.code != '1.2.276.0.76.4.49' implies entry.where(resource is Patient).resource.address.line.count() = 0"
 
 // Beispielgenerierung
 Instance: EEBBescheinigungBundleSampleEgk

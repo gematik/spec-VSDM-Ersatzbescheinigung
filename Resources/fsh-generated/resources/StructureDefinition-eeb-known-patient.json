@@ -4,9 +4,9 @@
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient",
   "version": "1.0.0",
   "name": "EEBKnownPatient",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
-  "date": "2023-11-15",
+  "date": "2025-05-15",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
