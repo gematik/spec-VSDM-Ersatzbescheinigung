@@ -1,10 +1,10 @@
-Profile: EEBCoverageEgk
+Profile: EEBCoverageEgkNoAddressLine
 Parent: coverage-de-basis
-Id: eeb-coverage-egk
-* ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
+Id: eeb-coverage-egk-noaddressline
+* ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine"
 * insert Meta
 * meta 1..1
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk" (exactly)
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine" (exactly)
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
@@ -22,6 +22,8 @@ Id: eeb-coverage-egk
     GeschuetzteVersichertendaten named geschuetzteVersichertendaten 0..1 and
     $patient-genderIdentity named genderIdentity 0..0
 * extension[versionEgk].valueString 1..1
+* extension[PersoenlicheVersichertendaten] ^short = "Zum Schutz der ePA-Befugnisvergabe mittels hcv-Check ist in diesem Profil die Wohnadresse der/des Versicherten gekürzt. Für die eEB ist nur relevant ob der/die Versicherte zum angefragten Datum versichert ist."
+* extension[AllgemeineVersicherungsdaten] ^short = "Zum Schutz der ePA-Befugnisvergabe mittels hcv-Check ist in diesem Profil das Versicherungsbeginn auf das aktuelle Tagsdatum gesetzt. Für die eEB ist nur relevant ob der/die Versicherte zum angefragten Datum versichert ist."
 * identifier 0..0
 * status = #active (exactly)
 * type 1..1
@@ -54,21 +56,19 @@ Id: eeb-coverage-egk
 * costToBeneficiary 0..0
 * subrogation 0..0
 * contract 0..0
-* obeys -eeb-angabeGeschuetzteVersichertendaten
+* obeys -eeb-angabeGeschuetzteVersichertendaten2
 
-Invariant: -eeb-angabeGeschuetzteVersichertendaten
+Invariant: -eeb-angabeGeschuetzteVersichertendaten2
 Description: "Falls der Versicherungstyp GKV ist, müssen die geschützten Versichertendaten angegeben werden."
 Severity: #error
 Expression: "type.coding.code='GKV' implies extension('https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten').exists()"
 
-
-// Beispielgenerierung
-// PKV Patient with adress line, eEB triggered via App or queried with HBA-signature
-Instance: KBV_PR_FOR_PatientEgkSampleHBAqueried
+// new sample, wegen hcv-Anpassung keine Adressenstraße
+Instance: KBV_PR_FOR_PatientEgkNoAddressLineSample
 InstanceOf: KBV_PR_FOR_Patient
-Title: "Patient for EEBBescheinigungBundle with address line"
+Title: "Patient for EEBBescheinigungBundle without address.line"
 Usage: #example
-* id = "437f2555-2396-4c64-a656-e9553161ca3u"
+* id = "437f2555-2396-4c64-a656-e9553161ca3c"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
 * identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
 * identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
@@ -80,47 +80,16 @@ Usage: #example
 * name[name].given = "Ludger"
 * birthDate = "1935-06-22"
 * address[Strassenanschrift].type = #both
-* address[Strassenanschrift].line = "Blumenweg 14"
-* address[Strassenanschrift].line.extension[0][Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address[Strassenanschrift].line.extension[=][Hausnummer].valueString = "14"
-* address[Strassenanschrift].line.extension[+][Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address[Strassenanschrift].line.extension[=][Strasse].valueString = "Blumenweg"
 * address[Strassenanschrift].city = "Esens"
 * address[Strassenanschrift].postalCode = "26427"
 * address[Strassenanschrift].country = "D"
 
-// PKV Patient with adress line, eEB triggered via App
-Instance: KBV_PR_FOR_PatientEgkPkvSample
-InstanceOf: KBV_PR_FOR_Patient
-Title: "Patient for EEBBescheinigungBundle PKV details"
+Instance: EEBCoverageEgkNoAddressLineSample
+InstanceOf: EEBCoverageEgkNoAddressLine
+Title:   "Coverage for EEBBescheinigungBundle without address and Versicherungsdatum"
 Usage: #inline
-* id = "e36f9476-0d04-4394-a626-8b4706b005b0"
-* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
-* identifier[versichertenID_pkv].type = http://fhir.de/CodeSystem/identifier-type-de-basis#PKV
-* identifier[versichertenID_pkv].system = "http://fhir.de/sid/pkv/kvid-10"
-* identifier[versichertenID_pkv].value = "A987654321"
-* name[name].use = #official
-* name[name].family = "Meier"
-* name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-* name[name].family.extension[nachname].valueString = "Meier"
-* name[name].given = "Hans"
-* birthDate = "1965-04-11"
-* address[Strassenanschrift].type = #both
-* address[Strassenanschrift].line = "Musterstraße 1"
-* address[Strassenanschrift].line.extension[0][Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address[Strassenanschrift].line.extension[=][Hausnummer].valueString = "1"
-* address[Strassenanschrift].line.extension[+][Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address[Strassenanschrift].line.extension[=][Strasse].valueString = "Musterstraße"
-* address[Strassenanschrift].city = "Dortmund"
-* address[Strassenanschrift].postalCode = "44227"
-* address[Strassenanschrift].country = "D"
-
-Instance: EEBCoverageEgkSample
-InstanceOf: EEBCoverageEgk
-Title:   "Coverage eGK for EEBBescheinigungBundle"
-Usage: #inline
-* id = "2d4da53a-413a-48fe-b908-2e67b576152u"
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
+* id = "2d4da53a-413a-48fe-b908-2e67b5761523"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine"
 * extension[versionEgk].url = "http://fhir.de/StructureDefinition/gkv/version-vsdm"
 * extension[versionEgk].valueString = "5.2.0"
 * extension[allgemeineVersicherungsdaten].url = "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten"
@@ -135,30 +104,8 @@ Usage: #inline
 * type.coding.display = "gesetzliche Krankenversicherung"
 * period.start = "2022-04-01"
 * period.end = "2027-07-31"
-* beneficiary.reference =  "Patient/437f2555-2396-4c64-a656-e9553161ca3u"
+* beneficiary.reference =  "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
 * payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
 * payor.identifier.value = "12345678"
 * payor.display = "Test GKV Krankenkasse"
 
-Instance: EEBCoverageEgkPkvSample
-InstanceOf: EEBCoverageEgk
-Title:   "Coverage PKV for EEBBescheinigungBundle"
-Usage: #inline
-* id = "d7fbdcd7-f220-4a11-8526-d846e4db2a82"
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
-* extension[versionEgk].url = "http://fhir.de/StructureDefinition/gkv/version-vsdm"
-* extension[versionEgk].valueString = "5.2.0"
-* extension[allgemeineVersicherungsdaten].url = "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten"
-* extension[allgemeineVersicherungsdaten].valueBase64Binary = "H4sIACSWtmQA/71SXW+bQBD8K+jezQENqV0dZ7l2VFnEH6pTWvUFXWANyLBUd2c39a/3gawIHMvJU19As7MzO7pdNn6pSusAUhU1BsS1HWIBJnVaYBaQ+WY1GA790cD1iaW0wFSUNUJA/oEiY85+TONJWWZQQYEQNSZJDnKPmUqFBvy1eLSms0UcPXzfzFfLgPi21wwwI1EFJNf6zxdK/yrbOAhd7OwU6FbQg0qr5kMPpp9w9mqsQXZQM0Yl+V4fOfsKWYHIPcdzHNdxGT0XWFgrE0RLAVkj7sEdIBoTPvx879998ozqKt0XlQIwBWleCPjsQtHl2FJUwJ9AaWsdRlYoBRrDnVAKGG05NnmWkOTYaj6Sc3QO+r9z0htB+8YGX13P770S+ljgtlY98C2MeutFITU3e7gsdTXxOY3xj1v9z9WaOw6jzZ/RW51d8k2hm709NPr+dfMTAkWMED8DAAA="
-* extension[persoenlicheVersichertendaten].url = "https://gematik.de/fhir/eeb/StructureDefinition/PersoenlicheVersichertendaten"
-* extension[persoenlicheVersichertendaten].valueBase64Binary = "H4sIAOXZU2QA/41R0Y7TMBD8lcjvjZuQ3LVo46q6IK7S5YqoKLxVJlkuEbGNvE45+Fl+pZujLS3igRc7M5mdHY1h8Wz6aI+eOmcLkcRTEaGtXdPZp0KsNuvJbJbPJ0kuIgraNrp3FgvxA0ksFHy4273jUYe27+oWt6MN3z4gK/n4VD1Ed2W12755v1mtHwuRx+m4gXdaKkQbwrfXUn6n+AmNDt3XuEH5Rcs9NWY85J71QsGFr79Cdrcq1XI+u73Js1dpAvLvf/ASzyp4i58HH4hTDUYl85t8miWsv6Jh67zVBtW9tsReRwSPum5fvirs0IM8Y3aluu2xboOqRrMzgk3wmgjtsvHINwdxFHrswk/d9irL0vQW5BUHax9U6Xwwg21AjggeuHEFH11riVW95lrR8+OgKkH+iwb5e+S4XlUDcWfE6BeCPLFwrweygzFcJ5dwgc6aP8HlqcLLckflfzy+OgDTCNF/XwIAAA=="
-* status = #active
-* type.coding.system = "http://fhir.de/CodeSystem/versicherungsart-de-basis"
-* type.coding.code = #PKV
-* type.coding.display = "private Krankenversicherung"
-* period.start = "2022-04-01"
-* period.end = "2022-04-01"
-* beneficiary.reference =  "Patient/e36f9476-0d04-4394-a626-8b4706b005b0"
-* payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
-* payor.identifier.value = "23456789"
-* payor.display = "Test PKV Krankenkasse"
