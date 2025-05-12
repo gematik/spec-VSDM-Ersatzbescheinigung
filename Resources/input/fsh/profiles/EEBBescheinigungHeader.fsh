@@ -35,11 +35,26 @@ Id: eeb-bescheinigung-header
 
 
 // Beispielgenerierung
-Instance: EEBBescheinigungHeaderSample
+Instance: EEBBescheinigungHeaderSampleHBA
 InstanceOf: EEBBescheinigungHeader
-Title:   "Header for EEBBescheinigungBundle"
+Title:   "Header for EEBBescheinigungBundle query by HBA signature"
 Usage: #inline
 * id = "bd901c08-0133-4276-b34b-eb810a62deda"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
+* eventCoding.code = #1.2.276.0.76.4.30
+* eventCoding.display = "Ärztin/Arzt"
+* source.endpoint = "https://Test-Krankenkasse.de/KIM"
+* response.identifier = "79939e34-c5cc-4da6-ba55-f4bd85832760"
+* response.code = #ok
+* focus[+].reference = "Patient/437f2555-2396-4c64-a656-e9553161ca3u"
+* focus[+].reference = "Coverage/2d4da53a-413a-48fe-b908-2e67b576152u"
+
+Instance: EEBBescheinigungHeaderSampleNoAddressLine
+InstanceOf: EEBBescheinigungHeader
+Title:   "Header for EEBBescheinigungBundle query by SMC-B signature"
+Usage: #inline
+* id = "bd901c08-0133-4276-b34b-eb810a62dedu"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.50
@@ -50,9 +65,10 @@ Usage: #inline
 * focus[+].reference = "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
 * focus[+].reference = "Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"
 
+
 Instance: EEBBescheinigungHeaderNoEGKSample
 InstanceOf: EEBBescheinigungHeader
-Title:   "Header for EEBBescheinigungBundle"
+Title:   "Header for EEBBescheinigungBundle no KVNR available"
 Usage: #inline
 * id = "5b3c588d-36f5-42be-a10e-1c48eb800cc3"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
@@ -67,7 +83,7 @@ Usage: #inline
 
 Instance: EEBBescheinigungHeaderPkvSample
 InstanceOf: EEBBescheinigungHeader
-Title:   "Header for EEBBescheinigungBundle"
+Title:   "Header for EEBBescheinigungBundle triggered via GKV or PKV App"
 Usage: #inline
 * id = "aafed78c-696c-4805-9e7b-d454e1aeb538"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
