@@ -53,21 +53,21 @@
             "key": "-eeb-checkConditionCode49",
             "severity": "error",
             "human": "Wenn Versicherter '1.2.276.0.76.4.49', dann muss EEBCoverageEgk, Patient-Resource mit KVNR und darf eine Straße in der Adressangabe enthalten sein.",
-            "expression": "entry.where(resource is EEBBescheinigungHeader).resource.eventCoding.code = '1.2.276.0.76.4.49' implies (entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk') and entry.where(resource is Patient).resource.identifier.where(type.coding.code = 'GKV').exists() and entry.where(resource is Patient).resource.address.line.exists())",
+            "expression": "entry.where(resource is MessageHeader).resource.eventCoding.code = '1.2.276.0.76.4.49' implies (entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk'))",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
           },
           {
             "key": "-eeb-checkConditionCode30",
             "severity": "error",
             "human": "Wenn HBA-Anfrage '1.2.276.0.76.4.30/31/45/46/47', dann muss Coverage entweder EEBCoverageEgk oder EEBCoverageNoEgk sein, Patient-Resource darf KVNR und darf eine Straße in der Adressangabe enthalten.",
-            "expression": "entry.where(resource is EEBBescheinigungHeader).resource.eventCoding.code = '1.2.276.0.76.4.30' implies ((entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk') or entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and entry.where(resource is Patient).resource.identifier.where(type.coding.code = 'GKV').count() <= 1 and entry.where(resource is Patient).resource.address.line.exists())",
+            "expression": "entry.where(resource is MessageHeader).resource.eventCoding.code = '1.2.276.0.76.4.30' implies ((entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk') or entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and entry.where(resource is Patient).resource.identifier.where(type.coding.code = 'GKV').count() <= 1 and entry.where(resource is Patient).resource.address.line.exists())",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
           },
           {
             "key": "-eeb-checkConditionOtherCodes",
             "severity": "error",
-            "human": "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein und die Patient-Resource darf keine Straße in der Adressangabe enthalten.",
-            "expression": "entry.where(resource is EEBBescheinigungHeader).resource.eventCoding.code != '1.2.276.0.76.4.30' and entry.where(resource is EEBBescheinigungHeader).resource.eventCoding.code != '1.2.276.0.76.4.31' and entry.where(resource is EEBBescheinigungHeader).resource.eventCoding.code != '1.2.276.0.76.4.45' and entry.where(resource is EEBBescheinigungHeader).resource.eventCoding.code != '1.2.276.0.76.4.46' and entry.where(resource is EEBBescheinigungHeader).resource.eventCoding.code != '1.2.276.0.76.4.47' and entry.where(resource is EEBBescheinigungHeader).resource.eventCoding.code != '1.2.276.0.76.4.49' implies ((entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and entry.where(resource is Patient).resource.address.line.exists().not())",
+            "human": "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein und die Patient-Resource darf keine Straße in der Adressangabe enthalten (SMC-B Prüfung).",
+            "expression": "entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.30').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.31').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.45').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.46').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.47').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.49').not() implies ((entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and entry.where(resource is Patient).resource.address.line.exists().not())",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
           }
         ]
@@ -278,6 +278,46 @@
       },
       {
         "id": "Bundle.entry:EEBCoverageEgk.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine",
+        "path": "Bundle.entry",
+        "sliceName": "EEBCoverageEgkNoAddressLine",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Coverage",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine.response",
         "path": "Bundle.entry.response",
         "max": "0"
       },
