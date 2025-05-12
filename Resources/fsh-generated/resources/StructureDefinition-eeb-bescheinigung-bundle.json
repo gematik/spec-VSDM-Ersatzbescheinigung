@@ -52,15 +52,8 @@
           {
             "key": "-eeb-checkConditionCode49",
             "severity": "error",
-            "human": "Wenn Versicherter '1.2.276.0.76.4.49', dann muss EEBCoverageEgk, Patient-Resource mit KVNR und darf eine Straße in der Adressangabe enthalten sein.",
+            "human": "Wenn Versicherter '1.2.276.0.76.4.49' (App-Anfrage), dann muss EEBCoverageEgk, Patient-Resource mit KVNR und darf eine Straße in der Adressangabe enthalten sein.",
             "expression": "entry.where(resource is MessageHeader).resource.eventCoding.code = '1.2.276.0.76.4.49' implies (entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk'))",
-            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
-          },
-          {
-            "key": "-eeb-checkConditionCode30",
-            "severity": "error",
-            "human": "Wenn HBA-Anfrage '1.2.276.0.76.4.30/31/45/46/47', dann muss Coverage entweder EEBCoverageEgk oder EEBCoverageNoEgk sein, Patient-Resource darf KVNR und darf eine Straße in der Adressangabe enthalten.",
-            "expression": "entry.where(resource is MessageHeader).resource.eventCoding.code = '1.2.276.0.76.4.30' implies ((entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk') or entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and entry.where(resource is Patient).resource.identifier.where(type.coding.code = 'GKV').count() <= 1 and entry.where(resource is Patient).resource.address.line.exists())",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
           },
           {
