@@ -53,7 +53,7 @@
             "key": "-eeb-checkConditionCode49",
             "severity": "error",
             "human": "Wenn Versicherter '1.2.276.0.76.4.49' (App-Anfrage), dann muss EEBCoverageEgk, Patient-Resource mit KVNR und darf eine Straße in der Adressangabe enthalten sein.",
-            "expression": "entry.where(resource is MessageHeader).resource.eventCoding.code in ('1.2.276.0.76.4.49') implies (entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk'))",
+            "expression": "entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.49') implies (entry.where(resource is Coverage).resource.meta.profile.where($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk').exists())",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
           },
           {

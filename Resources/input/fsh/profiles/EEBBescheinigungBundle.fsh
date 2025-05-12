@@ -74,7 +74,7 @@ Expression: "entry.where(resource is Patient).resource.address.postalCode.exists
 Invariant: -eeb-checkConditionCode49
 Description: "Wenn Versicherter '1.2.276.0.76.4.49' (App-Anfrage), dann muss EEBCoverageEgk, Patient-Resource mit KVNR und darf eine Straße in der Adressangabe enthalten sein."
 Severity: #error
-Expression: "entry.where(resource is MessageHeader).resource.eventCoding.code in ('1.2.276.0.76.4.49') implies (entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk'))"
+Expression: "entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.49') implies (entry.where(resource is Coverage).resource.meta.profile.where($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk').exists())"
 
 Invariant: -eeb-checkConditionOtherCodes
 Description: "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein und die Patient-Resource darf keine Straße in der Adressangabe enthalten (SMC-B Prüfung)."
