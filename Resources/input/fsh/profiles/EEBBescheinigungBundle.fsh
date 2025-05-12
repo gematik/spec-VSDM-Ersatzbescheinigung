@@ -64,7 +64,6 @@ Id: eeb-bescheinigung-bundle
 * entry[EEBCoverageNoEgk].response ..0
 * obeys -eeb-angabePatientPLZ
 * obeys -eeb-checkConditionCode49
-* obeys -eeb-checkConditionCode30
 * obeys -eeb-checkConditionOtherCodes
 
 Invariant: -eeb-angabePatientPLZ
