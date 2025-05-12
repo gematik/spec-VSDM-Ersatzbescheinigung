@@ -53,14 +53,14 @@
             "key": "-eeb-checkConditionCode49",
             "severity": "error",
             "human": "Wenn Versicherter '1.2.276.0.76.4.49' (App-Anfrage), dann muss EEBCoverageEgk, Patient-Resource mit KVNR und darf eine Straße in der Adressangabe enthalten sein.",
-            "expression": "entry.where(resource is MessageHeader).resource.eventCoding.code = '1.2.276.0.76.4.49' implies (entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk'))",
+            "expression": "entry.where(resource is MessageHeader).resource.eventCoding.code in ('1.2.276.0.76.4.49') implies (entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk'))",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
           },
           {
             "key": "-eeb-checkConditionOtherCodes",
             "severity": "error",
             "human": "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein und die Patient-Resource darf keine Straße in der Adressangabe enthalten (SMC-B Prüfung).",
-            "expression": "entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.30').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.31').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.45').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.46').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.47').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.49').not() implies ((entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and entry.where(resource is Patient).resource.address.line.exists().not())",
+            "expression": "(entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.30').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.31').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.45').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.46').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.47').not() and entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.49').not()) implies ((entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.conformsTo('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and entry.where(resource is Patient).resource.address.line.exists().not())",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
           }
         ]
