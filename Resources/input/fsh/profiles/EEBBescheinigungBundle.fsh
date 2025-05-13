@@ -72,14 +72,13 @@ Severity: #error
 Expression: "entry.where(resource is Patient).resource.address.postalCode.exists()"
 
 Invariant: -eeb-checkConditionCode49
-Description: "Wenn Versicherter '1.2.276.0.76.4.49' (App-Anfrage), dann muss EEBCoverageEgk, Patient-Resource mit KVNR und darf eine Straße in der Adressangabe enthalten sein."
+Description: "Wenn Versicherter '1.2.276.0.76.4.49', dann muss EEBCoverageEgk, Patient-Resource muss mit KVNR  (authentisierte App-Anfrage)."
 Severity: #error
-Expression: "entry.where(resource is MessageHeader).resource.eventCoding.code.contains('1.2.276.0.76.4.49') implies (entry.where(resource is Coverage).resource.meta.profile.where($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk').exists())"
+Expression: "entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49' implies (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk') and entry.where(resource is Patient).resource.identifier.count() > 0)"
 
 Invariant: -eeb-checkConditionOtherCodes
 Description: "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein und die Patient-Resource darf keine Straße in der Adressangabe enthalten (SMC-B Prüfung)."
 Severity: #error
-//Expression: "(entry.where(resource is MessageHeader).resource.eventCoding.code in ('1.2.276.0.76.4.30', '1.2.276.0.76.4.31', '1.2.276.0.76.4.45', '1.2.276.0.76.4.46', '1.2.276.0.76.4.47', '1.2.276.0.76.4.49')).not() implies ((entry.where(resource is Coverage).resource.meta.profile.where($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine').exists() or entry.where(resource is Coverage).resource.meta.profile.where($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk').exists()) and entry.where(resource is Patient).resource.address.line.exists().not())"
 Expression: "(entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.30' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.31' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.45' or
