@@ -80,7 +80,7 @@ Invariant: -eeb-checkConditionOtherCodes
 Description: "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein und die Patient-Resource darf keine Straße in der Adressangabe enthalten (SMC-B Prüfung)."
 Severity: #error
 //Expression: "(entry.where(resource is MessageHeader).resource.eventCoding.code in ('1.2.276.0.76.4.30', '1.2.276.0.76.4.31', '1.2.276.0.76.4.45', '1.2.276.0.76.4.46', '1.2.276.0.76.4.47', '1.2.276.0.76.4.49')).not() implies ((entry.where(resource is Coverage).resource.meta.profile.where($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine').exists() or entry.where(resource is Coverage).resource.meta.profile.where($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk').exists()) and entry.where(resource is Patient).resource.address.line.exists().not())"
-Expression: "not(entry.where(resource is MessageHeader).eventCoding.code.toString() in ('1.2.276.0.76.4.30', '1.2.276.0.76.4.31', '1.2.276.0.76.4.45', '1.2.276.0.76.4.46', '1.2.276.0.76.4.47', '1.2.276.0.76.4.49')) implies entry.where(resource is Coverage).meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine')"
+Expression: "not(entry.where(resource is MessageHeader).eventCoding.code.substring(eventCoding.code.length() - 2) in ('30', '31', '45', '46', '47', '49')) implies entry.where(resource is Coverage).meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine')"
 
 // Beispielgenerierung
 Instance: EEBBescheinigungBundleSampleEgk
