@@ -84,7 +84,7 @@ entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.31'
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.45' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.46' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.47' or
-entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') and entry.where(resource is Patient).resource.address.line.count() = 0) or (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk') and entry.where(resource is Patient).resource.identifier.count() = 0)"
+entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') and entry.where(resource is Patient).resource.address.line.count() = 0) or (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk') and entry.where(resource is Patient).resource.address.line.count() = 0)"
 
 // Beispielgenerierung
 Instance: EEBBescheinigungBundleSampleEgk
