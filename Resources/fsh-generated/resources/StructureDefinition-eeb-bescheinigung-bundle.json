@@ -52,15 +52,15 @@
           {
             "key": "-eeb-checkConditionCode49",
             "severity": "error",
-            "human": "Wenn Versicherter '1.2.276.0.76.4.49', dann muss EEBCoverageEgk, Patient-Resource muss mit KVNR  (authentisierte App-Anfrage).",
+            "human": "Wenn Versicherter '1.2.276.0.76.4.49', dann muss EEBCoverageEgk, Patient-Resource muss mit KVNR  [authentisierte App-Anfrage].",
             "expression": "entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49' implies (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk') and entry.where(resource is Patient).resource.identifier.count() > 0)",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
           },
           {
             "key": "-eeb-checkConditionOtherCodes",
             "severity": "error",
-            "human": "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein und die Patient-Resource darf keine Straße in der Adressangabe enthalten (SMC-B Prüfung).",
-            "expression": "(entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.30' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.31' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.45' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.46' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.47' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') and (entry.where(resource is Patient).resource.address.line.count() = 0 or entry.where(resource is Patient).resource.address.type = 'postal'))",
+            "human": "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil (EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein) und (die Patient-Resource darf keine Straße in der Adressangabe enthalten oder muss ein Postfach sein) [SMC-B Prüfung].",
+            "expression": "(entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.30' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.31' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.45' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.46' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.47' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies ((entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and (entry.where(resource is Patient).resource.address.line.count() = 0 or entry.where(resource is Patient).resource.address.type = 'postal'))",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
           }
         ]

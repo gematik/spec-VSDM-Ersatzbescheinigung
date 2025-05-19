@@ -72,19 +72,19 @@ Severity: #error
 Expression: "entry.where(resource is Patient).resource.address.postalCode.exists()"
 
 Invariant: -eeb-checkConditionCode49
-Description: "Wenn Versicherter '1.2.276.0.76.4.49', dann muss EEBCoverageEgk, Patient-Resource muss mit KVNR  (authentisierte App-Anfrage)."
+Description: "Wenn Versicherter '1.2.276.0.76.4.49', dann muss EEBCoverageEgk, Patient-Resource muss mit KVNR  [authentisierte App-Anfrage]."
 Severity: #error
 Expression: "entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49' implies (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk') and entry.where(resource is Patient).resource.identifier.count() > 0)"
 
 Invariant: -eeb-checkConditionOtherCodes
-Description: "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein und die Patient-Resource darf keine Straße in der Adressangabe enthalten (SMC-B Prüfung)."
+Description: "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil (EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein) und (die Patient-Resource darf keine Straße in der Adressangabe enthalten oder muss ein Postfach sein) [SMC-B Prüfung]."
 Severity: #error
 Expression: "(entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.30' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.31' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.45' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.46' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.47' or
-entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') and (entry.where(resource is Patient).resource.address.line.count() = 0 or entry.where(resource is Patient).resource.address.type = 'postal'))"
+entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies ((entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and (entry.where(resource is Patient).resource.address.line.count() = 0 or entry.where(resource is Patient).resource.address.type = 'postal'))"
 
 // Beispielgenerierung
 Instance: EEBBescheinigungBundleSampleEgk
@@ -228,3 +228,70 @@ Usage: #example
 
 * entry[2].fullUrl = "https://gematik.de/fhir/Coverage/90733223-ef0d-426a-8248-f28c55846933"
 * entry[2].resource = CoverageExample
+
+// TK Beispiel Neugeboren oder Kassenwechsel (noch ohne KVNR)
+Instance: 2e79b6a1-0917-4fc9-8847-22206c863671
+InstanceOf: Bundle
+Usage: #example
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:4a270af6-nneu-ohne-kvnr-dfe20acfb5c5"
+* type = #message
+* entry[0].fullUrl = "https://gematik.de/fhir/MessageHeader/e184d490-22f3-4009-892e-77b9bc9a7504"
+* entry[=].resource = e184d490-22f3-4009-892e-77b9bc9a7504
+* entry[+].fullUrl = "https://gematik.de/fhir/Patient/2e67b7dc-24c0-4b23-9487-9a7dd8e140cd"
+* entry[=].resource = 2e67b7dc-24c0-4b23-9487-9a7dd8e140cd
+* entry[+].fullUrl = "https://gematik.de/fhir/Coverage/fcdf444c-8b0b-49ed-be0c-2ba3ee8a9254"
+* entry[=].resource = fcdf444c-8b0b-49ed-be0c-2ba3ee8a9254
+* timestamp = "2025-05-16T10:28:38.475+02:00"
+
+Instance: e184d490-22f3-4009-892e-77b9bc9a7504
+InstanceOf: MessageHeader
+Usage: #inline
+* eventCoding = https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID#1.2.276.0.76.4.50 "Betriebsstätte Arzt"
+* source.endpoint = "http://www.tk.de"
+* response.code = #ok
+* response.identifier = "8e2df5fe-2691-4277-936c-9cc2140b189b"
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+
+Instance: 2e67b7dc-24c0-4b23-9487-9a7dd8e140cd
+InstanceOf: Patient
+Usage: #inline
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+* identifier.system = "http://fhir.de/sid/gkv/kvk-versichertennummer"
+* identifier.value = "3143112513"
+* identifier.type = https://fhir.kbv.de/CodeSystem/KBV_CS_Base_identifier_type#kvk
+* address.city = "München"
+* address.postalCode = "80805"
+* address.type = #both
+* birthDate = "1969-02-23"
+* name.use = #official
+* name.given = "Max"
+* name.family.extension.valueString = "TK-eEB"
+* name.family.extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+* name.family = "TK-eEB"
+
+Instance: fcdf444c-8b0b-49ed-be0c-2ba3ee8a9254
+InstanceOf: Coverage
+Usage: #inline
+* period.start = "2025-05-03"
+* period.end = "2025-06-30"
+* extension[0].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS#1 "Mitglieder"
+* extension[=].url = "http://fhir.de/StructureDefinition/gkv/versichertenart"
+* extension[+].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP#71 "Bayern"
+* extension[=].url = "http://fhir.de/StructureDefinition/gkv/wop"
+* extension[+].valueCoding = https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE#00 "nicht gesetzt"
+* extension[=].url = "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
+* extension[+].extension.valueBoolean = false
+* extension[=].extension.url = "status"
+* extension[=].url = "http://fhir.de/StructureDefinition/gkv/zuzahlungsstatus"
+* status = #active
+* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk"
+* beneficiary = Reference(2e67b7dc-24c0-4b23-9487-9a7dd8e140cd)
+* type = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV "gesetzliche Krankenversicherung"
+* payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
+* payor.identifier.value = "101575519"
+* payor.display = "Techniker Krankenkasse"
+* payor.extension.valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
+* payor.extension.valueIdentifier.value = "108377503"
+* payor.extension.url = "http://fhir.de/StructureDefinition/AbrechnendeIK"
