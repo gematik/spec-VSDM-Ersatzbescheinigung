@@ -230,12 +230,13 @@ Usage: #example
 * entry[2].resource = CoverageExample
 
 // TK Beispiel Neugeboren oder Kassenwechsel (noch ohne KVNR)
-Instance: 2e79b6a1-0917-4fc9-8847-22206c863671
+Instance: EEBBescheinigungBundle2
 InstanceOf: Bundle
 Usage: #example
+* id = "4a270af6-nneu-ohne-kvnr-dfe20acfb5c5"
 * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
 * identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:4a270af6-nneu-ohne-kvnr-dfe20acfb5c5"
+* identifier.value = "urn:uuid:4a270af6-1234-5678-abcd-dfe20acfb5c5"
 * type = #message
 * entry[0].fullUrl = "https://gematik.de/fhir/MessageHeader/e184d490-22f3-4009-892e-77b9bc9a7504"
 * entry[=].resource = e184d490-22f3-4009-892e-77b9bc9a7504
