@@ -178,7 +178,7 @@
         "id": "Coverage.extension:persoenlicheVersichertendaten",
         "path": "Coverage.extension",
         "sliceName": "persoenlicheVersichertendaten",
-        "short": "Zum Schutz der ePA-Befugnisvergabe mittels hcv-Check ist in diesem Profil die Wohnadresse der/des Versicherten gekürzt. Für die eEB ist nur relevant ob der/die Versicherte zum angefragten Datum versichert ist.",
+        "short": "Zum Schutz der ePA-Befugnisvergabe mittels hcv-Check ist in diesem Profil die Wohnadresse der/des Versicherten gekürzt. Für die eEB ist nur relevant, ob der/die Versicherte zum angefragten Leistungsdatum versichert ist.",
         "min": 1,
         "max": "1",
         "type": [
@@ -194,7 +194,7 @@
         "id": "Coverage.extension:allgemeineVersicherungsdaten",
         "path": "Coverage.extension",
         "sliceName": "allgemeineVersicherungsdaten",
-        "short": "Zum Schutz der ePA-Befugnisvergabe mittels hcv-Check ist in diesem Profil das Versicherungsbeginn auf das aktuelle Tagsdatum gesetzt. Für die eEB ist nur relevant ob der/die Versicherte zum angefragten Datum versichert ist.",
+        "short": "Zum Schutz der ePA-Befugnisvergabe mittels hcv-Check ist in diesem Profil der Versicherungsbeginn konstant auf 01.01.1900 gesetzt. Dieser Versicherungsbeginn ist fiktiv und legitimiert keinen Leistungsbeginn. Für die eEB ist nur relevant, ob der/die Versicherte zum angefragten Leistungsdatum versichert ist.",
         "min": 1,
         "max": "1",
         "type": [
