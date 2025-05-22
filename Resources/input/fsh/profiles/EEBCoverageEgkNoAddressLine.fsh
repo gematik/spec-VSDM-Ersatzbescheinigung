@@ -22,8 +22,8 @@ Id: eeb-coverage-egk-noaddressline
     GeschuetzteVersichertendaten named geschuetzteVersichertendaten 0..1 and
     $patient-genderIdentity named genderIdentity 0..0
 * extension[versionEgk].valueString 1..1
-* extension[PersoenlicheVersichertendaten] ^short = "Zum Schutz der ePA-Befugnisvergabe mittels hcv-Check ist in diesem Profil die Wohnadresse der/des Versicherten gekürzt. Für die eEB ist nur relevant ob der/die Versicherte zum angefragten Datum versichert ist."
-* extension[AllgemeineVersicherungsdaten] ^short = "Zum Schutz der ePA-Befugnisvergabe mittels hcv-Check ist in diesem Profil das Versicherungsbeginn auf das aktuelle Tagsdatum gesetzt. Für die eEB ist nur relevant ob der/die Versicherte zum angefragten Datum versichert ist."
+* extension[PersoenlicheVersichertendaten] ^short = "Zum Schutz der ePA-Befugnisvergabe mittels hcv-Check ist in diesem Profil die Wohnadresse der/des Versicherten gekürzt. Für die eEB ist nur relevant, ob der/die Versicherte zum angefragten Leistungsdatum versichert ist."
+* extension[AllgemeineVersicherungsdaten] ^short = "Zum Schutz der ePA-Befugnisvergabe mittels hcv-Check ist in diesem Profil der Versicherungsbeginn konstant auf 01.01.1900 gesetzt. Dieser Versicherungsbeginn ist fiktiv und legitimiert keinen Leistungsbeginn. Für die eEB ist nur relevant, ob der/die Versicherte zum angefragten Leistungsdatum versichert ist."
 * identifier 0..0
 * status = #active (exactly)
 * type 1..1
