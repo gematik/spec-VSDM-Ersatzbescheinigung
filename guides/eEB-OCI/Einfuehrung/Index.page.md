@@ -13,7 +13,7 @@ Das auslösende Ereignis (Anforderung) kann ein von einem Patienten durchgeführ
 
 Hier gehts zu den [FHIR-Profilen](https://simplifier.net/vsdm-ersatzbescheinigung)
 
-> **Aktueller Hinweis**
+> **Hinweis zu URLs in FHIR-Bundles**
 >
 > Folgender Hinweis aufgrund von Rückmeldungen im Feld:
 > Einige Systeme zur Validierung der FHIR-Ressourcen dieses Projekts vermelden Fehler bei strenger Validierung, wenn **keine** `fullURL` zu einer Ressource im EEBAnfrageBundle angegeben ist.
@@ -21,3 +21,9 @@ Hier gehts zu den [FHIR-Profilen](https://simplifier.net/vsdm-ersatzbescheinigun
 > So ist die `fullUrl` in eines Bundle-Entry zunächst optional, jedoch nur für Transaktions-Bundles und Batches, siehe https://www.hl7.org/fhir/R4/bundle.html#bundle-unique
 >
 > Die gematik stellt mit dem [TI-Validator](https://github.com/gematik/app-referencevalidator) ein Tool bereit, um solch eine strenge FHIR-Validierung in herstellereigenen Tests zu berücksichtigen.
+
+> **Hinweis zu ePA-Sicherheitsmaßnahmen**
+>
+> Mit dem 30.04.2025 ist das eEB-Verfahren aufgrund der ePA-Abhängigkeit zu den hcv-Sicherheitsmerkmalen eingeschränkt nutzbar, eEB-Anfragen via KIM bedürfen einer Überarbeitung. eEB-Bescheinigungen, die auf eine eEB-Anfrage via KIM zurückzuführen sind, enthalten zukünftig keine hcv-Merkmale. Hierzu wird ein neues Coverage FHIR-Profil EEBCoverageNoAddressLine eingeführt.
+>
+> eEB-Bescheinigungen, die aus einer Versicherten-App (PKV oder GKV) angefordert werden, können weitehin nach der bestehenden Spezifikation ausgestellt werden.

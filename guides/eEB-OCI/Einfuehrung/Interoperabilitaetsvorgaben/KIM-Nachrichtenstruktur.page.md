@@ -24,13 +24,23 @@ Die Übertragung der Daten bzw. der Anfrage erfolgt via KIM. Dabei sind drei Nac
 
 ## KIM Dienstkennungen
 
+Aufgrund notwendiger Anpassungen der eEB-Logik zum Schutz der ePA-hcv-Befugnismerkmale wird das eEB-Verfahren auf eine Version mit KIM-Dienstkennung 1.1 weiterentwickelt, die Verwendung von 1.0 ist zunächst weiterhin möglich, eine Abkündigung von 1.0 wird jedoch angestrebt.
+
+Das bedeutet im Einzelnen
+1.	EEB-Bescheinigungen, die über die Kassen- oder Versicherungs-Apps angefordert werden, bleiben zunächst bei der KIM-Dienstkennung **eEB;Bescheinigung;V1.0**, da sich das Verfahren hierfür nicht ändert.
+2.	EEB-Anfragen, die über KIM mit der KIM-Dienstkennung **eEB;Anfrage;V1.0** gestellt werden, werden von den Kassen grundsätzlich mit einem Fehler (Code 130) und der KIM-Dienstkennung **eEB;Fehler;V1.0** beantwortet
+3.	Neue EEB-Anfragen, die dieses geänderte Verfahren mit dem Coverage Profil `EEBCoverageNoAddressLine` berücksichtigen, haben die KIM-Dienstkennung **eEB;Anfrage;V1.1** zu verwenden. Erfolgreiche Prüfungen der Anfragen führen dann zu EEB-Bescheinungnen, die von den Kassen mit der KIM-Dienstkennung **eEB;Bescheinigung;V1.1** gesendet werden.
+
+{{render:guides-eeb-oci-images-eeb11}}
+
 Dienstkennungen in KIM-Nachrichten kennzeichnen den transportierten Inhalt für das Empfangssystem. Diese erlauben damit eine Dunkelverarbeitung bei Nachrichtenempfang und ggfs. die vollautomatisierte Erstellung und den Versand einer Antwortnachricht.
 
 |Anwendung                          |elektronische Ersatzbescheinigung (eEB)|
 |:--------                          |:--------------------------------------|
 |Verantwortlich                     |gematik                                |
 |Anwendungsbeschreibung             |Verfahren zur Übertragung von Versichertenstammdaten (VSD) aus einem PKV Versicherungsunternehmen und Erstzbescheinigung nach §19 Abs. 2 BMV von einer Gesetzlichen Krankenkasse zu einem Leistungserbringer|
-|Dienstkennung & Kurzbeschreibung|**eEB;Anfrage;V1.0** <br /> Nachrichten-Typ: Anfragedaten zum Erhalt von Versichertendaten <br /> Verwendung: Vertragsärzte, Vertragszahnärzte, Krankenhäuser <br /><br />  **eEB;Bescheinigung;V1.0** <br /> Nachrichten-Typ: Versichertendaten in verschiedenen Ausprägungen <br /> Verwendung: Krankenkassen, Versicherungsunternehmen <br /> <br /> **eEB;Fehler;V1.0** <br /> Nachrichten-Typ: Fehlermeldung bzgl. der Ermittlung der Daten des Versicherten <br />  Verwendung: Krankenkassen, Versicherungsunternehmen |
+|Dienstkennung & Kurzbeschreibung für Anfragen via KIM|**eEB;Anfrage;V1.1** <br /> Nachrichten-Typ: Anfragedaten zum Erhalt von Versichertendaten <br /> Verwendung: Vertragsärzte, Vertragszahnärzte, Krankenhäuser <br /><br />  **eEB;Bescheinigung;V1.1** <br /> Nachrichten-Typ: Versichertendaten in verschiedenen Ausprägungen <br /> Verwendung: Krankenkassen, Versicherungsunternehmen <br /> <br /> **eEB;Fehler;V1.1**<br /> Nachrichten-Typ: Fehlermeldung bzgl. der Ermittlung der Daten des Versicherten <br />  Verwendung: Krankenkassen, Versicherungsunternehmen |
+|Dienstkennung & Kurzbeschreibung für Anfragen via Kassen- und Versicherungs-Apps|**eEB;Bescheinigung;V1.0** <br /> Nachrichten-Typ: Versichertendaten in verschiedenen Ausprägungen <br /> Verwendung: Krankenkassen, Versicherungsunternehmen |
 
 ## Übermittlungsbestätigung und Lesebestätigung
 
@@ -45,7 +55,7 @@ Die FHIR-Datensätze in Anfrage- und Antwortnachrichten werden ausschließlich a
 
 |KIM-Header              |Inhalt                                 |verpflichtend|
 |------------------------|---------------------------------------|-------------|
-|X-KIM-Dienstkennung     |eEB;Anfrage;V1.0                       |ja|
+|X-KIM-Dienstkennung     |eEB;Anfrage;V1.1                       |ja|
 |X-KIM-Sendersystem      |\<PVS-Bezeichnung>;\<Releaseversion>   |ja|
 |X-KIM-Support           |\<Support-Email-Adresse PVS-Hersteller>|nein|
 |Subject                 |\<T/E>EEB0_ANF_\<UUID>                 |ja <br />T/E: *T*estsystem (RU) / *E*chtsystem (PU)<br />UUID: bundle-identifier (AZ des LE)|
@@ -68,7 +78,7 @@ Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Date
   MIME-Version: 1.0
   Content-Type: multipart/mixed;
   boundary="----=_Part_0_2088448449.1681742158273"
-  X-KIM-Dienstkennung: eEB;Anfrage;V1.0
+  X-KIM-Dienstkennung: eEB;Anfrage;V1.1
   X-KIM-Sendersystem: easyTI;2.2.1-SNAPSHOT
 
   ------=_Part_0_2088448449.1681742158273
@@ -188,7 +198,7 @@ Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Date
 
 |Header                  |Inhalt                                 |verpflichtend|
 |------------------------|---------------------------------------|-------------|
-|X-KIM-Dienstkennung     |eEB;Bescheinigung;V1.0                 |ja|
+|X-KIM-Dienstkennung     |eEB;Bescheinigung;V1.1                 |ja|
 |X-KIM-Ursprungssystem   |\<PVS-Bezeichnung>;\<Releaseversion>   |nein|
 |X-KIM-Sendersystem      |\<Kasse-Bezeichnung>;\<Releaseversion> |nein|
 |X-KIM-Support           |\<Support-Email-Adresse Kasse> |nein|
@@ -217,7 +227,7 @@ Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Dat
   X-KIM-Ursprungssystem: easyTI;2.2.1-SNAPSHOT
   X-KIM-Sendersystem: Test-TK;1.0
   X-KIM-Support: v-eeb@tk.de
-  X-KIM-Dienstkennung: eEB;Bescheinigung;V1.0
+  X-KIM-Dienstkennung: eEB;Bescheinigung;V1.1
   X-TK-OBJECT-ID: 13901:00010000000000561735050000029000
   X-TK-ARCHIVE-ID: SENT/EEB0/1.0/ehex-22@arv.kim.telematik-test/2023/04/17/1/<2091056040.122.1681742212013@reai20v01.dst.tk-inline.net>
 
@@ -459,7 +469,7 @@ Der Anhang enthält die signierte Bescheinigung (SMC-B signiert) als `PKCS7`-Dat
 
 |Header                    |Inhalt                                          |verpflichtend|
 |------                    |-------                                          |-------------|
-|X-KIM-Dienstkennung      |eEB;Fehler;V1.0                                  |ja|
+|X-KIM-Dienstkennung      |eEB;Fehler;V1.1                                  |ja|
 |X-KIM-Ursprungssystem    |\<PVS-Bezeichnung>;\<Releaseversion>             |nein|
 |X-KIM-Sendersystem        |\<Kasse-Bezeichnung>;\<Releaseversion>           |nein|
 |X-KIM-Support             |\<Support-Email-Adresse Kasse>                   |nein|
@@ -487,7 +497,7 @@ Der Anhang enthält eine Fehlermeldung als FHIR-Ressource `OperationOutcome`
   X-KIM-Ursprungssystem: easyTI;2.0.4-SNAPSHOT
   X-KIM-Sendersystem: Test-TK;1.0
   X-KIM-Support: v-eeb@tk.de
-  X-KIM-Dienstkennung: eEB;Fehler;V1.0
+  X-KIM-Dienstkennung: eEB;Fehler;V1.1
   X-KIM-Fehlercode: 101
   X-TK-OBJECT-ID: 13901:000100000000005285890500000001A3
   X-TK-ARCHIVE-ID: SENT/EEB0/1.0/ehex-22@arv.kim.telematik-test/2022/12/16/1/<235818581.18.1671197691939@MX-PF1XKCBH.dst.tk-inline.net>

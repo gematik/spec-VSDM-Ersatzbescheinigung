@@ -13,22 +13,18 @@ Bis zur Klärung rechtlicher Fragestellungen zwischen den Bundesmantelvertagspar
 
 Für die Pilotierung (bis zur Klärung der rechtlichen Fragestellungen) in der Produktivumgebung werden folgenden Institutions-Typen Ersatzbescheinigungen über das eEB-Verfahren bereitgestellt:
 
-| Anfragende OID Rolle | Bedeutung |
+| Anfragende OID Rolle | Leistungserbringer |
 |----------------------|---|
 | 1.2.276.0.76.4.30 | Ärztin/Arzt |
+| 1.2.276.0.76.4.31 | Zahnärztin/Zahnarzt |
 | 1.2.276.0.76.4.45 | Psychotherapeut/-in |
 | 1.2.276.0.76.4.46 | Psychologische/-r Psychotherapeut/-in |
 | 1.2.276.0.76.4.47 | Kinder- und Jugendlichenpsychotherapeut/-in |
+| **Anfragende OID Rolle** | **Betriebsstätte Leistungserbringer** |
 | 1.2.276.0.76.4.50 | Betriebsstätte Arzt |
+| 1.2.276.0.76.4.51 | Zahnarztpraxis |
 | 1.2.276.0.76.4.52 | Betriebsstätte Psychotherapeut |
 | 1.2.276.0.76.4.53 | Krankenhaus |
 | 1.2.276.0.76.4.57 | Betriebsstätte Mobile Einrichtung Rettungsdienst |
-
-Demnächst auch:
-
-| Anfragende OID Rolle | Bedeutung |
-|----------------------|---|
-| 1.2.276.0.76.4.31 | Zahnärztin/Zahnarzt |
-| 1.2.276.0.76.4.51 | Zahnarztpraxis |
 
 Die in der RU bereitstehenden Testsysteme unterstützen alle oben gelisteten, anfragenden Personen- und Institutions-Rollen.

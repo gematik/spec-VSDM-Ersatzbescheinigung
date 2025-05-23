@@ -19,8 +19,10 @@ Ebenso sendet das Versicherungsunternehmen einer Praxis eine KIM-Nachricht mit e
     - [Patient](#patient)
     - [Coverage](#coverage)
     - [Sonderfall Coverage ohne KVNR](#sonderfall-coverage-ohne-kvnr)
-  - [Bescheinigungsbundle (Beispiel)](#bescheinigungsbundle-beispiel)
-  - [Fehlerfälle (Anfrage für GKV-Ersatzbescheinigung fehlgeschlagen)](#fehlerfälle-anfrage-für-gkv-ersatzbescheinigung-fehlgeschlagen)
+  - [Beispiele für Anfragen, Bescheinigungen und Fehler](#beispiele-für-anfragen-bescheinigungen-und-fehler)
+    - [Beispiele für eEB-Anfragen](#beispiele-für-eeb-anfragen)
+    - [Beispiele für eEB-Bescheinigungen mit gültigem Versicherungsverhältnis](#beispiele-für-eeb-bescheinigungen-mit-gültigem-versicherungsverhältnis)
+    - [Beispiel für eEB-Fehler](#beispiel-für-eeb-fehler)
 
 ## Signatur
 
@@ -238,6 +240,10 @@ Im Ergebnis der Signaturprüfung liefert der Konnektor eine `verifyDocumentRespo
 
 Gibt es Hinweise im Zusammenhang mit ggfs. veralteten, eingebetteten OCSP-Responses antwortet der Konnektor mit einem HighLevelResult `INCONCLUSIVE` und Status:Result `Warning`, das zusätzliche Informationen liefert.
 
+> **Hinweis** Prüfung auf Aussteller einer eEB-Bescheinigung
+>
+> Anhand von XXX_TODO_XXX muss festgestellt werden, ob eine eEB von einem legitimen Absender ausgestellt wurde. Da eine eEB-Bescheinigung für GKV-Versicherte zur Abrechnung zu Lasten der GKV herangezogen wird, darf bei eEB-Bescheinigungen für GKV-Versicherte in XXX_TODO_XXX ausschließlich eine OID-Kostenträger `1.2.276.0.76.4.59 Betriebsstätte Kostenträger` enthalten sein.
+
 ## FHIR Datenstruktur Bescheinigung
 
 Das Bescheinigungs-Bundle besteht aus einem Bescheinigungs-Header `MessageHeader`, Patienteninformationen `Patient` und der Deckungsinformation `Coverage`.
@@ -260,7 +266,7 @@ Der Header ist für den Bundle-Type `message` verpflichtend.
 
 Die Patient-Ressource vom Typ `KBV_PR_FOR_Patient` enthält die der Kasse bekannten Patientendaten gemäß KBV-Profilierung,
 wie sie in den Anwendungen *eAU*, *eRezept*, etc. verwendet werden.
-Dieses Profil hat ausschließlich informativen Charakter für die Verarbeitung der Bescheinigung, da es als Referenz im MUSS-element `beneficiary` des Profils der nachfolgend beschriebenen `EEBCoverageEgk` verwendet wird.
+Dieses Profil hat ausschließlich informativen Charakter für die Verarbeitung der Bescheinigung, da es als Referenz im MUSS-element `beneficiary` des Profils der nachfolgend beschriebenen `EEBCoverageEgk` und `EEBCoverageNoAddressLine` verwendet wird.
 
 <iframe src="https://www.simplifier.net/embed/render?id=for/kbvprforpatient" style="width: 100%;height: 320px;"></iframe>
 
@@ -268,7 +274,12 @@ Dieses Profil hat ausschließlich informativen Charakter für die Verarbeitung d
 
 In der Coverage-Ressource werden von den Krankenkassen der GKV die Ersatzbescheinigung und von Versicherungsunternehmen der PKV Versichertenstammdaten wie insbesondere die Krankenversichertennummer geliefert.
 
-Das Feld period mit `period.start` und `period.end` wird unterschiedlich von GKV und PKV verwendet.
+Die Krankenkassen verwenden abhängig von der Anfrage (Versicherter per Kassen-App bzw. Praxis per KIM-Anfrage) die FHIR-Profile EEBCoverageEgk bzw. EEBCoverageNoAddressLine. Bei FHIR-Profile sind vom Aufbau her strukturell identisch. Der Unterschied ist im Inhalt der Extensions für die VSD-Container zu finden.
+
+- Im VSD-Container `persoenlicheVersicherungsdaten` des Profils EEBCoverageNoAddressLine werden in der Straßenadresse die Werte für Straße und Hausnummer nicht gesetzt.
+- Im VSD-Container `allgemeineVersicherungsdaten` ist der Versicherungsbeginn ein muss-Feld. Daher wird ein fiktiver Versicherungsbeginn konstant auf 01.01.1900 gesetzt. Dieses Datum repräsentiert nicht den wahren Versicherungsbeginn des Versicherten und darf für weitere Geschäftsfunktionen, z.B. Abrechnungsmodalitäten, nicht verwendet werden.
+
+Das Feld Coverage.period mit `period.start` und `period.end` wird unterschiedlich von GKV und PKV verwendet.
 
 - Die Krankenkassen der GKV prüfen, ob zum angefragten Leistungsdatum der eEB-Anfrage ein Versicherungsverhältnis (inkl. Leistungsanspruch) besteht. Ist dieses „Versicherungsverhältnis“ vorhanden, so wird als Beginn (`period.start`) das angefragte Leistungsdatum gesetzt. Als Ende-Datum (`period.end`) wird in der Regel das zugehörige Quartalsendedatum bescheinigt. In Ausnahmefällen wird das Ende-Datum vor dem Quartalsende liegen, z.B. wenn bereits bekannt ist, dass das Versicherungsverhältnis vor dem Quartalsende beendet sein wird. Eine Bescheinigung über mehrere Quartale ist nicht vorgesehen.
 - Die Versicherungsunternehmen der PKV übertragen mit der Bescheinigung die Versichertenstammdaten, so dass im Feld period der Zeitpunkt der Stammdatenübertragung angegeben wird. Daher wird `period.start = period.end` gesetzt.
@@ -285,6 +296,8 @@ Für PKV-Versicherte wurde festgelegt, dass hier ebenfalls das GKV-Schema verwen
 Details zur Befüllung der VSD für PKV-Versicherte sind auf der folgenden Unterseite angegeben {{pagelink:Einfuehrung/OCI/VU-Backend.page.md}}
 
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk}}
+
+{{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine}}
 
 ### Sonderfall Coverage ohne KVNR
 
@@ -305,8 +318,9 @@ Anstelle der noch nicht bekannten KVNR muss eine kassen-individuelle "Ersatznumm
 ### Beispiele für eEB-Bescheinigungen mit gültigem Versicherungsverhältnis
 | Voraussetzung | verwendetes Bescheinigungs-FHIR-Profil für Versicherten | Beispiel der eEB-Bescheinigung |
 | :---- | :---- | :---- |
-| KVNR liegt bei der Kasse vor                  | [EEBCoverageEgk](https://simplifier.net/vsdm-ersatzbescheinigung/eebcoverageegk)| [EEBBescheinigungBundle mit EEBCoverageEgK](https://simplifier.net/vsdm-ersatzbescheinigung/9b6ac30d-246d-4eab-af83-544564792089)|
-| KVNR liegt (noch) **NICHT** bei der Kasse vor | [EEBCoverageNoEgk](https://simplifier.net/vsdm-ersatzbescheinigung/eebcoveragenoegk) | [EEBBescheinigungBundle mit EEBCoverageNoEgK](https://simplifier.net/vsdm-ersatzbescheinigung/43bb7e49-7d03-4dfe-b4d7-df4b6c370d6b)|
+| KVNR liegt bei der Kasse vor                       | [EEBCoverageEgk](https://simplifier.net/vsdm-ersatzbescheinigung/eebcoverageegk)| [EEBBescheinigungBundle mit EEBCoverageEgK](https://simplifier.net/vsdm-ersatzbescheinigung/9b6ac30d-246d-4eab-af83-544564792089)|
+| KVNR liegt bei der Kasse vor (Adresse weggelassen) | [EEBCoverageEgkNoAddressLine](https://simplifier.net/vsdm-ersatzbescheinigung/eebcoverageegknoaddressline)| [EEBBescheinigungBundle mit EEBCoverageEgK](https://simplifier.net/vsdm-ersatzbescheinigung/9b6ac30d-246d-4eab-af83-54456479208u)|
+| KVNR liegt (noch) **NICHT** bei der Kasse vor      | [EEBCoverageNoEgk](https://simplifier.net/vsdm-ersatzbescheinigung/eebcoveragenoegk) | [EEBBescheinigungBundle mit EEBCoverageNoEgK](https://simplifier.net/vsdm-ersatzbescheinigung/43bb7e49-7d03-4dfe-b4d7-df4b6c370d6b)|
 
 ### Beispiel für eEB-Fehler
 | Voraussetzung | verwendetes Fehler-FHIR-Profil | Beispiel für eEB-Fehler |
