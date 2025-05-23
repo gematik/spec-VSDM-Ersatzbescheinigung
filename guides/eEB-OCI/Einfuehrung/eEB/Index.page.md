@@ -16,6 +16,9 @@ parent:
   - [Anforderung zur Ausstellung einer Ersatzbescheinigung via KIM](#anforderung-zur-ausstellung-einer-ersatzbescheinigung-via-kim)
     - [Anfrage Header](#anfrage-header)
     - [Anfrage Bundle](#anfrage-bundle)
+  - [Ausgestaltung der Bescheinigung](#ausgestaltung-der-bescheinigung)
+    - [KVNR für Patient vorhanden](#kvnr-für-patient-vorhanden)
+    - [KVNR für Patient nicht vorhanden](#kvnr-für-patient-nicht-vorhanden)
 
 ## Implementierungsleitfaden elektronische Ersatzbescheinigung (eEB/GKV)
 
@@ -317,3 +320,19 @@ Das Feld `MessageHeader.source.endpoint` ist dabei ein vom FHIR-Standard vorgese
 {{tree:https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle}}
 
 Im folgenden Link ist ein Beispiel-Bundle [Patient mit bekannter KVNR](https://simplifier.net/vsdm-ersatzbescheinigung/1f311c40-fee9-4b03-b0c4-c29d432f2371) dargestellt.
+
+## Ausgestaltung der Bescheinigung
+
+EEB-Anfragen über KIM werden nach erfolgreicher Prüfung von der Kasse mit den Coverage Profilen EEBCovergaEgkNoAddressLine bzw. EEBCoverageNoEgk abhängig beantwortet, ob der angefragte Patient eine KNVR hat oder nicht.
+
+### KVNR für Patient vorhanden
+
+Ist die KVNR für den angefragten Patienten vorhanden, so wird in der EEBBescheinigung für die Coverage das Profil `EEBCoverageEgkNoAddressLine` und für den Patienten das Profil `KBV_PR_FOR_Patient` verwendet.
+
+- Im VSD-Container `persoenlicheVersicherungsdaten` des Profils EEBCoverageNoAddressLine werden in der Straßenadresse die Werte für Straße und Hausnummer nicht gesetzt.
+- Im VSD-Container `allgemeineVersicherungsdaten` ist der Versicherungsbeginn ein muss-Feld. Daher wird ein fiktiver Versicherungsbeginn konstant auf 01.01.1900 gesetzt. Dieses Datum repräsentiert nicht den wahren Versicherungsbeginn des Versicherten und darf für weitere Geschäftsfunktionen, z.B. Abrechnungsmodalitäten, nicht verwendet werden.
+- Im Profil `KBV_PR_FOR_Patient` wird das Feld `address.line` inklusive der extensions der Straßenanschrift weggelassen, damit entfallen zusätzlich die Felder Strasse, Hausnummer und Adresszusatz.
+
+### KVNR für Patient nicht vorhanden
+
+Besitzt der Patient noch keine KVNR (z.B. Neugeborene) sowie wird das Coverage Profil `EEBCoverageNoEgk` verwendet. In diesem Profil gibt es weder einen Versicherungsbeginn noch eine Straßenadresse, so dass sich die geforderten Adresseinschränkungen nur im Profil `KBV_PR_FOR_Patient` auswirken. D.h. auch in dieser Konstellation (`EEBCoverageNoEgk`) werden im Profil `KBV_PR_FOR_Patient` das Feld line der Straßenanschrift weggelassen.

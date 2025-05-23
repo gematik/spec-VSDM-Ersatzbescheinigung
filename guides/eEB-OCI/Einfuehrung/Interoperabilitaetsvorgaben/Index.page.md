@@ -9,7 +9,7 @@ Bei gesetzlich Versicherten kann mittels **elektronischer Ersatzbescheinigung** 
 
 Privatversicherte haben keine Gesundheitskarte. Möchten sie sich jedoch ein E-Rezept ausstellen lassen oder einer Praxis bzw. einem Krankenhaus Zugriff auf die elektronische Patientenakte ermöglichen, benötigen diese die Krankenversichertennummer. Über den **Online Check-in** lässt sie sich sicher an die jeweilige Einrichtung übermitteln. Der OCI wird dabei immer vom Versicherten per App angestoßen.
 
-Beide Verfahren orientieren sich beim genutzten Datensatz am etablierten VSDM-Standard der GKV. Zum Einsatz kommen dementsprechend das FHIR-Profil `EEBCoverageEgk`, welches bei gesetzlich Versicherten zusätzlich um `geschuetzteVersichertendaten` erweitert wird.
+Beide Verfahren orientieren sich beim genutzten Datensatz am etablierten VSDM-Standard der GKV. Zum Einsatz kommen die beiden Coverage-FHIR-Profile `EEBCoverageEgk` (Kassen-App-Anfrage) und `EEBCoverageNoAddressLine` (KIM-Anfrage), welche bei gesetzlich Versicherten zusätzlich um geschuetzteVersichertendaten erweitert werden.
 
 Bei der versicherteninitiierten Anfrage einer eEB oder eines OCI via App wird ein vergleichbarer Ansatz verfolgt. So können medizinische Einrichtungen einen QR-Code bereitstellen, der sowohl von gesetzlich als auch Privatversicherten mit einer App ihrer Versicherung gescannt werden kann, um die Praxis als Adressat der Daten zu erfassen.
 
