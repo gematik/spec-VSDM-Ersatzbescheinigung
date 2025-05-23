@@ -268,6 +268,7 @@ Die Patient-Ressource vom Typ `KBV_PR_FOR_Patient` enthält die der Kasse bekann
 wie sie in den Anwendungen *eAU*, *eRezept*, etc. verwendet werden.
 Dieses Profil hat ausschließlich informativen Charakter für die Verarbeitung der Bescheinigung, da es als Referenz im MUSS-element `beneficiary` des Profils der nachfolgend beschriebenen `EEBCoverageEgk` und `EEBCoverageNoAddressLine` verwendet wird.
 
+// TODO: URL aktualisieren
 <iframe src="https://www.simplifier.net/embed/render?id=for/kbvprforpatient" style="width: 100%;height: 320px;"></iframe>
 
 ### Coverage
@@ -319,7 +320,7 @@ Anstelle der noch nicht bekannten KVNR muss eine kassen-individuelle "Ersatznumm
 | Voraussetzung | verwendetes Bescheinigungs-FHIR-Profil für Versicherten | Beispiel der eEB-Bescheinigung |
 | :---- | :---- | :---- |
 | KVNR liegt bei der Kasse vor                       | [EEBCoverageEgk](https://simplifier.net/vsdm-ersatzbescheinigung/eebcoverageegk)| [EEBBescheinigungBundle mit EEBCoverageEgK](https://simplifier.net/vsdm-ersatzbescheinigung/9b6ac30d-246d-4eab-af83-544564792089)|
-| KVNR liegt bei der Kasse vor (Adresse weggelassen) | [EEBCoverageEgkNoAddressLine](https://simplifier.net/vsdm-ersatzbescheinigung/eebcoverageegknoaddressline)| [EEBBescheinigungBundle mit EEBCoverageEgK](https://simplifier.net/vsdm-ersatzbescheinigung/9b6ac30d-246d-4eab-af83-54456479208u)|
+| KVNR liegt bei der Kasse vor (Adresse weggelassen) | [EEBCoverageEgkNoAddressLine](https://simplifier.net/vsdm-ersatzbescheinigung/eebcoverageegknoaddressline)| [EEBBescheinigungBundle mit EEBCoverageEgkNoAddressLine](https://simplifier.net/vsdm-ersatzbescheinigung/9b6ac30d-246d-4eab-af83-54456479208u)|
 | KVNR liegt (noch) **NICHT** bei der Kasse vor      | [EEBCoverageNoEgk](https://simplifier.net/vsdm-ersatzbescheinigung/eebcoveragenoegk) | [EEBBescheinigungBundle mit EEBCoverageNoEgK](https://simplifier.net/vsdm-ersatzbescheinigung/43bb7e49-7d03-4dfe-b4d7-df4b6c370d6b)|
 
 ### Beispiel für eEB-Fehler
