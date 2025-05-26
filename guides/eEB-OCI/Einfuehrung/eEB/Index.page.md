@@ -75,11 +75,9 @@ Es wird empfohlen, dass das Praxispersonal darauf hingewiesen wird, die versiche
 ## Angaben zur anfragenden Praxis
 
 Die Kasse benötigt für die Ausstellung einer Ersatzbescheinigung Informationen über die anfragende Praxis, um das Ausstellen von "Blanko"-Bescheinigungen zu unterbinden.
-Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbvprfororganization "KBV formularübergreifende Festlegungen") mitgegeben werden.
+Dazu muss jeder Anfrage eine FHIR-Ressource `Organization` des Profils [KBV_PR_FOR_Organization](https://simplifier.net/for/kbv_pr_for_organization "KBV formularübergreifende Festlegungen") mitgegeben werden.
 Die Anfrage muss entweder die Betriebsstättennummer `BSNR`, die KZV Abrechnungsnummer `KZVA`, Standortnummer des Krankenhauses oder das Institutionskennzeichen enthalten, um die anfragende Praxis zu identifizieren, zusätzlich kann die `TelematikID` angegeben werden.
 Ebenso müssen die Angaben zur `address` und `telecom`-Kontaktinformationen für Rückfragen angegeben sein.
-
-<iframe src="https://www.simplifier.net/embed/render?id=for/kbvprfororganization" style="width: 100%;height: 320px;"></iframe>
 
 ## Signatur der Anfrage
 

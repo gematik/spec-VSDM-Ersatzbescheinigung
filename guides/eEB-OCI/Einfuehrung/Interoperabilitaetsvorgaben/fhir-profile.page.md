@@ -264,18 +264,15 @@ Der Header ist für den Bundle-Type `message` verpflichtend.
 
 ### Patient
 
-Die Patient-Ressource vom Typ `KBV_PR_FOR_Patient` enthält die der Kasse bekannten Patientendaten gemäß KBV-Profilierung,
+Die Patient-Ressource vom Typ `KBV_PR_FOR_Patient` enthält die der Kasse bekannten Patientendaten gemäß KBV-Profilierung [KBV_PR_FOR_Patient](https://simplifier.net/for/kbv_pr_for_patient),
 wie sie in den Anwendungen *eAU*, *eRezept*, etc. verwendet werden.
 Dieses Profil hat ausschließlich informativen Charakter für die Verarbeitung der Bescheinigung, da es als Referenz im MUSS-element `beneficiary` des Profils der nachfolgend beschriebenen `EEBCoverageEgk` und `EEBCoverageNoAddressLine` verwendet wird.
-
-// TODO: URL aktualisieren
-<iframe src="https://www.simplifier.net/embed/render?id=for/kbvprforpatient" style="width: 100%;height: 320px;"></iframe>
 
 ### Coverage
 
 In der Coverage-Ressource werden von den Krankenkassen der GKV die Ersatzbescheinigung und von Versicherungsunternehmen der PKV Versichertenstammdaten wie insbesondere die Krankenversichertennummer geliefert.
 
-Die Krankenkassen verwenden abhängig von der Anfrage (Versicherter per Kassen-App bzw. Praxis per KIM-Anfrage) die FHIR-Profile EEBCoverageEgk bzw. EEBCoverageNoAddressLine. Bei FHIR-Profile sind vom Aufbau her strukturell identisch. Der Unterschied ist im Inhalt der Extensions für die VSD-Container zu finden.
+Die Krankenkassen verwenden abhängig von der Anfrage (Versicherter per Kassen-App bzw. Praxis per KIM-Anfrage) die FHIR-Profile EEBCoverageEgk bzw. EEBCoverageNoAddressLine. Beide FHIR-Profile sind vom Aufbau her strukturell identisch. Der Unterschied ist im Inhalt der Extensions für die VSD-Container zu finden.
 
 - Im VSD-Container `persoenlicheVersicherungsdaten` des Profils EEBCoverageNoAddressLine werden in der Straßenadresse die Werte für Straße und Hausnummer nicht gesetzt.
 - Im VSD-Container `allgemeineVersicherungsdaten` ist der Versicherungsbeginn ein muss-Feld. Daher wird ein fiktiver Versicherungsbeginn konstant auf 01.01.1900 gesetzt. Dieses Datum repräsentiert nicht den wahren Versicherungsbeginn des Versicherten und darf für weitere Geschäftsfunktionen, z.B. Abrechnungsmodalitäten, nicht verwendet werden.
