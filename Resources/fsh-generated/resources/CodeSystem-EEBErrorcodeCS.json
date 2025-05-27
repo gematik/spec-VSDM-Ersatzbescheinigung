@@ -1,6 +1,6 @@
 {
   "resourceType": "CodeSystem",
-  "status": "draft",
+  "status": "active",
   "content": "complete",
   "name": "EEBErrorcodeCS",
   "id": "EEBErrorcodeCS",
@@ -76,7 +76,7 @@
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "date": "2025-05-26",
+  "date": "2025-05-27",
   "caseSensitive": true,
   "count": 16
 }

@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "status": "draft",
+  "status": "active",
   "name": "EEBErrorcodeVS",
   "id": "EEBErrorcodeVS",
   "title": "ValueSet für eEB Fehler",
@@ -9,7 +9,7 @@
   "url": "https://gematik.de/fhir/eeb/ValueSet/EEBErrorcodeVS",
   "experimental": false,
   "publisher": "gematik GmbH",
-  "date": "2025-05-26",
+  "date": "2025-05-27",
   "compose": {
     "include": [
       {

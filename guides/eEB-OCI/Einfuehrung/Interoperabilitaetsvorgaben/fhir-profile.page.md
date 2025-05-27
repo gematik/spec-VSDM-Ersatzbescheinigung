@@ -240,9 +240,12 @@ Im Ergebnis der Signaturprüfung liefert der Konnektor eine `verifyDocumentRespo
 
 Gibt es Hinweise im Zusammenhang mit ggfs. veralteten, eingebetteten OCSP-Responses antwortet der Konnektor mit einem HighLevelResult `INCONCLUSIVE` und Status:Result `Warning`, das zusätzliche Informationen liefert.
 
-> **Hinweis** Prüfung auf Aussteller einer eEB-Bescheinigung
+> **Achtung** Prüfung auf Aussteller einer eEB-Bescheinigung
 >
-> Anhand von XXX_TODO_XXX muss festgestellt werden, ob eine eEB von einem legitimen Absender ausgestellt wurde. Da eine eEB-Bescheinigung für GKV-Versicherte zur Abrechnung zu Lasten der GKV herangezogen wird, darf bei eEB-Bescheinigungen für GKV-Versicherte in XXX_TODO_XXX ausschließlich eine OID-Kostenträger `1.2.276.0.76.4.59 Betriebsstätte Kostenträger` enthalten sein.
+> Da eine eEB-Bescheinigung für GKV-Versicherte zur Abrechnung zu Lasten der GKV herangezogen wird, muss geprüft werden, ob für GKV-Versicherte empfangene eEB-Bescheinigungen durch einen Kostenträger ausgestellt wurden.
+>
+> Mit der Konnektoroperation `VerifyCertificate` wird das in der eEB-Signatur enthaltene Signaturzertifikat geprüft und in der `VerifyCertificateResponse` die professionOID des Zertifikatsinhabers in `<ns4:RoleList>...<ns4:Role>1.2.276.0.76.4.59</ns4:Role>...</ns4:RoleList>` zurückgegeben.
+> Hier ist ausschließlich eine OID-Kostenträger `1.2.276.0.76.4.59 Betriebsstätte Kostenträger` zulässig.
 
 ## FHIR Datenstruktur Bescheinigung
 
