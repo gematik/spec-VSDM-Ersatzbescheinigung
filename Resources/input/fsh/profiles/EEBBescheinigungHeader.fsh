@@ -1,11 +1,11 @@
 Profile: EEBBescheinigungHeader
 Parent: MessageHeader
-Id: eeb-bescheinigung-header
-* ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+Id: EEBBescheinigungHeader
 * insert Meta
 * meta 1..1
-* meta.profile 1..1
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader" (exactly)
+  * profile 1..1
+  * profile = Canonical(EEBBescheinigungHeader) (exactly)
+
 
 // hier OID Anfragender
 * event[x] only Coding
@@ -15,14 +15,17 @@ Id: eeb-bescheinigung-header
 * sender 0..0
 * enterer 0..0
 * author 0..0
+
 * source.name 0..0
 * source.software 0..0
 * source.version 0..0
 * source.contact 0..0
 * source.endpoint 1..1
 * source.endpoint ^short = "Source endpoint URI of sender. E.g. https://Test-Krankenkasse.de/KIM"
+
 * responsible 0..0
 * reason 0..0
+
 * response 0..1
 * response ^short = "If there is an EEBAnfrageBundle (eEBRequest aus der Praxis)), the Bundle.identifier is mandatory."
 * response.identifier 1..1
@@ -30,7 +33,6 @@ Id: eeb-bescheinigung-header
 * response.identifier ^definition = "The Bundle.identifier of the EEBAnfrageBundle to which this message is a response."
 * response.code = #ok (exactly)
 * response.details 0..0
-//* focus 0..0
 * definition 0..0
 
 
@@ -40,7 +42,6 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle query by HBA signature"
 Usage: #inline
 * id = "bd901c08-0133-4276-b34b-eb810a62deda"
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.30
 * eventCoding.display = "Ärztin/Arzt"
@@ -55,7 +56,6 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle query by SMC-B signature"
 Usage: #inline
 * id = "bd901c08-0133-4276-b34b-eb810a62dedu"
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
@@ -71,7 +71,6 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle no KVNR available"
 Usage: #inline
 * id = "5b3c588d-36f5-42be-a10e-1c48eb800cc3"
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
@@ -86,7 +85,6 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle triggered via GKV or PKV App"
 Usage: #inline
 * id = "aafed78c-696c-4805-9e7b-d454e1aeb538"
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.49
 * eventCoding.display = "Versicherte/-r"

@@ -3,23 +3,9 @@
   "id": "437f2555-2396-4c64-a656-e9553161ca3c",
   "meta": {
     "profile": [
-      "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+      "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2"
     ]
   },
-  "identifier": [
-    {
-      "type": {
-        "coding": [
-          {
-            "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-            "code": "GKV"
-          }
-        ]
-      },
-      "system": "http://fhir.de/sid/gkv/kvid-10",
-      "value": "T024791905"
-    }
-  ],
   "name": [
     {
       "use": "official",
@@ -35,6 +21,20 @@
       "given": [
         "Ludger"
       ]
+    }
+  ],
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+            "code": "KVZ10"
+          }
+        ]
+      },
+      "system": "http://fhir.de/sid/gkv/kvid-10",
+      "value": "T024791905"
     }
   ],
   "address": [

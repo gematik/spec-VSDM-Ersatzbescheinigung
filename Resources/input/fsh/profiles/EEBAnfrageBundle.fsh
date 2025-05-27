@@ -1,11 +1,22 @@
+Invariant: -eeb-angabeOrganizationIdentifier
+Description: "Im Organization-Profil muss als Identifier entweder das Institutionskennzeichen, die Betriebsstättennummer oder die KZV-Abrechnungsnummer angegeben werden."
+Severity: #error
+Expression: "entry.where(resource is Organization).resource.identifier.type.coding.where(code='BSNR' or code='XX' or code='KZVA').exists()"
+
+Invariant: -eeb-angabePatientIdentifier
+Description: "Im Patient-Profil muss entweder ein Identifier (GKV oder PKV) oder folgende Informationen (Name, Vorname, Geburtsdatum und Postleitzahl) angegeben werden."
+Severity: #error
+Expression: "entry.where(resource is Patient).resource.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').exists() or entry.where(resource is Patient).resource.where(name.family and name.given and birthDate and address.postalCode).exists()"
+
+
 Profile: EEBAnfrageBundle
 Parent: Bundle
-Id: eeb-anfrage-bundle
-* ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+Id: EEBAnfrageBundle
 * insert Meta
 * meta 1..1
-* meta.profile 1..1
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle" (exactly)
+  * profile 1..1
+  * profile = Canonical(EEBAnfrageBundle) (exactly)
+
 * id 1..1
 * identifier 1..
 * identifier.use 0..0
@@ -37,18 +48,21 @@ Id: eeb-anfrage-bundle
 * entry[EEBAnfrageHeader].search ..0
 * entry[EEBAnfrageHeader].request ..0
 * entry[EEBAnfrageHeader].response ..0
+
 * entry[EEBKnownPatient].link ..0
 * entry[EEBKnownPatient].resource 1..
 * entry[EEBKnownPatient].resource only EEBKnownPatient
 * entry[EEBKnownPatient].search ..0
 * entry[EEBKnownPatient].request ..0
 * entry[EEBKnownPatient].response ..0
+
 * entry[KBV_PR_FOR_Patient].link ..0
 * entry[KBV_PR_FOR_Patient].resource 1..
 * entry[KBV_PR_FOR_Patient].resource only KBV_PR_FOR_Patient
 * entry[KBV_PR_FOR_Patient].search ..0
 * entry[KBV_PR_FOR_Patient].request ..0
 * entry[KBV_PR_FOR_Patient].response ..0
+
 * entry[KBV_PR_FOR_Organization].link ..0
 * entry[KBV_PR_FOR_Organization].resource 1..
 * entry[KBV_PR_FOR_Organization].resource only KBV_PR_FOR_Organization
@@ -59,34 +73,18 @@ Id: eeb-anfrage-bundle
 * obeys -eeb-angabePatientIdentifier
 
 
-Invariant: -eeb-angabeOrganizationIdentifier
-Description: "Im Organization-Profil muss als Identifier entweder das Institutionskennzeichen, die Betriebsstättennummer oder die KZV-Abrechnungsnummer angegeben werden."
-Severity: #error
-Expression: "entry.where(resource is Organization).resource.identifier.type.coding.where(code='BSNR' or code='XX' or code='KZVA').exists()"
-
-Invariant: -eeb-angabePatientIdentifier
-Description: "Im Patient-Profil muss entweder ein Identifier (GKV oder PKV) oder folgende Informationen (Name, Vorname, Geburtsdatum und Postleitzahl) angegeben werden."
-Severity: #error
-Expression: "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists() or entry.where(resource is Patient).resource.where(name.family and name.given and birthDate and address.postalCode).exists()"
-
-
 // Beispielgenerierung
 Instance: KBV_PR_FOR_OrganizationSample
 InstanceOf: KBV_PR_FOR_Organization
 Title: "Organization for EEBAnfrageBundle"
 Usage: #inline
 * id = "fad15347-a4b3-4899-a454-9fb43bdb0f30"
-* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.1.0"
 * identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
 * identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
 * identifier[Telematik-ID].value = "123456"
 * identifier[Betriebsstaettennummer].type = http://terminology.hl7.org/CodeSystem/v2-0203#BSNR
 * identifier[Betriebsstaettennummer].system = "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"
 * identifier[Betriebsstaettennummer].value = "123456789"
-// To test invariant
-// * identifier[Standortnummer].type = https://fhir.kbv.de/CodeSystem/KBV_CS_Base_identifier_type#KSN
-// * identifier[Standortnummer].system = "http://fhir.de/sid/dkgev/standortnummer"
-// * identifier[Standortnummer].value = "123456789"
 * name = "Praxis Test"
 * telecom[telefon].system = #phone
 * telecom[telefon].value = "0123456789"
@@ -105,10 +103,10 @@ InstanceOf: KBV_PR_FOR_Patient
 Title: "KBV_PR_FOR_PatientKnownSample"
 Usage: #inline
 * id = "eb601b0c-96cd-4ac8-8849-fdd7aca89c33"
-* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
-* identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
-* identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[versichertenId_GKV].value = "A123456789"
+* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
+* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[versichertenId].value = "A123456789"
+
 * name[name].use = #official
 * name[name].family = "Königstein"
 * name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
@@ -116,24 +114,23 @@ Usage: #inline
 * name[name].given = "Ludger"
 * birthDate = "1935-06-22"
 * address[Strassenanschrift].type = #both
-// * address[Strassenanschrift].line = "Blumenweg 14"
-// * address[Strassenanschrift].line.extension[0][Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-// * address[Strassenanschrift].line.extension[=][Hausnummer].valueString = "14"
-// * address[Strassenanschrift].line.extension[+][Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-// * address[Strassenanschrift].line.extension[=][Strasse].valueString = "Blumenweg"
-// * address[Strassenanschrift].city = "Esens"
-// * address[Strassenanschrift].postalCode = "26427"
-// * address[Strassenanschrift].country = "D"
+* address[Strassenanschrift].line = "Blumenweg 14"
+* address[Strassenanschrift].line.extension[0][Hausnummer].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+* address[Strassenanschrift].line.extension[=][Hausnummer].valueString = "14"
+* address[Strassenanschrift].line.extension[+][Strasse].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
+* address[Strassenanschrift].line.extension[=][Strasse].valueString = "Blumenweg"
+* address[Strassenanschrift].city = "Esens"
+* address[Strassenanschrift].postalCode = "26427"
+* address[Strassenanschrift].country = "D"
 
 Instance: KBV_PR_FOR_PatientKnownPkvSample
 InstanceOf: KBV_PR_FOR_Patient
 Title: "KBV_PR_FOR_PatientKnownPkvSample"
 Usage: #inline
 * id = "77355dc2-07cc-4cc6-bd78-afccfb7d0106"
-* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
-* identifier[versichertenID_pkv].type = http://fhir.de/CodeSystem/identifier-type-de-basis#PKV
-* identifier[versichertenID_pkv].system = "http://fhir.de/sid/pkv/kvid-10"
-* identifier[versichertenID_pkv].value = "A987654321"
+* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
+* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[versichertenId].value = "A987654321"
 * name[name].use = #official
 * name[name].family = "Meier"
 * name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
@@ -147,7 +144,6 @@ InstanceOf: KBV_PR_FOR_Patient
 Title: "KBV_PR_FOR_PatientUnknownSample"
 Usage: #inline
 * id = "16c07b55-c7bd-4e64-86bc-bf00f0435ba7"
-* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
 * name[name].use = #official
 * name[name].family = "Meier"
 * name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
