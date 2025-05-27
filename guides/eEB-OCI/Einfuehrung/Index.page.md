@@ -7,7 +7,8 @@ Elektronische Ersatzbescheinigung (GKV) und Online Check-In (PKV) dienen der sic
 
 Sowohl der Versand der elektronischen Ersatzbescheinigung (eEB) für gesetzlich Versicherte als auch der Online Check-in (OCI) für Privatversicherte erfolgen von einer Krankenkassenkasse/privaten Krankenversicherung an Leistungserbringer via KIM.
 
-Um den PVS-Herstellern die Umsetzung durch das Einlesen von Patientendaten über das etablierte VSDM-Standardverfahren im GKV-Bereich zu erleichtern, verwenden die PKV Versicherungsunternehmen in der EEB-Bescheinigung die gleichen FHIR-Profile wie die Krankenkassen der GKV. Das FHIR-Profil `EEBCoverageEgk` bietet dazu mit der optionalen Extension geschuetzteVersichertendaten die Möglichkeit, dass PKV-Versicherungsunternehmen auf diesen Eintrag verzichten können.
+Um den PVS-Herstellern die Umsetzung durch das Einlesen von Patientendaten über das etablierte VSDM-Standardverfahren im GKV-Bereich zu erleichtern, verwenden die PKV Versicherungsunternehmen in der EEB-Bescheinigung die gleichen FHIR-Profile wie die Krankenkassen der GKV.
+Die Coverage-FHIR-Profile (`EEBCoverageEgk` und `EEBCoverageEgkNoAddressLine`) bieten dazu mit den optionalen Extensionen die Möglichkeit, dass PKV-Versicherungsunternehmen auf den Eintrag „geschuetzteVersichertendaten“ verzichten können.
 
 Das auslösende Ereignis (Anforderung) kann ein von einem Patienten durchgeführter "QR-Code-Scan" in der Praxis mittels seiner Kassen- bzw. Versicherten-App oder bei der eEB auch eine manuelle Anforderung aus dem Praxisverwaltungssystem durch Mitarbeitende der Praxis sein.
 

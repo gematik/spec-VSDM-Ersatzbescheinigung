@@ -7,6 +7,7 @@ parent:
   - [Nutzung des QR-Codes durch Versicherte](#nutzung-des-qr-codes-durch-versicherte)
   - [Aufbau und Inhalt des QR-Codes](#aufbau-und-inhalt-des-qr-codes)
     - [Weitere QR-Code-Generatoren:](#weitere-qr-code-generatoren)
+  - [Test des QR-Code in der RU](#test-des-qr-code-in-der-ru)
 
 Der QR-Code-Scan ist Voraussetzung für folgende zwei Use Cases, die von den Versicherten über ihre Versicherten-App (PKV) bzw. Kassen-App (GKV) angestoßen werden können:
 
@@ -70,3 +71,7 @@ Weitere Hinweise zum Hinterlegen technischer Informationen für die Betriebssyst
 
 - https://developer.android.com/training/app-links/verify-android-applinks#multi-app-same-domain
 - https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content
+
+## Test des QR-Code in der RU
+
+Zum Testen in der RU kann die QR-Code-Erzeugung der Seite https://www.praxis-check-in-test.de verwendet werden.
