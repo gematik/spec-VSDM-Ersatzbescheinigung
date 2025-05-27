@@ -1,36 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "eeb-anfrage-bundle",
+  "id": "EEBAnfrageBundle",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "EEBAnfrageBundle",
   "status": "draft",
   "experimental": false,
-  "date": "2025-05-15",
+  "date": "2025-05-26",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "v2",
-      "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
-    },
-    {
-      "identity": "rim",
-      "uri": "http://hl7.org/v3",
-      "name": "RIM Mapping"
-    },
-    {
-      "identity": "cda",
-      "uri": "http://hl7.org/v3/cda",
-      "name": "CDA (R2)"
-    },
-    {
-      "identity": "w5",
-      "uri": "http://hl7.org/fhir/fivews",
-      "name": "FiveWs Pattern Mapping"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "Bundle",
@@ -53,7 +31,7 @@
             "key": "-eeb-angabePatientIdentifier",
             "severity": "error",
             "human": "Im Patient-Profil muss entweder ein Identifier (GKV oder PKV) oder folgende Informationen (Name, Vorname, Geburtsdatum und Postleitzahl) angegeben werden.",
-            "expression": "entry.where(resource is Patient).resource.identifier.type.coding.where(code='GKV' or code='PKV').exists() or entry.where(resource is Patient).resource.where(name.family and name.given and birthDate and address.postalCode).exists()",
+            "expression": "entry.where(resource is Patient).resource.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').exists() or entry.where(resource is Patient).resource.where(name.family and name.given and birthDate and address.postalCode).exists()",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
           }
         ]

@@ -1,41 +1,14 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "eeb-known-patient",
+  "id": "EEBKnownPatient",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "EEBKnownPatient",
   "status": "draft",
   "experimental": false,
-  "date": "2025-05-15",
+  "date": "2025-05-26",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "rim",
-      "uri": "http://hl7.org/v3",
-      "name": "RIM Mapping"
-    },
-    {
-      "identity": "cda",
-      "uri": "http://hl7.org/v3/cda",
-      "name": "CDA (R2)"
-    },
-    {
-      "identity": "w5",
-      "uri": "http://hl7.org/fhir/fivews",
-      "name": "FiveWs Pattern Mapping"
-    },
-    {
-      "identity": "v2",
-      "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
-    },
-    {
-      "identity": "loinc",
-      "uri": "http://loinc.org",
-      "name": "LOINC code for the element"
-    }
-  ],
   "kind": "resource",
   "abstract": false,
   "type": "Patient",
@@ -61,20 +34,21 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "pattern",
-              "path": "type"
+              "type": "value",
+              "path": "system"
             }
           ],
           "rules": "closed"
         },
         "min": 1,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
-        "id": "Patient.identifier:versichertenId_GKV",
+        "id": "Patient.identifier:KVNR",
         "path": "Patient.identifier",
-        "sliceName": "versichertenId_GKV",
-        "min": 0,
+        "sliceName": "KVNR",
+        "min": 1,
         "max": "1",
         "type": [
           {
@@ -83,22 +57,8 @@
               "http://fhir.de/StructureDefinition/identifier-kvid-10"
             ]
           }
-        ]
-      },
-      {
-        "id": "Patient.identifier:versichertenID_pkv",
-        "path": "Patient.identifier",
-        "sliceName": "versichertenID_pkv",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier",
-            "profile": [
-              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Identifier_PkvID_10"
-            ]
-          }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Patient.active",

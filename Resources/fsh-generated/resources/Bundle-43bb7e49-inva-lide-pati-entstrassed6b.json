@@ -52,7 +52,7 @@
         "id": "d62d9d82-2396-4c64-a656-2e67b5761523",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2"
           ]
         },
         "name": [
@@ -151,10 +151,6 @@
         ],
         "payor": [
           {
-            "identifier": {
-              "system": "http://fhir.de/sid/arge-ik/iknr",
-              "value": "12345678"
-            },
             "extension": [
               {
                 "url": "http://fhir.de/StructureDefinition/AbrechnendeIK",
@@ -164,6 +160,10 @@
                 }
               }
             ],
+            "identifier": {
+              "system": "http://fhir.de/sid/arge-ik/iknr",
+              "value": "12345678"
+            },
             "display": "Test Krankenkasse"
           }
         ],
