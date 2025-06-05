@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "EEBCoverageEgk",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk",
-  "version": "1.1.0",
+  "version": "1.0.1",
   "name": "EEBCoverageEgk",
   "status": "draft",
   "experimental": false,
-  "date": "2025-05-26",
+  "date": "2025-06-05",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -58,6 +58,11 @@
             ]
           }
         ]
+      },
+      {
+        "id": "Coverage.extension:versionEgk.extension",
+        "path": "Coverage.extension.extension",
+        "max": "0"
       },
       {
         "id": "Coverage.extension:versionEgk.value[x]",

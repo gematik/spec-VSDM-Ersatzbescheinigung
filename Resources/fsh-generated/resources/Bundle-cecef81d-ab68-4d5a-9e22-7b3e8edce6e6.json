@@ -48,9 +48,23 @@
         "id": "e36f9476-0d04-4394-a626-8b4706b005b0",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
           ]
         },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "PKV"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/pkv/kvid-10",
+            "value": "A987654321"
+          }
+        ],
         "name": [
           {
             "use": "official",
@@ -66,20 +80,6 @@
             "given": [
               "Hans"
             ]
-          }
-        ],
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "KVZ10"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "A987654321"
           }
         ],
         "address": [
