@@ -4,3 +4,4 @@ fhirpkg.lock.json
 package-lock.json
 scripts/validation_script-config.yaml
 resources/fsh-index.txt
+resources/fsh-index.json
