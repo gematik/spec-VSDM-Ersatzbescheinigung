@@ -74,7 +74,7 @@
               "coding": [
                 {
                   "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "KVZ10"
+                  "code": "GKV"
                 }
               ]
             },
@@ -91,7 +91,7 @@
         "id": "fad15347-a4b3-4899-a454-9fb43bdb0f30",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.2"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.1.0"
           ]
         },
         "telecom": [

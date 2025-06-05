@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "EEBCoverageEgkNoAddressLine",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine",
-  "version": "1.1.0",
+  "version": "1.0.1",
   "name": "EEBCoverageEgkNoAddressLine",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-27",
+  "date": "2025-06-05",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -58,6 +58,11 @@
             ]
           }
         ]
+      },
+      {
+        "id": "Coverage.extension:versionEgk.extension",
+        "path": "Coverage.extension.extension",
+        "max": "0"
       },
       {
         "id": "Coverage.extension:versionEgk.value[x]",
