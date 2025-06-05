@@ -4,7 +4,7 @@
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler",
   "version": "1.0.1",
   "name": "EEBFehler",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
   "date": "2025-06-05",
   "publisher": "gematik GmbH",

@@ -1,5 +1,5 @@
 RuleSet: Meta
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^version = "1.0.1"
 * ^publisher = "gematik GmbH"
