@@ -34,3 +34,9 @@ Durch größtmögliche Standardisierung soll eine aufwandarme Umsetzung in Prim�
 ||||||
 |**eEB-Anforderung via KIM** <br />FHIR-Version 1.1.0 |01.04.26 |tbd.      |FHIR-Version 1.1.0 <br />(KBV-Patient 1.2) |V1.1           |
 |**eEB-Anforderung via APP** <br />                   |01.04.26 |tbd.      |FHIR-Version 1.1.0 <br />(KBV-Patient 1.2) |V1.1           |
+
+> **Hinweis** zur Unterscheidung der FHIR-Version in der eEB-Anforderung via KIM:
+>
+> 1.0.1: KBV_FOR-Patient mit `meta.profile = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0` oder KnownPatient mit `identifier.type.coding.code = 'GKV'` bzw. `'PKV'`
+>
+> 1.1.0: KBV_FOR-Patient mit `meta.profile = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2` oder KnownPatient mit `identifier.type.coding.code = 'KVZ10'`
