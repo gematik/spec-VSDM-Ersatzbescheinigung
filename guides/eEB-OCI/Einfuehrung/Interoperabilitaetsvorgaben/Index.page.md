@@ -33,5 +33,5 @@ Durch größtmögliche Standardisierung soll eine aufwandarme Umsetzung in Prim�
 |**eEB-Anforderung via APP** <br />                   |01.10.25 |31.03.26  |FHIR-Version 1.0.0 oder 1.0.1|V1.0 |
 ||||||
 |**eEB-Anforderung via KIM** <br />FHIR-Version 1.0.1 |01.04.26 |tbd.      |FHIR-Version 1.1.1 + Fehler |V1.1  |
-|**eEB-Anforderung via KIM** <br />FHIR-Version 1.0.1 |01.04.26 |tbd.      |FHIR-Version 1.1.0 |V1.1           |
+|**eEB-Anforderung via KIM** <br />FHIR-Version 1.1.0 |01.04.26 |tbd.      |FHIR-Version 1.1.0 |V1.1           |
 |**eEB-Anforderung via APP** <br />                   |01.04.26 |tbd.      |FHIR-Version 1.1.0 |V1.1           |
