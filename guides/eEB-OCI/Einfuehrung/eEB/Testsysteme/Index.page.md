@@ -7,6 +7,7 @@ Die folgenden Krankenkassen stellen in der RU ein Testsystem bereit.
 
 * {{pagelink:Einfuehrung/eEB/Testsysteme/tk.page.md}}
 * {{pagelink:Einfuehrung/eEB/Testsysteme/bitmarck.page.md}}
+* {{pagelink:Einfuehrung/eEB/Testsysteme/barmer.page.md}}
 
 Beispiele für signierte Ersatzbescheinigungen finden sich im github unter https://github.com/gematik/spec-VSDM-Ersatzbescheinigung/tree/master/guides/eEB-OCI/samples
 
