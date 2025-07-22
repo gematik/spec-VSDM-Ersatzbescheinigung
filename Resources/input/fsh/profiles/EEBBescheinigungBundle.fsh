@@ -220,7 +220,7 @@ Usage: #inline
 
 // TK Beispiel Neugeboren oder Kassenwechsel (noch ohne KVNR)
 Instance: EEBBescheinigungBundle2
-InstanceOf: Bundle
+InstanceOf: EEBBescheinigungBundle
 Usage: #example
 * id = "4a270af6-nneu-ohne-kvnr-dfe20acfb5c5"
 * identifier.system = "urn:ietf:rfc:3986"

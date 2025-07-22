@@ -4,8 +4,8 @@
     "fshName": "EEBAnfrageBundleSampleKnownPatient",
     "fshType": "Instance",
     "fshFile": "profiles/EEBAnfrageBundle.fsh",
-    "startLine": 164,
-    "endLine": 179
+    "startLine": 170,
+    "endLine": 185
   },
   {
     "outputFile": "Bundle-43bb7e49-inva-lide-pati-entstrassed6b.json",
@@ -20,16 +20,16 @@
     "fshName": "EEBBescheinigungBundle2",
     "fshType": "Instance",
     "fshFile": "profiles/EEBBescheinigungBundle.fsh",
-    "startLine": 219,
-    "endLine": 232
+    "startLine": 222,
+    "endLine": 235
   },
   {
     "outputFile": "Bundle-96120812-a785-4fe3-a1e9-244314fdad9d.json",
     "fshName": "EEBAnfrageBundleSampleKnownKBV_PR_FOR_Patient",
     "fshType": "Instance",
     "fshFile": "profiles/EEBAnfrageBundle.fsh",
-    "startLine": 181,
-    "endLine": 196
+    "startLine": 187,
+    "endLine": 202
   },
   {
     "outputFile": "Bundle-9b6ac30d-246d-4eab-af83-544564792089.json",
@@ -60,8 +60,8 @@
     "fshName": "EEBAnfrageBundleSampleUnknownKBV_PR_FOR_Patient",
     "fshType": "Instance",
     "fshFile": "profiles/EEBAnfrageBundle.fsh",
-    "startLine": 198,
-    "endLine": 213
+    "startLine": 204,
+    "endLine": 219
   },
   {
     "outputFile": "CodeSystem-EEBErrorcodeCS.json",
@@ -100,8 +100,8 @@
     "fshName": "EEBKnownPatientPkvSample",
     "fshType": "Instance",
     "fshFile": "profiles/EEBKnownPatient.fsh",
-    "startLine": 45,
-    "endLine": 52
+    "startLine": 57,
+    "endLine": 67
   },
   {
     "outputFile": "Patient-437f2555-2396-4c64-a656-e9553161ca3c.json",
@@ -109,7 +109,7 @@
     "fshType": "Instance",
     "fshFile": "profiles/EEBCoverageEgkNoAddressLine.fsh",
     "startLine": 11,
-    "endLine": 29
+    "endLine": 32
   },
   {
     "outputFile": "Patient-437f2555-2396-4c64-a656-e9553161ca3u.json",
@@ -117,15 +117,15 @@
     "fshType": "Instance",
     "fshFile": "profiles/EEBCoverageEgk.fsh",
     "startLine": 71,
-    "endLine": 94
+    "endLine": 97
   },
   {
     "outputFile": "Patient-b8f0f69c-af1a-480b-8abf-44ab11aa23c5.json",
     "fshName": "EEBKnownPatientSample",
     "fshType": "Instance",
     "fshFile": "profiles/EEBKnownPatient.fsh",
-    "startLine": 36,
-    "endLine": 43
+    "startLine": 45,
+    "endLine": 55
   },
   {
     "outputFile": "Patient-d62d9d82-2396-4c64-a656-2e67b5761523.json",
@@ -205,7 +205,7 @@
     "fshType": "Profile",
     "fshFile": "profiles/EEBKnownPatient.fsh",
     "startLine": 1,
-    "endLine": 32
+    "endLine": 41
   },
   {
     "outputFile": "StructureDefinition-allgemeine-versicherungsdaten.json",
