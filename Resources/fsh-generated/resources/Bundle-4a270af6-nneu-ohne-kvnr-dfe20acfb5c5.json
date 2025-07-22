@@ -1,11 +1,16 @@
 {
   "resourceType": "Bundle",
   "id": "4a270af6-nneu-ohne-kvnr-dfe20acfb5c5",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+    ]
+  },
+  "type": "message",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:4a270af6-1234-5678-abcd-dfe20acfb5c5"
   },
-  "type": "message",
   "entry": [
     {
       "fullUrl": "https://gematik.de/fhir/MessageHeader/e184d490-22f3-4009-892e-77b9bc9a7504",
