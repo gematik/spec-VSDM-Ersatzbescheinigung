@@ -12,7 +12,7 @@
         "coding": [
           {
             "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-            "code": "GKV"
+            "code": "KVZ10"
           }
         ]
       },

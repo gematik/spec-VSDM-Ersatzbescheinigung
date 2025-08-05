@@ -73,12 +73,9 @@ InstanceOf: KBV_PR_FOR_Patient
 Title: "Patient for EEBBescheinigungBundle with address line"
 Usage: #example
 * id = "437f2555-2396-4c64-a656-e9553161ca3u"
-* identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
-* identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-// below for new dependencies
-//* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
-//* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[versichertenId_GKV].value = "T024791905"
+* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
+* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[versichertenId].value = "T024791905"
 * name[name]
   * use = #official
   * family = "Königstein"
@@ -103,12 +100,9 @@ InstanceOf: KBV_PR_FOR_Patient
 Title: "Patient for EEBBescheinigungBundle PKV details"
 Usage: #inline
 * id = "e36f9476-0d04-4394-a626-8b4706b005b0"
-* identifier[versichertenID_pkv].type = http://fhir.de/CodeSystem/identifier-type-de-basis#PKV
-* identifier[versichertenID_pkv].system = "http://fhir.de/sid/pkv/kvid-10"
-// below for new dependencies -> later GKV and PKV share the same KVNR-identifiert
-//* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
-//* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[versichertenID_pkv].value = "A987654321"
+* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
+* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[versichertenId].value = "A987654321"
 * name[name].use = #official
 * name[name].family = "Meier"
 * name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"

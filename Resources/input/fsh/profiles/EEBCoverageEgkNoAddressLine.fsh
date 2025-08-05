@@ -13,12 +13,9 @@ InstanceOf: KBV_PR_FOR_Patient
 Title: "Patient for EEBBescheinigungBundle without address.line"
 Usage: #example
 * id = "437f2555-2396-4c64-a656-e9553161ca3c"
-* identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
-* identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-// below for new dependencies
-//* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
-//* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[versichertenId_GKV].value = "T024791905"
+* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
+* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[versichertenId].value = "T024791905"
 * name[name]
   * use = #official
   * family = "Königstein"

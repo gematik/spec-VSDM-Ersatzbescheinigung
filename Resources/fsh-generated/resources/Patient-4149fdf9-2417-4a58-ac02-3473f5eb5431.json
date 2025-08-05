@@ -12,11 +12,11 @@
         "coding": [
           {
             "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-            "code": "PKV"
+            "code": "KVZ10"
           }
         ]
       },
-      "system": "http://fhir.de/sid/pkv/kvid-10",
+      "system": "http://fhir.de/sid/gkv/kvid-10",
       "value": "A987654321"
     }
   ]

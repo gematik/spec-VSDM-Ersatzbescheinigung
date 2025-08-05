@@ -43,23 +43,9 @@
         "id": "2e67b7dc-24c0-4b23-9487-9a7dd8e140cd",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2"
           ]
         },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_Base_identifier_type",
-                  "code": "kvk"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvk-versichertennummer",
-            "value": "3143112513"
-          }
-        ],
         "name": [
           {
             "use": "official",
@@ -75,6 +61,20 @@
             "given": [
               "Max"
             ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_Base_identifier_type",
+                  "code": "kvk"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvk-versichertennummer",
+            "value": "3143112513"
           }
         ],
         "address": [
