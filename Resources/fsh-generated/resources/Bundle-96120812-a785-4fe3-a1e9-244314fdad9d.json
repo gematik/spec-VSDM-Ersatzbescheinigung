@@ -65,23 +65,9 @@
         "id": "eb601b0c-96cd-4ac8-8849-fdd7aca89c33",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2"
           ]
         },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "A123456789"
-          }
-        ],
         "name": [
           {
             "use": "official",
@@ -97,6 +83,20 @@
             "given": [
               "Ludger"
             ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "KVZ10"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "A123456789"
           }
         ],
         "address": [
@@ -134,7 +134,7 @@
         "id": "fad15347-a4b3-4899-a454-9fb43bdb0f30",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.1.0"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.2"
           ]
         },
         "telecom": [

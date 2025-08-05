@@ -177,12 +177,9 @@ Instance: PatientExample
 InstanceOf: KBV_PR_FOR_Patient
 Usage: #inline
 * id = "cb7d4484-bade-47f5-985f-86196b6678a2"
-* identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
-* identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-// below for new dependencies
-//* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
-//* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[versichertenId_GKV].value = "A819745621"
+* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
+* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[versichertenId].value = "A819745621"
 * name[name]
   * use = #official
   * family = "TK-eEB-QR-Code"

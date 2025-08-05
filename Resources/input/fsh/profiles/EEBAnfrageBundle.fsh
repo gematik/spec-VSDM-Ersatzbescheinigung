@@ -103,12 +103,9 @@ InstanceOf: KBV_PR_FOR_Patient
 Title: "KBV_PR_FOR_PatientKnownSample"
 Usage: #inline
 * id = "eb601b0c-96cd-4ac8-8849-fdd7aca89c33"
-* identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
-* identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-// below for new dependencies
-//* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
-//* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[versichertenId_GKV].value = "A123456789"
+* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
+* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[versichertenId].value = "A123456789"
 
 * name[name].use = #official
 * name[name].family = "Königstein"
@@ -131,12 +128,9 @@ InstanceOf: KBV_PR_FOR_Patient
 Title: "KBV_PR_FOR_PatientKnownPkvSample"
 Usage: #inline
 * id = "77355dc2-07cc-4cc6-bd78-afccfb7d0106"
-* identifier[versichertenId_GKV].type = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV
-* identifier[versichertenId_GKV].system = "http://fhir.de/sid/gkv/kvid-10"
-// below for new dependencies
-//* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
-//* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier[versichertenId_GKV].value = "A987654321"
+* identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
+* identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
+* identifier[versichertenId].value = "A987654321"
 * name[name].use = #official
 * name[name].family = "Meier"
 * name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"

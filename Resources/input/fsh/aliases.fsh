@@ -1,17 +1,3 @@
-Alias: $coverage-de-gkv = http://fhir.de/StructureDefinition/coverage-de-gkv
-Alias: $kbv-for-organization = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization
-Alias: $identifier-kvid-10 = http://fhir.de/StructureDefinition/identifier-kvid-10
-Alias: $identifier-pkv = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Identifier_PkvID_10
-Alias: $kbv_pr_base_identifier_kvk = https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Identifier_KVK
-Alias: $humanname-de-basis = http://fhir.de/StructureDefinition/humanname-de-basis
-Alias: $kbv_pr_base_datatype_name = https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Datatype_Name
-Alias: $kbv_pr_base_datatype_street_address = https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Datatype_Street_Address
-Alias: $coverage-de-basis = http://fhir.de/StructureDefinition/coverage-de-basis
-Alias: $einlesedatum-karte = http://fhir.de/StructureDefinition/gkv/einlesedatum-karte
-Alias: $onlinepruefung-egk = http://fhir.de/StructureDefinition/gkv/onlinepruefung-egk
-Alias: $generation-egk = http://fhir.de/StructureDefinition/gkv/generation-egk
-Alias: $identifier-pseudo-kvid = http://fhir.de/StructureDefinition/identifier-pseudo-kvid
-// above not needed for new dependencies
 Alias: $kbv-for-patient = https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient
 Alias: $versicherungsart-de-basis = http://fhir.de/ValueSet/versicherungsart-de-basis
 Alias: $version-vsdm = http://fhir.de/StructureDefinition/gkv/version-vsdm
@@ -25,5 +11,4 @@ Alias: $zuzahlungsstatus = http://fhir.de/StructureDefinition/gkv/zuzahlungsstat
 Alias: $AbrechnendeIK = http://fhir.de/StructureDefinition/AbrechnendeIK
 Alias: $identifier-iknr = http://fhir.de/StructureDefinition/identifier-iknr
 Alias: $patient-genderIdentity = http://hl7.org/fhir/StructureDefinition/patient-genderIdentity
-// below needed for new dependencies
-//Alias: $sid-identifier-kvid-10 = http://fhir.de/sid/gkv/kvid-10
+Alias: $sid-identifier-kvid-10 = http://fhir.de/sid/gkv/kvid-10
