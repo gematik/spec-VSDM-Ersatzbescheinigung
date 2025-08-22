@@ -6,7 +6,7 @@ parent:
 
 | Kasse | Testdatensatz | 
 | ---- | --------- |
-| Allianz | [Testdatensatz_Allianz.xml](https://raw.github.com/gematik/spec-VSDM-Ersatzbescheinigung/master/Resources/downloads/Testdatensatz_Allianz.xml) |
+| Allianz | [Testdatensatz_Allianz.xml](https://raw.githubusercontent.com/gematik/spec-VSDM-Ersatzbescheinigung/master/Resources/downloads/Testdatensatz_Allianz.xml) |
 | Hallesche | [Testdatensatz_Hallesche.xml](https://github.com/gematik/spec-VSDM-Ersatzbescheinigung/blob/master/Resources/downloads/Testdatensatz_Hallesche.xml) |
 | Wayne Bruce | [Testdatensatz_Wayne_Bruce.xml](https://github.com/gematik/spec-VSDM-Ersatzbescheinigung/blob/master/Resources/downloads/Testdatensatz_Wayne_Bruce.xml) |
 
