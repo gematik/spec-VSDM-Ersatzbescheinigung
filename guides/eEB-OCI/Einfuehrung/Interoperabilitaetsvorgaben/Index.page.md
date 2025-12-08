@@ -26,14 +26,14 @@ Durch größtmögliche Standardisierung soll eine aufwandarme Umsetzung in Prim�
 |:------------------------------------------------|:--------|:---------|:------------------|:------------------|
 |**eEB-Anforderung via KIM** <br />FHIR-Version 1.0.1 |jetzt    |30.09.25  |FHIR-Version 1.0.1 <br />(KBV-Patient 1.1) |V1.1 <br />bzw. V1.0 + FC130 falls KTR noch nicht aktualisiert |
 |**eEB-Anforderung via KIM** <br />FHIR-Version 1.1.0 |jetzt    |30.09.25  |FHIR-Version 1.0.1 <br />(KBV-Patient 1.1) |V1.1 <br />bzw. V1.0 + FC130 falls KTR noch nicht aktualisiert |
-|**eEB-Anforderung via APP** <br />                   |jetzt    |30.09.25  |FHIR-Version 1.0.0 oder 1.0.1 <br />(KBV-Patient 1.1)|V1.0 |
+|**eEB-Anforderung via App** <br />                   |jetzt    |30.09.25  |FHIR-Version 1.0.0 oder 1.0.1 <br />(KBV-Patient 1.1)|V1.0 |
 ||||||
 |**eEB-Anforderung via KIM** <br />FHIR-Version 1.0.1 |01.10.25 |31.03.26  |FHIR-Version 1.0.1 <br />(KBV-Patient 1.1) |V1.1           |
 |**eEB-Anforderung via KIM** <br />FHIR-Version 1.1.0 |01.10.25 |31.03.26  |FHIR-Version 1.1.0 <br />(KBV-Patient 1.2) |V1.1           |
-|**eEB-Anforderung via APP** <br />                   |01.10.25 |31.03.26  |FHIR-Version 1.0.0 oder 1.0.1 <br />(KBV-Patient 1.1)|V1.0 |
+|**eEB-Anforderung via App** <br />                   |01.10.25 |31.03.26  |FHIR-Version 1.0.0 oder 1.0.1 <br />(KBV-Patient 1.1)|V1.0 |
 ||||||
-|**eEB-Anforderung via KIM** <br />FHIR-Version 1.1.0 |01.04.26 |tbd.      |FHIR-Version 1.1.0 <br />(KBV-Patient 1.2) |V1.1           |
-|**eEB-Anforderung via APP** <br />                   |01.04.26 |tbd.      |FHIR-Version 1.1.0 <br />(KBV-Patient 1.2) |V1.1           |
+|**eEB-Anforderung via KIM** <br />FHIR-Version 1.1.0 |01.04.26 |tbd.      |FHIR-Version 1.1.0 <br />(KBV-Patient 1.2) |eEB;Bescheinigung-KIM;V1.1           |
+|**eEB-Anforderung via App** <br />                   |01.04.26 |tbd.      |FHIR-Version 1.1.0 <br />(KBV-Patient 1.2) |eEB;Bescheinigung-App;V1.1           |
 
 > **Hinweis** zur Unterscheidung der FHIR-Version in der eEB-Anforderung via KIM:
 >
