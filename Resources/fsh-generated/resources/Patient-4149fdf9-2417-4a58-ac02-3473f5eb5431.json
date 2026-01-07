@@ -1,0 +1,23 @@
+{
+  "resourceType": "Patient",
+  "id": "4149fdf9-2417-4a58-ac02-3473f5eb5431",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+            "code": "KVZ10"
+          }
+        ]
+      },
+      "system": "http://fhir.de/sid/gkv/kvid-10",
+      "value": "A987654321"
+    }
+  ]
+}

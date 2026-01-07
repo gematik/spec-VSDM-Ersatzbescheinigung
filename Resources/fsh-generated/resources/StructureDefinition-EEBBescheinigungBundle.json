@@ -1,0 +1,342 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "EEBBescheinigungBundle",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle",
+  "version": "1.1.0",
+  "name": "EEBBescheinigungBundle",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-08-05",
+  "publisher": "gematik GmbH",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle",
+        "path": "Bundle",
+        "constraint": [
+          {
+            "key": "-eeb-angabePatientPLZ",
+            "severity": "error",
+            "human": "In der Ressource vom Typ Patient ist keine Postleitzahl vorhanden, diese ist aber eine Pflichtangabe.",
+            "expression": "entry.where(resource is Patient).resource.address.postalCode.exists()",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+          },
+          {
+            "key": "-eeb-checkConditionCode49",
+            "severity": "error",
+            "human": "Wenn Versicherter '1.2.276.0.76.4.49', dann muss EEBCoverageEgk, Patient-Resource muss mit KVNR  [authentisierte App-Anfrage].",
+            "expression": "entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49' implies (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk') and entry.where(resource is Patient).resource.identifier.count() > 0)",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+          },
+          {
+            "key": "-eeb-checkConditionOtherCodes",
+            "severity": "error",
+            "human": "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil (EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein) und (die Patient-Resource darf keine Straße in der Adressangabe enthalten oder muss ein Postfach sein) [SMC-B Prüfung].",
+            "expression": "(entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.30' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.31' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.45' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.46' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.47' or\nentry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies ((entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and (entry.where(resource is Patient).resource.address.line.count() = 0 or entry.where(resource is Patient).resource.address.type = 'postal'))",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+          }
+        ]
+      },
+      {
+        "id": "Bundle.id",
+        "path": "Bundle.id",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+      },
+      {
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "min": 1
+      },
+      {
+        "id": "Bundle.identifier.use",
+        "path": "Bundle.identifier.use",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.type",
+        "path": "Bundle.identifier.type",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.system",
+        "path": "Bundle.identifier.system",
+        "min": 1,
+        "fixedUri": "urn:ietf:rfc:3986"
+      },
+      {
+        "id": "Bundle.identifier.value",
+        "path": "Bundle.identifier.value",
+        "short": "Eindeutige UUID als übergreifender Identifier für mehrere Anfragen eines Vorgangs",
+        "min": 1
+      },
+      {
+        "id": "Bundle.identifier.period",
+        "path": "Bundle.identifier.period",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.assigner",
+        "path": "Bundle.identifier.assigner",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "fixedCode": "message"
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "min": 1
+      },
+      {
+        "id": "Bundle.total",
+        "path": "Bundle.total",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.link",
+        "path": "Bundle.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resource"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 3,
+        "max": "3"
+      },
+      {
+        "id": "Bundle.entry:EEBBescheinigungHeader",
+        "path": "Bundle.entry",
+        "sliceName": "EEBBescheinigungHeader",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:EEBBescheinigungHeader.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBBescheinigungHeader.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:EEBBescheinigungHeader.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBBescheinigungHeader.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBBescheinigungHeader.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBVFORPatient",
+        "path": "Bundle.entry",
+        "sliceName": "KBVFORPatient",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:KBVFORPatient.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBVFORPatient.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:KBVFORPatient.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBVFORPatient.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBVFORPatient.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgk",
+        "path": "Bundle.entry",
+        "sliceName": "EEBCoverageEgk",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgk.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgk.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Coverage",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgk.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgk.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgk.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine",
+        "path": "Bundle.entry",
+        "sliceName": "EEBCoverageEgkNoAddressLine",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Coverage",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageEgkNoAddressLine.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageNoEgk",
+        "path": "Bundle.entry",
+        "sliceName": "EEBCoverageNoEgk",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageNoEgk.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageNoEgk.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Coverage",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageNoEgk.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageNoEgk.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBCoverageNoEgk.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.signature",
+        "path": "Bundle.signature",
+        "max": "0"
+      }
+    ]
+  }
+}

@@ -3,3 +3,5 @@ validation_results/**
 fhirpkg.lock.json
 package-lock.json
 scripts/validation_script-config.yaml
+Resources/fsh-generated/fsh-index.txt
+Resources/fsh-generated/fsh-index.json

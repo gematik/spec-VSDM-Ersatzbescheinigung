@@ -2,20 +2,13 @@
   "resourceType": "StructureDefinition",
   "id": "eeb-operation-outcome-issue-identifier",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBOperationOutcomeIssueIdentifier",
-  "version": "1.0.0-rc3",
+  "version": "1.1.0",
   "name": "EEBOperationOutcomeIssueIdentifier",
   "status": "active",
   "experimental": false,
-  "date": "2023-03-17",
+  "date": "2025-08-05",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
-  "mapping": [
-    {
-      "identity": "rim",
-      "uri": "http://hl7.org/v3",
-      "name": "RIM Mapping"
-    }
-  ],
   "kind": "complex-type",
   "abstract": false,
   "context": [
@@ -70,16 +63,6 @@
       {
         "id": "Extension.extension:Bundle-Identifier.value[x]",
         "path": "Extension.extension.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
         "min": 1,
         "type": [
           {
@@ -88,40 +71,34 @@
         ]
       },
       {
-        "id": "Extension.extension:Bundle-Identifier.valueIdentifier",
-        "path": "Extension.extension.valueIdentifier",
-        "min": 1,
-        "max": "1"
-      },
-      {
-        "id": "Extension.extension:Bundle-Identifier.valueIdentifier.use",
-        "path": "Extension.extension.valueIdentifier.use",
+        "id": "Extension.extension:Bundle-Identifier.value[x].use",
+        "path": "Extension.extension.value[x].use",
         "max": "0"
       },
       {
-        "id": "Extension.extension:Bundle-Identifier.valueIdentifier.type",
-        "path": "Extension.extension.valueIdentifier.type",
+        "id": "Extension.extension:Bundle-Identifier.value[x].type",
+        "path": "Extension.extension.value[x].type",
         "max": "0"
       },
       {
-        "id": "Extension.extension:Bundle-Identifier.valueIdentifier.system",
-        "path": "Extension.extension.valueIdentifier.system",
+        "id": "Extension.extension:Bundle-Identifier.value[x].system",
+        "path": "Extension.extension.value[x].system",
         "min": 1,
         "fixedUri": "urn:ietf:rfc:3986"
       },
       {
-        "id": "Extension.extension:Bundle-Identifier.valueIdentifier.value",
-        "path": "Extension.extension.valueIdentifier.value",
+        "id": "Extension.extension:Bundle-Identifier.value[x].value",
+        "path": "Extension.extension.value[x].value",
         "min": 1
       },
       {
-        "id": "Extension.extension:Bundle-Identifier.valueIdentifier.period",
-        "path": "Extension.extension.valueIdentifier.period",
+        "id": "Extension.extension:Bundle-Identifier.value[x].period",
+        "path": "Extension.extension.value[x].period",
         "max": "0"
       },
       {
-        "id": "Extension.extension:Bundle-Identifier.valueIdentifier.assigner",
-        "path": "Extension.extension.valueIdentifier.assigner",
+        "id": "Extension.extension:Bundle-Identifier.value[x].assigner",
+        "path": "Extension.extension.value[x].assigner",
         "max": "0"
       },
       {
@@ -146,16 +123,6 @@
       {
         "id": "Extension.extension:Message-ID.value[x]",
         "path": "Extension.extension.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
         "min": 1,
         "type": [
           {
@@ -164,40 +131,34 @@
         ]
       },
       {
-        "id": "Extension.extension:Message-ID.valueIdentifier",
-        "path": "Extension.extension.valueIdentifier",
-        "min": 1,
-        "max": "1"
-      },
-      {
-        "id": "Extension.extension:Message-ID.valueIdentifier.use",
-        "path": "Extension.extension.valueIdentifier.use",
+        "id": "Extension.extension:Message-ID.value[x].use",
+        "path": "Extension.extension.value[x].use",
         "max": "0"
       },
       {
-        "id": "Extension.extension:Message-ID.valueIdentifier.type",
-        "path": "Extension.extension.valueIdentifier.type",
+        "id": "Extension.extension:Message-ID.value[x].type",
+        "path": "Extension.extension.value[x].type",
         "max": "0"
       },
       {
-        "id": "Extension.extension:Message-ID.valueIdentifier.system",
-        "path": "Extension.extension.valueIdentifier.system",
+        "id": "Extension.extension:Message-ID.value[x].system",
+        "path": "Extension.extension.value[x].system",
         "min": 1,
         "fixedUri": "https://gematik.de/fhir/eeb/StructureDefinition/Message_ID_KIM"
       },
       {
-        "id": "Extension.extension:Message-ID.valueIdentifier.value",
-        "path": "Extension.extension.valueIdentifier.value",
+        "id": "Extension.extension:Message-ID.value[x].value",
+        "path": "Extension.extension.value[x].value",
         "min": 1
       },
       {
-        "id": "Extension.extension:Message-ID.valueIdentifier.period",
-        "path": "Extension.extension.valueIdentifier.period",
+        "id": "Extension.extension:Message-ID.value[x].period",
+        "path": "Extension.extension.value[x].period",
         "max": "0"
       },
       {
-        "id": "Extension.extension:Message-ID.valueIdentifier.assigner",
-        "path": "Extension.extension.valueIdentifier.assigner",
+        "id": "Extension.extension:Message-ID.value[x].assigner",
+        "path": "Extension.extension.value[x].assigner",
         "max": "0"
       },
       {

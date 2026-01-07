@@ -1,0 +1,295 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "EEBAnfrageBundle",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle",
+  "version": "1.1.0",
+  "name": "EEBAnfrageBundle",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-08-05",
+  "publisher": "gematik GmbH",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle",
+        "path": "Bundle",
+        "constraint": [
+          {
+            "key": "-eeb-angabeOrganizationIdentifier",
+            "severity": "error",
+            "human": "Im Organization-Profil muss als Identifier entweder das Institutionskennzeichen, die Betriebsstättennummer oder die KZV-Abrechnungsnummer angegeben werden.",
+            "expression": "entry.where(resource is Organization).resource.identifier.type.coding.where(code='BSNR' or code='XX' or code='KZVA').exists()",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+          },
+          {
+            "key": "-eeb-angabePatientIdentifier",
+            "severity": "error",
+            "human": "Im Patient-Profil muss entweder ein Identifier (GKV oder PKV) oder folgende Informationen (Name, Vorname, Geburtsdatum und Postleitzahl) angegeben werden.",
+            "expression": "entry.where(resource is Patient).resource.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').exists() or entry.where(resource is Patient).resource.where(name.family and name.given and birthDate and address.postalCode).exists()",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+          }
+        ]
+      },
+      {
+        "id": "Bundle.id",
+        "path": "Bundle.id",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta",
+        "min": 1
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+      },
+      {
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "min": 1
+      },
+      {
+        "id": "Bundle.identifier.use",
+        "path": "Bundle.identifier.use",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.type",
+        "path": "Bundle.identifier.type",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.system",
+        "path": "Bundle.identifier.system",
+        "min": 1,
+        "fixedUri": "urn:ietf:rfc:3986"
+      },
+      {
+        "id": "Bundle.identifier.value",
+        "path": "Bundle.identifier.value",
+        "short": "Eindeutige UUID",
+        "min": 1
+      },
+      {
+        "id": "Bundle.identifier.period",
+        "path": "Bundle.identifier.period",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.assigner",
+        "path": "Bundle.identifier.assigner",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "fixedCode": "message"
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "min": 1
+      },
+      {
+        "id": "Bundle.total",
+        "path": "Bundle.total",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.link",
+        "path": "Bundle.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "resource.meta.profile"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 3,
+        "max": "3"
+      },
+      {
+        "id": "Bundle.entry:EEBAnfrageHeader",
+        "path": "Bundle.entry",
+        "sliceName": "EEBAnfrageHeader",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:EEBAnfrageHeader.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBAnfrageHeader.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "MessageHeader",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:EEBAnfrageHeader.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBAnfrageHeader.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBAnfrageHeader.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBKnownPatient",
+        "path": "Bundle.entry",
+        "sliceName": "EEBKnownPatient",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:EEBKnownPatient.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBKnownPatient.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:EEBKnownPatient.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBKnownPatient.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:EEBKnownPatient.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient",
+        "path": "Bundle.entry",
+        "sliceName": "KBV_PR_FOR_Patient",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Patient.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Organization",
+        "path": "Bundle.entry",
+        "sliceName": "KBV_PR_FOR_Organization",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Organization.link",
+        "path": "Bundle.entry.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Organization.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Organization.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Organization.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:KBV_PR_FOR_Organization.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.signature",
+        "path": "Bundle.signature",
+        "max": "0"
+      }
+    ]
+  }
+}

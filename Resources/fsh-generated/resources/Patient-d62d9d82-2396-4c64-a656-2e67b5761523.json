@@ -1,0 +1,52 @@
+{
+  "resourceType": "Patient",
+  "id": "d62d9d82-2396-4c64-a656-2e67b5761523",
+  "meta": {
+    "profile": [
+      "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2"
+    ]
+  },
+  "name": [
+    {
+      "use": "official",
+      "family": "Meier",
+      "_family": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+            "valueString": "Meier"
+          }
+        ]
+      },
+      "given": [
+        "Max"
+      ]
+    }
+  ],
+  "address": [
+    {
+      "type": "both",
+      "line": [
+        "Teststrasse 2"
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "2"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "Teststrasse"
+            }
+          ]
+        }
+      ],
+      "city": "Dortmund",
+      "postalCode": "44227",
+      "country": "D"
+    }
+  ],
+  "birthDate": "1970-04-11"
+}

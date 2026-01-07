@@ -1,0 +1,12 @@
+- name: Interoperabilitätsvorgaben
+  filename: Index.page.md
+- name: FHIR-Profile
+  filename: fhir-profile.page.md
+- name: KIM-Nachrichtenstruktur
+  filename: KIM-Nachrichtenstruktur.page.md
+- name: QR-Code-Scan
+  filename: QR-VZD.page.md
+- name: Release Notes
+  filename: Release-Notes.page.md
+- name: Terminologie
+  filename: Terminologie.page.md

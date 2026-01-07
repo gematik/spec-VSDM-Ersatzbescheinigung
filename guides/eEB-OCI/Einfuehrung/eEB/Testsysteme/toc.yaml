@@ -1,0 +1,8 @@
+- name: Index
+  filename: Index.page.md
+- name: Techniker Krankenkasse
+  filename: tk.page.md
+- name: DAK, BKK VBU, IKK classic, SBK, SLVFG
+  filename: bitmarck.page.md
+- name: Barmer Krankenkasse
+  filename: barmer.page.md

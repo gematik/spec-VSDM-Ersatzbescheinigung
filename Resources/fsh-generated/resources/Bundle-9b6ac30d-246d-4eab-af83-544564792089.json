@@ -28,47 +28,33 @@
           "identifier": "79939e34-c5cc-4da6-ba55-f4bd85832760"
         },
         "eventCoding": {
-          "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
-          "code": "1.2.276.0.76.4.50",
-          "display": "Betriebsstätte Arzt"
+          "system": "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID",
+          "code": "1.2.276.0.76.4.30",
+          "display": "Ärztin/Arzt"
         },
         "source": {
           "endpoint": "https://Test-Krankenkasse.de/KIM"
         },
         "focus": [
           {
-            "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
+            "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3u"
           },
           {
-            "reference": "Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"
+            "reference": "Coverage/2d4da53a-413a-48fe-b908-2e67b576152u"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/Patient/437f2555-2396-4c64-a656-e9553161ca3c",
+      "fullUrl": "https://gematik.de/fhir/Patient/437f2555-2396-4c64-a656-e9553161ca3u",
       "resource": {
         "resourceType": "Patient",
-        "id": "437f2555-2396-4c64-a656-e9553161ca3c",
+        "id": "437f2555-2396-4c64-a656-e9553161ca3u",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2"
           ]
         },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
-                  "code": "GKV"
-                }
-              ]
-            },
-            "system": "http://fhir.de/sid/gkv/kvid-10",
-            "value": "T024791905"
-          }
-        ],
         "name": [
           {
             "use": "official",
@@ -84,6 +70,20 @@
             "given": [
               "Ludger"
             ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "KVZ10"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "T024791905"
           }
         ],
         "address": [
@@ -115,10 +115,10 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/Coverage/2d4da53a-413a-48fe-b908-2e67b5761523",
+      "fullUrl": "https://gematik.de/fhir/Coverage/2d4da53a-413a-48fe-b908-2e67b576152u",
       "resource": {
         "resourceType": "Coverage",
-        "id": "2d4da53a-413a-48fe-b908-2e67b5761523",
+        "id": "2d4da53a-413a-48fe-b908-2e67b576152u",
         "meta": {
           "profile": [
             "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
@@ -166,7 +166,7 @@
           "end": "2027-07-31"
         },
         "beneficiary": {
-          "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3c"
+          "reference": "Patient/437f2555-2396-4c64-a656-e9553161ca3u"
         }
       }
     }
