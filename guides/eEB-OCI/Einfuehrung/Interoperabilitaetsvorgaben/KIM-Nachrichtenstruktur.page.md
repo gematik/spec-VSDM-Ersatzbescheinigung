@@ -24,12 +24,12 @@ Die Übertragung der Daten bzw. der Anfrage erfolgt via KIM. Dabei sind drei Nac
 
 ## KIM Dienstkennungen
 
-Aufgrund notwendiger Anpassungen der eEB-Logik zum Schutz der ePA-hcv-Befugnismerkmale wird das eEB-Verfahren auf eine Version mit KIM-Dienstkennung 1.1 weiterentwickelt, die Verwendung von 1.0 ist zunächst weiterhin möglich, eine Abkündigung von 1.0 wird jedoch angestrebt.
+Aufgrund notwendiger Anpassungen der eEB-Logik zum Schutz der ePA-hcv-Befugnismerkmale wird das eEB-Verfahren auf eine Version mit KIM-Dienstkennung 1.1 weiterentwickelt, die Verwendung von 1.0 ist zunächst weiterhin möglich, eine Abkündigung von 1.0 erfolgt zum 01.04.2026.
 
 Das bedeutet im Einzelnen
 1.	EEB-Bescheinigungen, die über die Kassen- oder Versicherungs-Apps angefordert werden, bleiben zunächst bei der KIM-Dienstkennung **eEB;Bescheinigung;V1.0**, da sich das Verfahren hierfür nicht ändert.
 2.	EEB-Anfragen, die über KIM mit der KIM-Dienstkennung **eEB;Anfrage;V1.0** gestellt werden, werden von den Kassen grundsätzlich mit einem Fehler (Code 130) und der KIM-Dienstkennung **eEB;Fehler;V1.0** beantwortet
-3.	Neue EEB-Anfragen, die dieses geänderte Verfahren mit dem Coverage Profil `EEBCoverageNoAddressLine` berücksichtigen, haben die KIM-Dienstkennung **eEB;Anfrage;V1.1** zu verwenden. Erfolgreiche Prüfungen der Anfragen führen dann zu eEB-Bescheinigungen, die von den Kassen mit der KIM-Dienstkennung **eEB;Bescheinigung-KIM;V1.1** gesendet werden. <br /> Hierfür wird eine neue Version v1.1.0 der FHIR-Profile eingeführt, die ab sofort dort Verwendung finden, wo sie über die passende Dienstkennung bei einem Kostenträger angefordert werden. Mit der Profilaktualisierung werden auch die FHIR-Dependencies auf den aktuellen Stand angepasst, wie sie ab dem 01.10.2025 für das E-Rezept verbindlich werden.
+3.	Neue EEB-Anfragen, die dieses geänderte Verfahren mit dem Coverage Profil `EEBCoverageNoAddressLine` berücksichtigen, haben die KIM-Dienstkennung **eEB;Anfrage;V1.1** zu verwenden. Erfolgreiche Prüfungen der Anfragen führen dann zu eEB-Bescheinigungen, die von den Kassen mit der KIM-Dienstkennung **eEB;Bescheinigung;V1.1** gesendet werden. <br /> Hierfür wird eine neue Version v1.1.0 der FHIR-Profile eingeführt, die ab sofort dort Verwendung finden, wo sie über die passende Dienstkennung bei einem Kostenträger angefordert werden. Mit der Profilaktualisierung werden auch die FHIR-Dependencies auf den aktuellen Stand angepasst, wie sie ab dem 01.10.2025 für das E-Rezept verbindlich werden.
 
 {{render:guides-eeb-oci-images-eeb11}}
 
