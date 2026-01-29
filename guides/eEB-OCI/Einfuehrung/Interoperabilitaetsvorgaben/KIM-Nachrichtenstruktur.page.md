@@ -198,7 +198,7 @@ Der Anhang enthält die signierte Anfrage (SMC-B OSIG-signiert) als `PKCS7`-Date
 
 |Header                  |Inhalt                                 |verpflichtend|
 |------------------------|---------------------------------------|-------------|
-|X-KIM-Dienstkennung     |eEB;Bescheinigung-KIM;V1.1 (wenn eEB-Anforderung via KIM)<br />eEB;Bescheinigung-App;V1.1 (wenn eEB-Anforderung via App)  |ja|
+|X-KIM-Dienstkennung     |eEB;Bescheinigung;V1.1 |ja|
 |X-KIM-Ursprungssystem   |\<PVS-Bezeichnung>;\<Releaseversion>   |nein|
 |X-KIM-Sendersystem      |\<Kasse-Bezeichnung>;\<Releaseversion> |nein|
 |X-KIM-Support           |\<Support-Email-Adresse Kasse> |nein|
