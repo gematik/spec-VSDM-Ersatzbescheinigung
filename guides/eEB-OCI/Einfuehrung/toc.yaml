@@ -1,5 +1,7 @@
 - name: Einführung
   filename: Index.page.md
+- name: Leitfaden-Versionierung
+  filename: Leitfaden-Versionierung.md
 - name: Interoperabilitätsvorgaben
   filename: Interoperabilitaetsvorgaben
 - name: Elektronische Ersatzbescheinigung (eEB)
