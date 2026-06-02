@@ -2,11 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "EEBBescheinigungHeader",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "EEBBescheinigungHeader",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
-  "date": "2025-08-05",
+  "date": "2026-05-08",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "kind": "resource",
@@ -27,6 +27,99 @@
         "min": 1,
         "max": "1",
         "fixedCanonical": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+      },
+      {
+        "id": "MessageHeader.extension",
+        "path": "MessageHeader.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MessageHeader.extension:versionEEB",
+        "path": "MessageHeader.extension",
+        "sliceName": "versionEEB",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/versionEEB"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.extension:versionEEB.value[x]",
+        "path": "MessageHeader.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "MessageHeader.extension:servicePeriod",
+        "path": "MessageHeader.extension",
+        "sliceName": "servicePeriod",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/servicePeriod"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.extension:servicePeriod.value[x]",
+        "path": "MessageHeader.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "MessageHeader.extension:noAddressLine",
+        "path": "MessageHeader.extension",
+        "sliceName": "noAddressLine",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/noAddressLine"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.extension:noAddressLine.value[x]",
+        "path": "MessageHeader.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "MessageHeader.extension:KVNRinClearing",
+        "path": "MessageHeader.extension",
+        "sliceName": "KVNRinClearing",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://gematik.de/fhir/eeb/StructureDefinition/KVNRinClearing"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MessageHeader.extension:KVNRinClearing.value[x]",
+        "path": "MessageHeader.extension.value[x]",
+        "min": 1
       },
       {
         "id": "MessageHeader.event[x]",

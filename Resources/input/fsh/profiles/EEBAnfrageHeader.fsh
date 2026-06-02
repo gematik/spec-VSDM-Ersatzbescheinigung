@@ -13,10 +13,12 @@ Id: EEBAnfrageHeader
 * extension contains
     Leistungsdatum named Leistungsdatum 1..1 and
     Einverstaendnis named Einverstaendnis 1..1 and
-    Institutionskennzeichen named Institutionskennzeichen 1..1
+    Institutionskennzeichen named Institutionskennzeichen 1..1 and 
+    versionEEB named versionEEB 0..1
 * extension[Leistungsdatum].value[x] 1..1
 * extension[Einverstaendnis].value[x] 1..1
 * extension[Institutionskennzeichen].value[x] 1..1
+* extension[versionEEB].value[x] 1..1
 
 // hier OID Anfragender
 * event[x] only Coding

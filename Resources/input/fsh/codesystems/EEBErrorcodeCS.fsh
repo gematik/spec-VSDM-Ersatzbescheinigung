@@ -11,8 +11,11 @@ Description: "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausste
 * #110 "Der Patient ist nicht eindeutig identifizierbar."
 * #111 "Das angefragte Leistungsdatum ist unplausibel."
 * #112 "Es liegt für den Patienten kein gültiges Versichertenverhältnis zum angefragten Leistungsdatum vor."
+* #113 "Die Prüfziffer der Krankenversicherungsnummer (KVNR) ist nicht korrekt."
 * #120 "Die Einwilligung des Patienten zur Freigabe der Bescheinigungsübermittlung an die Praxis liegt nicht vor."
-* #130 "Es liegt ein Sonderfall/ eine Ausnahme vor. Bitten Sie den Patienten, mit der Krankenkasse Kontakt aufzunehmen."
+* #130 "Es liegt ein Sonderfall - eine Ausnahme vor. Bitten Sie den Patienten, mit der Krankenkasse Kontakt aufzunehmen."
+* #140 "Die Version der KIM-Dienstkennung passt nicht zur übermittelten EEB-Version."
+* #141 "Die angeforderte Version der EEB-Bescheinigung (VSDM1-Schema) wird nicht mehr unterstützt."
 
 * #201 "Die Signatur der eEB-Anfrage ist nicht gültig, da ein fehlerhaftes Zertifikat verwendet wurde oder nicht alle zur Zertifikatsprüfung erforderlichen Komponenten bzw. Ressourcen zur Verfügung standen."
 * #202 "Die Signaturprüfung der eEB-Anfrage hat ergeben, dass die signierten Daten nicht mit den übermittelten Daten der eEB-Anfrage übereinstimmen."

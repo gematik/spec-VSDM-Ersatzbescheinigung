@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "geschuetzte-versichertendaten",
-  "url": "https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten",
+  "id": "noaddressline",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/noAddressLine",
   "version": "1.2.0",
-  "name": "GeschuetzteVersichertendaten",
+  "name": "noAddressLine",
   "status": "draft",
   "experimental": false,
   "date": "2026-05-08",
@@ -14,7 +14,7 @@
   "context": [
     {
       "type": "element",
-      "expression": "Coverage"
+      "expression": "MessageHeader"
     }
   ],
   "type": "Extension",
@@ -25,7 +25,7 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "Geschuetzte Versichertendaten als base64-codierter und gzip-komprimierter String analog zu den Containern der eGK"
+        "short": "Die ausgestellte eEB enthält bewusst unvollständige Adressangaben. Clientseitig bekannte Adressdaten sollten nicht überschrieben werden."
       },
       {
         "id": "Extension.extension",
@@ -35,15 +35,14 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten"
+        "fixedUri": "https://gematik.de/fhir/eeb/StructureDefinition/noAddressLine"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "min": 1,
         "type": [
           {
-            "code": "base64Binary"
+            "code": "boolean"
           }
         ]
       }

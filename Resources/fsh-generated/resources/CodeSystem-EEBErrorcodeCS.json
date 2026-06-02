@@ -1,12 +1,12 @@
 {
   "resourceType": "CodeSystem",
-  "status": "active",
+  "status": "draft",
   "content": "complete",
   "name": "EEBErrorcodeCS",
   "id": "EEBErrorcodeCS",
   "title": "CodeSystem für eEB Fehler",
   "description": "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausstellen kann",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "url": "https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS",
   "concept": [
     {
@@ -30,12 +30,24 @@
       "display": "Es liegt für den Patienten kein gültiges Versichertenverhältnis zum angefragten Leistungsdatum vor."
     },
     {
+      "code": "113",
+      "display": "Die Prüfziffer der Krankenversicherungsnummer (KVNR) ist nicht korrekt."
+    },
+    {
       "code": "120",
       "display": "Die Einwilligung des Patienten zur Freigabe der Bescheinigungsübermittlung an die Praxis liegt nicht vor."
     },
     {
       "code": "130",
-      "display": "Es liegt ein Sonderfall/ eine Ausnahme vor. Bitten Sie den Patienten, mit der Krankenkasse Kontakt aufzunehmen."
+      "display": "Es liegt ein Sonderfall - eine Ausnahme vor. Bitten Sie den Patienten, mit der Krankenkasse Kontakt aufzunehmen."
+    },
+    {
+      "code": "140",
+      "display": "Die Version der KIM-Dienstkennung passt nicht zur übermittelten EEB-Version."
+    },
+    {
+      "code": "141",
+      "display": "Die angeforderte Version der EEB-Bescheinigung (VSDM1-Schema) wird nicht mehr unterstützt."
     },
     {
       "code": "201",
@@ -76,7 +88,7 @@
   ],
   "experimental": false,
   "publisher": "gematik GmbH",
-  "date": "2025-08-05",
+  "date": "2026-05-08",
   "caseSensitive": true,
-  "count": 16
+  "count": 19
 }

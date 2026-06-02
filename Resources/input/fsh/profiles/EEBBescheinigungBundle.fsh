@@ -18,6 +18,24 @@ entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.46'
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.47' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies ((entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and (entry.where(resource is Patient).resource.address.line.count() = 0 or entry.where(resource is Patient).resource.address.type = 'postal'))"
 
+Invariant: -eeb-checkEebVersionCoverage
+Description: "Wird die Extension versionEEB verwendet, darf als Coverage nur VSDMCoverageGKV verwendet werden."
+Severity: #error
+Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').exists() implies entry.resource.ofType(Coverage).all($this.conformsTo('VSDMCoverageGKV'))"
+
+Invariant: -eeb-checkEebVersionExtensions
+Description: "Wird die Extension versionEEB mit dem code 2.0 verwendet, muss die Extension noAddressLine mit „true“ gesetzt sein und darf in KBV_PR_FOR_Patitent im adress-Feld kein Feld Line verwendet werden."
+Severity: #error
+Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB' and value = '2.0').exists() implies
+  (entry.resource.ofType(MessageHeader).extension.where(url = 'noAddressLine' and valueBoolean = true).exists()) and
+  (entry.resource.ofType(Patient).where(meta.profile.exists($this = 'KBV_PR_FOR_Patient')).address.line.empty())"
+
+Invariant: -eeb-checkEebVersionKVNRclearing
+Description: "Wird die Extension KVNRinClearing verwendet, darf in der Ressource KBV_PR_FOR_Patitent kein identifier verwendet werden."
+Severity: #error
+Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'KVNRinClearing').exists() implies
+  entry.resource.ofType(Patient).where(meta.profile.exists($this = 'KBV_PR_FOR_Patient')).identifier.empty()"
+
 
 Profile: EEBBescheinigungBundle
 Parent: Bundle
@@ -52,7 +70,8 @@ Id: EEBBescheinigungBundle
     KBVFORPatient 1..1 and
     EEBCoverageEgk 0..1 and
     EEBCoverageEgkNoAddressLine 0..1 and
-    EEBCoverageNoEgk 0..1
+    EEBCoverageNoEgk 0..1 and
+    VSDMCoverageGKV 0..1
 * entry[EEBBescheinigungHeader].link ..0
 * entry[EEBBescheinigungHeader].resource 1..
 * entry[EEBBescheinigungHeader].resource only EEBBescheinigungHeader
@@ -87,6 +106,11 @@ Id: EEBBescheinigungBundle
 * entry[EEBCoverageNoEgk].search ..0
 * entry[EEBCoverageNoEgk].request ..0
 * entry[EEBCoverageNoEgk].response ..0
+
+
+
+
+
 
 * obeys -eeb-angabePatientPLZ
 * obeys -eeb-checkConditionCode49
@@ -223,7 +247,7 @@ Usage: #example
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:4a270af6-1234-5678-abcd-dfe20acfb5c5"
 * type = #message
-* entry[0].fullUrl = "https://gematik.de/fhir/MessageHeader/e184d490-22f3-4009-892e-77b9bc9a7504"
+* entry[+].fullUrl = "https://gematik.de/fhir/MessageHeader/e184d490-22f3-4009-892e-77b9bc9a7504"
 * entry[=].resource = e184d490-22f3-4009-892e-77b9bc9a7504
 * entry[+].fullUrl = "https://gematik.de/fhir/Patient/2e67b7dc-24c0-4b23-9487-9a7dd8e140cd"
 * entry[=].resource = 2e67b7dc-24c0-4b23-9487-9a7dd8e140cd
