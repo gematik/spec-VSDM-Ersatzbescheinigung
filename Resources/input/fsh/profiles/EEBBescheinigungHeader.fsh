@@ -54,7 +54,7 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle query by HBA signature"
 Usage: #inline
 * id = "bd901c08-0133-4276-b34b-eb810a62deda"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
+* eventCoding.system = $system-practitionerProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.30
 * eventCoding.display = "Ärztin/Arzt"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
@@ -68,7 +68,7 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle query by SMC-B signature"
 Usage: #inline
 * id = "bd901c08-0133-4276-b34b-eb810a62dedu"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.system = $system-organizationProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
@@ -83,7 +83,7 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle no KVNR available"
 Usage: #inline
 * id = "5b3c588d-36f5-42be-a10e-1c48eb800cc3"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.system = $system-organizationProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
@@ -97,7 +97,7 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle triggered via GKV or PKV App"
 Usage: #inline
 * id = "aafed78c-696c-4805-9e7b-d454e1aeb538"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
+* eventCoding.system = $system-practitionerProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.49
 * eventCoding.display = "Versicherte/-r"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
@@ -109,7 +109,7 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle no KVNR available"
 Usage: #inline
 * id = "68183245-0857-4e65-b4fa-2a6d698d9608"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.system = $system-organizationProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"

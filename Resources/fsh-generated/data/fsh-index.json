@@ -4,64 +4,80 @@
     "fshName": "EEBAnfrageBundleSampleKnownPatient",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 164,
-    "endLine": 179
+    "startLine": 176,
+    "endLine": 191
   },
   {
     "outputFile": "Bundle-43bb7e49-inva-lide-pati-entstrassed6b.json",
     "fshName": "EEBBescheinigungBundleSampleNoEgk",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 159,
-    "endLine": 173
+    "startLine": 170,
+    "endLine": 184
   },
   {
     "outputFile": "Bundle-4a270af6-nneu-ohne-kvnr-dfe20acfb5c5.json",
     "fshName": "EEBBescheinigungBundle2",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 243,
-    "endLine": 256
+    "startLine": 257,
+    "endLine": 270
   },
   {
     "outputFile": "Bundle-96120812-a785-4fe3-a1e9-244314fdad9d.json",
     "fshName": "EEBAnfrageBundleSampleKnownKBV_PR_FOR_Patient",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 181,
-    "endLine": 196
+    "startLine": 193,
+    "endLine": 208
   },
   {
     "outputFile": "Bundle-9b6ac30d-246d-4eab-af83-544564792089.json",
     "fshName": "EEBBescheinigungBundleSampleEgk",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 121,
-    "endLine": 135
+    "startLine": 132,
+    "endLine": 146
   },
   {
     "outputFile": "Bundle-9b6ac30d-246d-4eab-af83-54456479208u.json",
     "fshName": "EEBBescheinigungBundleEgkNoAddressLine",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 137,
-    "endLine": 151
+    "startLine": 148,
+    "endLine": 162
   },
   {
     "outputFile": "Bundle-cecef81d-ab68-4d5a-9e22-7b3e8edce6e6.json",
     "fshName": "EEBBescheinigungBundleSampleEgkPkv",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 175,
-    "endLine": 189
+    "startLine": 186,
+    "endLine": 200
   },
   {
     "outputFile": "Bundle-cef4c975-753e-4b25-bec3-6549c7360e0a.json",
     "fshName": "EEBAnfrageBundleSampleUnknownKBV_PR_FOR_Patient",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 198,
-    "endLine": 213
+    "startLine": 210,
+    "endLine": 225
+  },
+  {
+    "outputFile": "Bundle-eeb-anfrage-v2.json",
+    "fshName": "eEBAnfrageExampleV2",
+    "fshType": "Instance",
+    "fshFile": "samples\\eEBAnfrageExampleV2.fsh",
+    "startLine": 1,
+    "endLine": 25
+  },
+  {
+    "outputFile": "Bundle-eeb-bescheinigung-v2.json",
+    "fshName": "eEBBescheinigungExampleV2",
+    "fshType": "Instance",
+    "fshFile": "samples\\eEBBescheinigungExampleV2.fsh",
+    "startLine": 1,
+    "endLine": 24
   },
   {
     "outputFile": "CodeSystem-EEBErrorcodeCS.json",
@@ -84,8 +100,8 @@
     "fshName": "EEBCoverageNoEgkSample",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBCoverageNoEgk.fsh",
-    "startLine": 72,
-    "endLine": 105
+    "startLine": 75,
+    "endLine": 108
   },
   {
     "outputFile": "OperationOutcome-3f624395-be34-4fac-9773-d735cb3a1f73.json",
@@ -117,7 +133,7 @@
     "fshType": "Instance",
     "fshFile": "profiles\\EEBCoverageEgkNoAddressLine.fsh",
     "startLine": 11,
-    "endLine": 29
+    "endLine": 32
   },
   {
     "outputFile": "Patient-437f2555-2396-4c64-a656-e9553161ca3u.json",
@@ -125,7 +141,7 @@
     "fshType": "Instance",
     "fshFile": "profiles\\EEBCoverageEgk.fsh",
     "startLine": 71,
-    "endLine": 94
+    "endLine": 97
   },
   {
     "outputFile": "Patient-b8f0f69c-af1a-480b-8abf-44ab11aa23c5.json",
@@ -141,7 +157,7 @@
     "fshType": "Instance",
     "fshFile": "profiles\\EEBCoverageNoEgk.fsh",
     "startLine": 51,
-    "endLine": 69
+    "endLine": 72
   },
   {
     "outputFile": "StructureDefinition-EEBAnfrageBundle.json",
@@ -164,8 +180,8 @@
     "fshName": "EEBBescheinigungBundle",
     "fshType": "Profile",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 40,
-    "endLine": 117
+    "startLine": 47,
+    "endLine": 128
   },
   {
     "outputFile": "StructureDefinition-EEBBescheinigungHeader.json",
@@ -198,6 +214,14 @@
     "fshFile": "profiles\\EEBCoverageNoEgk.fsh",
     "startLine": 1,
     "endLine": 47
+  },
+  {
+    "outputFile": "StructureDefinition-EEBCoverageVSDM.json",
+    "fshName": "EEBCoverageVSDM",
+    "fshType": "Profile",
+    "fshFile": "profiles\\EEBCoverageVSDM.fsh",
+    "startLine": 1,
+    "endLine": 19
   },
   {
     "outputFile": "StructureDefinition-EEBFehler.json",

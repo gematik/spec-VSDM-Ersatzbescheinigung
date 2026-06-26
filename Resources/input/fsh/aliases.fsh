@@ -12,3 +12,5 @@ Alias: $AbrechnendeIK = http://fhir.de/StructureDefinition/AbrechnendeIK
 Alias: $identifier-iknr = http://fhir.de/StructureDefinition/identifier-iknr
 Alias: $patient-genderIdentity = http://hl7.org/fhir/StructureDefinition/patient-genderIdentity
 Alias: $sid-identifier-kvid-10 = http://fhir.de/sid/gkv/kvid-10
+Alias: $system-practitionerProfessionOID-code = https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID
+Alias: $system-organizationProfessionOID-code = https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID
