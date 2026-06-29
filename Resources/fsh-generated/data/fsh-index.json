@@ -4,64 +4,64 @@
     "fshName": "EEBAnfrageBundleSampleKnownPatient",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 176,
-    "endLine": 191
+    "startLine": 188,
+    "endLine": 203
   },
   {
     "outputFile": "Bundle-43bb7e49-inva-lide-pati-entstrassed6b.json",
     "fshName": "EEBBescheinigungBundleSampleNoEgk",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 170,
-    "endLine": 184
+    "startLine": 174,
+    "endLine": 188
   },
   {
     "outputFile": "Bundle-4a270af6-nneu-ohne-kvnr-dfe20acfb5c5.json",
     "fshName": "EEBBescheinigungBundle2",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 257,
-    "endLine": 270
+    "startLine": 261,
+    "endLine": 274
   },
   {
     "outputFile": "Bundle-96120812-a785-4fe3-a1e9-244314fdad9d.json",
     "fshName": "EEBAnfrageBundleSampleKnownKBV_PR_FOR_Patient",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 193,
-    "endLine": 208
+    "startLine": 205,
+    "endLine": 220
   },
   {
     "outputFile": "Bundle-9b6ac30d-246d-4eab-af83-544564792089.json",
     "fshName": "EEBBescheinigungBundleSampleEgk",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 132,
-    "endLine": 146
+    "startLine": 136,
+    "endLine": 150
   },
   {
     "outputFile": "Bundle-9b6ac30d-246d-4eab-af83-54456479208u.json",
     "fshName": "EEBBescheinigungBundleEgkNoAddressLine",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 148,
-    "endLine": 162
+    "startLine": 152,
+    "endLine": 166
   },
   {
     "outputFile": "Bundle-cecef81d-ab68-4d5a-9e22-7b3e8edce6e6.json",
     "fshName": "EEBBescheinigungBundleSampleEgkPkv",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 186,
-    "endLine": 200
+    "startLine": 190,
+    "endLine": 204
   },
   {
     "outputFile": "Bundle-cef4c975-753e-4b25-bec3-6549c7360e0a.json",
     "fshName": "EEBAnfrageBundleSampleUnknownKBV_PR_FOR_Patient",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 210,
-    "endLine": 225
+    "startLine": 222,
+    "endLine": 237
   },
   {
     "outputFile": "Bundle-eeb-anfrage-v2.json",
@@ -164,8 +164,8 @@
     "fshName": "EEBAnfrageBundle",
     "fshType": "Profile",
     "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 12,
-    "endLine": 73
+    "startLine": 22,
+    "endLine": 85
   },
   {
     "outputFile": "StructureDefinition-EEBAnfrageHeader.json",
@@ -181,7 +181,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
     "startLine": 47,
-    "endLine": 128
+    "endLine": 132
   },
   {
     "outputFile": "StructureDefinition-EEBBescheinigungHeader.json",

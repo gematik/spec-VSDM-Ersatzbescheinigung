@@ -22,7 +22,7 @@ or
 (entry.where(resource is MessageHeader).resource.extension.where(url = 'versionEEB' and value = '2.1').exists() and entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageVSDM') implies (entry.where(resource is Patient).resource.address.line.count() >= 0))"
 
 Invariant: -eeb-checkEebVersionCoverage
-Description: "Wird die Extension versionEEB verwendet, darf als Coverage nur VSDMCoverageGKV verwendet werden."
+Description: "Wird die Extension versionEEB verwendet, darf als Coverage nur EEBCoverageVSDM verwendet werden. Die Coverages EEBCoverageEgk, EEBCoverageNoEgk und EEBCoverageEgkNoAddressline dürfen nicht mehr verwendet werden"
 Severity: #error
 Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').exists()
 implies 
@@ -126,6 +126,10 @@ Id: EEBBescheinigungBundle
 * obeys -eeb-angabePatientPLZ
 * obeys -eeb-checkConditionCode49
 * obeys -eeb-checkConditionOtherCodes
+// version 2 constraints
+* obeys -eeb-checkEebVersionCoverage
+* obeys -eeb-checkEebVersionExtensions
+* obeys -eeb-checkEebVersionKVNRclearing
 
 
 // Beispielgenerierung

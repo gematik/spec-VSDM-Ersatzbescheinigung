@@ -127,6 +127,13 @@
             "human": "Im Patient-Profil muss entweder ein Identifier (GKV oder PKV) oder folgende Informationen (Name, Vorname, Geburtsdatum und Postleitzahl) angegeben werden.",
             "expression": "entry.where(resource is Patient).resource.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').exists() or entry.where(resource is Patient).resource.where(name.family and name.given and birthDate and address.postalCode).exists()",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+          },
+          {
+            "key": "-eeb-checkEebVersionValue",
+            "severity": "error",
+            "human": "Wird die Extension versionEEB verwendet, darf nur der Wert '2' angefragt werden.",
+            "expression": "\r\nentry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').exists()\r\nimplies\r\nentry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').all(\r\n  value = '2'\r\n)\r\n",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
           }
         ],
         "isModifier": false,
@@ -7334,6 +7341,13 @@
             "severity": "error",
             "human": "Im Patient-Profil muss entweder ein Identifier (GKV oder PKV) oder folgende Informationen (Name, Vorname, Geburtsdatum und Postleitzahl) angegeben werden.",
             "expression": "entry.where(resource is Patient).resource.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').exists() or entry.where(resource is Patient).resource.where(name.family and name.given and birthDate and address.postalCode).exists()",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+          },
+          {
+            "key": "-eeb-checkEebVersionValue",
+            "severity": "error",
+            "human": "Wird die Extension versionEEB verwendet, darf nur der Wert '2' angefragt werden.",
+            "expression": "\r\nentry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').exists()\r\nimplies\r\nentry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').all(\r\n  value = '2'\r\n)\r\n",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
           }
         ]
