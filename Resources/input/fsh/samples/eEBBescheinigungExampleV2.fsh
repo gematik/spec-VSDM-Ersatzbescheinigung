@@ -65,9 +65,6 @@ Usage: #inline
 * id = "22222222-2222-2222-3333-222222222222"
 * meta.versionId = "1"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.3"
-* identifier.type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
-* identifier.system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier.value = "T576543456"
 * name.use = #official
 * name.family = "Haselnuss"
 * name.family.extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
