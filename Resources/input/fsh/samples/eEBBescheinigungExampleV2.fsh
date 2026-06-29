@@ -72,11 +72,6 @@ Usage: #inline
 * name.given = "Eileen"
 * birthDate = "1993-08-13"
 * address.type = #both
-* address.line = "Musterstr. 3"
-* address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address.line.extension[=].valueString = "3"
-* address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address.line.extension[=].valueString = "Musterstr."
 * address.country.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-codedString"
 * address.country.extension[=].valueCoding.system = "http://fhir.de/CodeSystem/deuev/anlage-8-laenderkennzeichen"
 * address.country.extension[=].valueCoding.code = #D
