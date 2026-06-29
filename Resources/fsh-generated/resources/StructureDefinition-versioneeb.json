@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "allgemeine-versicherungsdaten",
-  "url": "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten",
+  "id": "versioneeb",
+  "url": "https://gematik.de/fhir/eeb/StructureDefinition/versionEEB",
   "version": "1.2.0",
-  "name": "AllgemeineVersicherungsdaten",
+  "name": "versionEEB",
   "status": "draft",
   "experimental": false,
   "date": "2026-05-08",
@@ -21,7 +21,7 @@
   "context": [
     {
       "type": "element",
-      "expression": "Coverage"
+      "expression": "MessageHeader"
     }
   ],
   "type": "Extension",
@@ -32,7 +32,7 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "Allgemeine Versicherungsdaten als base64-codierter und gzip-komprimierter String analog zu den Containern der eGK",
+        "short": "Fachliche Versionsangabe über die Inhalte der eEB",
         "definition": "Optional Extension Element - found in all resources.",
         "min": 0,
         "max": "*",
@@ -194,7 +194,7 @@
             ]
           }
         ],
-        "fixedUri": "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten",
+        "fixedUri": "https://gematik.de/fhir/eeb/StructureDefinition/versionEEB",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -209,7 +209,7 @@
         "path": "Extension.value[x]",
         "short": "Value of extension",
         "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Extension.value[x]",
@@ -218,7 +218,7 @@
         },
         "type": [
           {
-            "code": "base64Binary"
+            "code": "code"
           }
         ],
         "constraint": [
@@ -247,7 +247,7 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "Allgemeine Versicherungsdaten als base64-codierter und gzip-komprimierter String analog zu den Containern der eGK"
+        "short": "Fachliche Versionsangabe über die Inhalte der eEB"
       },
       {
         "id": "Extension.extension",
@@ -257,15 +257,14 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten"
+        "fixedUri": "https://gematik.de/fhir/eeb/StructureDefinition/versionEEB"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "min": 1,
         "type": [
           {
-            "code": "base64Binary"
+            "code": "code"
           }
         ]
       }

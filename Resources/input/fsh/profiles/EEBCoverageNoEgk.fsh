@@ -53,6 +53,9 @@ InstanceOf: KBV_PR_FOR_Patient
 Title: "Patient for EEBBescheinigungBundle"
 Usage: #example
 * id = "d62d9d82-2396-4c64-a656-2e67b5761523"
+// neu mit KBV.for 1.3
+* meta.versionId = "1"
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.3"
 * name[name]
   * use = #official
   * family = "Meier"
@@ -83,7 +86,7 @@ Usage: #example
 
 * extension[besonderePersonengruppe].valueCoding.system = "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE"
 * extension[besonderePersonengruppe].valueCoding.code = #06
-* extension[besonderePersonengruppe].valueCoding.display = "BVG" // (Gesetz über die Versorgung der Opfer des Krieges)
+* extension[besonderePersonengruppe].valueCoding.display = "SER" // (Gesetz über die Versorgung der Opfer des Krieges)
 
 * extension[zuzahlungsstatus].extension[status].url = "status"
 * extension[zuzahlungsstatus].extension[status].valueBoolean = true

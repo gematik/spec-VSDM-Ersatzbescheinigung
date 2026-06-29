@@ -28,7 +28,7 @@
       "valueCoding": {
         "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE",
         "code": "06",
-        "display": "BVG"
+        "display": "SER"
       }
     },
     {

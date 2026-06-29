@@ -9,14 +9,39 @@ Severity: #error
 Expression: "entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49' implies (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk') and entry.where(resource is Patient).resource.identifier.count() > 0)"
 
 Invariant: -eeb-checkConditionOtherCodes
-Description: "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil (EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein) und (die Patient-Resource darf keine Straße in der Adressangabe enthalten oder muss ein Postfach sein) [SMC-B Prüfung]."
+Description: "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil (EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein) und (die Patient-Resource darf keine Straße in der Adressangabe enthalten oder muss ein Postfach sein) [SMC-B Prüfung] - Außer, es ist die Version 2.1 mit 
+VSDM2Coverage GKV, dann ist die Angabe der Adresse in der Patient-Resource wieder erlaubt."
 Severity: #error
-Expression: "(entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.30' or
+Expression: "((entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.30' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.31' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.45' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.46' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.47' or
-entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies ((entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and (entry.where(resource is Patient).resource.address.line.count() = 0 or entry.where(resource is Patient).resource.address.type = 'postal'))"
+entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies ((entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and (entry.where(resource is Patient).resource.address.line.count() = 0 or entry.where(resource is Patient).resource.address.type = 'postal'))) 
+or
+(entry.where(resource is MessageHeader).resource.extension.where(url = 'versionEEB' and value = '2.1').exists() and entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageVSDM') implies (entry.where(resource is Patient).resource.address.line.count() >= 0))"
+
+Invariant: -eeb-checkEebVersionCoverage
+Description: "Wird die Extension versionEEB verwendet, darf als Coverage nur VSDMCoverageGKV verwendet werden."
+Severity: #error
+Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').exists()
+implies 
+entry.resource.ofType(Coverage).all(
+  meta.profile.exists($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageVSDM')
+)"
+
+Invariant: -eeb-checkEebVersionExtensions
+Description: "Wird die Extension versionEEB mit dem code 2.0 verwendet, muss die Extension noAddressLine mit „true“ gesetzt sein und darf in KBV_PR_FOR_Patitent im adress-Feld kein Feld Line verwendet werden."
+Severity: #error
+Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB' and value = '2.0').exists() implies
+  (entry.resource.ofType(MessageHeader).extension.where(url = 'noAddressLine' and valueBoolean = true).exists()) and
+  (entry.resource.ofType(Patient).where(meta.profile.exists($this = 'KBV_PR_FOR_Patient')).address.line.empty())"
+
+Invariant: -eeb-checkEebVersionKVNRclearing
+Description: "Wird die Extension KVNRinClearing verwendet, darf in der Ressource KBV_PR_FOR_Patitent kein identifier verwendet werden."
+Severity: #error
+Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'KVNRinClearing').exists() implies
+  entry.resource.ofType(Patient).where(meta.profile.exists($this = 'KBV_PR_FOR_Patient')).identifier.empty()"
 
 
 Profile: EEBBescheinigungBundle
@@ -52,7 +77,8 @@ Id: EEBBescheinigungBundle
     KBVFORPatient 1..1 and
     EEBCoverageEgk 0..1 and
     EEBCoverageEgkNoAddressLine 0..1 and
-    EEBCoverageNoEgk 0..1
+    EEBCoverageNoEgk 0..1 and
+    EEBCoverageVSDM 0..1
 * entry[EEBBescheinigungHeader].link ..0
 * entry[EEBBescheinigungHeader].resource 1..
 * entry[EEBBescheinigungHeader].resource only EEBBescheinigungHeader
@@ -87,6 +113,15 @@ Id: EEBBescheinigungBundle
 * entry[EEBCoverageNoEgk].search ..0
 * entry[EEBCoverageNoEgk].request ..0
 * entry[EEBCoverageNoEgk].response ..0
+
+* entry[EEBCoverageVSDM].link ..0
+* entry[EEBCoverageVSDM].resource 1..
+* entry[EEBCoverageVSDM].resource only EEBCoverageVSDM
+* entry[EEBCoverageVSDM].search ..0
+* entry[EEBCoverageVSDM].request ..0
+* entry[EEBCoverageVSDM].response ..0
+
+
 
 * obeys -eeb-angabePatientPLZ
 * obeys -eeb-checkConditionCode49
@@ -170,13 +205,16 @@ Instance: EEBBescheinigungHeaderTKExample
 InstanceOf: EEBBescheinigungHeader
 Usage: #inline
 * id = "c600beab-92f3-4c4f-a0a4-795681533141"
-* eventCoding = https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID#1.2.276.0.76.4.49 "Versicherte/-r"
+* eventCoding = $system-practitionerProfessionOID-code#1.2.276.0.76.4.49 "Versicherte/-r"
 * source.endpoint = "http://www.tk.de"
 
 Instance: PatientExample
 InstanceOf: KBV_PR_FOR_Patient
 Usage: #inline
 * id = "cb7d4484-bade-47f5-985f-86196b6678a2"
+// neu mit KBV.for 1.3
+* meta.versionId = "1"
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.3"
 * identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
 * identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[versichertenId].value = "A819745621"
@@ -223,7 +261,7 @@ Usage: #example
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:4a270af6-1234-5678-abcd-dfe20acfb5c5"
 * type = #message
-* entry[0].fullUrl = "https://gematik.de/fhir/MessageHeader/e184d490-22f3-4009-892e-77b9bc9a7504"
+* entry[+].fullUrl = "https://gematik.de/fhir/MessageHeader/e184d490-22f3-4009-892e-77b9bc9a7504"
 * entry[=].resource = e184d490-22f3-4009-892e-77b9bc9a7504
 * entry[+].fullUrl = "https://gematik.de/fhir/Patient/2e67b7dc-24c0-4b23-9487-9a7dd8e140cd"
 * entry[=].resource = 2e67b7dc-24c0-4b23-9487-9a7dd8e140cd
@@ -234,7 +272,7 @@ Usage: #example
 Instance: e184d490-22f3-4009-892e-77b9bc9a7504
 InstanceOf: MessageHeader
 Usage: #inline
-* eventCoding = https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID#1.2.276.0.76.4.50 "Betriebsstätte Arzt"
+* eventCoding = $system-organizationProfessionOID-code#1.2.276.0.76.4.50 "Betriebsstätte Arzt"
 * source.endpoint = "http://www.tk.de"
 * response.code = #ok
 * response.identifier = "8e2df5fe-2691-4277-936c-9cc2140b189b"
@@ -243,6 +281,9 @@ Usage: #inline
 Instance: 2e67b7dc-24c0-4b23-9487-9a7dd8e140cd
 InstanceOf: KBV_PR_FOR_Patient
 Usage: #inline
+// neu mit KBV.for 1.3
+* meta.versionId = "1"
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.3"
 * identifier[versichertennummer_kvk].type = https://fhir.kbv.de/CodeSystem/KBV_CS_Base_identifier_type#kvk
 * identifier[versichertennummer_kvk].system = "http://fhir.de/sid/gkv/kvk-versichertennummer"
 * identifier[versichertennummer_kvk].value = "3143112513"

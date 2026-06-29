@@ -13,10 +13,12 @@ Id: EEBAnfrageHeader
 * extension contains
     Leistungsdatum named Leistungsdatum 1..1 and
     Einverstaendnis named Einverstaendnis 1..1 and
-    Institutionskennzeichen named Institutionskennzeichen 1..1
+    Institutionskennzeichen named Institutionskennzeichen 1..1 and 
+    versionEEB named versionEEB 0..1
 * extension[Leistungsdatum].value[x] 1..1
 * extension[Einverstaendnis].value[x] 1..1
 * extension[Institutionskennzeichen].value[x] 1..1
+* extension[versionEEB].value[x] 1..1
 
 // hier OID Anfragender
 * event[x] only Coding
@@ -49,7 +51,7 @@ InstanceOf: EEBAnfrageHeader
 Title: "Header of EEBAnfrageBundle"
 Usage: #inline
 * id = "bb03a437-fe56-46f9-8622-ffc3766e7c70"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.system = $system-organizationProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
 * sender.reference = "Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
@@ -68,7 +70,7 @@ InstanceOf: EEBAnfrageHeader
 Title: "Header of EEBAnfrageBundle"
 Usage: #inline
 * id = "1ab11ab3-c73b-4144-8706-be3fc090b007"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.system = $system-organizationProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
 * sender.reference = "Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
@@ -87,7 +89,7 @@ InstanceOf: EEBAnfrageHeader
 Title: "Header of EEBAnfrageBundle"
 Usage: #inline
 * id = "591371dd-1ff4-48e7-ac25-29988a7ee903"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.system = $system-organizationProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
 * sender.reference = "Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
@@ -106,7 +108,7 @@ InstanceOf: EEBAnfrageHeader
 Title: "Header of EEBAnfrageBundle"
 Usage: #inline
 * id = "97d364a4-33ca-4968-8cea-89ef50e006b6"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.system = $system-organizationProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
 * sender.reference = "Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"
@@ -125,7 +127,7 @@ InstanceOf: EEBAnfrageHeader
 Title: "Header of EEBAnfrageBundle"
 Usage: #inline
 * id = "35c13445-127b-4c88-b819-68bff12293c2"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.system = $system-organizationProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
 * sender.reference = "Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"

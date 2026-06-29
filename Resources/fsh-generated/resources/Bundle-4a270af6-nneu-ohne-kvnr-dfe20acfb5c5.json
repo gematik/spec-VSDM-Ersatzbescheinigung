@@ -43,8 +43,9 @@
         "id": "2e67b7dc-24c0-4b23-9487-9a7dd8e140cd",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2"
-          ]
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.3"
+          ],
+          "versionId": "1"
         },
         "name": [
           {

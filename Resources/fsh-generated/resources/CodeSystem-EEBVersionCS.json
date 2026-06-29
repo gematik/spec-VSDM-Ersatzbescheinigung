@@ -1,0 +1,30 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "EEBVersionCS",
+  "id": "EEBVersionCS",
+  "title": "CodeSystem für die fachliche eEB Versionierung",
+  "description": "Versionsangabe, über die die Inhalte der eEB gesteuert werden",
+  "version": "1.2.0",
+  "url": "https://gematik.de/fhir/eeb/CodeSystem/EEBVersionCS",
+  "concept": [
+    {
+      "code": "2",
+      "display": "Anfrage: Lieferung der Bescheinigung im VSDM2-Schema für die Coverage"
+    },
+    {
+      "code": "2.0",
+      "display": "Bescheinigung: Coverage im VSDM2-Schema - Bescheinigung mit ePA-Einschränkung"
+    },
+    {
+      "code": "2.1",
+      "display": "Bescheinigung: Coverage im VSDM2-Schema - Bescheinigung ohne ePA-Einschränkung"
+    }
+  ],
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "date": "2026-05-08",
+  "caseSensitive": true,
+  "count": 3
+}

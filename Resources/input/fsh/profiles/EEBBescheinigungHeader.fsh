@@ -6,6 +6,18 @@ Id: EEBBescheinigungHeader
   * profile 1..1
   * profile = Canonical(EEBBescheinigungHeader) (exactly)
 
+* extension ^slicing.discriminator.type = #value
+* extension ^slicing.discriminator.path = "url"
+* extension ^slicing.rules = #open
+* extension contains
+    versionEEB named versionEEB 0..1 and
+    servicePeriod named servicePeriod 0..1 and
+    noAddressLine named noAddressLine 0..1 and
+    KVNRinClearing named KVNRinClearing 0..1
+* extension[versionEEB].value[x] 1..1
+* extension[servicePeriod].value[x] 1..1
+* extension[noAddressLine].value[x] 1..1
+* extension[KVNRinClearing].value[x] 1..1
 
 // hier OID Anfragender
 * event[x] only Coding
@@ -42,7 +54,7 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle query by HBA signature"
 Usage: #inline
 * id = "bd901c08-0133-4276-b34b-eb810a62deda"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
+* eventCoding.system = $system-practitionerProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.30
 * eventCoding.display = "Ärztin/Arzt"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
@@ -56,7 +68,7 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle query by SMC-B signature"
 Usage: #inline
 * id = "bd901c08-0133-4276-b34b-eb810a62dedu"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.system = $system-organizationProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
@@ -71,7 +83,7 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle no KVNR available"
 Usage: #inline
 * id = "5b3c588d-36f5-42be-a10e-1c48eb800cc3"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+* eventCoding.system = $system-organizationProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
@@ -85,9 +97,23 @@ InstanceOf: EEBBescheinigungHeader
 Title:   "Header for EEBBescheinigungBundle triggered via GKV or PKV App"
 Usage: #inline
 * id = "aafed78c-696c-4805-9e7b-d454e1aeb538"
-* eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
+* eventCoding.system = $system-practitionerProfessionOID-code
 * eventCoding.code = #1.2.276.0.76.4.49
 * eventCoding.display = "Versicherte/-r"
 * source.endpoint = "https://Test-Krankenkasse.de/KIM"
 * focus[+].reference = "Patient/e36f9476-0d04-4394-a626-8b4706b005b0"
 * focus[+].reference = "Coverage/d7fbdcd7-f220-4a11-8526-d846e4db2a82"
+
+Instance: EEBBescheinigungHeaderKVNRclearing
+InstanceOf: EEBBescheinigungHeader
+Title:   "Header for EEBBescheinigungBundle no KVNR available"
+Usage: #inline
+* id = "68183245-0857-4e65-b4fa-2a6d698d9608"
+* eventCoding.system = $system-organizationProfessionOID-code
+* eventCoding.code = #1.2.276.0.76.4.50
+* eventCoding.display = "Betriebsstätte Arzt"
+* source.endpoint = "https://Test-Krankenkasse.de/KIM"
+* response.identifier = "9c1f57c9-9474-4f70-b64c-2213a7184d74"
+* response.code = #ok
+* focus[+].reference = "Patient/_tbd"
+* focus[+].reference = "Coverage/_tbd"

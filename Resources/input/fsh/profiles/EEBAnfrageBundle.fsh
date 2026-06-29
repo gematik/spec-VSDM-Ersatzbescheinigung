@@ -79,6 +79,9 @@ InstanceOf: KBV_PR_FOR_Organization
 Title: "Organization for EEBAnfrageBundle"
 Usage: #inline
 * id = "fad15347-a4b3-4899-a454-9fb43bdb0f30"
+// neu mit KBV.for 1.3
+* meta.versionId = "1"
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.3"
 * identifier[Telematik-ID].type = http://terminology.hl7.org/CodeSystem/v2-0203#PRN
 * identifier[Telematik-ID].system = "https://gematik.de/fhir/sid/telematik-id"
 * identifier[Telematik-ID].value = "123456"
@@ -103,6 +106,9 @@ InstanceOf: KBV_PR_FOR_Patient
 Title: "KBV_PR_FOR_PatientKnownSample"
 Usage: #inline
 * id = "eb601b0c-96cd-4ac8-8849-fdd7aca89c33"
+// neu mit KBV.for 1.3
+* meta.versionId = "1"
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.3"
 * identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
 * identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[versichertenId].value = "A123456789"
@@ -128,6 +134,9 @@ InstanceOf: KBV_PR_FOR_Patient
 Title: "KBV_PR_FOR_PatientKnownPkvSample"
 Usage: #inline
 * id = "77355dc2-07cc-4cc6-bd78-afccfb7d0106"
+// neu mit KBV.for 1.3
+* meta.versionId = "1"
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.3"
 * identifier[versichertenId].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
 * identifier[versichertenId].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[versichertenId].value = "A987654321"
@@ -144,6 +153,9 @@ InstanceOf: KBV_PR_FOR_Patient
 Title: "KBV_PR_FOR_PatientUnknownSample"
 Usage: #inline
 * id = "16c07b55-c7bd-4e64-86bc-bf00f0435ba7"
+// neu mit KBV.for 1.3
+* meta.versionId = "1"
+* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.3"
 * name[name].use = #official
 * name[name].family = "Meier"
 * name[name].family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
