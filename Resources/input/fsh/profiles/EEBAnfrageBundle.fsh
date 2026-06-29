@@ -8,6 +8,16 @@ Description: "Im Patient-Profil muss entweder ein Identifier (GKV oder PKV) oder
 Severity: #error
 Expression: "entry.where(resource is Patient).resource.identifier.where(system='http://fhir.de/sid/gkv/kvid-10').exists() or entry.where(resource is Patient).resource.where(name.family and name.given and birthDate and address.postalCode).exists()"
 
+Invariant: -eeb-checkEebVersionValue
+Description: "Wird die Extension versionEEB verwendet, darf nur der Wert '2' angefragt werden."
+Severity: #error
+Expression: "
+entry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').exists()
+implies
+entry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').all(
+  value = '2'
+)
+"
 
 Profile: EEBAnfrageBundle
 Parent: Bundle
@@ -71,6 +81,8 @@ Id: EEBAnfrageBundle
 * entry[KBV_PR_FOR_Organization].response ..0
 * obeys -eeb-angabeOrganizationIdentifier
 * obeys -eeb-angabePatientIdentifier
+// version 2 constraints
+* obeys -eeb-checkEebVersionValue
 
 
 // Beispielgenerierung

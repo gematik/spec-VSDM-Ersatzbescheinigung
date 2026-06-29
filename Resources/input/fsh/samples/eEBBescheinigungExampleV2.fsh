@@ -65,9 +65,6 @@ Usage: #inline
 * id = "22222222-2222-2222-3333-222222222222"
 * meta.versionId = "1"
 * meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.3"
-* identifier.type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
-* identifier.system = "http://fhir.de/sid/gkv/kvid-10"
-* identifier.value = "T576543456"
 * name.use = #official
 * name.family = "Haselnuss"
 * name.family.extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
@@ -75,11 +72,6 @@ Usage: #inline
 * name.given = "Eileen"
 * birthDate = "1993-08-13"
 * address.type = #both
-* address.line = "Musterstr. 3"
-* address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address.line.extension[=].valueString = "3"
-* address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address.line.extension[=].valueString = "Musterstr."
 * address.country.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-codedString"
 * address.country.extension[=].valueCoding.system = "http://fhir.de/CodeSystem/deuev/anlage-8-laenderkennzeichen"
 * address.country.extension[=].valueCoding.code = #D
