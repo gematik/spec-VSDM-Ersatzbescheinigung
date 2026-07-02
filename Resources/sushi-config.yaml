@@ -18,3 +18,4 @@ dependencies:
   kbv.basis: 1.7.0
   de.gematik.terminology: 1.0.9
   de.gematik.vsdm2: 1.0.2
+  de.gematik.ti: 1.3.1

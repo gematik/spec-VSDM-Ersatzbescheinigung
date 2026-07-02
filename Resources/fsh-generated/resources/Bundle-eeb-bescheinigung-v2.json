@@ -63,15 +63,14 @@
       }
     },
     {
-      "fullUrl": "https://gematik.de/fhir/Patient/22222222-2222-2222-3333-222222222222",
+      "fullUrl": "https://gematik.de/fhir/Patient/1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c",
       "resource": {
         "resourceType": "Patient",
-        "id": "22222222-2222-2222-3333-222222222222",
+        "id": "1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c",
         "meta": {
           "profile": [
-            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.3"
-          ],
-          "versionId": "1"
+            "https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient"
+          ]
         },
         "name": [
           {
@@ -169,6 +168,13 @@
               "value": "101575519"
             },
             "display": "Techniker Krankenkasse"
+          },
+          {
+            "identifier": {
+              "system": "http://fhir.de/sid/arge-ik/iknr",
+              "value": "105177505"
+            },
+            "display": "Techniker Krankenkasse"
           }
         ],
         "text": {
@@ -177,7 +183,7 @@
         },
         "status": "active",
         "beneficiary": {
-          "reference": "Patient/22222222-2222-2222-3333-222222222222"
+          "reference": "Patient/1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c"
         },
         "period": {
           "start": "2018-01-01"

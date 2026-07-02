@@ -19,12 +19,12 @@ entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.46'
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.47' or
 entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies ((entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and (entry.where(resource is Patient).resource.address.line.count() = 0 or entry.where(resource is Patient).resource.address.type = 'postal'))) 
 or
-(entry.where(resource is MessageHeader).resource.extension.where(url = 'versionEEB' and value = '2.1').exists() and entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageVSDM') implies (entry.where(resource is Patient).resource.address.line.count() >= 0))"
+(entry.where(resource is MessageHeader).resource.extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB' and value = '2.1').exists() and entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageVSDM') implies (entry.where(resource is Patient).resource.address.line.count() >= 0))"
 
 Invariant: -eeb-checkEebVersionCoverage
 Description: "Wird die Extension versionEEB verwendet, darf als Coverage nur EEBCoverageVSDM verwendet werden. Die Coverages EEBCoverageEgk, EEBCoverageNoEgk und EEBCoverageEgkNoAddressline dürfen nicht mehr verwendet werden"
 Severity: #error
-Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').exists()
+Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists()
 implies 
 entry.resource.ofType(Coverage).all(
   meta.profile.exists($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageVSDM')
@@ -33,16 +33,43 @@ entry.resource.ofType(Coverage).all(
 Invariant: -eeb-checkEebVersionExtensions
 Description: "Wird die Extension versionEEB mit dem code 2.0 verwendet, muss die Extension noAddressLine mit „true“ gesetzt sein und darf in KBV_PR_FOR_Patitent im adress-Feld kein Feld Line verwendet werden."
 Severity: #error
-Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB' and value = '2.0').exists() implies
-  (entry.resource.ofType(MessageHeader).extension.where(url = 'noAddressLine' and valueBoolean = true).exists()) and
-  (entry.resource.ofType(Patient).where(meta.profile.exists($this = 'KBV_PR_FOR_Patient')).address.line.empty())"
+Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB' and value = '2.0').exists() implies
+  (entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/noAddressLine' and valueBoolean = true).exists()) and
+  (entry.resource.ofType(Patient).address.line.empty())"
 
 Invariant: -eeb-checkEebVersionKVNRclearing
 Description: "Wird die Extension KVNRinClearing verwendet, darf in der Ressource KBV_PR_FOR_Patitent kein identifier verwendet werden."
 Severity: #error
-Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'KVNRinClearing').exists() implies
-  entry.resource.ofType(Patient).where(meta.profile.exists($this = 'KBV_PR_FOR_Patient')).identifier.empty()"
+Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/KVNRinClearing').exists() implies
+  entry.resource.ofType(Patient).identifier.empty()"
 
+Invariant: -eeb-checkPatient
+Description: "Wenn im MessageHeader die Extension versionEEB vorhanden ist, muss die Patient-Ressource dem Profil EEBPatient entsprechen. Ist die Extension nicht vorhanden, muss die Patient-Ressource dem Profil KBV_PR_FOR_Patient entsprechen."
+Severity: #error
+Expression: "
+(
+  entry.resource.ofType(MessageHeader).extension.where(url='https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists()
+  implies
+  entry.resource.ofType(Patient).meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient')
+)
+and
+(
+  entry.resource.ofType(MessageHeader).extension.where(url='https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists().not()
+  implies
+  entry.resource.ofType(Patient).meta.profile.contains('https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient')
+)
+"
+
+Invariant: -eeb-checkResourceCount
+Description: "Ein EEBBescheinigungsBundle muss genau einen MessageHeader, genau einen Patient und genau eine Coverage enthalten."
+Severity: #error
+Expression: "
+entry.resource.ofType(MessageHeader).count() = 1
+and
+entry.resource.ofType(Patient).count() = 1
+and
+entry.resource.ofType(Coverage).count() = 1
+"
 
 Profile: EEBBescheinigungBundle
 Parent: Bundle
@@ -74,7 +101,8 @@ Id: EEBBescheinigungBundle
 * entry 3..3
 * entry contains
     EEBBescheinigungHeader 1..1 and
-    KBVFORPatient 1..1 and
+    KBVFORPatient 0..1 and
+    EEBPatient 0..1 and
     EEBCoverageEgk 0..1 and
     EEBCoverageEgkNoAddressLine 0..1 and
     EEBCoverageNoEgk 0..1 and
@@ -92,6 +120,13 @@ Id: EEBBescheinigungBundle
 * entry[KBVFORPatient].search ..0
 * entry[KBVFORPatient].request ..0
 * entry[KBVFORPatient].response ..0
+
+* entry[EEBPatient].link ..0
+* entry[EEBPatient].resource 1..
+* entry[EEBPatient].resource only EEBPatient
+* entry[EEBPatient].search ..0
+* entry[EEBPatient].request ..0
+* entry[EEBPatient].response ..0
 
 * entry[EEBCoverageEgk].link ..0
 * entry[EEBCoverageEgk].resource 1..
@@ -130,7 +165,8 @@ Id: EEBBescheinigungBundle
 * obeys -eeb-checkEebVersionCoverage
 * obeys -eeb-checkEebVersionExtensions
 * obeys -eeb-checkEebVersionKVNRclearing
-
+* obeys -eeb-checkPatient
+* obeys -eeb-checkResourceCount
 
 // Beispielgenerierung
 Instance: EEBBescheinigungBundleSampleEgk
