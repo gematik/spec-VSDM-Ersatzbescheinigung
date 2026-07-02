@@ -7132,7 +7132,7 @@
         "comment": "Zur Kompatibilität mit den etablierten Profilen (z.B. ISIK) werden neben der Referenz innerhalb des Bundles auch der Identifier und der Name in der Referenz hinterlegt.\nInnerhalb des VSDM-Bundles werden die Kostenträger als VSDMPayorOrganization-Ressourcen übermittelt; der Verweis erfolgt über die reference-Angabe.",
         "requirements": "Need to identify the issuer to target for claim processing and for coordination of benefit processing.",
         "min": 1,
-        "max": "1",
+        "max": "2",
         "base": {
           "path": "Coverage.payor",
           "min": 1,
@@ -8769,11 +8769,6 @@
         "path": "Coverage.period",
         "short": "Seit wann besteht Versicherungsanspruch",
         "min": 1
-      },
-      {
-        "id": "Coverage.payor",
-        "path": "Coverage.payor",
-        "max": "1"
       },
       {
         "id": "Coverage.payor.extension:abrechnendeIK",

@@ -17,8 +17,8 @@ Usage: #example
 * entry[+][EEBBescheinigungHeader].fullUrl = "https://gematik.de/fhir/MessageHeader/11111111-1111-1111-1111-111111111111"
 * entry[=][EEBBescheinigungHeader].resource = BescheinigungHeaderV2
 
-* entry[+][KBVFORPatient].fullUrl = "https://gematik.de/fhir/Patient/22222222-2222-2222-3333-222222222222"
-* entry[=][KBVFORPatient].resource = PatientFull
+* entry[+][KBVFORPatient].fullUrl = "https://gematik.de/fhir/Patient/1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c"
+* entry[=][KBVFORPatient].resource = EEBPatientGkvNoKvnrExample
 
 * entry[+][EEBCoverageVSDM].fullUrl = "https://gematik.de/fhir/Coverage/2d4da53a-413a-48fe-b908-2e67b576152u"
 * entry[=][EEBCoverageVSDM].resource = CoverageVSDM
@@ -57,30 +57,6 @@ Usage: #inline
 
 
 /////////////////////////////////////////////////////
-// Patient (KBV) 
-/////////////////////////////////////////////////////
-Instance: PatientFull
-InstanceOf: KBV_PR_FOR_Patient
-Usage: #inline
-* id = "22222222-2222-2222-3333-222222222222"
-* meta.versionId = "1"
-* meta.profile = "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.3"
-* name.use = #official
-* name.family = "Haselnuss"
-* name.family.extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
-* name.family.extension.valueString = "Haselnuss"
-* name.given = "Eileen"
-* birthDate = "1993-08-13"
-* address.type = #both
-* address.country.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-codedString"
-* address.country.extension[=].valueCoding.system = "http://fhir.de/CodeSystem/deuev/anlage-8-laenderkennzeichen"
-* address.country.extension[=].valueCoding.code = #D
-* address.country = "DE"
-* address.city = "Berlin"
-* address.postalCode = "10623"
-
-
-/////////////////////////////////////////////////////
 // Coverage (EEBCoverageVSDM)
 /////////////////////////////////////////////////////
 Instance: CoverageVSDM
@@ -106,12 +82,15 @@ Usage: #inline
 * extension[zuzahlungsstatus].extension[=].valueDate = "2027-06-09"
 
 * status = #active
-* beneficiary = Reference(Patient/22222222-2222-2222-3333-222222222222)
+* beneficiary = Reference(Patient/1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c)
 * period.start = "2018-01-01"
 
 * type.coding.system = "http://fhir.de/CodeSystem/versicherungsart-de-basis"
 * type.coding.code = #GKV
 * type.coding.display = "gesetzliche Krankenversicherung"
-* payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
-* payor.identifier.value = "101575519"
-* payor.display = "Techniker Krankenkasse"
+* payor[+].identifier.system = "http://fhir.de/sid/arge-ik/iknr"
+* payor[=].identifier.value = "101575519" 
+* payor[=].display = "Techniker Krankenkasse"
+* payor[+].identifier.system = "http://fhir.de/sid/arge-ik/iknr"
+* payor[=].identifier.value = "105177505" 
+* payor[=].display = "Techniker Krankenkasse"

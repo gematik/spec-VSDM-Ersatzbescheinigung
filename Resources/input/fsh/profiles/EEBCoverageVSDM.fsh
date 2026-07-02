@@ -7,7 +7,7 @@ Id: EEBCoverageVSDM
 * period ^short = "Seit wann besteht Versicherungsanspruch"
 * period 1..1
 * period.start 1..1
-* payor 1..1
+* payor 1..2
 * payor.extension ^slicing.discriminator.type = #value
 * payor.extension ^slicing.discriminator.path = "url"
 * payor.extension ^slicing.rules = #open

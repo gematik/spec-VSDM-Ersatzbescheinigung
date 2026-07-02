@@ -12,16 +12,16 @@
     "fshName": "EEBBescheinigungBundleSampleNoEgk",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 174,
-    "endLine": 188
+    "startLine": 210,
+    "endLine": 224
   },
   {
     "outputFile": "Bundle-4a270af6-nneu-ohne-kvnr-dfe20acfb5c5.json",
     "fshName": "EEBBescheinigungBundle2",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 261,
-    "endLine": 274
+    "startLine": 297,
+    "endLine": 310
   },
   {
     "outputFile": "Bundle-96120812-a785-4fe3-a1e9-244314fdad9d.json",
@@ -36,24 +36,24 @@
     "fshName": "EEBBescheinigungBundleSampleEgk",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 136,
-    "endLine": 150
+    "startLine": 172,
+    "endLine": 186
   },
   {
     "outputFile": "Bundle-9b6ac30d-246d-4eab-af83-54456479208u.json",
     "fshName": "EEBBescheinigungBundleEgkNoAddressLine",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 152,
-    "endLine": 166
+    "startLine": 188,
+    "endLine": 202
   },
   {
     "outputFile": "Bundle-cecef81d-ab68-4d5a-9e22-7b3e8edce6e6.json",
     "fshName": "EEBBescheinigungBundleSampleEgkPkv",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 190,
-    "endLine": 204
+    "startLine": 226,
+    "endLine": 240
   },
   {
     "outputFile": "Bundle-cef4c975-753e-4b25-bec3-6549c7360e0a.json",
@@ -120,6 +120,14 @@
     "endLine": 60
   },
   {
+    "outputFile": "Patient-1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c.json",
+    "fshName": "EEBPatientGkvNoKvnrExample",
+    "fshType": "Instance",
+    "fshFile": "profiles\\EEBPatient.fsh",
+    "startLine": 36,
+    "endLine": 53
+  },
+  {
     "outputFile": "Patient-4149fdf9-2417-4a58-ac02-3473f5eb5431.json",
     "fshName": "EEBKnownPatientPkvSample",
     "fshType": "Instance",
@@ -180,8 +188,8 @@
     "fshName": "EEBBescheinigungBundle",
     "fshType": "Profile",
     "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 47,
-    "endLine": 132
+    "startLine": 74,
+    "endLine": 169
   },
   {
     "outputFile": "StructureDefinition-EEBBescheinigungHeader.json",
@@ -238,6 +246,14 @@
     "fshFile": "profiles\\EEBKnownPatient.fsh",
     "startLine": 1,
     "endLine": 32
+  },
+  {
+    "outputFile": "StructureDefinition-EEBPatient.json",
+    "fshName": "EEBPatient",
+    "fshType": "Profile",
+    "fshFile": "profiles\\EEBPatient.fsh",
+    "startLine": 1,
+    "endLine": 31
   },
   {
     "outputFile": "StructureDefinition-KVNRinClearing.json",

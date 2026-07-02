@@ -1,0 +1,46 @@
+{
+  "resourceType": "Patient",
+  "id": "1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient"
+    ]
+  },
+  "name": [
+    {
+      "use": "official",
+      "family": "Haselnuss",
+      "_family": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+            "valueString": "Haselnuss"
+          }
+        ]
+      },
+      "given": [
+        "Eileen"
+      ]
+    }
+  ],
+  "birthDate": "1993-08-13",
+  "address": [
+    {
+      "type": "both",
+      "country": "DE",
+      "_country": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-codedString",
+            "valueCoding": {
+              "system": "http://fhir.de/CodeSystem/deuev/anlage-8-laenderkennzeichen",
+              "code": "D"
+            }
+          }
+        ]
+      },
+      "city": "Berlin",
+      "postalCode": "10623"
+    }
+  ]
+}
