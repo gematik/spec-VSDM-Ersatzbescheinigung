@@ -4,8 +4,8 @@
     "fshName": "EEBAnfrageBundleSampleKnownPatient",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 188,
-    "endLine": 203
+    "startLine": 215,
+    "endLine": 230
   },
   {
     "outputFile": "Bundle-43bb7e49-inva-lide-pati-entstrassed6b.json",
@@ -28,8 +28,8 @@
     "fshName": "EEBAnfrageBundleSampleKnownKBV_PR_FOR_Patient",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 205,
-    "endLine": 220
+    "startLine": 232,
+    "endLine": 247
   },
   {
     "outputFile": "Bundle-9b6ac30d-246d-4eab-af83-544564792089.json",
@@ -60,8 +60,8 @@
     "fshName": "EEBAnfrageBundleSampleUnknownKBV_PR_FOR_Patient",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 222,
-    "endLine": 237
+    "startLine": 249,
+    "endLine": 264
   },
   {
     "outputFile": "Bundle-eeb-anfrage-v2.json",
@@ -124,8 +124,8 @@
     "fshName": "EEBPatientGkvNoKvnrExample",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBPatient.fsh",
-    "startLine": 36,
-    "endLine": 53
+    "startLine": 161,
+    "endLine": 178
   },
   {
     "outputFile": "Patient-4149fdf9-2417-4a58-ac02-3473f5eb5431.json",
@@ -172,8 +172,8 @@
     "fshName": "EEBAnfrageBundle",
     "fshType": "Profile",
     "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 22,
-    "endLine": 85
+    "startLine": 40,
+    "endLine": 112
   },
   {
     "outputFile": "StructureDefinition-EEBAnfrageHeader.json",
@@ -253,7 +253,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\EEBPatient.fsh",
     "startLine": 1,
-    "endLine": 31
+    "endLine": 157
   },
   {
     "outputFile": "StructureDefinition-KVNRinClearing.json",

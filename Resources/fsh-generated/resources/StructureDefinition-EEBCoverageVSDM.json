@@ -684,7 +684,6 @@
             }
           ],
           "description": "Extensions are always sliced by (at least) url",
-          "ordered": false,
           "rules": "open"
         },
         "short": "Additional content defined by implementations",
@@ -1105,6 +1104,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -1131,7 +1131,7 @@
         "short": "Version of the system - if relevant",
         "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
         "comment": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Coding.version",
@@ -1143,6 +1143,7 @@
             "code": "string"
           }
         ],
+        "fixedString": "1.00",
         "condition": [
           "ele-1"
         ],
@@ -1156,6 +1157,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -1208,6 +1210,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -1705,6 +1708,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -1731,7 +1735,7 @@
         "short": "Version of the system - if relevant",
         "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
         "comment": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Coding.version",
@@ -1743,6 +1747,7 @@
             "code": "string"
           }
         ],
+        "fixedString": "1.03",
         "condition": [
           "ele-1"
         ],
@@ -1756,6 +1761,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -1808,6 +1814,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -4293,7 +4300,7 @@
         "sliceName": "art",
         "short": "Gibt die Art des ruhenden Leistungsanspruchs an.",
         "definition": "Gibt die Art des ruhenden Leistungsanspruchs an.",
-        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "comment": "Das CodeSystem zur Definition der Werte wurde nachträglich eingefügt. \nDie Werte sind identisch zu den bereits durch die Invariante ruhend-1 erwzungenen Werten.\nEs ist daher ausreichend, das CodeSystem zu ergänzen, um die Werte vollständig zu qualifizieren; eine weiter Anpassung ist nicht erforderlich.\nUm für eine Übergangszeit bestehende Ressourcen nicht zu invalidieren, wird das ValueSet zunächst als preferred binding hinterlegt.",
         "alias": [
           "extensions",
           "user content"
@@ -4507,7 +4514,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/vsdm2/ValueSet/VSDMRuhenderLeistungsanspruchArtVS"
+          "valueSet": "http://fhir.de/ValueSet/gkv/RuhenderLeistungsanspruchGKV"
         },
         "mapping": [
           {
@@ -4624,7 +4631,7 @@
         "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
         "comment": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should reference to some definition that establishes the system clearly and unambiguously.",
         "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Coding.system",
@@ -4650,6 +4657,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -4676,7 +4684,7 @@
         "short": "Version of the system - if relevant",
         "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
         "comment": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Coding.version",
@@ -4688,6 +4696,7 @@
             "code": "string"
           }
         ],
+        "fixedString": "1.6.0",
         "condition": [
           "ele-1"
         ],
@@ -4701,6 +4710,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -4751,15 +4761,9 @@
             "expression": "hasValue() or (children().count() > id.count())",
             "xpath": "@value|f:*|h:div",
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
-          },
-          {
-            "key": "ruhend-1",
-            "severity": "warning",
-            "human": "Es sind nur die Werte \"1\" (vollständig) und \"2\" (eingeschränkt) erlaubt.",
-            "expression": "matches('^[12]$')",
-            "source": "http://fhir.de/StructureDefinition/gkv/ruhender-leistungsanspruch"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -5902,6 +5906,7 @@
             "code": "uri"
           }
         ],
+        "fixedUri": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS",
         "condition": [
           "ele-1"
         ],
@@ -5915,6 +5920,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -5941,7 +5947,7 @@
         "short": "Version of the system - if relevant",
         "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
         "comment": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Coding.version",
@@ -5953,6 +5959,7 @@
             "code": "string"
           }
         ],
+        "fixedString": "1.02",
         "condition": [
           "ele-1"
         ],
@@ -5966,6 +5973,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -6018,6 +6026,7 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport": true,
         "isSummary": true,
         "mapping": [
           {
@@ -6379,6 +6388,7 @@
           "coding": [
             {
               "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis",
+              "version": "1.6.0",
               "code": "GKV"
             }
           ]

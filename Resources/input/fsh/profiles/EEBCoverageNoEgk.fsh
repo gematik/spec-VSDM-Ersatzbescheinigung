@@ -104,5 +104,5 @@ Usage: #example
   * extension[abrechnendeIK].valueIdentifier.value = "756756324"
   * identifier
     * system = "http://fhir.de/sid/arge-ik/iknr"
-    * value = "12345678"
+    * value = "123456789"
   * display = "Test Krankenkasse"

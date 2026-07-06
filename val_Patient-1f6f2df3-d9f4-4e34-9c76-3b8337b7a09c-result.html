@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationOutcome xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p class="res-header-id">
+        <b>OperationOutcome </b>
+      </p>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Severity</b>
+          </td>
+          <td>
+            <b>Location</b>
+          </td>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Details</b>
+          </td>
+          <td>
+            <b>Diagnostics</b>
+          </td>
+          <td>
+            <b>Source</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Information</td>
+          <td>Patient.address[0].country.extension[0].value.ofType(Coding)</td>
+          <td>Invalid Code</td>
+          <td>Binding für Pfad Patient.address[0].country.extension[0].value.ofType(Coding) hat keine source, kann also nicht überprüft werden</td>
+          <td/>
+          <td>InstanceValidator</td>
+        </tr>
+        <tr>
+          <td>Warning</td>
+          <td>Patient</td>
+          <td>Validation rule failed</td>
+          <td>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</td>
+          <td/>
+          <td>InstanceValidator</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-file">
+    <valueString value="C:\GIT\spec-VSDM-Ersatzbescheinigung\Resources\fsh-generated\resources\Patient-1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c.json"/>
+  </extension>
+  <issue>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
+      <valueInteger value="35"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
+      <valueInteger value="14"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source">
+      <valueString value="InstanceValidator"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id">
+      <valueCode value="Terminology_TX_Binding_NoSource"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context">
+      <valueString value="http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"/>
+    </extension>
+    <severity value="information"/>
+    <code value="code-invalid"/>
+    <details>
+      <text value="Binding für Pfad Patient.address[0].country.extension[0].value.ofType(Coding) hat keine source, kann also nicht überprüft werden"/>
+    </details>
+    <expression value="Patient.address[0].country.extension[0].value.ofType(Coding)"/>
+  </issue>
+  <issue>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
+      <valueInteger value="1"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
+      <valueInteger value="2"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source">
+      <valueString value="InstanceValidator"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id">
+      <valueCode value="http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context">
+      <valueString value="http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"/>
+    </extension>
+    <severity value="warning"/>
+    <code value="invariant"/>
+    <details>
+      <text value="Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"/>
+    </details>
+    <expression value="Patient"/>
+  </issue>
+</OperationOutcome>

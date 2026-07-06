@@ -62,7 +62,7 @@ Usage: #inline
 * extension[=][Einverstaendnis].valueBoolean = true
 * extension[+][Institutionskennzeichen].url = "https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen"
 * extension[=][Institutionskennzeichen].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
-* extension[=][Institutionskennzeichen].valueIdentifier.value = "12345678"
+* extension[=][Institutionskennzeichen].valueIdentifier.value = "123456789"
 * focus[+].reference = "Patient/b8f0f69c-af1a-480b-8abf-44ab11aa23c5"
 
 Instance: EEBAnfrageHeaderSample2
@@ -81,7 +81,7 @@ Usage: #inline
 * extension[=][Einverstaendnis].valueBoolean = true
 * extension[+][Institutionskennzeichen].url = "https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen"
 * extension[=][Institutionskennzeichen].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
-* extension[=][Institutionskennzeichen].valueIdentifier.value = "12345678"
+* extension[=][Institutionskennzeichen].valueIdentifier.value = "123456789"
 * focus[+].reference = "Patient/eb601b0c-96cd-4ac8-8849-fdd7aca89c33"
 
 Instance: EEBAnfrageHeaderSample3
@@ -100,7 +100,7 @@ Usage: #inline
 * extension[=][Einverstaendnis].valueBoolean = true
 * extension[+][Institutionskennzeichen].url = "https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen"
 * extension[=][Institutionskennzeichen].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
-* extension[=][Institutionskennzeichen].valueIdentifier.value = "12345678"
+* extension[=][Institutionskennzeichen].valueIdentifier.value = "123456789"
 * focus[+].reference = "Patient/16c07b55-c7bd-4e64-86bc-bf00f0435ba7"
 
 Instance: EEBAnfrageHeaderSample4
@@ -119,7 +119,7 @@ Usage: #inline
 * extension[=][Einverstaendnis].valueBoolean = true
 * extension[+][Institutionskennzeichen].url = "https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen"
 * extension[=][Institutionskennzeichen].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
-* extension[=][Institutionskennzeichen].valueIdentifier.value = "12345678"
+* extension[=][Institutionskennzeichen].valueIdentifier.value = "123456789"
 * focus[+].reference = "Patient/4149fdf9-2417-4a58-ac02-3473f5eb5431"
 
 Instance: EEBAnfrageHeaderSample5
@@ -138,5 +138,5 @@ Usage: #inline
 * extension[=][Einverstaendnis].valueBoolean = true
 * extension[+][Institutionskennzeichen].url = "https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen"
 * extension[=][Institutionskennzeichen].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
-* extension[=][Institutionskennzeichen].valueIdentifier.value = "12345678"
+* extension[=][Institutionskennzeichen].valueIdentifier.value = "123456789"
 * focus[+].reference = "Patient/77355dc2-07cc-4cc6-bd78-afccfb7d0106"

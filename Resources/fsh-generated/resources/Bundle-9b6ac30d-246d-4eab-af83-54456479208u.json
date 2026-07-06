@@ -131,7 +131,7 @@
           {
             "identifier": {
               "system": "http://fhir.de/sid/arge-ik/iknr",
-              "value": "12345678"
+              "value": "123456789"
             },
             "display": "Test GKV Krankenkasse"
           }

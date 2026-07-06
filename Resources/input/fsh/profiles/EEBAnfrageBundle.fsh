@@ -12,12 +12,30 @@ Invariant: -eeb-checkEebVersionValue
 Description: "Wird die Extension versionEEB verwendet, darf nur der Wert '2' angefragt werden."
 Severity: #error
 Expression: "
-entry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').exists()
+entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists()
 implies
-entry.resource.ofType(MessageHeader).extension.where(url = 'versionEEB').all(
+entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').all(
   value = '2'
 )
 "
+
+Invariant: -eeb-PatientByVersion
+Description: "Wird die Extension versionEEB verwendet, darf der KBV_PR_FOR_Patient nicht mehr verwendet werden."
+Severity: #error
+Expression: "
+entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists()
+implies
+entry.resource.ofType(Patient)
+.all(
+  meta.profile.where(
+    $this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient'
+    or
+    $this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient'
+  ).exists()
+
+)
+"
+
 
 Profile: EEBAnfrageBundle
 Parent: Bundle
@@ -49,6 +67,7 @@ Id: EEBAnfrageBundle
 * entry 3..3
 * entry contains
     EEBAnfrageHeader 1..1 and
+    EEBPatient 0..1 and
     EEBKnownPatient 0..1 and
     KBV_PR_FOR_Patient 0..1 and
     KBV_PR_FOR_Organization 1..1
@@ -58,6 +77,13 @@ Id: EEBAnfrageBundle
 * entry[EEBAnfrageHeader].search ..0
 * entry[EEBAnfrageHeader].request ..0
 * entry[EEBAnfrageHeader].response ..0
+
+* entry[EEBPatient].link ..0
+* entry[EEBPatient].resource 1..
+* entry[EEBPatient].resource only EEBPatient
+* entry[EEBPatient].search ..0
+* entry[EEBPatient].request ..0
+* entry[EEBPatient].response ..0
 
 * entry[EEBKnownPatient].link ..0
 * entry[EEBKnownPatient].resource 1..
@@ -83,6 +109,7 @@ Id: EEBAnfrageBundle
 * obeys -eeb-angabePatientIdentifier
 // version 2 constraints
 * obeys -eeb-checkEebVersionValue
+* obeys -eeb-PatientByVersion
 
 
 // Beispielgenerierung

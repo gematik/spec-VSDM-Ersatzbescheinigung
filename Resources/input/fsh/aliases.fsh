@@ -14,3 +14,6 @@ Alias: $patient-genderIdentity = http://hl7.org/fhir/StructureDefinition/patient
 Alias: $sid-identifier-kvid-10 = http://fhir.de/sid/gkv/kvid-10
 Alias: $system-practitionerProfessionOID-code = https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID
 Alias: $system-organizationProfessionOID-code = https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID
+// administrative Geschlechtsangabe, verwendet für
+//   - Beispiel für VSDMPatient
+Alias: $csGenderAmtlich = http://fhir.de/CodeSystem/gender-amtlich-de // "1.6.0" // Version($csGenderAmtlich)
