@@ -53,7 +53,7 @@ Usage: #inline
 * extension[Institutionskennzeichen].valueIdentifier.value = "109999999"
 
 * extension[versionEEB].url = "https://gematik.de/fhir/eeb/StructureDefinition/versionEEB"
-* extension[versionEEB].valueCode = #2.0
+* extension[versionEEB].valueCode = #2
 
 
 /////////////////////////////////////////////////////

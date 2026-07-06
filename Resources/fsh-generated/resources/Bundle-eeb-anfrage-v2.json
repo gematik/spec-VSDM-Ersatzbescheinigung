@@ -41,7 +41,7 @@
           },
           {
             "url": "https://gematik.de/fhir/eeb/StructureDefinition/versionEEB",
-            "valueCode": "2.0"
+            "valueCode": "2"
           }
         ],
         "eventCoding": {

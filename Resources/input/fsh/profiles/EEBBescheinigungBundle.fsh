@@ -34,7 +34,7 @@ Invariant: -eeb-checkEebVersionExtensions
 Description: "Wird die Extension versionEEB mit dem code 2.0 verwendet, muss die Extension noAddressLine mit „true“ gesetzt sein und darf in KBV_PR_FOR_Patitent im adress-Feld kein Feld Line verwendet werden."
 Severity: #error
 Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB' and value = '2.0').exists() implies
-  (entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/noAddressLine' and valueBoolean = true).exists()) and
+  (entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/noAddressLine' and value = true).exists()) and
   (entry.resource.ofType(Patient).address.line.empty())"
 
 Invariant: -eeb-checkEebVersionKVNRclearing

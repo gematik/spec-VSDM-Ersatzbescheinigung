@@ -143,7 +143,7 @@ Usage: #inline
 * period.end = "2027-07-31"
 * beneficiary.reference =  "Patient/437f2555-2396-4c64-a656-e9553161ca3u"
 * payor.identifier.system = "http://fhir.de/sid/arge-ik/iknr"
-* payor.identifier.value = "12345678"
+* payor.identifier.value = "123456789"
 * payor.display = "Test GKV Krankenkasse"
 
 
