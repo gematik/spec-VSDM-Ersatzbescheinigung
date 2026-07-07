@@ -229,7 +229,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\EEBCoverageVSDM.fsh",
     "startLine": 1,
-    "endLine": 19
+    "endLine": 27
   },
   {
     "outputFile": "StructureDefinition-EEBFehler.json",

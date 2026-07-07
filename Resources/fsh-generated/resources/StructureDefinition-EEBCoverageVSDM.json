@@ -7138,10 +7138,10 @@
         "id": "Coverage.payor",
         "path": "Coverage.payor",
         "short": "Kostenträger",
-        "definition": "Gibt den gesetzlichen Kostenträger des Versicherten an.\nDer Haupt-Kostenträger ist verpflichtend in der ersten Position anzugeben.\nEin etwaiger abweichender abrechnender Kostenträger kann als zweite Referenz angegeben werden.",
-        "comment": "Zur Kompatibilität mit den etablierten Profilen (z.B. ISIK) werden neben der Referenz innerhalb des Bundles auch der Identifier und der Name in der Referenz hinterlegt.\nInnerhalb des VSDM-Bundles werden die Kostenträger als VSDMPayorOrganization-Ressourcen übermittelt; der Verweis erfolgt über die reference-Angabe.",
+        "definition": "Gibt den gesetzlichen Kostenträger des Versicherten an.\nDer Haupt-Kostenträger ist verpflichtend in der ersten Position anzugeben.\nEin abrechnender Kostenträger wird als zweite Referenz angegeben.",
+        "comment": "Zur Kompatibilität mit den etablierten Profilen (z.B. ISIK) werden neben der Referenz innerhalb des Bundles auch der Identifier und der Name in der Referenz hinterlegt.",
         "requirements": "Need to identify the issuer to target for claim processing and for coordination of benefit processing.",
-        "min": 1,
+        "min": 2,
         "max": "2",
         "base": {
           "path": "Coverage.payor",
@@ -8779,6 +8779,13 @@
         "path": "Coverage.period",
         "short": "Seit wann besteht Versicherungsanspruch",
         "min": 1
+      },
+      {
+        "id": "Coverage.payor",
+        "path": "Coverage.payor",
+        "definition": "Gibt den gesetzlichen Kostenträger des Versicherten an.\nDer Haupt-Kostenträger ist verpflichtend in der ersten Position anzugeben.\nEin abrechnender Kostenträger wird als zweite Referenz angegeben.",
+        "comment": "Zur Kompatibilität mit den etablierten Profilen (z.B. ISIK) werden neben der Referenz innerhalb des Bundles auch der Identifier und der Name in der Referenz hinterlegt.",
+        "min": 2
       },
       {
         "id": "Coverage.payor.extension:abrechnendeIK",

@@ -27,7 +27,7 @@ StructureDefinition-EEBBescheinigungHeader.json                  EEBBescheinigun
 StructureDefinition-EEBCoverageEgk.json                          EEBCoverageEgk                                   Profile     profiles\EEBCoverageEgk.fsh                        60 - 66
 StructureDefinition-EEBCoverageEgkNoAddressLine.json             EEBCoverageEgkNoAddressLine                      Profile     profiles\EEBCoverageEgkNoAddressLine.fsh           1 - 7
 StructureDefinition-EEBCoverageNoEgk.json                        EEBCoverageNoEgk                                 Profile     profiles\EEBCoverageNoEgk.fsh                      1 - 47
-StructureDefinition-EEBCoverageVSDM.json                         EEBCoverageVSDM                                  Profile     profiles\EEBCoverageVSDM.fsh                       1 - 19
+StructureDefinition-EEBCoverageVSDM.json                         EEBCoverageVSDM                                  Profile     profiles\EEBCoverageVSDM.fsh                       1 - 27
 StructureDefinition-EEBFehler.json                               EEBFehler                                        Profile     profiles\EEBFehler.fsh                             1 - 33
 StructureDefinition-EEBKnownPatient.json                         EEBKnownPatient                                  Profile     profiles\EEBKnownPatient.fsh                       1 - 32
 StructureDefinition-EEBPatient.json                              EEBPatient                                       Profile     profiles\EEBPatient.fsh                            1 - 157

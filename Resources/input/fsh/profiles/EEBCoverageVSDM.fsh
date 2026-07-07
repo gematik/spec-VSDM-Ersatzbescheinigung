@@ -7,7 +7,15 @@ Id: EEBCoverageVSDM
 * period ^short = "Seit wann besteht Versicherungsanspruch"
 * period 1..1
 * period.start 1..1
-* payor 1..2
+* payor 2..2
+  * ^definition = """
+      Gibt den gesetzlichen Kostenträger des Versicherten an.
+      Der Haupt-Kostenträger ist verpflichtend in der ersten Position anzugeben.
+      Ein abrechnender Kostenträger wird als zweite Referenz angegeben.
+    """
+  * ^comment = """
+      Zur Kompatibilität mit den etablierten Profilen (z.B. ISIK) werden neben der Referenz innerhalb des Bundles auch der Identifier und der Name in der Referenz hinterlegt.
+    """
 * payor.extension ^slicing.discriminator.type = #value
 * payor.extension ^slicing.discriminator.path = "url"
 * payor.extension ^slicing.rules = #open
