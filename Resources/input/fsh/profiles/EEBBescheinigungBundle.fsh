@@ -38,7 +38,7 @@ Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'https:/
   (entry.resource.ofType(Patient).address.line.empty())"
 
 Invariant: -eeb-checkEebVersionKVNRclearing
-Description: "Wird die Extension KVNRinClearing verwendet, darf in der Ressource KBV_PR_FOR_Patitent kein identifier verwendet werden."
+Description: "Wird die Extension KVNRinClearing verwendet, darf in der Patient-Ressource kein identifier verwendet werden."
 Severity: #error
 Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/KVNRinClearing').exists() implies
   entry.resource.ofType(Patient).identifier.empty()"
