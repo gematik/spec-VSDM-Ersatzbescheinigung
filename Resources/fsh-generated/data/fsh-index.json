@@ -64,12 +64,20 @@
     "endLine": 264
   },
   {
-    "outputFile": "Bundle-eeb-anfrage-v2.json",
-    "fshName": "eEBAnfrageExampleV2",
+    "outputFile": "Bundle-eeb-anfrage-v2a.json",
+    "fshName": "eEBAnfrageExampleV2a",
     "fshType": "Instance",
     "fshFile": "samples\\eEBAnfrageExampleV2.fsh",
     "startLine": 1,
-    "endLine": 25
+    "endLine": 24
+  },
+  {
+    "outputFile": "Bundle-eeb-anfrage-v2b.json",
+    "fshName": "eEBAnfrageExampleV2b",
+    "fshType": "Instance",
+    "fshFile": "samples\\eEBAnfrageExampleV2.fsh",
+    "startLine": 29,
+    "endLine": 52
   },
   {
     "outputFile": "Bundle-eeb-bescheinigung-v2.json",
@@ -124,8 +132,8 @@
     "fshName": "EEBPatientGkvNoKvnrExample",
     "fshType": "Instance",
     "fshFile": "profiles\\EEBPatient.fsh",
-    "startLine": 161,
-    "endLine": 178
+    "startLine": 37,
+    "endLine": 54
   },
   {
     "outputFile": "Patient-4149fdf9-2417-4a58-ac02-3473f5eb5431.json",
@@ -253,7 +261,7 @@
     "fshType": "Profile",
     "fshFile": "profiles\\EEBPatient.fsh",
     "startLine": 1,
-    "endLine": 157
+    "endLine": 31
   },
   {
     "outputFile": "StructureDefinition-KVNRinClearing.json",
