@@ -7,14 +7,15 @@ Bundle-9b6ac30d-246d-4eab-af83-544564792089.json                 EEBBescheinigun
 Bundle-9b6ac30d-246d-4eab-af83-54456479208u.json                 EEBBescheinigungBundleEgkNoAddressLine           Instance    profiles\EEBBescheinigungBundle.fsh                188 - 202
 Bundle-cecef81d-ab68-4d5a-9e22-7b3e8edce6e6.json                 EEBBescheinigungBundleSampleEgkPkv               Instance    profiles\EEBBescheinigungBundle.fsh                226 - 240
 Bundle-cef4c975-753e-4b25-bec3-6549c7360e0a.json                 EEBAnfrageBundleSampleUnknownKBV_PR_FOR_Patient  Instance    profiles\EEBAnfrageBundle.fsh                      249 - 264
-Bundle-eeb-anfrage-v2.json                                       eEBAnfrageExampleV2                              Instance    samples\eEBAnfrageExampleV2.fsh                    1 - 25
+Bundle-eeb-anfrage-v2a.json                                      eEBAnfrageExampleV2a                             Instance    samples\eEBAnfrageExampleV2.fsh                    1 - 24
+Bundle-eeb-anfrage-v2b.json                                      eEBAnfrageExampleV2b                             Instance    samples\eEBAnfrageExampleV2.fsh                    29 - 52
 Bundle-eeb-bescheinigung-v2.json                                 eEBBescheinigungExampleV2                        Instance    samples\eEBBescheinigungExampleV2.fsh              1 - 24
 CodeSystem-EEBErrorcodeCS.json                                   EEBErrorcodeCS                                   CodeSystem  codesystems\EEBErrorcodeCS.fsh                     1 - 29
 CodeSystem-EEBVersionCS.json                                     EEBVersionCS                                     CodeSystem  codesystems\EEBVersionCS.fsh                       1 - 11
 Coverage-e9553161ca3c-413a-48fe-b908-04159be709fb.json           EEBCoverageNoEgkSample                           Instance    profiles\EEBCoverageNoEgk.fsh                      75 - 108
 OperationOutcome-3f624395-be34-4fac-9773-d735cb3a1f73.json       EEBFehlerSampleMessage                           Instance    profiles\EEBFehler.fsh                             37 - 48
 OperationOutcome-bbd0690c-6939-4c90-979c-9ab9b1ed1552.json       EEBFehlerSampleBundle                            Instance    profiles\EEBFehler.fsh                             50 - 60
-Patient-1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c.json                EEBPatientGkvNoKvnrExample                       Instance    profiles\EEBPatient.fsh                            161 - 178
+Patient-1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c.json                EEBPatientGkvNoKvnrExample                       Instance    profiles\EEBPatient.fsh                            37 - 54
 Patient-4149fdf9-2417-4a58-ac02-3473f5eb5431.json                EEBKnownPatientPkvSample                         Instance    profiles\EEBKnownPatient.fsh                       45 - 52
 Patient-437f2555-2396-4c64-a656-e9553161ca3c.json                KBV_PR_FOR_PatientEgkNoAddressLineSample         Instance    profiles\EEBCoverageEgkNoAddressLine.fsh           11 - 32
 Patient-437f2555-2396-4c64-a656-e9553161ca3u.json                KBV_PR_FOR_PatientEgkSampleHBAqueried            Instance    profiles\EEBCoverageEgk.fsh                        71 - 97
@@ -30,7 +31,7 @@ StructureDefinition-EEBCoverageNoEgk.json                        EEBCoverageNoEg
 StructureDefinition-EEBCoverageVSDM.json                         EEBCoverageVSDM                                  Profile     profiles\EEBCoverageVSDM.fsh                       1 - 27
 StructureDefinition-EEBFehler.json                               EEBFehler                                        Profile     profiles\EEBFehler.fsh                             1 - 33
 StructureDefinition-EEBKnownPatient.json                         EEBKnownPatient                                  Profile     profiles\EEBKnownPatient.fsh                       1 - 32
-StructureDefinition-EEBPatient.json                              EEBPatient                                       Profile     profiles\EEBPatient.fsh                            1 - 157
+StructureDefinition-EEBPatient.json                              EEBPatient                                       Profile     profiles\EEBPatient.fsh                            1 - 31
 StructureDefinition-KVNRinClearing.json                          KVNRinClearing                                   Extension   extensions\KVNRinClearing.fsh                      1 - 9
 StructureDefinition-allgemeine-versicherungsdaten.json           AllgemeineVersicherungsdaten                     Extension   extensions\AllgemeineVersicherungsdaten.fsh        1 - 10
 StructureDefinition-eeb-operation-outcome-issue-identifier.json  EEBOperationOutcomeIssueIdentifier               Extension   extensions\EEBOperationOutcomeIssueIdentifier.fsh  1 - 37

@@ -1,8 +1,8 @@
-Instance: eEBAnfrageExampleV2
+Instance: eEBAnfrageExampleV2a
 InstanceOf: EEBAnfrageBundle
 Usage: #example
 
-* id = "eeb-anfrage-v2"
+* id = "eeb-anfrage-v2a"
 
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
@@ -20,9 +20,37 @@ Usage: #example
 * entry[+].fullUrl = "https://gematik.de/fhir/Patient/22222222-2222-2222-2222-222222222222"
 * entry[=].resource = PatientKnown
 
+* entry[+].fullUrl = "https://gematik.de/fhir/Organization/33333333-3333-3333-3333-333333333333"
+* entry[=].resource = OrgExample
+
+//////////////////////////////////////////////////////
+// alternatives Beispiel
+//////////////////////////////////////////////////////
+Instance: eEBAnfrageExampleV2b
+InstanceOf: EEBAnfrageBundle
+Usage: #example
+
+* id = "eeb-anfrage-v2b"
+
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"
+
+* type = #message
+* timestamp = "2026-06-02T10:00:00+02:00"
+
+/////////////////////////////////////////////////////
+//  Slice-Namen + gültige UUIDs
+/////////////////////////////////////////////////////
+
+* entry[+].fullUrl = "https://gematik.de/fhir/MessageHeader/11111111-1111-1111-1111-111111111111"
+* entry[=].resource = AnfrageHeaderV2
+
+* entry[+].fullUrl = "https://gematik.de/fhir/Patient/22222222-4444-2222-2222-222222222222"
+* entry[=].resource = PatientNotKnown
 
 * entry[+].fullUrl = "https://gematik.de/fhir/Organization/33333333-3333-3333-3333-333333333333"
 * entry[=].resource = OrgExample
+
 
 
 
@@ -66,6 +94,23 @@ Usage: #inline
 * identifier[KVNR].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
 * identifier[KVNR].system = "http://fhir.de/sid/gkv/kvid-10"
 * identifier[KVNR].value = "A123456789"
+
+/////////////////////////////////////////////////////
+// Patient (KVNR not known), Name Vorname, Geburtsdatum, Postleitzahl
+/////////////////////////////////////////////////////
+Instance: PatientNotKnown
+InstanceOf: EEBPatient
+Usage: #inline
+* id = "22222222-4444-2222-2222-222222222222"
+* name[Name]
+  * use = #official
+  * family = "Königstein"
+  * family.extension[nachname].url = "http://hl7.org/fhir/StructureDefinition/humanname-own-name"
+  * family.extension[nachname].valueString = "Königstein"
+  * given = "Ludger"
+* birthDate = "1935-06-22"
+* address[StrassenAdresse].postalCode = "26427"
+
 
 /////////////////////////////////////////////////////
 // Organization (KBV) 
