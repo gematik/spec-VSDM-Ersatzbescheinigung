@@ -357,7 +357,7 @@
     "fshType": "ValueSet",
     "fshFile": "valuesets\\EEBAnfrageUrsprungVS.fsh",
     "startLine": 1,
-    "endLine": 8
+    "endLine": 21
   },
   {
     "outputFile": "ValueSet-EEBErrorcodeVS.json",

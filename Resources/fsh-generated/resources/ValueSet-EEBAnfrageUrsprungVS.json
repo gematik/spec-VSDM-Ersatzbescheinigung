@@ -13,10 +13,58 @@
   "compose": {
     "include": [
       {
-        "system": "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID"
+        "system": "https://gematik.de/fhir/directory/CodeSystem/PractitionerProfessionOID",
+        "concept": [
+          {
+            "code": "1.2.276.0.76.4.30",
+            "display": "Ärztin/Arzt"
+          },
+          {
+            "code": "1.2.276.0.76.4.31",
+            "display": "Zahnärztin/Zahnarzt"
+          },
+          {
+            "code": "1.2.276.0.76.4.45",
+            "display": "Psychotherapeut/-in"
+          },
+          {
+            "code": "1.2.276.0.76.4.46",
+            "display": "Psychologische/-r Psychotherapeut/-in"
+          },
+          {
+            "code": "1.2.276.0.76.4.47",
+            "display": "Kinder- und Jugendlichenpsychotherapeut/-in"
+          },
+          {
+            "code": "1.2.276.0.76.4.49",
+            "display": "Versicherte/-r"
+          }
+        ]
       },
       {
-        "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
+        "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+        "concept": [
+          {
+            "code": "1.2.276.0.76.4.50",
+            "display": "Betriebsstätte Arzt"
+          },
+          {
+            "code": "1.2.276.0.76.4.51",
+            "display": "Zahnarztpraxis"
+          },
+          {
+            "code": "1.2.276.0.76.4.52",
+            "display": "Betriebsstätte Psychotherapeut"
+          },
+          {
+            "code": "1.2.276.0.76.4.53",
+            "display": "Krankenhaus"
+          },
+          {
+            "code": "1.2.276.0.76.4.57",
+            "display": "Betriebsstätte Mobile Einrichtung Rettungsdienst"
+          }
+        ]
       }
     ]
   }
