@@ -43,6 +43,6 @@ StructureDefinition-noaddressline.json                           noAddressLine  
 StructureDefinition-persoenliche-versichertendaten.json          PersoenlicheVersichertendaten                    Extension   extensions\PersoenlicheVersichertendaten.fsh       1 - 10
 StructureDefinition-servicePeriod.json                           servicePeriod                                    Extension   extensions\servicePeriod.fsh                       1 - 9
 StructureDefinition-versioneeb.json                              versionEEB                                       Extension   extensions\versionEEB.fsh                          1 - 9
-ValueSet-EEBAnfrageUrsprungVS.json                               EEBAnfrageUrsprungVS                             ValueSet    valuesets\EEBAnfrageUrsprungVS.fsh                 1 - 8
+ValueSet-EEBAnfrageUrsprungVS.json                               EEBAnfrageUrsprungVS                             ValueSet    valuesets\EEBAnfrageUrsprungVS.fsh                 1 - 21
 ValueSet-EEBErrorcodeVS.json                                     EEBErrorcodeVS                                   ValueSet    valuesets\EEBErrorcodeVS.fsh                       1 - 7
 ValueSet-EEBVersionVS.json                                       EEBVersionVS                                     ValueSet    valuesets\EEBVersionVS.fsh                         1 - 7
