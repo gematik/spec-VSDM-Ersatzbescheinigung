@@ -1,13 +1,13 @@
 RuleSet: Meta
-* ^status = #draft
+* ^status = #active
 * ^experimental = false
 * ^version = "1.2.0"
 * ^publisher = "gematik GmbH"
-* ^date = "2026-05-08"
+* ^date = "2026-08-27"
 
 RuleSet: Meta-Inst
-* status = #draft
+* status = #active
 * experimental = false
 * version = "1.2.0"
 * publisher = "gematik GmbH"
-* date = "2026-05-08"
+* date = "2026-08-27"
