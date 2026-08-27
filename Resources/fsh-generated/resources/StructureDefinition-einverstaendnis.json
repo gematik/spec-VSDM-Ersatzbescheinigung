@@ -4,9 +4,9 @@
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/Einverstaendnis",
   "version": "1.2.0",
   "name": "Einverstaendnis",
-  "status": "draft",
+  "status": "active",
   "experimental": false,
-  "date": "2026-05-08",
+  "date": "2026-08-27",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
