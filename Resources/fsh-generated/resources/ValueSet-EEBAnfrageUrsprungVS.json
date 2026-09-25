@@ -5,7 +5,7 @@
   "id": "EEBAnfrageUrsprungVS",
   "title": "ValueSet of eEB Message Header Events",
   "description": "eEB Message Header Event codes of request orgin",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "url": "https://gematik.de/fhir/eeb/ValueSet/EEBAnfrageUrsprungVS",
   "experimental": false,
   "publisher": "gematik GmbH",

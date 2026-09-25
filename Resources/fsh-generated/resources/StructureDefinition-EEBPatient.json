@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "EEBPatient",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "name": "EEBPatient",
   "title": "Versicherter",
   "status": "active",

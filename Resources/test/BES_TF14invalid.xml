@@ -1,0 +1,138 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="eeb-bescheinigung-v2"/>
+	<meta>
+		<profile value="https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"/>
+	</meta>
+	<identifier>
+		<system value="urn:ietf:rfc:3986"/>
+		<value value="urn:uuid:bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"/>
+	</identifier>
+	<type value="message"/>
+	<timestamp value="2026-06-02T10:05:00+02:00"/>
+	<entry>
+		<fullUrl value="https://gematik.de/fhir/MessageHeader/11111111-1111-1111-1111-111111111111"/>
+		<resource>
+			<MessageHeader>
+				<id value="11111111-1111-1111-1111-111111111111"/>
+				<meta>
+					<profile value="https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"/>
+				</meta>
+				<text>
+					<status value="additional"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">EEBBescheinigungHeader für eEB v2</div>
+				</text>
+				<extension url="https://gematik.de/fhir/eeb/StructureDefinition/versionEEB">
+					<valueCode value="2.0"/>
+				</extension>
+				<extension url="https://gematik.de/fhir/eeb/StructureDefinition/servicePeriod">
+					<valuePeriod>
+						<start value="2026-04-01"/>
+						<end value="2026-06-30"/>
+					</valuePeriod>
+				</extension>
+				<extension url="https://gematik.de/fhir/eeb/StructureDefinition/noAddressLine">
+					<valueBoolean value="true"/>
+				</extension>
+				<eventCoding>
+					<system value="https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"/>
+					<code value="1.2.276.0.76.4.50"/>
+					<display value="Betriebsstätte Arzt"/>
+				</eventCoding>
+				<source>
+					<endpoint value="kim://kasse@example.kim.telematik"/>
+				</source>
+				<response>
+					<identifier value="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"/>
+					<code value="ok"/>
+				</response>
+				<focus>
+					<reference value="Patient/1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c"/>
+				</focus>
+				<focus>
+					<reference value="Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"/>
+				</focus>
+			</MessageHeader>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="https://gematik.de/fhir/Patient/1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c"/>
+		<resource>
+			<Patient>
+				<id value="1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c"/>
+				<meta>
+					<profile value="https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient"/>
+				</meta>
+				<identifier>
+					<type>
+						<coding>
+							<system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+							<code value="KVZ10"/>
+						</coding>
+					</type>
+					<system value="http://fhir.de/sid/gkv/kvid-10"/>
+					<value value="T024791905"/>
+				</identifier>
+				<name>
+					<use value="official"/>
+					<family value="Haselnuss">
+						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+							<valueString value="Haselnuss"/>
+						</extension>
+					</family>
+					<given value="Eileen"/>
+				</name>
+				<birthDate value="1993-08-13"/>
+				<address>
+					<type value="both"/>
+					<city value="Berlin"/>
+					<postalCode value="10623"/>
+				</address>
+			</Patient>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="https://gematik.de/fhir/Coverage/2d4da53a-413a-48fe-b908-2e67b5761523"/>
+		<resource>
+			<Coverage>
+				<id value="2d4da53a-413a-48fe-b908-2e67b5761523"/>
+				<meta>
+					<profile value="https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine"/>
+				</meta>
+				<extension url="http://fhir.de/StructureDefinition/gkv/version-vsdm">
+					<valueString value="5.2.0"/>
+				</extension>
+				<extension url="https://gematik.de/fhir/eeb/StructureDefinition/PersoenlicheVersichertendaten">
+					<valueBase64Binary value="H4sIAN/UU2QA/41RXY/TMBD8K5HfL05Cc3dBG5/gWkFFPxCFwltlkiWJsDfIdnrAD+e5m3JXWsQDL17PeHZ2NYa779ZEe3S+66kUaZyICKnq646aUsw366vb27y4SnMR+aCp1qYnLMUP9OJOwYf73Vtu7ZFMV7W4HW24uoCs5OPTchHdT5e77ezdZr5elSKPs3ECzyRfijaEb8+lfPBxg1aH7mtco/yi5d7XdjzknvVCwZmvu0C0m0/V+ySb3BRpkeQg/36D43qk4BV+HlzwvNVgVVo8y5PrLAN5QcO2d6QtqsVQN+jY7RHDSlft8fbmF3WND9gRyBPJ5r5qDVZtUMvR84RgE5z2HulF7ZAr79P7YLALP3VrVHY9yW5AXnCwdkHNuMWDHK+w4NQVfOxb8iwxmqNFxx+EagryXzTI3y2Ps9VLM1ikB2xAPlHwWg+eBms5z3QC8gyeRH92lk8hnsc7Kv/j+9UBL5cSPWECAAA="/>
+				</extension>
+				<extension url="https://gematik.de/fhir/eeb/StructureDefinition/AllgemeineVersicherungsdaten">
+					<valueBase64Binary value="H4sIAKnUU2QA/71S32+qMBT+V0jfpYDjTpdS4/RmMU5d5q5b9kI6OAIRDjdtdXf+9RZiFnDG3ae9QL7z9fuRnrLBvyK3diBVVmJAXNshFmBUxhkmAZksF51ez+93XJ9YSguMRV4iBOQDFBlw9mcUDvM8gQIyhFVlEqUgt5ioWGjAl9m9NRrPwtXvx+VkMQ+Ib3tVgIlEFZBU6783lL4r2zgInW3sGOha0J2Ki+pDd+Y84ezTWINsoCpGRelW7zm7hSRD5J7jOY7ruIweB2xaKlNESwFJJW7BDSAaE+563Sv/13WP0bN0W5QLwBikuSHg4xNFk2NzUQB/AqWtu+nKmkqBxnAjlAJGa44N3yREKdaa/+l5rNn/6Z70QtG2scFn1/O6VULvM1yXqgVMYmu9KKTmZnuno6YmPLYx/mGtf1488K5ZXvVn9NLJJvll0OxePzT6/evmBylH1Y4/AwAA"/>
+				</extension>
+				<extension url="https://gematik.de/fhir/eeb/StructureDefinition/GeschuetzteVersichertendaten">
+					<valueBase64Binary value="H4sIABPVU2QA/4VP70vDMBD9V8p9X28TCptcMmSKDJwDh0P2ZYT2bMrSVJpr1f71S1FQUfDLu+Tu8X7Q8q12Sc9tqBqvYJZOIWGfN0XlSwXr3XYyn2eLySyDJIjxhXGNZwXvHGCp6XF1vOWQ245lEN6PKrnlVjgSIzxt7pLV9ea4v3nYrbf3CrL0YjSIlj4osCIvl4ivIS25NlKd0oLx2WAfinoE7CMfNB26wVjX+TLECNIFTbuPOSX8fBH+QWLHJ6n6WE5awyVruuJ2EBcz6gXh14cOxnrz/fZzEW1+a+H/5fUZUb40hF4BAAA="/>
+				</extension>
+				<status value="active"/>
+				<type>
+					<coding>
+						<system value="http://fhir.de/CodeSystem/versicherungsart-de-basis"/>
+						<code value="GKV"/>
+						<display value="gesetzliche Krankenversicherung"/>
+					</coding>
+				</type>
+				<beneficiary>
+					<reference value="Patient/437f2555-2396-4c64-a656-e9553161ca3c"/>
+				</beneficiary>
+				<period>
+					<start value="2022-04-01"/>
+					<end value="2027-07-31"/>
+				</period>
+				<payor>
+					<identifier>
+						<system value="http://fhir.de/sid/arge-ik/iknr"/>
+						<value value="123456789"/>
+					</identifier>
+					<display value="Test GKV Krankenkasse"/>
+				</payor>
+			</Coverage>
+		</resource>
+	</entry>
+</Bundle>

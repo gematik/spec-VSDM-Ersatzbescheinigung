@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "institutionskennzeichen",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "name": "Institutionskennzeichen",
   "status": "active",
   "experimental": false,

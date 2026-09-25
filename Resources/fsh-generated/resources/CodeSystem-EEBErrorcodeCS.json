@@ -6,7 +6,7 @@
   "id": "EEBErrorcodeCS",
   "title": "CodeSystem für eEB Fehler",
   "description": "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausstellen kann",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "url": "https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS",
   "concept": [
     {

@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "servicePeriod",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/servicePeriod",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "name": "servicePeriod",
   "status": "active",
   "experimental": false,

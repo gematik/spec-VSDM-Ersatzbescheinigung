@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "EEBFehler",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "name": "EEBFehler",
   "status": "active",
   "experimental": false,

@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "KVNRinClearing",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/KVNRinClearing",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "name": "KVNRinClearing",
   "status": "active",
   "experimental": false,

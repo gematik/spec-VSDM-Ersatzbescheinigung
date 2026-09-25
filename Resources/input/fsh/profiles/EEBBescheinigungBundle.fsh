@@ -31,11 +31,35 @@ entry.resource.ofType(Coverage).all(
 )"
 
 Invariant: -eeb-checkEebVersionExtensions
-Description: "Wird die Extension versionEEB mit dem code 2.0 verwendet, muss die Extension noAddressLine mit „true“ gesetzt sein und darf in KBV_PR_FOR_Patitent im adress-Feld kein Feld Line verwendet werden."
+Description: "Wird die Extension versionEEB mit dem code 2.0 verwendet, muss die Extension noAddressLine mit „true“ gesetzt sein und darf in KBV_PR_FOR_Patitent im adress-Feld kein Feld Line verwendet werden. Wird die Extension versionEEB mit dem code 2.1 (zunächst nur OCI aus der Kassen-App) verwendet, darf die Extension noAddressLine nicht mit „true“ gesetzt sein."
 Severity: #error
-Expression: "entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB' and value = '2.0').exists() implies
-  (entry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/noAddressLine' and value = true).exists()) and
-  (entry.resource.ofType(Patient).address.line.empty())"
+Expression: "
+(
+  entry.resource.ofType(MessageHeader)
+    .extension
+      .where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB' and value = '2.0').exists()
+  implies
+  (
+    entry.resource.ofType(MessageHeader)
+      .extension
+        .where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/noAddressLine' and value = true).exists()
+    and
+    entry.resource.ofType(Patient).address.line.empty()
+  )
+)
+and
+(
+  entry.resource.ofType(MessageHeader)
+    .extension
+      .where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB' and value = '2.1').exists()
+  implies
+  (
+    entry.resource.ofType(MessageHeader)
+      .extension
+        .where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/noAddressLine' and value = true).exists().not()
+  )
+)
+"
 
 Invariant: -eeb-checkEebVersionKVNRclearing
 Description: "Wird die Extension KVNRinClearing verwendet, darf in der Patient-Ressource kein identifier verwendet werden."
@@ -69,6 +93,17 @@ and
 entry.resource.ofType(Patient).count() = 1
 and
 entry.resource.ofType(Coverage).count() = 1
+"
+
+Invariant: -eeb-checkResponse
+Description: "Wird die Extension versionEEB mit Wert '2.1' verwendet (zunächst nur OCI aus der Kassen-App), darf kein Response-Bezug zu einer eEBAnfrage vorhanden sein."
+Severity: #error
+Expression: "
+entry.resource.ofType(MessageHeader)
+  .extension
+    .where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB' and value = '2.1').exists()
+implies
+entry.resource.ofType(MessageHeader).response.exists().not()
 "
 
 Profile: EEBBescheinigungBundle
@@ -167,6 +202,7 @@ Id: EEBBescheinigungBundle
 * obeys -eeb-checkEebVersionKVNRclearing
 * obeys -eeb-checkPatient
 * obeys -eeb-checkResourceCount
+* obeys -eeb-checkResponse
 
 // Beispielgenerierung
 Instance: EEBBescheinigungBundleSampleEgk
