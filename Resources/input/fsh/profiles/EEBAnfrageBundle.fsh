@@ -32,10 +32,21 @@ entry.resource.ofType(Patient)
     or
     $this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient'
   ).exists()
-
 )
 "
 
+Invariant: -eeb-VersionByPatient
+Description: "Wird der Patient EEBPatient verwendet, dann muss die Extension versionEEB vorhanden sein."
+Severity: #error
+Expression: "
+entry.where(resource is Patient)
+  .resource.meta.profile
+    .where($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient').exists()
+implies
+entry.resource.ofType(MessageHeader)
+  .extension
+    .where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists()
+"
 
 Profile: EEBAnfrageBundle
 Parent: Bundle
@@ -110,6 +121,7 @@ Id: EEBAnfrageBundle
 // version 2 constraints
 * obeys -eeb-checkEebVersionValue
 * obeys -eeb-PatientByVersion
+* obeys -eeb-VersionByPatient
 
 
 // Beispielgenerierung

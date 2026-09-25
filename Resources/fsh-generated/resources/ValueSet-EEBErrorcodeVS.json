@@ -5,7 +5,7 @@
   "id": "EEBErrorcodeVS",
   "title": "ValueSet für eEB Fehler",
   "description": "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausstellen kann",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "url": "https://gematik.de/fhir/eeb/ValueSet/EEBErrorcodeVS",
   "experimental": false,
   "publisher": "gematik GmbH",

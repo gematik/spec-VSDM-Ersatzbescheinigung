@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "EEBAnfrageBundle",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "name": "EEBAnfrageBundle",
   "status": "active",
   "experimental": false,
@@ -139,7 +139,14 @@
             "key": "-eeb-PatientByVersion",
             "severity": "error",
             "human": "Wird die Extension versionEEB verwendet, darf der KBV_PR_FOR_Patient nicht mehr verwendet werden.",
-            "expression": "\r\nentry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists()\r\nimplies\r\nentry.resource.ofType(Patient)\r\n.all(\r\n  meta.profile.where(\r\n    $this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient'\r\n    or\r\n    $this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient'\r\n  ).exists()\r\n\r\n)\r\n",
+            "expression": "\r\nentry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists()\r\nimplies\r\nentry.resource.ofType(Patient)\r\n.all(\r\n  meta.profile.where(\r\n    $this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient'\r\n    or\r\n    $this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient'\r\n  ).exists()\r\n)\r\n",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+          },
+          {
+            "key": "-eeb-VersionByPatient",
+            "severity": "error",
+            "human": "Wird der Patient EEBPatient verwendet, dann muss die Extension versionEEB vorhanden sein.",
+            "expression": "\r\nentry.where(resource is Patient)\r\n  .resource.meta.profile\r\n    .where($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient').exists()\r\nimplies\r\nentry.resource.ofType(MessageHeader)\r\n  .extension\r\n    .where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists()\r\n",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
           }
         ],
@@ -8538,7 +8545,14 @@
             "key": "-eeb-PatientByVersion",
             "severity": "error",
             "human": "Wird die Extension versionEEB verwendet, darf der KBV_PR_FOR_Patient nicht mehr verwendet werden.",
-            "expression": "\r\nentry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists()\r\nimplies\r\nentry.resource.ofType(Patient)\r\n.all(\r\n  meta.profile.where(\r\n    $this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient'\r\n    or\r\n    $this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient'\r\n  ).exists()\r\n\r\n)\r\n",
+            "expression": "\r\nentry.resource.ofType(MessageHeader).extension.where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists()\r\nimplies\r\nentry.resource.ofType(Patient)\r\n.all(\r\n  meta.profile.where(\r\n    $this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient'\r\n    or\r\n    $this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient'\r\n  ).exists()\r\n)\r\n",
+            "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
+          },
+          {
+            "key": "-eeb-VersionByPatient",
+            "severity": "error",
+            "human": "Wird der Patient EEBPatient verwendet, dann muss die Extension versionEEB vorhanden sein.",
+            "expression": "\r\nentry.where(resource is Patient)\r\n  .resource.meta.profile\r\n    .where($this = 'https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient').exists()\r\nimplies\r\nentry.resource.ofType(MessageHeader)\r\n  .extension\r\n    .where(url = 'https://gematik.de/fhir/eeb/StructureDefinition/versionEEB').exists()\r\n",
             "source": "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"
           }
         ]

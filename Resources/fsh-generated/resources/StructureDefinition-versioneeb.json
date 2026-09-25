@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "versioneeb",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/versionEEB",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "name": "versionEEB",
   "status": "active",
   "experimental": false,

@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "EEBCoverageEgkNoAddressLine",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "name": "EEBCoverageEgkNoAddressLine",
   "status": "active",
   "experimental": false,

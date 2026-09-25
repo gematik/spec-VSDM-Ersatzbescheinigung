@@ -1,0 +1,155 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="1f311c40-fee9-4b03-b0c4-c29d432f2371"/>
+	<meta>
+		<profile value="https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageBundle"/>
+	</meta>
+	<identifier>
+		<system value="urn:ietf:rfc:3986"/>
+		<value value="urn:uuid:79939e34-c5cc-4da6-ba55-f4bd85832760"/>
+	</identifier>
+	<type value="message"/>
+	<timestamp value="2022-08-29T02:10:37.154+02:00"/>
+	<entry>
+		<fullUrl value="https://gematik.de/fhir/MessageHeader/bb03a437-fe56-46f9-8622-ffc3766e7c70"/>
+		<resource>
+			<MessageHeader>
+				<id value="bb03a437-fe56-46f9-8622-ffc3766e7c70"/>
+				<meta>
+					<profile value="https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"/>
+				</meta>
+				<extension url="https://gematik.de/fhir/eeb/StructureDefinition/Leistungsdatum">
+					<valueDate value="2022-02-01"/>
+				</extension>
+				<extension url="https://gematik.de/fhir/eeb/StructureDefinition/Einverstaendnis">
+					<valueBoolean value="true"/>
+				</extension>
+				<extension url="https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen">
+					<valueIdentifier>
+						<system value="http://fhir.de/sid/arge-ik/iknr"/>
+						<value value="101575519"/>
+					</valueIdentifier>
+				</extension>
+				<extension url="https://gematik.de/fhir/eeb/StructureDefinition/versionEEB">
+					<valueCode value="2"/>
+				</extension>
+				<eventCoding>
+					<system value="https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"/>
+					<code value="1.2.276.0.76.4.50"/>
+					<display value="Betriebsstätte Arzt"/>
+				</eventCoding>
+				<sender>
+					<reference value="Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"/>
+				</sender>
+				<source>
+					<endpoint value="https://pvs.de/KIM"/>
+				</source>
+				<focus>
+					<reference value="Patient/1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c"/>
+				</focus>
+			</MessageHeader>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="https://gematik.de/fhir/Patient/1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c"/>
+		<resource>
+			<Patient>
+				<id value="1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c"/>
+				<meta>
+					<profile value="https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient"/>
+				</meta>
+				<identifier>
+					<type>
+						<coding>
+							<system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+							<code value="KVZ10"/>
+						</coding>
+					</type>
+					<system value="http://fhir.de/sid/gkv/kvid-10"/>
+					<value value="T024791905"/>
+				</identifier>
+				<name>
+					<use value="official"/>
+					<family value="Haselnuss">
+						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+							<valueString value="Haselnuss"/>
+						</extension>
+					</family>
+					<given value="Eileen"/>
+				</name>
+				<birthDate value="1993-08-13"/>
+				<address>
+					<type value="both"/>
+					<line value="Blumenweg 14">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="14"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Blumenweg"/>
+						</extension>
+					</line>
+					<city value="Berlin"/>
+					<postalCode value="10623"/>
+					<country value="DE">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-codedString">
+							<valueCoding>
+								<system value="http://fhir.de/CodeSystem/deuev/anlage-8-laenderkennzeichen"/>
+								<code value="D"/>
+							</valueCoding>
+						</extension>
+					</country>
+				</address>
+			</Patient>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="https://gematik.de/fhir/Organisation/fad15347-a4b3-4899-a454-9fb43bdb0f30"/>
+		<resource>
+			<Organization>
+				<id value="fad15347-a4b3-4899-a454-9fb43bdb0f30"/>
+				<meta>
+					<versionId value="1"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.3"/>
+				</meta>
+				<identifier>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+							<code value="PRN"/>
+						</coding>
+					</type>
+					<system value="https://gematik.de/fhir/sid/telematik-id"/>
+					<value value="123456"/>
+				</identifier>
+				<identifier>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+							<code value="BSNR"/>
+						</coding>
+					</type>
+					<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"/>
+					<value value="123456789"/>
+				</identifier>
+				<name value="Praxis Test"/>
+				<telecom>
+					<system value="phone"/>
+					<value value="0123456789"/>
+				</telecom>
+				<address>
+					<type value="both"/>
+					<line value="Testweg 10">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="10"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Testweg"/>
+						</extension>
+					</line>
+					<city value="Berlin"/>
+					<postalCode value="10115"/>
+					<country value="D"/>
+				</address>
+			</Organization>
+		</resource>
+	</entry>
+</Bundle>

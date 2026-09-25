@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "EEBCoverageNoEgk",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "name": "EEBCoverageNoEgk",
   "status": "active",
   "experimental": false,
