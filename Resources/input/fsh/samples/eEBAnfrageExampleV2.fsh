@@ -15,7 +15,7 @@ Usage: #example
 /////////////////////////////////////////////////////
 
 * entry[+].fullUrl = "https://gematik.de/fhir/MessageHeader/11111111-1111-1111-1111-111111111111"
-* entry[=].resource = AnfrageHeaderV2
+* entry[=].resource = AnfrageHeaderV2a
 
 * entry[+].fullUrl = "https://gematik.de/fhir/Patient/22222222-2222-2222-2222-222222222222"
 * entry[=].resource = PatientKnown
@@ -43,7 +43,7 @@ Usage: #example
 /////////////////////////////////////////////////////
 
 * entry[+].fullUrl = "https://gematik.de/fhir/MessageHeader/11111111-1111-1111-1111-111111111111"
-* entry[=].resource = AnfrageHeaderV2
+* entry[=].resource = AnfrageHeaderV2b
 
 * entry[+].fullUrl = "https://gematik.de/fhir/Patient/22222222-4444-2222-2222-222222222222"
 * entry[=].resource = PatientNotKnown
@@ -57,7 +57,7 @@ Usage: #example
 /////////////////////////////////////////////////////
 // Header
 /////////////////////////////////////////////////////
-Instance: AnfrageHeaderV2
+Instance: AnfrageHeaderV2a
 InstanceOf: EEBAnfrageHeader
 Usage: #inline
 * id = "11111111-1111-1111-1111-111111111111"
@@ -83,6 +83,38 @@ Usage: #inline
 * extension[versionEEB].url = "https://gematik.de/fhir/eeb/StructureDefinition/versionEEB"
 * extension[versionEEB].valueCode = #2
 
+* focus.reference = "Patient/22222222-2222-2222-2222-222222222222"
+
+/////////////////////////////////////////////////////
+// Header
+/////////////////////////////////////////////////////
+Instance: AnfrageHeaderV2b
+InstanceOf: EEBAnfrageHeader
+Usage: #inline
+* id = "11111111-1111-1111-1111-111111111111"
+
+* eventCoding.system = $system-organizationProfessionOID-code
+* eventCoding.code = #1.2.276.0.76.4.50
+* eventCoding.display = "Betriebsstätte Arzt"
+
+* source.endpoint = "kim://praxis@example.kim.telematik"
+
+// Referenz MUSS fullUrl matchen
+* sender.reference = "Organisation/33333333-3333-3333-3333-333333333333"
+* extension[Leistungsdatum].url = "https://gematik.de/fhir/eeb/StructureDefinition/Leistungsdatum"
+* extension[Leistungsdatum].valueDate = "2026-06-01"
+
+* extension[Einverstaendnis].url = "https://gematik.de/fhir/eeb/StructureDefinition/Einverstaendnis"
+* extension[Einverstaendnis].valueBoolean = true
+
+* extension[Institutionskennzeichen].url = "https://gematik.de/fhir/eeb/StructureDefinition/Institutionskennzeichen"
+* extension[Institutionskennzeichen].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
+* extension[Institutionskennzeichen].valueIdentifier.value = "109999999"
+
+* extension[versionEEB].url = "https://gematik.de/fhir/eeb/StructureDefinition/versionEEB"
+* extension[versionEEB].valueCode = #2
+
+* focus.reference = "Patient/22222222-4444-2222-2222-222222222222"
 
 /////////////////////////////////////////////////////
 // Patient (EEBKnownPatient)

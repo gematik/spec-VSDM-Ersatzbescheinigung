@@ -1,69 +1,5 @@
 [
   {
-    "outputFile": "Bundle-1f311c40-fee9-4b03-b0c4-c29d432f2371.json",
-    "fshName": "EEBAnfrageBundleSampleKnownPatient",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 227,
-    "endLine": 242
-  },
-  {
-    "outputFile": "Bundle-43bb7e49-inva-lide-pati-entstrassed6b.json",
-    "fshName": "EEBBescheinigungBundleSampleNoEgk",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 246,
-    "endLine": 260
-  },
-  {
-    "outputFile": "Bundle-4a270af6-nneu-ohne-kvnr-dfe20acfb5c5.json",
-    "fshName": "EEBBescheinigungBundle2",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 333,
-    "endLine": 346
-  },
-  {
-    "outputFile": "Bundle-96120812-a785-4fe3-a1e9-244314fdad9d.json",
-    "fshName": "EEBAnfrageBundleSampleKnownKBV_PR_FOR_Patient",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 244,
-    "endLine": 259
-  },
-  {
-    "outputFile": "Bundle-9b6ac30d-246d-4eab-af83-544564792089.json",
-    "fshName": "EEBBescheinigungBundleSampleEgk",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 208,
-    "endLine": 222
-  },
-  {
-    "outputFile": "Bundle-9b6ac30d-246d-4eab-af83-54456479208u.json",
-    "fshName": "EEBBescheinigungBundleEgkNoAddressLine",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 224,
-    "endLine": 238
-  },
-  {
-    "outputFile": "Bundle-cecef81d-ab68-4d5a-9e22-7b3e8edce6e6.json",
-    "fshName": "EEBBescheinigungBundleSampleEgkPkv",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBBescheinigungBundle.fsh",
-    "startLine": 262,
-    "endLine": 276
-  },
-  {
-    "outputFile": "Bundle-cef4c975-753e-4b25-bec3-6549c7360e0a.json",
-    "fshName": "EEBAnfrageBundleSampleUnknownKBV_PR_FOR_Patient",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBAnfrageBundle.fsh",
-    "startLine": 261,
-    "endLine": 276
-  },
-  {
     "outputFile": "Bundle-eeb-anfrage-v2a.json",
     "fshName": "eEBAnfrageExampleV2a",
     "fshType": "Instance",
@@ -104,14 +40,6 @@
     "endLine": 11
   },
   {
-    "outputFile": "Coverage-e9553161ca3c-413a-48fe-b908-04159be709fb.json",
-    "fshName": "EEBCoverageNoEgkSample",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBCoverageNoEgk.fsh",
-    "startLine": 75,
-    "endLine": 108
-  },
-  {
     "outputFile": "OperationOutcome-3f624395-be34-4fac-9773-d735cb3a1f73.json",
     "fshName": "EEBFehlerSampleMessage",
     "fshType": "Instance",
@@ -134,46 +62,6 @@
     "fshFile": "profiles\\EEBPatient.fsh",
     "startLine": 37,
     "endLine": 54
-  },
-  {
-    "outputFile": "Patient-4149fdf9-2417-4a58-ac02-3473f5eb5431.json",
-    "fshName": "EEBKnownPatientPkvSample",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBKnownPatient.fsh",
-    "startLine": 45,
-    "endLine": 52
-  },
-  {
-    "outputFile": "Patient-437f2555-2396-4c64-a656-e9553161ca3c.json",
-    "fshName": "KBV_PR_FOR_PatientEgkNoAddressLineSample",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBCoverageEgkNoAddressLine.fsh",
-    "startLine": 11,
-    "endLine": 32
-  },
-  {
-    "outputFile": "Patient-437f2555-2396-4c64-a656-e9553161ca3u.json",
-    "fshName": "KBV_PR_FOR_PatientEgkSampleHBAqueried",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBCoverageEgk.fsh",
-    "startLine": 71,
-    "endLine": 97
-  },
-  {
-    "outputFile": "Patient-b8f0f69c-af1a-480b-8abf-44ab11aa23c5.json",
-    "fshName": "EEBKnownPatientSample",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBKnownPatient.fsh",
-    "startLine": 36,
-    "endLine": 43
-  },
-  {
-    "outputFile": "Patient-d62d9d82-2396-4c64-a656-2e67b5761523.json",
-    "fshName": "KBV_PR_FOR_PatientNoEgkSample",
-    "fshType": "Instance",
-    "fshFile": "profiles\\EEBCoverageNoEgk.fsh",
-    "startLine": 51,
-    "endLine": 72
   },
   {
     "outputFile": "StructureDefinition-EEBAnfrageBundle.json",
