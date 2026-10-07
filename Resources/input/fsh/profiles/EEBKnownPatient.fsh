@@ -32,21 +32,3 @@ Id: EEBKnownPatient
 * link 0..0
 
 
-// Beispielgenerierung
-Instance: EEBKnownPatientSample
-InstanceOf: EEBKnownPatient
-Title: "EEBKnownPatient"
-Usage: #example
-* id = "b8f0f69c-af1a-480b-8abf-44ab11aa23c5"
-* identifier[KVNR].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
-* identifier[KVNR].system = $sid-identifier-kvid-10
-* identifier[KVNR].value = "T024791905"
-
-Instance: EEBKnownPatientPkvSample
-InstanceOf: EEBKnownPatient
-Title: "EEBKnownPatientPkv"
-Usage: #example
-* id = "4149fdf9-2417-4a58-ac02-3473f5eb5431"
-* identifier[KVNR].type = http://fhir.de/CodeSystem/identifier-type-de-basis#KVZ10
-* identifier[KVNR].system = $sid-identifier-kvid-10
-* identifier[KVNR].value = "A987654321"
