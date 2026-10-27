@@ -1,6 +1,6 @@
 /*!
  * Original file: /npm/qrcode-generator@1.4.4/qrcode.js
- * Copyright (c) 2009 Kazuhiko Arase
+ * Copyright 2009 Kazuhiko Arase
  * Licensed under the MIT License.
  * Minified by jsDelivr using Terser v3.14.1.
  * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
