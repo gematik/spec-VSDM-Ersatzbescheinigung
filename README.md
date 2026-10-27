@@ -9,6 +9,8 @@ This Repo holds the FHIR Short Hand profile defintions and compiled FHIR Profile
   - [About ](#about-)
   - [Getting Started ](#getting-started-)
     - [Installing](#installing)
+  - [License](#license)
+  - [Additional Notes and Disclaimer from gematik GmbH](#additional-notes-and-disclaimer-from-gematik-gmbh)
 
 ## About <a name = "about"></a>
 
@@ -47,7 +49,7 @@ See `../validation_results/` for results.
 
 ## License
 
-Copyright 2025 gematik GmbH
+Copyright 2026 gematik GmbH
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 

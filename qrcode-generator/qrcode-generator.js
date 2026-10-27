@@ -1,5 +1,9 @@
 /*!
  * Original file: /npm/qrcode-generator@1.4.4/qrcode.js
+ * Copyright 2026 gematik GmbH
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ *
  * Copyright (c) 2009 Kazuhiko Arase
  * Released under the MIT License.
  * Minified by jsDelivr using Terser v3.14.1.
